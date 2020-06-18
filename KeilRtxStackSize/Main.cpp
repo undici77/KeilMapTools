@@ -85,6 +85,7 @@ void read_ini(const boost::filesystem::path &ini_file_path, PARAMETERS *paramete
 		}
 		else
 		{
+            boost::algorithm::trim_if(buffer, boost::is_any_of("\""));
 			parameters->map_file_path = boost::filesystem::absolute(buffer);
 			path = boost::filesystem::relative(parameters->map_file_path.string());
 			property_tree.put<std::string>("Map.FilePath", path.string());
@@ -113,6 +114,7 @@ void read_ini(const boost::filesystem::path &ini_file_path, PARAMETERS *paramete
 		}
 		else
 		{
+            boost::algorithm::trim_if(buffer, boost::is_any_of("\""));
 			parameters->output_file_path = boost::filesystem::absolute(buffer);
 		}
 	}
@@ -166,6 +168,7 @@ int main(int argc, char *argv[])
 	boost::filesystem::path         ini_file_path;
 	PARAMETERS                      parameters;
 	std::unique_ptr<GeneratorBase>  generator;
+	std::string                     buffer;
 	std::string                     error;
 	int                             result;
 
@@ -179,6 +182,7 @@ int main(int argc, char *argv[])
 		description.add_options()
 		("help",                                                    "produce help message")
 		("ini",       boost::program_options::value<std::string>(), "set ini configuration file")
+		("debug",     boost::program_options::value<std::string>(), "enable debug info")
 		;
 
 		boost::program_options::store(boost::program_options::parse_command_line(argc, argv, description), variable_map);
@@ -192,8 +196,10 @@ int main(int argc, char *argv[])
 
 		if (variable_map.count("ini"))
 		{
-			ini_file_path = variable_map["ini"].as<std::string>();
-			if (boost::filesystem::is_directory(ini_file_path))
+            buffer = variable_map["ini"].as<std::string>();
+            boost::algorithm::trim_if(buffer, boost::is_any_of("\""));
+			ini_file_path = boost::filesystem::absolute(buffer);
+			if (!boost::filesystem::is_regular_file(ini_file_path))
 			{
 				ini_file_path.append("KeilRtxStackSize.ini");
 			}
@@ -208,10 +214,13 @@ int main(int argc, char *argv[])
 
 		std::cout << App_Name << " " << App_Version << " by " << App_Author << std::endl;
 
-		std::cout << "    Architecture: " << parameters.architecture     << std::endl;
-		std::cout << "    Map file:     " << parameters.map_file_path    << std::endl;
-		std::cout << "    Output file:  " << parameters.output_file_path << std::endl;
-		std::cout << "    Oversizing:   " << parameters.stack_oversizing << std::endl;
+		if (variable_map.count("debug"))
+        {
+		    std::cout << "    Architecture: " << parameters.architecture     << std::endl;
+		    std::cout << "    Map file:     " << parameters.map_file_path    << std::endl;
+		    std::cout << "    Output file:  " << parameters.output_file_path << std::endl;
+		    std::cout << "    Oversizing:   " << parameters.stack_oversizing << std::endl;
+        }
 
 		generator = GeneratorFactory::Make(parameters.architecture);
 		if (generator == NULL)
@@ -230,7 +239,7 @@ int main(int argc, char *argv[])
 
 		if (!generator->WriteRequest())
 		{
-			std::cout << parameters.output_file_path << " ok" << std::endl;
+			std::cout << parameters.output_file_path << " OK!" << std::endl;
 			return (EXIT_SUCCESS);
 		}
 
@@ -240,12 +249,12 @@ int main(int argc, char *argv[])
 			return (EXIT_FAILURE);
 		}
 
-		std::cout << "Error: " << parameters.output_file_path << " PLEASE REBUILD PROJECT!!" << std::endl;
+		std::cout << "Error: " << parameters.output_file_path << " !!PLEASE REBUILD PROJECT!!" << std::endl;
 		return (EXIT_FAILURE);
 	}
 	catch (std::exception &e)
 	{
-		std::cerr << "error: " << e.what() << std::endl;
+		std::cerr << "Error: " << e.what() << std::endl;
 
 		return (EXIT_FAILURE);
 	}
