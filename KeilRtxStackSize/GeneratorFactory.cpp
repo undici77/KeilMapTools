@@ -35,15 +35,13 @@ std::unique_ptr<GeneratorBase> GeneratorFactory::Make(std::string architecture)
 {
 	std::unique_ptr<GeneratorBase>(*factory)(void);
 
-	if (_Map.find(architecture) != _Map.end())
-	{
-		factory = _Map[architecture];
-		return (factory());
-	}
-	else
+	if (_Map.find(architecture) == _Map.end())
 	{
 		return (NULL);
 	}
+
+	factory = _Map[architecture];
+	return (factory());
 }
 
 /*****************************************************************************/
