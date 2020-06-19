@@ -13,30 +13,17 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with KeilMapLib.  If not, see <https://www.gnu.org/licenses/>.
 
-#ifndef _KEIL_MAP_LIB_H
-#define _KEIL_MAP_LIB_H
+#ifndef _SWIG_INTERFACE_H
+#define _SWIG_INTERFACE_H
 
 /*****************************************************************************/
 
 #include "KeilMapLibStructs.h"
-#include <iostream>
-#include <vector>
+#include "SwigInterface.h"
 
-/*****************************************************************************/
-
-#ifdef LIB_EXPORTS
-#define LIB_API __declspec(dllexport)
-#else
-#define LIB_API __declspec(dllimport)
-#endif
-
-/*****************************************************************************/
-
-class LIB_API KeilMapLib
+class SwigInterface
 {
 	public:
-		KeilMapLib(void);
-
 		std::vector<CROSS_REFERENCE_FIELD>      GetCrossReference(std::string &file);
 		std::vector<FUNCTION_POINTER_FIELD>     GetFunctionPointer(std::string &file);
 		std::vector<GLOBAL_SYMBOL_FIELD>        GetGlobalSymbols(std::string &file);
