@@ -49,7 +49,7 @@ typedef struct
 	std::string address;
 	std::string type;
 	std::string size;
-	std::string object;
+	std::string object_name;
 } GLOBAL_SYMBOL_FIELD;
 
 /*****************************************************************************/
@@ -82,7 +82,7 @@ typedef struct
 	std::string address;
 	std::string type;
 	std::string size;
-	std::string object;
+	std::string object_name;
 } LOCAL_SYMBOL_FIELD;
 
 /*****************************************************************************/
@@ -106,27 +106,27 @@ typedef struct
 	std::string id;
 	bool        entry_point;
 	std::string section_name;
-	std::string object;
+	std::string object_name;
+} MEMORY_MAP_IMAGE_OBJECT_FIELD;
+
+typedef struct
+{
+	std::string                                name;
+	std::string                                data;
+	std::vector<MEMORY_MAP_IMAGE_OBJECT_FIELD> fields;
 } MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD;
 
 typedef struct
 {
 	std::string                                          name;
 	std::string                                          data;
-	std::vector<MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD> fields;
-} MEMORY_MAP_IMAGE_EXECUTION_REGION;
+	std::vector<MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD> execution_region;
+} MEMORY_MAP_IMAGE_LOAD_REGION_FIELD;
 
 typedef struct
 {
-	std::string                                    name;
-	std::string                                    data;
-	std::vector<MEMORY_MAP_IMAGE_EXECUTION_REGION> execution_region;
-} MEMORY_MAP_IMAGE_LOAD_REGION;
-
-typedef struct
-{
-	std::string                               entry_point;
-	std::vector<MEMORY_MAP_IMAGE_LOAD_REGION> load_region;
+	std::string                                     entry_point;
+	std::vector<MEMORY_MAP_IMAGE_LOAD_REGION_FIELD> load_region;
 } MEMORY_MAP_IMAGE;
 
 /*****************************************************************************/

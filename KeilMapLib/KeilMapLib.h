@@ -36,12 +36,13 @@ class LIB_API KeilMapLib
 {
 	public:
 		KeilMapLib(void);
+		~KeilMapLib(void);
 
 		std::vector<CROSS_REFERENCE_FIELD>      GetCrossReference(std::string &file);
 		std::vector<FUNCTION_POINTER_FIELD>     GetFunctionPointer(std::string &file);
 		std::vector<GLOBAL_SYMBOL_FIELD>        GetGlobalSymbols(std::string &file);
 		std::vector<IMAGE_COMPONENT_SIZE_FIELD> GetImageComponentSize(std::string &file);
-		std::vector<IMAGE_SIZE_DATA>            GetImageSize(std::string &file);
+		IMAGE_SIZE_DATA                         GetImageSize(std::string &file);
 		std::vector<LOCAL_SYMBOL_FIELD>         GetLocalSymbols(std::string &file);
 		std::vector<MAXIMUM_STACK_USAGE_FIELD>  GetMaximumStackUsage(std::string &file);
 		MEMORY_MAP_IMAGE                        GetMemoryMapImage(std::string &file);

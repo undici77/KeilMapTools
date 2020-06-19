@@ -87,7 +87,7 @@ bool GlobalSymbolsSection::Manage(std::string &file)
 					global_symbols_field.address       = fields_match_result[2].str();
 					global_symbols_field.type          = fields_match_result[3].str();
 					global_symbols_field.size          = fields_match_result[4].str();
-					global_symbols_field.object        = fields_match_result[5].str();
+					global_symbols_field.object_name   = fields_match_result[5].str();
 				}
 				else
 				{
@@ -95,14 +95,14 @@ bool GlobalSymbolsSection::Manage(std::string &file)
 					global_symbols_field.address       = fields_match_result[7].str();
 					global_symbols_field.type          = fields_match_result[8].str();
 					global_symbols_field.size          = "0";
-					global_symbols_field.object        = "-";
+					global_symbols_field.object_name   = "-";
 				}
 
 				boost::algorithm::trim(global_symbols_field.symbolic_name);
 				boost::algorithm::trim(global_symbols_field.address);
 				boost::algorithm::trim(global_symbols_field.type);
 				boost::algorithm::trim(global_symbols_field.size);
-				boost::algorithm::trim(global_symbols_field.object);
+				boost::algorithm::trim(global_symbols_field.object_name);
 
 				_Data.emplace_back(global_symbols_field);
 			}
