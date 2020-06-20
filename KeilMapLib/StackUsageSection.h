@@ -26,6 +26,6 @@ class StackUsageSection : public SectionBase, public SectionData<STACK_USAGE_FIE
 		StackUsageSection();
 		~StackUsageSection();
 
-		bool Manage(std::string &file);
+		bool Manage(const std::string &file);
 };
 

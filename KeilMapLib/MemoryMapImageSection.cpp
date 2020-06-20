@@ -31,7 +31,7 @@ MemoryMapImageSection::~MemoryMapImageSection()
 }
 
 /*****************************************************************************/
-bool MemoryMapImageSection::Manage(std::string &file)
+bool MemoryMapImageSection::Manage(const std::string &file)
 /*****************************************************************************/
 {
 	boost::regex                                                   begin_section_regex;
@@ -101,17 +101,17 @@ bool MemoryMapImageSection::Manage(std::string &file)
 
 	for (std::string load_region_string : load_region_vector)
 	{
-		MEMORY_MAP_IMAGE_LOAD_REGION load_region;
+		MEMORY_MAP_IMAGE_LOAD_REGION_FIELD load_region_field;
 		if (!boost::regex_search(load_region_string, match_result, load_region_regex))
 		{
 			return (false);
 		}
 
-		load_region.name = match_result[1].str();
-		load_region.data = match_result[2].str();
+		load_region_field.name = match_result[1].str();
+		load_region_field.data = match_result[2].str();
 
-		boost::algorithm::trim(load_region.name);
-		boost::algorithm::trim(load_region.data);
+		boost::algorithm::trim(load_region_field.name);
+		boost::algorithm::trim(load_region_field.data);
 
 		if (!SplitSection(load_region_string, execution_region_regex, &execution_region_vector))
 		{
@@ -120,22 +120,22 @@ bool MemoryMapImageSection::Manage(std::string &file)
 
 		for (std::string execution_region_string : execution_region_vector)
 		{
-			MEMORY_MAP_IMAGE_EXECUTION_REGION execution_region;
+			MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD execution_region_field;
 			if (!boost::regex_search(execution_region_string, match_result, execution_region_regex))
 			{
 				return (false);
 			}
 
-			execution_region.name = match_result[1].str();
-			execution_region.data = match_result[2].str();
+			execution_region_field.name = match_result[1].str();
+			execution_region_field.data = match_result[2].str();
 
-			boost::algorithm::trim(execution_region.name);
-			boost::algorithm::trim(execution_region.data);
+			boost::algorithm::trim(execution_region_field.name);
+			boost::algorithm::trim(execution_region_field.data);
 
 			fields_iterator = boost::sregex_token_iterator(execution_region_string.begin(), execution_region_string.end(), fields_regex, 0);
 			while (fields_iterator != fields_end)
 			{
-				MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD fields;
+				MEMORY_MAP_IMAGE_OBJECT_FIELD field;
 
 				std::string fields_string = fields_iterator->str();
 				if (boost::regex_search(fields_string, match_result, fields_regex))
@@ -146,39 +146,39 @@ bool MemoryMapImageSection::Manage(std::string &file)
 						    match_result[2].matched &&
 						    match_result[3].matched)
 						{
-							fields.execution_address = match_result[1].str();
-							fields.load_address      = match_result[2].str();
-							fields.size              = match_result[3].str();
-							fields.type              = "PAD";
-							fields.attribute         = "";
-							fields.id                = "";
-							fields.entry_point       = false;
-							fields.section_name      = "";
-							fields.object            = "";
+							field.execution_address = match_result[1].str();
+							field.load_address      = match_result[2].str();
+							field.size              = match_result[3].str();
+							field.type              = "PAD";
+							field.attribute         = "";
+							field.id                = "";
+							field.entry_point       = false;
+							field.section_name      = "";
+							field.object_name       = "";
 						}
 						else
 						{
-							fields.execution_address = match_result[4].str();
-							fields.load_address      = match_result[5].str();
-							fields.size              = match_result[6].str();
-							fields.type              = match_result[7].str();
-							fields.attribute         = match_result[8].str();
-							fields.id                = match_result[9].str();
-							fields.entry_point       = match_result[10].matched;
-							fields.section_name      = match_result[11].str();
-							fields.object            = match_result[12].str();
+							field.execution_address = match_result[4].str();
+							field.load_address      = match_result[5].str();
+							field.size              = match_result[6].str();
+							field.type              = match_result[7].str();
+							field.attribute         = match_result[8].str();
+							field.id                = match_result[9].str();
+							field.entry_point       = match_result[10].matched;
+							field.section_name      = match_result[11].str();
+							field.object_name       = match_result[12].str();
 						}
 
-						boost::algorithm::trim(fields.execution_address);
-						boost::algorithm::trim(fields.load_address);
-						boost::algorithm::trim(fields.size);
-						boost::algorithm::trim(fields.type);
-						boost::algorithm::trim(fields.attribute);
-						boost::algorithm::trim(fields.id);
-						boost::algorithm::trim(fields.section_name);
-						boost::algorithm::trim(fields.object);
+						boost::algorithm::trim(field.execution_address);
+						boost::algorithm::trim(field.load_address);
+						boost::algorithm::trim(field.size);
+						boost::algorithm::trim(field.type);
+						boost::algorithm::trim(field.attribute);
+						boost::algorithm::trim(field.id);
+						boost::algorithm::trim(field.section_name);
+						boost::algorithm::trim(field.object_name);
 
-						execution_region.fields.emplace_back(fields);
+						execution_region_field.fields.emplace_back(field);
 					}
 					catch (...)
 					{
@@ -188,10 +188,10 @@ bool MemoryMapImageSection::Manage(std::string &file)
 				fields_iterator++;
 			}
 
-			load_region.execution_region.emplace_back(execution_region);
+			load_region_field.execution_region.emplace_back(execution_region_field);
 		}
 
-		memory_map_image.load_region.emplace_back(load_region);
+		memory_map_image.load_region.emplace_back(load_region_field);
 	}
 
 	_Data.emplace_back(memory_map_image);

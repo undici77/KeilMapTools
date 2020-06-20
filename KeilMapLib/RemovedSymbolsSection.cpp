@@ -31,7 +31,7 @@ RemovedSymbolSection::~RemovedSymbolSection()
 }
 
 /*****************************************************************************/
-bool RemovedSymbolSection::Manage(std::string &file)
+bool RemovedSymbolSection::Manage(const std::string &file)
 /*****************************************************************************/
 {
 	boost::regex                                      begin_section_regex;

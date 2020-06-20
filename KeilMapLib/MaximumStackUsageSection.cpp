@@ -31,7 +31,7 @@ MaximumStackUsageSection::~MaximumStackUsageSection()
 }
 
 /*****************************************************************************/
-bool MaximumStackUsageSection::Manage(std::string &file)
+bool MaximumStackUsageSection::Manage(const std::string &file)
 /*****************************************************************************/
 {
 	boost::regex                                      begin_section_regex;

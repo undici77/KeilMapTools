@@ -26,7 +26,7 @@ class CrossReferencesSection : public SectionBase, public SectionData<CROSS_REFE
 		CrossReferencesSection();
 		~CrossReferencesSection();
 
-		bool Manage(std::string &file);
+		bool Manage(const std::string &file);
 
 	private:
 };

@@ -30,7 +30,7 @@ ImageSizeSection::~ImageSizeSection()
 }
 
 /*****************************************************************************/
-bool ImageSizeSection::Manage(std::string &file)
+bool ImageSizeSection::Manage(const std::string &file)
 /*****************************************************************************/
 {
 	boost::regex                                      section_regex;

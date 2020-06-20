@@ -26,6 +26,6 @@ class RemovedSymbolSection : public SectionBase, public SectionData<REMOVED_SYMB
 		RemovedSymbolSection();
 		~RemovedSymbolSection();
 
-		bool Manage(std::string &file);
+		bool Manage(const std::string &file);
 };
 

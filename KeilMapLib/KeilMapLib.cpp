@@ -36,6 +36,12 @@ KeilMapLib::KeilMapLib()
 }
 
 /*****************************************************************************/
+KeilMapLib::~KeilMapLib(void)
+/*****************************************************************************/
+{
+}
+
+/*****************************************************************************/
 std::vector<CROSS_REFERENCE_FIELD> KeilMapLib::GetCrossReference(std::string &file)
 /*****************************************************************************/
 {
@@ -76,13 +82,26 @@ std::vector<IMAGE_COMPONENT_SIZE_FIELD> KeilMapLib::GetImageComponentSize(std::s
 }
 
 /*****************************************************************************/
-std::vector<IMAGE_SIZE_DATA> KeilMapLib::GetImageSize(std::string &file)
+IMAGE_SIZE_DATA KeilMapLib::GetImageSize(std::string &file)
 /*****************************************************************************/
 {
 	ImageSizeSection manager;
+	IMAGE_SIZE_DATA  result;
 
 	manager.Manage(file);
-	return (std::move(manager.Get()));
+
+	if (manager.Get().size() > 0)
+	{
+		result = manager.Get().at(0);
+	}
+	else
+	{
+		result.total_read_only_size  = "";
+		result.total_read_write_size = "";
+		result.total_rom_size        = "";
+	}
+
+	return (std::move(result));
 }
 
 /*****************************************************************************/
@@ -110,9 +129,20 @@ MEMORY_MAP_IMAGE KeilMapLib::GetMemoryMapImage(std::string &file)
 /*****************************************************************************/
 {
 	MemoryMapImageSection manager;
+	MEMORY_MAP_IMAGE      result;
 
 	manager.Manage(file);
-	return (std::move(manager.Get()[0]));
+
+	if (manager.Get().size() > 0)
+	{
+		result = manager.Get().at(0);
+	}
+	else
+	{
+		result.entry_point = "";
+	}
+
+	return (std::move(result));
 }
 
 /*****************************************************************************/
@@ -144,3 +174,4 @@ std::vector<STACK_USAGE_FIELD> KeilMapLib::GetStackUsage(std::string &file)
 	manager.Manage(file);
 	return (std::move(manager.Get()));
 }
+

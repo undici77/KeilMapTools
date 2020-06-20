@@ -31,7 +31,7 @@ LocalSymbolsSection::~LocalSymbolsSection()
 }
 
 /*****************************************************************************/
-bool LocalSymbolsSection::Manage(std::string &file)
+bool LocalSymbolsSection::Manage(const std::string &file)
 /*****************************************************************************/
 {
 	boost::regex                                      begin_section_regex;
@@ -86,7 +86,7 @@ bool LocalSymbolsSection::Manage(std::string &file)
 					local_symbols_field.address       = fields_match_result[2].str();
 					local_symbols_field.type          = fields_match_result[3].str();
 					local_symbols_field.size          = fields_match_result[4].str();
-					local_symbols_field.object        = fields_match_result[5].str();
+					local_symbols_field.object_name   = fields_match_result[5].str();
 				}
 				else
 				{
@@ -94,14 +94,14 @@ bool LocalSymbolsSection::Manage(std::string &file)
 					local_symbols_field.address       = fields_match_result[7].str();
 					local_symbols_field.type          = fields_match_result[8].str();
 					local_symbols_field.size          = "0";
-					local_symbols_field.object        = "-";
+					local_symbols_field.object_name   = "-";
 				}
 
 				boost::algorithm::trim(local_symbols_field.symbolic_name);
 				boost::algorithm::trim(local_symbols_field.address);
 				boost::algorithm::trim(local_symbols_field.type);
 				boost::algorithm::trim(local_symbols_field.size);
-				boost::algorithm::trim(local_symbols_field.object);
+				boost::algorithm::trim(local_symbols_field.object_name);
 
 				_Data.emplace_back(local_symbols_field);
 			}

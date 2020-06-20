@@ -31,7 +31,7 @@ MutuallyRecursiveSection::~MutuallyRecursiveSection()
 }
 
 /*****************************************************************************/
-bool MutuallyRecursiveSection::Manage(std::string &file)
+bool MutuallyRecursiveSection::Manage(const std::string &file)
 /*****************************************************************************/
 {
 	boost::regex                                      begin_section_regex;

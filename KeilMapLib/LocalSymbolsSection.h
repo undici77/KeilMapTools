@@ -26,6 +26,6 @@ class LocalSymbolsSection : public SectionBase, public SectionData<LOCAL_SYMBOL_
 		LocalSymbolsSection();
 		~LocalSymbolsSection();
 
-		bool Manage(std::string &file);
+		bool Manage(const std::string &file);
 };
 

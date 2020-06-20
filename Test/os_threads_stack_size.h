@@ -32,10 +32,10 @@
 #define ACCELEROMETER_TASK_STACK_SIZE                                    (SYSTEM_ARCHITECTURE_STACK_USAGE + 576)
 
 // adc12_task => HAL_ADC_Start_DMA => HAL_DMA_Start_IT => DMA_SetConfig
-#define ADC12_TASK_STACK_SIZE                                            (SYSTEM_ARCHITECTURE_STACK_USAGE + 384)
+#define ADC12_TASK_STACK_SIZE                                            (SYSTEM_ARCHITECTURE_STACK_USAGE + 320)
 
 // ampli_protocol_digipro_task => init_connection => import_log_session => read => i2c_ampli_memory_read => i2c_stop => set_sda_as_out => HAL_GPIO_Init
-#define AMPLI_PROTOCOL_DIGIPRO_TASK_STACK_SIZE                           (SYSTEM_ARCHITECTURE_STACK_USAGE + 704)
+#define AMPLI_PROTOCOL_DIGIPRO_TASK_STACK_SIZE                           (SYSTEM_ARCHITECTURE_STACK_USAGE + 640)
 
 // dsp_task => read_data => adau145x_read_block => read_data => spi_device_rx => HAL_SPI_Receive_DMA => HAL_SPI_TransmitReceive_DMA => HAL_DMA_Start_IT => DMA_SetConfig
 #define DSP_TASK_STACK_SIZE                                              (SYSTEM_ARCHITECTURE_STACK_USAGE + 512)
@@ -56,22 +56,22 @@
 #define INPUTS_TASK_STACK_SIZE                                           (SYSTEM_ARCHITECTURE_STACK_USAGE + 320)
 
 // ird_net_slave_task => receive_command => _trace_log_append => log_append => queue_push => osThreadFlagsSet => osRtxPostProcess => osRtxErrorNotify => ___handle_error => ampli_error => __handle_error => ampli_error (Cycle)
-#define IRD_NET_SLAVE_TASK_STACK_SIZE                                    (SYSTEM_ARCHITECTURE_STACK_USAGE + 640)
+#define IRD_NET_SLAVE_TASK_STACK_SIZE                                    (SYSTEM_ARCHITECTURE_STACK_USAGE + 576)
 
 // kernel_task => application_init => parameters_module_init => set_parameters_to_default => ext_flash_read => __handle_error => ampli_error (Cycle)
-#define KERNEL_TASK_STACK_SIZE                                           (SYSTEM_ARCHITECTURE_STACK_USAGE + 832)
+#define KERNEL_TASK_STACK_SIZE                                           (SYSTEM_ARCHITECTURE_STACK_USAGE + 768)
 
 // leds_bicolor_task => __handle_error => ampli_error (Cycle)
-#define LEDS_BICOLOR_TASK_STACK_SIZE                                     (SYSTEM_ARCHITECTURE_STACK_USAGE + 384)
+#define LEDS_BICOLOR_TASK_STACK_SIZE                                     (SYSTEM_ARCHITECTURE_STACK_USAGE + 320)
 
 // leds_task => __handle_error => ampli_error (Cycle)
-#define LEDS_TASK_STACK_SIZE                                             (SYSTEM_ARCHITECTURE_STACK_USAGE + 384)
+#define LEDS_TASK_STACK_SIZE                                             (SYSTEM_ARCHITECTURE_STACK_USAGE + 320)
 
 // log_task => ext_flash_program => write_disable => send_byte
-#define LOG_TASK_STACK_SIZE                                              (SYSTEM_ARCHITECTURE_STACK_USAGE + 512)
+#define LOG_TASK_STACK_SIZE                                              (SYSTEM_ARCHITECTURE_STACK_USAGE + 448)
 
 // rd_net_485_bus_task => rd_net_on_line_event => user_eq_set => user_eq_helpers_initialize => user_eq_helpers_set_switch_high_pass_filter => dsp_sigma_studio_filter => __hardfp_pow => __aeabi_dmul => _double_epilogue => _double_round
-#define RD_NET_485_BUS_TASK_STACK_SIZE                                   (SYSTEM_ARCHITECTURE_STACK_USAGE + 1280)
+#define RD_NET_485_BUS_TASK_STACK_SIZE                                   (SYSTEM_ARCHITECTURE_STACK_USAGE + 1216)
 
 // rd_net_log_event_task => generate_log => queue_push => osThreadFlagsSet => osRtxPostProcess => osRtxErrorNotify => ___handle_error => ampli_error => __handle_error => ampli_error (Cycle)
 #define RD_NET_LOG_EVENT_TASK_STACK_SIZE                                 (SYSTEM_ARCHITECTURE_STACK_USAGE + 448)
@@ -80,7 +80,7 @@
 #define RD_NET_TASK_STACK_SIZE                                           (SYSTEM_ARCHITECTURE_STACK_USAGE + 768)
 
 // serial_bridge_task => rx_data => sc16is7xx_clear_rx_fifo => write_single_register => i2c_device_memory_write => _trace_log_append => log_append => queue_push => osThreadFlagsSet => osRtxPostProcess => osRtxErrorNotify => ___handle_error => ampli_error => __handle_error => ampli_error (Cycle)
-#define SERIAL_BRIDGE_TASK_STACK_SIZE                                    (SYSTEM_ARCHITECTURE_STACK_USAGE + 640)
+#define SERIAL_BRIDGE_TASK_STACK_SIZE                                    (SYSTEM_ARCHITECTURE_STACK_USAGE + 576)
 
 // speaker_test_task => running_test => ext_adc_set_line => pcm1862_write_data => i2c_device_memory_write => _trace_log_append => log_append => queue_push => osThreadFlagsSet => osRtxPostProcess => osRtxErrorNotify => ___handle_error => ampli_error => __handle_error => ampli_error (Cycle)
 #define SPEAKER_TEST_TASK_STACK_SIZE                                     (SYSTEM_ARCHITECTURE_STACK_USAGE + 704)
@@ -89,13 +89,13 @@
 #define SYSTEM_MANAGER_MAIN_TASK_STACK_SIZE                              (SYSTEM_ARCHITECTURE_STACK_USAGE + 1280)
 
 // system_manager_periodic_task => ampli_mute_status_manager => user_eq_get => user_eq_helpers_get => flash_disk_read_field => __handle_error => ampli_error (Cycle)
-#define SYSTEM_MANAGER_PERIODIC_TASK_STACK_SIZE                          (SYSTEM_ARCHITECTURE_STACK_USAGE + 768)
+#define SYSTEM_MANAGER_PERIODIC_TASK_STACK_SIZE                          (SYSTEM_ARCHITECTURE_STACK_USAGE + 704)
 
 // temperature_limiter_task => ntc_read => adc12_read => __handle_error => ampli_error (Cycle)
 #define TEMPERATURE_LIMITER_TASK_STACK_SIZE                              (SYSTEM_ARCHITECTURE_STACK_USAGE + 384)
 
 // usb_app_task => terminal_session => execute => parameter => write_parameter_by_field => __hardfp_atof
-#define USB_APP_TASK_STACK_SIZE                                          (SYSTEM_ARCHITECTURE_STACK_USAGE + 1280)
+#define USB_APP_TASK_STACK_SIZE                                          (SYSTEM_ARCHITECTURE_STACK_USAGE + 1216)
 
 // user_eq_task => user_eq_command_manager => load_eq => user_eq_helpers_initialize => user_eq_helpers_set_switch_high_pass_filter => dsp_sigma_studio_filter => __hardfp_pow => __aeabi_dmul => _double_epilogue => _double_round
 #define USER_EQ_TASK_STACK_SIZE                                          (SYSTEM_ARCHITECTURE_STACK_USAGE + 1408)

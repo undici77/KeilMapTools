@@ -31,7 +31,7 @@ FunctionPointerSection::~FunctionPointerSection()
 }
 
 /*****************************************************************************/
-bool FunctionPointerSection::Manage(std::string &file)
+bool FunctionPointerSection::Manage(const std::string &file)
 /*****************************************************************************/
 {
 	boost::regex                                      begin_section_regex;

@@ -26,6 +26,6 @@ class MaximumStackUsageSection : public SectionBase, public SectionData<MAXIMUM_
 		MaximumStackUsageSection();
 		~MaximumStackUsageSection();
 
-		bool Manage(std::string &file);
+		bool Manage(const std::string &file);
 };
 

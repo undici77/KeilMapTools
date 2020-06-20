@@ -26,6 +26,6 @@ class MemoryMapImageSection : public SectionBase, public SectionData<MEMORY_MAP_
 		MemoryMapImageSection();
 		~MemoryMapImageSection();
 
-		bool Manage(std::string &file);
+		bool Manage(const std::string &file);
 };
 

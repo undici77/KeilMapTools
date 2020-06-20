@@ -22,7 +22,7 @@
 class SectionBase
 {
 	public:
-		virtual bool Manage(std::string &file) = 0;
+		virtual bool Manage(const std::string &file) = 0;
 
 	protected:
 		std::string GetSection(const std::string &file, const boost::regex &begin_section_regex, int begin_group_id, const boost::regex &end_section_regex, int end_group_id);
