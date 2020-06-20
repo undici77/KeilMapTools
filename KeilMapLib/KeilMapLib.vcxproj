@@ -98,8 +98,8 @@
     <ClInclude Include="ImageComponentSizeSection.h" />
     <ClInclude Include="ImageSizeSection.h" />
     <ClInclude Include="KeilMapLib.h" />
-    <ClInclude Include="KeilMapLibInterface.h" />
-    <ClInclude Include="KeilMapLibInterface_wrap.h" />
+    <ClInclude Include="KeilMapLibClient.h" />
+    <ClInclude Include="KeilMapLibClient_wrap.h" />
     <ClInclude Include="KeilMapLibStructs.h" />
     <ClInclude Include="LocalSymbolsSection.h" />
     <ClInclude Include="MaximumStackUsageSection.h" />
@@ -128,8 +128,8 @@
     <ClCompile Include="ImageComponentSizeSection.cpp" />
     <ClCompile Include="ImageSizeSection.cpp" />
     <ClCompile Include="KeilMapLib.cpp" />
-    <ClCompile Include="KeilMapLibInterface.cpp" />
-    <ClCompile Include="KeilMapLibInterface_wrap.cxx" />
+    <ClCompile Include="KeilMapLibClient.cpp" />
+    <ClCompile Include="KeilMapLibClient_wrap.cxx" />
     <ClCompile Include="LocalSymbolsSection.cpp" />
     <ClCompile Include="MaximumStackUsageSection.cpp" />
     <ClCompile Include="MemoryMapImageSection.cpp" />
@@ -143,7 +143,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="KeilMapLibInterface.i">
+    <CustomBuild Include="KeilMapLibClient.i">
       <FileType>Document</FileType>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">echo Invoking SWIG...
 $(SolutionDir)swigwin\swig.exe -c++ -csharp -outdir "$(SolutionDir)TestCs\swig" "%(FullPath)"

@@ -30,7 +30,7 @@ CrossReferencesSection::~CrossReferencesSection()
 }
 
 /*****************************************************************************/
-bool CrossReferencesSection::Manage(std::string &file)
+bool CrossReferencesSection::Manage(const std::string &file)
 /*****************************************************************************/
 {
 	boost::regex                                      begin_section_regex;

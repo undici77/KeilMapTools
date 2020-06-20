@@ -26,6 +26,6 @@ class GlobalSymbolsSection : public SectionBase, public SectionData<GLOBAL_SYMBO
 		GlobalSymbolsSection();
 		~GlobalSymbolsSection();
 
-		bool Manage(std::string &file);
+		bool Manage(const std::string &file);
 };
 

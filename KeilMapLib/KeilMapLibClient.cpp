@@ -14,8 +14,12 @@
 // along with KeilMapLib.  If not, see <https://www.gnu.org/licenses/>.
 
 #include "stdafx.h"
+
+#include <fstream>
+#include <boost/filesystem.hpp>
+
 #include "Global.h"
-#include "KeilMapLibInterface.h"
+#include "KeilMapLibClient.h"
 #include "RegexBuilder.h"
 #include "CrossReferencesSection.h"
 #include "RemovedSymbolsSection.h"
@@ -30,26 +34,52 @@
 #include "ImageSizeSection.h"
 
 /*****************************************************************************/
-KeilMapLibInterface::KeilMapLibInterface(void)
+KeilMapLibClient::KeilMapLibClient(void)
 /*****************************************************************************/
 {
 }
 
 /*****************************************************************************/
-KeilMapLibInterface::~KeilMapLibInterface(void)
+KeilMapLibClient::~KeilMapLibClient(void)
 /*****************************************************************************/
 {
 }
 
 /*****************************************************************************/
-std::vector<CROSS_REFERENCE_FIELD> KeilMapLibInterface::GetCrossReference(std::string file)
+bool KeilMapLibClient::ReadFile(const std::string file_path)
+/*****************************************************************************/
+{
+	std::ifstream input_file_stream;
+
+	try
+	{
+		if (!boost::filesystem::exists(file_path))
+		{
+			return (false);
+		}
+
+		input_file_stream = std::ifstream(file_path);
+		_File             = std::string(std::istreambuf_iterator<char>(input_file_stream.rdbuf()), std::istreambuf_iterator<char>());
+
+		return (true);
+	}
+	catch (...)
+	{
+
+	}
+
+	return (false);
+}
+
+/*****************************************************************************/
+std::vector<CROSS_REFERENCE_FIELD> KeilMapLibClient::GetCrossReference(void)
 /*****************************************************************************/
 {
 	CrossReferencesSection manager;
 
 	try
 	{
-		manager.Manage(file);
+		manager.Manage(_File);
 		return (std::move(manager.Get()));
 	}
 	catch (...)
@@ -60,14 +90,14 @@ std::vector<CROSS_REFERENCE_FIELD> KeilMapLibInterface::GetCrossReference(std::s
 }
 
 /*****************************************************************************/
-std::vector<FUNCTION_POINTER_FIELD> KeilMapLibInterface::GetFunctionPointer(std::string file)
+std::vector<FUNCTION_POINTER_FIELD> KeilMapLibClient::GetFunctionPointer(void)
 /*****************************************************************************/
 {
 	FunctionPointerSection manager;
 
 	try
 	{
-		manager.Manage(file);
+		manager.Manage(_File);
 		return (std::move(manager.Get()));
 	}
 	catch (...)
@@ -78,14 +108,14 @@ std::vector<FUNCTION_POINTER_FIELD> KeilMapLibInterface::GetFunctionPointer(std:
 }
 
 /*****************************************************************************/
-std::vector<GLOBAL_SYMBOL_FIELD> KeilMapLibInterface::GetGlobalSymbols(std::string file)
+std::vector<GLOBAL_SYMBOL_FIELD> KeilMapLibClient::GetGlobalSymbols(void)
 /*****************************************************************************/
 {
 	GlobalSymbolsSection manager;
 
 	try
 	{
-		manager.Manage(file);
+		manager.Manage(_File);
 		return (std::move(manager.Get()));
 	}
 	catch (...)
@@ -96,14 +126,14 @@ std::vector<GLOBAL_SYMBOL_FIELD> KeilMapLibInterface::GetGlobalSymbols(std::stri
 }
 
 /*****************************************************************************/
-std::vector<IMAGE_COMPONENT_SIZE_FIELD> KeilMapLibInterface::GetImageComponentSize(std::string file)
+std::vector<IMAGE_COMPONENT_SIZE_FIELD> KeilMapLibClient::GetImageComponentSize(void)
 /*****************************************************************************/
 {
 	ImageComponentSizeSection manager;
 
 	try
 	{
-		manager.Manage(file);
+		manager.Manage(_File);
 		return (std::move(manager.Get()));
 	}
 	catch (...)
@@ -114,7 +144,7 @@ std::vector<IMAGE_COMPONENT_SIZE_FIELD> KeilMapLibInterface::GetImageComponentSi
 }
 
 /*****************************************************************************/
-IMAGE_SIZE_DATA KeilMapLibInterface::GetImageSize(std::string file)
+IMAGE_SIZE_DATA KeilMapLibClient::GetImageSize(void)
 /*****************************************************************************/
 {
 	ImageSizeSection manager;
@@ -122,7 +152,7 @@ IMAGE_SIZE_DATA KeilMapLibInterface::GetImageSize(std::string file)
 
 	try
 	{
-		manager.Manage(file);
+		manager.Manage(_File);
 
 		if (manager.Get().size() > 0)
 		{
@@ -139,21 +169,21 @@ IMAGE_SIZE_DATA KeilMapLibInterface::GetImageSize(std::string file)
 	{
 		result.total_read_only_size  = "";
 		result.total_read_write_size = "";
-    	result.total_rom_size        = "";
+		result.total_rom_size        = "";
 	}
 
 	return (std::move(result));
 }
 
 /*****************************************************************************/
-std::vector<LOCAL_SYMBOL_FIELD> KeilMapLibInterface::GetLocalSymbols(std::string file)
+std::vector<LOCAL_SYMBOL_FIELD> KeilMapLibClient::GetLocalSymbols(void)
 /*****************************************************************************/
 {
 	LocalSymbolsSection manager;
 
 	try
 	{
-		manager.Manage(file);
+		manager.Manage(_File);
 		return (std::move(manager.Get()));
 	}
 	catch (...)
@@ -164,14 +194,14 @@ std::vector<LOCAL_SYMBOL_FIELD> KeilMapLibInterface::GetLocalSymbols(std::string
 }
 
 /*****************************************************************************/
-std::vector<MAXIMUM_STACK_USAGE_FIELD> KeilMapLibInterface::GetMaximumStackUsage(std::string file)
+std::vector<MAXIMUM_STACK_USAGE_FIELD> KeilMapLibClient::GetMaximumStackUsage(void)
 /*****************************************************************************/
 {
 	MaximumStackUsageSection manager;
 
 	try
 	{
-		manager.Manage(file);
+		manager.Manage(_File);
 		return (std::move(manager.Get()));
 	}
 	catch (...)
@@ -182,7 +212,7 @@ std::vector<MAXIMUM_STACK_USAGE_FIELD> KeilMapLibInterface::GetMaximumStackUsage
 }
 
 /*****************************************************************************/
-MEMORY_MAP_IMAGE KeilMapLibInterface::GetMemoryMapImage(std::string file)
+MEMORY_MAP_IMAGE KeilMapLibClient::GetMemoryMapImage(void)
 /*****************************************************************************/
 {
 	MemoryMapImageSection manager;
@@ -190,34 +220,34 @@ MEMORY_MAP_IMAGE KeilMapLibInterface::GetMemoryMapImage(std::string file)
 
 	try
 	{
-	    manager.Manage(file);
+		manager.Manage(_File);
 
-	    if (manager.Get().size() > 0)
-	    {
-		    result = manager.Get().at(0);
-	    }
-	    else
-	    {
-		    result.entry_point = "";
-	    }
-    }
+		if (manager.Get().size() > 0)
+		{
+			result = manager.Get().at(0);
+		}
+		else
+		{
+			result.entry_point = "";
+		}
+	}
 	catch (...)
 	{
-	    result.entry_point = "";
+		result.entry_point = "";
 	}
 
-    return (std::move(result));
+	return (std::move(result));
 }
 
 /*****************************************************************************/
-std::vector<MUTUALLY_RECURSIVE_FIELD> KeilMapLibInterface::GetMutualRecursive(std::string file)
+std::vector<MUTUALLY_RECURSIVE_FIELD> KeilMapLibClient::GetMutualRecursive(void)
 /*****************************************************************************/
 {
 	MutuallyRecursiveSection manager;
 
 	try
 	{
-		manager.Manage(file);
+		manager.Manage(_File);
 		return (std::move(manager.Get()));
 	}
 	catch (...)
@@ -228,14 +258,14 @@ std::vector<MUTUALLY_RECURSIVE_FIELD> KeilMapLibInterface::GetMutualRecursive(st
 }
 
 /*****************************************************************************/
-std::vector<REMOVED_SYMBOL_FIELD> KeilMapLibInterface::GetRemovedSymbols(std::string file)
+std::vector<REMOVED_SYMBOL_FIELD> KeilMapLibClient::GetRemovedSymbols(void)
 /*****************************************************************************/
 {
 	RemovedSymbolSection manager;
 
 	try
 	{
-		manager.Manage(file);
+		manager.Manage(_File);
 		return (std::move(manager.Get()));
 	}
 	catch (...)
@@ -246,14 +276,14 @@ std::vector<REMOVED_SYMBOL_FIELD> KeilMapLibInterface::GetRemovedSymbols(std::st
 }
 
 /*****************************************************************************/
-std::vector<STACK_USAGE_FIELD> KeilMapLibInterface::GetStackUsage(std::string file)
+std::vector<STACK_USAGE_FIELD> KeilMapLibClient::GetStackUsage(void)
 /*****************************************************************************/
 {
 	StackUsageSection manager;
 
 	try
 	{
-		manager.Manage(file);
+		manager.Manage(_File);
 		return (std::move(manager.Get()));
 	}
 	catch (...)

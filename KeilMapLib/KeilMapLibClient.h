@@ -22,23 +22,28 @@
 #include <iostream>
 #include <vector>
 
-class KeilMapLibInterface
+class KeilMapLibClient
 {
 	public:
-		KeilMapLibInterface(void);
-		~KeilMapLibInterface(void);
+		KeilMapLibClient(void);
+		~KeilMapLibClient(void);
 
-		std::vector<CROSS_REFERENCE_FIELD>      GetCrossReference(std::string file);
-		std::vector<FUNCTION_POINTER_FIELD>     GetFunctionPointer(std::string file);
-		std::vector<GLOBAL_SYMBOL_FIELD>        GetGlobalSymbols(std::string file);
-		std::vector<IMAGE_COMPONENT_SIZE_FIELD> GetImageComponentSize(std::string file);
-		IMAGE_SIZE_DATA                         GetImageSize(std::string file);
-		std::vector<LOCAL_SYMBOL_FIELD>         GetLocalSymbols(std::string file);
-		std::vector<MAXIMUM_STACK_USAGE_FIELD>  GetMaximumStackUsage(std::string file);
-		MEMORY_MAP_IMAGE                        GetMemoryMapImage(std::string file);
-		std::vector<MUTUALLY_RECURSIVE_FIELD>   GetMutualRecursive(std::string file);
-		std::vector<REMOVED_SYMBOL_FIELD>       GetRemovedSymbols(std::string file);
-		std::vector<STACK_USAGE_FIELD>          GetStackUsage(std::string file);
+        bool                                    ReadFile(const std::string file_path);
+
+		std::vector<CROSS_REFERENCE_FIELD>      GetCrossReference(void);
+		std::vector<FUNCTION_POINTER_FIELD>     GetFunctionPointer(void);
+		std::vector<GLOBAL_SYMBOL_FIELD>        GetGlobalSymbols(void);
+		std::vector<IMAGE_COMPONENT_SIZE_FIELD> GetImageComponentSize(void);
+		IMAGE_SIZE_DATA                         GetImageSize(void);
+		std::vector<LOCAL_SYMBOL_FIELD>         GetLocalSymbols(void);
+		std::vector<MAXIMUM_STACK_USAGE_FIELD>  GetMaximumStackUsage(void);
+		MEMORY_MAP_IMAGE                        GetMemoryMapImage(void);
+		std::vector<MUTUALLY_RECURSIVE_FIELD>   GetMutualRecursive(void);
+		std::vector<REMOVED_SYMBOL_FIELD>       GetRemovedSymbols(void);
+		std::vector<STACK_USAGE_FIELD>          GetStackUsage(void);
+		
+	private:
+		std::string _File;
 };
 
 #endif

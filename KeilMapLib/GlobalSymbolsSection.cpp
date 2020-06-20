@@ -31,7 +31,7 @@ GlobalSymbolsSection::~GlobalSymbolsSection()
 }
 
 /*****************************************************************************/
-bool GlobalSymbolsSection::Manage(std::string &file)
+bool GlobalSymbolsSection::Manage(const std::string &file)
 /*****************************************************************************/
 {
 	boost::regex                                      begin_section_regex;

@@ -31,7 +31,7 @@ StackUsageSection::~StackUsageSection()
 }
 
 /*****************************************************************************/
-bool StackUsageSection::Manage(std::string &file)
+bool StackUsageSection::Manage(const std::string &file)
 /*****************************************************************************/
 {
 	boost::regex                                      begin_section_regex;

@@ -31,7 +31,7 @@ LocalSymbolsSection::~LocalSymbolsSection()
 }
 
 /*****************************************************************************/
-bool LocalSymbolsSection::Manage(std::string &file)
+bool LocalSymbolsSection::Manage(const std::string &file)
 /*****************************************************************************/
 {
 	boost::regex                                      begin_section_regex;

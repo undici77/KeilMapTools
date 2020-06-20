@@ -9,13 +9,13 @@
 
 %{
 	#include "KeilMapLibStructs.h"
-	#include "KeilMapLibInterface.h"
+	#include "KeilMapLibClient.h"
 %}
 
 %include "std_vector.i"
 %include "std_string.i"
 %include "KeilMapLibStructs.h"
-%include "KeilMapLibInterface.h"
+%include "KeilMapLibClient.h"
 
 namespace std
 {

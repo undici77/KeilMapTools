@@ -26,6 +26,6 @@ class FunctionPointerSection : public SectionBase, public SectionData<FUNCTION_P
 		FunctionPointerSection();
 		~FunctionPointerSection();
 
-		bool Manage(std::string &file);
+		bool Manage(const std::string &file);
 };
 

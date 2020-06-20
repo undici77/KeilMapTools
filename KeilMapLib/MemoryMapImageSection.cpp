@@ -31,7 +31,7 @@ MemoryMapImageSection::~MemoryMapImageSection()
 }
 
 /*****************************************************************************/
-bool MemoryMapImageSection::Manage(std::string &file)
+bool MemoryMapImageSection::Manage(const std::string &file)
 /*****************************************************************************/
 {
 	boost::regex                                                   begin_section_regex;
