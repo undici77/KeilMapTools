@@ -150,11 +150,11 @@ bool MemoryMapImageSection::Manage(const std::string &file)
 							field.load_address      = match_result[2].str();
 							field.size              = match_result[3].str();
 							field.type              = "PAD";
-							field.attribute         = "";
-							field.id                = "";
+							field.attribute         = "-";
+							field.id                = "-";
 							field.entry_point       = false;
-							field.section_name      = "";
-							field.object_name       = "";
+							field.section_name      = "-";
+							field.object_name       = "-";
 						}
 						else
 						{

@@ -81,13 +81,13 @@
 			this.LocalSymbolDataGridViewObjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.ImageComponentSizeTab = new System.Windows.Forms.TabPage();
 			this.ImageComponentSizeDataGridView = new DataGridViewEx();
+			this.ImageComponentSizeDataGridViewObjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.ImageComponentSizeDataGridViewCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.ImageComponentSizeDataGridViewlineData = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.ImageComponentSizeDataGridViewReadOnlyData = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.ImageComponentSizeDataGridViewReadWriteData = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.ImageComponentSizeDataGridZeroInitData = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.ImageComponentSizeDataGridViewDebugData = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.ImageComponentSizeDataGridViewObjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.FunctionPointerTab = new System.Windows.Forms.TabPage();
 			this.FunctionPointerDataGridView = new DataGridViewEx();
 			this.FunctionPointerDataGridViewSymbol = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -123,6 +123,8 @@
 			this.MemoryMapImageTab = new System.Windows.Forms.TabPage();
 			this.MainTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
 			this.MemoryMapImageDataGridView = new DataGridViewEx();
+			this.MemoryMapImageDataGridViewObjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.MemoryMapImageDataGridViewSectionName = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.MemoryMapImageDataGridViewExecutionAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.MemoryMapImageDataGridViewLoadAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.MemoryMapImageDataGridViewSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -130,8 +132,6 @@
 			this.MemoryMapImageDataGridViewAttribute = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.MemoryMapImageDataGridViewIndex = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.MemoryMapImageDataGridViewEntryPoint = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-			this.MemoryMapImageDataGridViewSectionName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.MemoryMapImageDataGridViewObjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.MemoryMapImageEntryPointAddressLabel = new System.Windows.Forms.Label();
 			this.MemoryMapImageEntryPointLabel = new System.Windows.Forms.Label();
 			this.MemoryMapImageLoadRegionLabel = new System.Windows.Forms.Label();
@@ -172,10 +172,10 @@
             this.TotalROLabel,
             this.TotalRWLabel,
             this.TotalROMLabel});
-			this.AppInfoStatusStrip.Location = new System.Drawing.Point(0, 395);
+			this.AppInfoStatusStrip.Location = new System.Drawing.Point(0, 437);
 			this.AppInfoStatusStrip.Name = "AppInfoStatusStrip";
 			this.AppInfoStatusStrip.ShowItemToolTips = true;
-			this.AppInfoStatusStrip.Size = new System.Drawing.Size(1000, 24);
+			this.AppInfoStatusStrip.Size = new System.Drawing.Size(1070, 24);
 			this.AppInfoStatusStrip.TabIndex = 1;
 			this.AppInfoStatusStrip.Text = "statusStrip1";
 			// 
@@ -185,7 +185,7 @@
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
 			this.TotalROLabel.Name = "TotalROLabel";
-			this.TotalROLabel.Size = new System.Drawing.Size(328, 19);
+			this.TotalROLabel.Size = new System.Drawing.Size(351, 19);
 			this.TotalROLabel.Spring = true;
 			this.TotalROLabel.Text = "TotalROLabel";
 			// 
@@ -195,7 +195,7 @@
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
 			this.TotalRWLabel.Name = "TotalRWLabel";
-			this.TotalRWLabel.Size = new System.Drawing.Size(328, 19);
+			this.TotalRWLabel.Size = new System.Drawing.Size(351, 19);
 			this.TotalRWLabel.Spring = true;
 			this.TotalRWLabel.Text = "TotalRWLabel";
 			// 
@@ -205,7 +205,7 @@
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
 			this.TotalROMLabel.Name = "TotalROMLabel";
-			this.TotalROMLabel.Size = new System.Drawing.Size(328, 19);
+			this.TotalROMLabel.Size = new System.Drawing.Size(351, 19);
 			this.TotalROMLabel.Spring = true;
 			this.TotalROMLabel.Text = "TotalROMLabel";
 			// 
@@ -217,7 +217,7 @@
 			this.MainFromMenuStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
 			this.MainFromMenuStrip.Location = new System.Drawing.Point(0, 0);
 			this.MainFromMenuStrip.Name = "MainFromMenuStrip";
-			this.MainFromMenuStrip.Size = new System.Drawing.Size(1000, 24);
+			this.MainFromMenuStrip.Size = new System.Drawing.Size(1070, 24);
 			this.MainFromMenuStrip.TabIndex = 2;
 			this.MainFromMenuStrip.Text = "MainFormMenuStrip";
 			// 
@@ -233,14 +233,14 @@
 			// openToolStripMenuItem
 			// 
 			this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-			this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.openToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
 			this.openToolStripMenuItem.Text = "Open";
 			this.openToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
 			// 
 			// closeToolStripMenuItem
 			// 
 			this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-			this.closeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.closeToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
 			this.closeToolStripMenuItem.Text = "Close";
 			this.closeToolStripMenuItem.Click += new System.EventHandler(this.CloseToolStripMenuItem_Click);
 			// 
@@ -250,7 +250,7 @@
 			this.MaximumStackUsageTab.Location = new System.Drawing.Point(4, 22);
 			this.MaximumStackUsageTab.Name = "MaximumStackUsageTab";
 			this.MaximumStackUsageTab.Padding = new System.Windows.Forms.Padding(3);
-			this.MaximumStackUsageTab.Size = new System.Drawing.Size(968, 335);
+			this.MaximumStackUsageTab.Size = new System.Drawing.Size(952, 377);
 			this.MaximumStackUsageTab.TabIndex = 13;
 			this.MaximumStackUsageTab.Text = "Maximum Stack Usage";
 			this.MaximumStackUsageTab.UseVisualStyleBackColor = true;
@@ -321,7 +321,7 @@
 			this.LocalSymbolTab.Location = new System.Drawing.Point(4, 22);
 			this.LocalSymbolTab.Name = "LocalSymbolTab";
 			this.LocalSymbolTab.Padding = new System.Windows.Forms.Padding(3);
-			this.LocalSymbolTab.Size = new System.Drawing.Size(968, 335);
+			this.LocalSymbolTab.Size = new System.Drawing.Size(952, 377);
 			this.LocalSymbolTab.TabIndex = 12;
 			this.LocalSymbolTab.Text = "Local Symbol";
 			this.LocalSymbolTab.UseVisualStyleBackColor = true;
@@ -416,7 +416,7 @@
 			this.ImageComponentSizeTab.Location = new System.Drawing.Point(4, 22);
 			this.ImageComponentSizeTab.Name = "ImageComponentSizeTab";
 			this.ImageComponentSizeTab.Padding = new System.Windows.Forms.Padding(3);
-			this.ImageComponentSizeTab.Size = new System.Drawing.Size(968, 335);
+			this.ImageComponentSizeTab.Size = new System.Drawing.Size(952, 377);
 			this.ImageComponentSizeTab.TabIndex = 11;
 			this.ImageComponentSizeTab.Text = "Image Component Size";
 			this.ImageComponentSizeTab.UseVisualStyleBackColor = true;
@@ -440,13 +440,13 @@
 			this.ImageComponentSizeDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
 			this.ImageComponentSizeDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.ImageComponentSizeDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ImageComponentSizeDataGridViewObjectName,
             this.ImageComponentSizeDataGridViewCode,
             this.ImageComponentSizeDataGridViewlineData,
             this.ImageComponentSizeDataGridViewReadOnlyData,
             this.ImageComponentSizeDataGridViewReadWriteData,
             this.ImageComponentSizeDataGridZeroInitData,
-            this.ImageComponentSizeDataGridViewDebugData,
-            this.ImageComponentSizeDataGridViewObjectName});
+            this.ImageComponentSizeDataGridViewDebugData});
 			dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
 			dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
 			dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -471,6 +471,13 @@
 			this.ImageComponentSizeDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.ImageComponentSizeDataGridView.Size = new System.Drawing.Size(955, 322);
 			this.ImageComponentSizeDataGridView.TabIndex = 11;
+			// 
+			// ImageComponentSizeDataGridViewObjectName
+			// 
+			this.ImageComponentSizeDataGridViewObjectName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.ImageComponentSizeDataGridViewObjectName.HeaderText = "Object Name";
+			this.ImageComponentSizeDataGridViewObjectName.Name = "ImageComponentSizeDataGridViewObjectName";
+			this.ImageComponentSizeDataGridViewObjectName.ReadOnly = true;
 			// 
 			// ImageComponentSizeDataGridViewCode
 			// 
@@ -514,20 +521,13 @@
 			this.ImageComponentSizeDataGridViewDebugData.Name = "ImageComponentSizeDataGridViewDebugData";
 			this.ImageComponentSizeDataGridViewDebugData.ReadOnly = true;
 			// 
-			// ImageComponentSizeDataGridViewObjectName
-			// 
-			this.ImageComponentSizeDataGridViewObjectName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.ImageComponentSizeDataGridViewObjectName.HeaderText = "Object Name";
-			this.ImageComponentSizeDataGridViewObjectName.Name = "ImageComponentSizeDataGridViewObjectName";
-			this.ImageComponentSizeDataGridViewObjectName.ReadOnly = true;
-			// 
 			// FunctionPointerTab
 			// 
 			this.FunctionPointerTab.Controls.Add(this.FunctionPointerDataGridView);
 			this.FunctionPointerTab.Location = new System.Drawing.Point(4, 22);
 			this.FunctionPointerTab.Name = "FunctionPointerTab";
 			this.FunctionPointerTab.Padding = new System.Windows.Forms.Padding(3);
-			this.FunctionPointerTab.Size = new System.Drawing.Size(968, 335);
+			this.FunctionPointerTab.Size = new System.Drawing.Size(952, 377);
 			this.FunctionPointerTab.TabIndex = 9;
 			this.FunctionPointerTab.Text = "Function Pointer";
 			this.FunctionPointerTab.UseVisualStyleBackColor = true;
@@ -614,7 +614,7 @@
 			this.GlobalSymbolTab.Location = new System.Drawing.Point(4, 22);
 			this.GlobalSymbolTab.Name = "GlobalSymbolTab";
 			this.GlobalSymbolTab.Padding = new System.Windows.Forms.Padding(3);
-			this.GlobalSymbolTab.Size = new System.Drawing.Size(968, 335);
+			this.GlobalSymbolTab.Size = new System.Drawing.Size(952, 377);
 			this.GlobalSymbolTab.TabIndex = 10;
 			this.GlobalSymbolTab.Text = "Global Symbol";
 			this.GlobalSymbolTab.UseVisualStyleBackColor = true;
@@ -709,7 +709,7 @@
 			this.CrossReferenceTab.Location = new System.Drawing.Point(4, 22);
 			this.CrossReferenceTab.Name = "CrossReferenceTab";
 			this.CrossReferenceTab.Padding = new System.Windows.Forms.Padding(3);
-			this.CrossReferenceTab.Size = new System.Drawing.Size(968, 335);
+			this.CrossReferenceTab.Size = new System.Drawing.Size(952, 377);
 			this.CrossReferenceTab.TabIndex = 8;
 			this.CrossReferenceTab.Text = "Cross Reference";
 			this.CrossReferenceTab.UseVisualStyleBackColor = true;
@@ -758,7 +758,7 @@
 			this.CrossReferenceDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
 			this.CrossReferenceDataGridView.RowHeadersVisible = false;
 			this.CrossReferenceDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.CrossReferenceDataGridView.Size = new System.Drawing.Size(955, 322);
+			this.CrossReferenceDataGridView.Size = new System.Drawing.Size(939, 364);
 			this.CrossReferenceDataGridView.TabIndex = 8;
 			// 
 			// CrossReferenceDataGridViewModule
@@ -801,7 +801,7 @@
 			this.MainTabs.Multiline = true;
 			this.MainTabs.Name = "MainTabs";
 			this.MainTabs.SelectedIndex = 0;
-			this.MainTabs.Size = new System.Drawing.Size(976, 361);
+			this.MainTabs.Size = new System.Drawing.Size(1046, 403);
 			this.MainTabs.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
 			this.MainTabs.TabIndex = 0;
 			this.MainTabs.SelectedIndexChanged += new System.EventHandler(this.InfoTabs_SelectedIndexChanged);
@@ -812,7 +812,7 @@
 			this.RemovedSymbolTab.Location = new System.Drawing.Point(4, 22);
 			this.RemovedSymbolTab.Name = "RemovedSymbolTab";
 			this.RemovedSymbolTab.Padding = new System.Windows.Forms.Padding(3);
-			this.RemovedSymbolTab.Size = new System.Drawing.Size(968, 335);
+			this.RemovedSymbolTab.Size = new System.Drawing.Size(952, 377);
 			this.RemovedSymbolTab.TabIndex = 16;
 			this.RemovedSymbolTab.Text = "Removed Symbol";
 			this.RemovedSymbolTab.UseVisualStyleBackColor = true;
@@ -891,7 +891,7 @@
 			this.StackUsageTab.Location = new System.Drawing.Point(4, 22);
 			this.StackUsageTab.Name = "StackUsageTab";
 			this.StackUsageTab.Padding = new System.Windows.Forms.Padding(3);
-			this.StackUsageTab.Size = new System.Drawing.Size(968, 335);
+			this.StackUsageTab.Size = new System.Drawing.Size(952, 377);
 			this.StackUsageTab.TabIndex = 17;
 			this.StackUsageTab.Text = "Stack Usage";
 			this.StackUsageTab.UseVisualStyleBackColor = true;
@@ -962,7 +962,7 @@
 			this.MutuallyRecursiveTab.Location = new System.Drawing.Point(4, 22);
 			this.MutuallyRecursiveTab.Name = "MutuallyRecursiveTab";
 			this.MutuallyRecursiveTab.Padding = new System.Windows.Forms.Padding(3);
-			this.MutuallyRecursiveTab.Size = new System.Drawing.Size(968, 335);
+			this.MutuallyRecursiveTab.Size = new System.Drawing.Size(952, 377);
 			this.MutuallyRecursiveTab.TabIndex = 15;
 			this.MutuallyRecursiveTab.Text = "Mutually Recursive";
 			this.MutuallyRecursiveTab.UseVisualStyleBackColor = true;
@@ -1033,7 +1033,7 @@
 			this.MemoryMapImageTab.Location = new System.Drawing.Point(4, 22);
 			this.MemoryMapImageTab.Name = "MemoryMapImageTab";
 			this.MemoryMapImageTab.Padding = new System.Windows.Forms.Padding(3);
-			this.MemoryMapImageTab.Size = new System.Drawing.Size(968, 335);
+			this.MemoryMapImageTab.Size = new System.Drawing.Size(1038, 377);
 			this.MemoryMapImageTab.TabIndex = 14;
 			this.MemoryMapImageTab.Text = "Memory Map Image";
 			this.MemoryMapImageTab.UseVisualStyleBackColor = true;
@@ -1044,12 +1044,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.MainTableLayoutPanel.ColumnCount = 6;
-			this.MainTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-			this.MainTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-			this.MainTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-			this.MainTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-			this.MainTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-			this.MainTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+			this.MainTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+			this.MainTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+			this.MainTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+			this.MainTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+			this.MainTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+			this.MainTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
 			this.MainTableLayoutPanel.Controls.Add(this.MemoryMapImageDataGridView, 0, 1);
 			this.MainTableLayoutPanel.Controls.Add(this.MemoryMapImageEntryPointAddressLabel, 1, 0);
 			this.MainTableLayoutPanel.Controls.Add(this.MemoryMapImageEntryPointLabel, 0, 0);
@@ -1062,7 +1062,7 @@
 			this.MainTableLayoutPanel.RowCount = 2;
 			this.MainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
 			this.MainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-			this.MainTableLayoutPanel.Size = new System.Drawing.Size(968, 335);
+			this.MainTableLayoutPanel.Size = new System.Drawing.Size(1035, 374);
 			this.MainTableLayoutPanel.TabIndex = 0;
 			// 
 			// MemoryMapImageDataGridView
@@ -1084,15 +1084,15 @@
 			this.MemoryMapImageDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle28;
 			this.MemoryMapImageDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.MemoryMapImageDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MemoryMapImageDataGridViewObjectName,
+            this.MemoryMapImageDataGridViewSectionName,
             this.MemoryMapImageDataGridViewExecutionAddress,
             this.MemoryMapImageDataGridViewLoadAddress,
             this.MemoryMapImageDataGridViewSize,
             this.MemoryMapImageDataGridViewType,
             this.MemoryMapImageDataGridViewAttribute,
             this.MemoryMapImageDataGridViewIndex,
-            this.MemoryMapImageDataGridViewEntryPoint,
-            this.MemoryMapImageDataGridViewSectionName,
-            this.MemoryMapImageDataGridViewObjectName});
+            this.MemoryMapImageDataGridViewEntryPoint});
 			this.MainTableLayoutPanel.SetColumnSpan(this.MemoryMapImageDataGridView, 6);
 			dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
 			dataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.Window;
@@ -1116,8 +1116,22 @@
 			this.MemoryMapImageDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle30;
 			this.MemoryMapImageDataGridView.RowHeadersVisible = false;
 			this.MemoryMapImageDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.MemoryMapImageDataGridView.Size = new System.Drawing.Size(962, 299);
+			this.MemoryMapImageDataGridView.Size = new System.Drawing.Size(1029, 338);
 			this.MemoryMapImageDataGridView.TabIndex = 12;
+			// 
+			// MemoryMapImageDataGridViewObjectName
+			// 
+			this.MemoryMapImageDataGridViewObjectName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.MemoryMapImageDataGridViewObjectName.HeaderText = "Object Name";
+			this.MemoryMapImageDataGridViewObjectName.Name = "MemoryMapImageDataGridViewObjectName";
+			this.MemoryMapImageDataGridViewObjectName.ReadOnly = true;
+			// 
+			// MemoryMapImageDataGridViewSectionName
+			// 
+			this.MemoryMapImageDataGridViewSectionName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.MemoryMapImageDataGridViewSectionName.HeaderText = "Section Name";
+			this.MemoryMapImageDataGridViewSectionName.Name = "MemoryMapImageDataGridViewSectionName";
+			this.MemoryMapImageDataGridViewSectionName.ReadOnly = true;
 			// 
 			// MemoryMapImageDataGridViewExecutionAddress
 			// 
@@ -1169,27 +1183,13 @@
 			this.MemoryMapImageDataGridViewEntryPoint.ReadOnly = true;
 			this.MemoryMapImageDataGridViewEntryPoint.Width = 64;
 			// 
-			// MemoryMapImageDataGridViewSectionName
-			// 
-			this.MemoryMapImageDataGridViewSectionName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.MemoryMapImageDataGridViewSectionName.HeaderText = "Section Name";
-			this.MemoryMapImageDataGridViewSectionName.Name = "MemoryMapImageDataGridViewSectionName";
-			this.MemoryMapImageDataGridViewSectionName.ReadOnly = true;
-			// 
-			// MemoryMapImageDataGridViewObjectName
-			// 
-			this.MemoryMapImageDataGridViewObjectName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.MemoryMapImageDataGridViewObjectName.HeaderText = "Object Name";
-			this.MemoryMapImageDataGridViewObjectName.Name = "MemoryMapImageDataGridViewObjectName";
-			this.MemoryMapImageDataGridViewObjectName.ReadOnly = true;
-			// 
 			// MemoryMapImageEntryPointAddressLabel
 			// 
 			this.MemoryMapImageEntryPointAddressLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.MemoryMapImageEntryPointAddressLabel.AutoSize = true;
-			this.MemoryMapImageEntryPointAddressLabel.Location = new System.Drawing.Point(164, 8);
+			this.MemoryMapImageEntryPointAddressLabel.Location = new System.Drawing.Point(103, 8);
 			this.MemoryMapImageEntryPointAddressLabel.Name = "MemoryMapImageEntryPointAddressLabel";
-			this.MemoryMapImageEntryPointAddressLabel.Size = new System.Drawing.Size(155, 13);
+			this.MemoryMapImageEntryPointAddressLabel.Size = new System.Drawing.Size(94, 13);
 			this.MemoryMapImageEntryPointAddressLabel.TabIndex = 5;
 			this.MemoryMapImageEntryPointAddressLabel.Text = "0x00000000";
 			// 
@@ -1199,7 +1199,7 @@
 			this.MemoryMapImageEntryPointLabel.AutoSize = true;
 			this.MemoryMapImageEntryPointLabel.Location = new System.Drawing.Point(3, 8);
 			this.MemoryMapImageEntryPointLabel.Name = "MemoryMapImageEntryPointLabel";
-			this.MemoryMapImageEntryPointLabel.Size = new System.Drawing.Size(155, 13);
+			this.MemoryMapImageEntryPointLabel.Size = new System.Drawing.Size(94, 13);
 			this.MemoryMapImageEntryPointLabel.TabIndex = 0;
 			this.MemoryMapImageEntryPointLabel.Text = "Entry Point";
 			// 
@@ -1207,9 +1207,9 @@
 			// 
 			this.MemoryMapImageLoadRegionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.MemoryMapImageLoadRegionLabel.AutoSize = true;
-			this.MemoryMapImageLoadRegionLabel.Location = new System.Drawing.Point(325, 8);
+			this.MemoryMapImageLoadRegionLabel.Location = new System.Drawing.Point(203, 8);
 			this.MemoryMapImageLoadRegionLabel.Name = "MemoryMapImageLoadRegionLabel";
-			this.MemoryMapImageLoadRegionLabel.Size = new System.Drawing.Size(155, 13);
+			this.MemoryMapImageLoadRegionLabel.Size = new System.Drawing.Size(94, 13);
 			this.MemoryMapImageLoadRegionLabel.TabIndex = 1;
 			this.MemoryMapImageLoadRegionLabel.Text = "Load Region";
 			// 
@@ -1217,9 +1217,9 @@
 			// 
 			this.MemoryMapImageExecutionRegionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.MemoryMapImageExecutionRegionLabel.AutoSize = true;
-			this.MemoryMapImageExecutionRegionLabel.Location = new System.Drawing.Point(647, 8);
+			this.MemoryMapImageExecutionRegionLabel.Location = new System.Drawing.Point(620, 8);
 			this.MemoryMapImageExecutionRegionLabel.Name = "MemoryMapImageExecutionRegionLabel";
-			this.MemoryMapImageExecutionRegionLabel.Size = new System.Drawing.Size(155, 13);
+			this.MemoryMapImageExecutionRegionLabel.Size = new System.Drawing.Size(94, 13);
 			this.MemoryMapImageExecutionRegionLabel.TabIndex = 2;
 			this.MemoryMapImageExecutionRegionLabel.Text = "Execution Region";
 			// 
@@ -1228,9 +1228,9 @@
 			this.MemoryMapImageLoadRegionComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.MemoryMapImageLoadRegionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.MemoryMapImageLoadRegionComboBox.FormattingEnabled = true;
-			this.MemoryMapImageLoadRegionComboBox.Location = new System.Drawing.Point(486, 4);
+			this.MemoryMapImageLoadRegionComboBox.Location = new System.Drawing.Point(303, 4);
 			this.MemoryMapImageLoadRegionComboBox.Name = "MemoryMapImageLoadRegionComboBox";
-			this.MemoryMapImageLoadRegionComboBox.Size = new System.Drawing.Size(155, 21);
+			this.MemoryMapImageLoadRegionComboBox.Size = new System.Drawing.Size(311, 21);
 			this.MemoryMapImageLoadRegionComboBox.TabIndex = 3;
 			this.MemoryMapImageLoadRegionComboBox.SelectionChangeCommitted += new System.EventHandler(this.MemoryMapImageLoadRegionComboBox_SelectionChangeCommitted);
 			// 
@@ -1239,9 +1239,9 @@
 			this.MemoryMapImageExecutionRegionComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.MemoryMapImageExecutionRegionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.MemoryMapImageExecutionRegionComboBox.FormattingEnabled = true;
-			this.MemoryMapImageExecutionRegionComboBox.Location = new System.Drawing.Point(808, 4);
+			this.MemoryMapImageExecutionRegionComboBox.Location = new System.Drawing.Point(720, 4);
 			this.MemoryMapImageExecutionRegionComboBox.Name = "MemoryMapImageExecutionRegionComboBox";
-			this.MemoryMapImageExecutionRegionComboBox.Size = new System.Drawing.Size(157, 21);
+			this.MemoryMapImageExecutionRegionComboBox.Size = new System.Drawing.Size(312, 21);
 			this.MemoryMapImageExecutionRegionComboBox.TabIndex = 4;
 			this.MemoryMapImageExecutionRegionComboBox.SelectionChangeCommitted += new System.EventHandler(this.MemoryMapImageExecutionRegionComboBox_SelectionChangeCommitted);
 			// 
@@ -1249,13 +1249,13 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1000, 419);
+			this.ClientSize = new System.Drawing.Size(1070, 461);
 			this.Controls.Add(this.AppInfoStatusStrip);
 			this.Controls.Add(this.MainFromMenuStrip);
 			this.Controls.Add(this.MainTabs);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MainMenuStrip = this.MainFromMenuStrip;
-			this.MinimumSize = new System.Drawing.Size(450, 320);
+			this.MinimumSize = new System.Drawing.Size(600, 400);
 			this.Name = "MainForm";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
 			this.Load += new System.EventHandler(this.MainForm_Load);
@@ -1329,13 +1329,6 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn LocalSymbolDataGridViewType;
 		private System.Windows.Forms.DataGridViewTextBoxColumn LocalSymbolDataGridViewSize;
 		private System.Windows.Forms.DataGridViewTextBoxColumn LocalSymbolDataGridViewObjectName;
-		private System.Windows.Forms.DataGridViewTextBoxColumn ImageComponentSizeDataGridViewCode;
-		private System.Windows.Forms.DataGridViewTextBoxColumn ImageComponentSizeDataGridViewlineData;
-		private System.Windows.Forms.DataGridViewTextBoxColumn ImageComponentSizeDataGridViewReadOnlyData;
-		private System.Windows.Forms.DataGridViewTextBoxColumn ImageComponentSizeDataGridViewReadWriteData;
-		private System.Windows.Forms.DataGridViewTextBoxColumn ImageComponentSizeDataGridZeroInitData;
-		private System.Windows.Forms.DataGridViewTextBoxColumn ImageComponentSizeDataGridViewDebugData;
-		private System.Windows.Forms.DataGridViewTextBoxColumn ImageComponentSizeDataGridViewObjectName;
 		private System.Windows.Forms.DataGridViewTextBoxColumn FunctionPointerDataGridViewSymbol;
 		private System.Windows.Forms.DataGridViewTextBoxColumn FunctionPointerDataGridViewModule;
 		private System.Windows.Forms.DataGridViewTextBoxColumn FunctionPointerDataGridViewCounts;
@@ -1345,15 +1338,6 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn GlobalSymboldDataGridType;
 		private System.Windows.Forms.DataGridViewTextBoxColumn GlobalSymboldDataGridSize;
 		private System.Windows.Forms.DataGridViewTextBoxColumn GlobalSymboldDataGridObjectName;
-		private System.Windows.Forms.DataGridViewTextBoxColumn MemoryMapImageDataGridViewExecutionAddress;
-		private System.Windows.Forms.DataGridViewTextBoxColumn MemoryMapImageDataGridViewLoadAddress;
-		private System.Windows.Forms.DataGridViewTextBoxColumn MemoryMapImageDataGridViewSize;
-		private System.Windows.Forms.DataGridViewTextBoxColumn MemoryMapImageDataGridViewType;
-		private System.Windows.Forms.DataGridViewTextBoxColumn MemoryMapImageDataGridViewAttribute;
-		private System.Windows.Forms.DataGridViewTextBoxColumn MemoryMapImageDataGridViewIndex;
-		private System.Windows.Forms.DataGridViewCheckBoxColumn MemoryMapImageDataGridViewEntryPoint;
-		private System.Windows.Forms.DataGridViewTextBoxColumn MemoryMapImageDataGridViewSectionName;
-		private System.Windows.Forms.DataGridViewTextBoxColumn MemoryMapImageDataGridViewObjectName;
 		private System.Windows.Forms.DataGridViewTextBoxColumn MutuallyRecursiveDataGridViewFunction;
 		private System.Windows.Forms.DataGridViewTextBoxColumn MutuallyRecursiveDataGridViewCaller;
 		private System.Windows.Forms.TabPage RemovedSymbolTab;
@@ -1373,6 +1357,22 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn RemovedSymbolDataGridViewSymbol;
 		private System.Windows.Forms.ToolTip MemoryMapImageLoadRegionToolTip;
 		private System.Windows.Forms.ToolTip MemoryMapImageExecutionRegionToolTip;
+		private System.Windows.Forms.DataGridViewTextBoxColumn ImageComponentSizeDataGridViewObjectName;
+		private System.Windows.Forms.DataGridViewTextBoxColumn ImageComponentSizeDataGridViewCode;
+		private System.Windows.Forms.DataGridViewTextBoxColumn ImageComponentSizeDataGridViewlineData;
+		private System.Windows.Forms.DataGridViewTextBoxColumn ImageComponentSizeDataGridViewReadOnlyData;
+		private System.Windows.Forms.DataGridViewTextBoxColumn ImageComponentSizeDataGridViewReadWriteData;
+		private System.Windows.Forms.DataGridViewTextBoxColumn ImageComponentSizeDataGridZeroInitData;
+		private System.Windows.Forms.DataGridViewTextBoxColumn ImageComponentSizeDataGridViewDebugData;
+		private System.Windows.Forms.DataGridViewTextBoxColumn MemoryMapImageDataGridViewObjectName;
+		private System.Windows.Forms.DataGridViewTextBoxColumn MemoryMapImageDataGridViewSectionName;
+		private System.Windows.Forms.DataGridViewTextBoxColumn MemoryMapImageDataGridViewExecutionAddress;
+		private System.Windows.Forms.DataGridViewTextBoxColumn MemoryMapImageDataGridViewLoadAddress;
+		private System.Windows.Forms.DataGridViewTextBoxColumn MemoryMapImageDataGridViewSize;
+		private System.Windows.Forms.DataGridViewTextBoxColumn MemoryMapImageDataGridViewType;
+		private System.Windows.Forms.DataGridViewTextBoxColumn MemoryMapImageDataGridViewAttribute;
+		private System.Windows.Forms.DataGridViewTextBoxColumn MemoryMapImageDataGridViewIndex;
+		private System.Windows.Forms.DataGridViewCheckBoxColumn MemoryMapImageDataGridViewEntryPoint;
 	}
 }
 

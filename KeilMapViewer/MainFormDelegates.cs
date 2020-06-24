@@ -362,9 +362,8 @@ namespace KeilMapViewer
 					foreach (MemoryMapImageObjectField field in execution_region.Fields)
 					{
 
-						MemoryMapImageDataGridView.Rows.Add(field.Execution_Address, field.Load_Address, field.Size, field.Type, field.Attribute, 
-															field.Id, field.Entry_Point, field.Section_Name, field.Object_Name);
-
+								MemoryMapImageDataGridView.Rows.Add(field.Section_Name, field.Object_Name, field.Execution_Address, field.Load_Address, 
+																	 field.Size, field.Type, field.Attribute, field.Id, field.Entry_Point);
 						foreach (DataGridViewCell cell in MemoryMapImageDataGridView.Rows[MemoryMapImageDataGridView.RowCount - 1].Cells)
 						{
 							cell.ToolTipText = tooltip_text;
@@ -381,8 +380,8 @@ namespace KeilMapViewer
 					{
 						foreach (MemoryMapImageObjectField field in execution_region.Fields)
 						{
-							MemoryMapImageDataGridView.Rows.Add(field.Execution_Address, field.Load_Address, field.Size, field.Type, field.Attribute, 
-																field.Id, field.Entry_Point, field.Section_Name, field.Object_Name);
+							MemoryMapImageDataGridView.Rows.Add(field.Section_Name, field.Object_Name, field.Execution_Address, field.Load_Address, 
+																 field.Size, field.Type, field.Attribute, field.Id, field.Entry_Point);
 							tooltip_text = "LOAD REGION: " + load_region.Name + " " + load_region.Data + "\r\n" + 
 							               "EXEC REGION: " + execution_region.Name + " " + execution_region.Data;
 							foreach (DataGridViewCell cell in MemoryMapImageDataGridView.Rows[MemoryMapImageDataGridView.RowCount - 1].Cells)
@@ -404,8 +403,8 @@ namespace KeilMapViewer
 							               "EXEC REGION: " + execution_region.Name + " " + execution_region.Data;
 							foreach (MemoryMapImageObjectField field in execution_region.Fields)
 							{
-								MemoryMapImageDataGridView.Rows.Add(field.Execution_Address, field.Load_Address, field.Size, field.Type, field.Attribute, 
-																	field.Id, field.Entry_Point, field.Section_Name, field.Object_Name);
+								MemoryMapImageDataGridView.Rows.Add(field.Section_Name, field.Object_Name, field.Execution_Address, field.Load_Address, 
+																	 field.Size, field.Type, field.Attribute, field.Id, field.Entry_Point);
 								foreach (DataGridViewCell cell in MemoryMapImageDataGridView.Rows[MemoryMapImageDataGridView.RowCount - 1].Cells)
 								{
 									cell.ToolTipText = tooltip_text;
@@ -431,7 +430,7 @@ namespace KeilMapViewer
 			data = _Map_File_Manager.ImageComponentSizeData;
 			foreach (ImageComponentSizeField field in data)
 			{
-				ImageComponentSizeDataGridView.Rows.Add(field.Code, field.Inline_Data, field.Read_Only_Data, field.Read_Write_Data, field.Zero_Init_Data, field.Debug_Data, field.Object_Name);
+				ImageComponentSizeDataGridView.Rows.Add(field.Object_Name, field.Code, field.Inline_Data, field.Read_Only_Data, field.Read_Write_Data, field.Zero_Init_Data, field.Debug_Data);
 			}
 
 			ImageComponentSizeDataGridView.RestoreData();

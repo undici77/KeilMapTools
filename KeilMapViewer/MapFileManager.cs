@@ -469,7 +469,7 @@ namespace KeilMapViewer
 		{
 			_Watcher.EnableRaisingEvents = false;
 
-			Thread.Sleep(500);
+			Thread.Sleep(100);
 
 			_Map_File_Update = true;
 			_Worker_Thread_Update_Event.Set();
