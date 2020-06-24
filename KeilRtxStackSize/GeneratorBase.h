@@ -35,7 +35,6 @@ class GeneratorBase
 	protected:
 		virtual size_t CalculareStackSize(size_t value, size_t stdio_stack_size, size_t stack_oversize);
 		std::string Pad(const char *input, size_t length);
-		bool CheckPattern(std::string &input, std::vector<std::string> &pattern_vector);
 
 		std::vector<MAXIMUM_STACK_USAGE_FIELD> _Maximum_Stack_Usage;
 		std::vector<STACK_USAGE_FIELD>         _Stack_Usage;

@@ -33,6 +33,7 @@ void Stm32Generator::Generate(PARAMETERS &parameters)
 /*****************************************************************************/
 {
 	std::vector<std::string> task_list;
+    boost::regex             regex(parameters.thread_regex);
 
 	_Header_File.clear();
 
@@ -68,8 +69,9 @@ void Stm32Generator::Generate(PARAMETERS &parameters)
 	{
 		size_t      size;
 		std::string name;
-		if (CheckPattern(field.function, parameters.thread_patterns))
-		{
+
+	    if (boost::regex_search(field.function, regex))
+	    {
 			if (std::find(task_list.begin(), task_list.end(), field.function) == task_list.end())
 			{
 			    task_list.emplace_back(field.function);
@@ -99,8 +101,8 @@ void Stm32Generator::Generate(PARAMETERS &parameters)
 	{
 		size_t      size;
 		std::string name;
-		if (CheckPattern(field.function, parameters.thread_patterns))
-		{
+	    if (boost::regex_search(field.function, regex))
+	    {
 			if (std::find(task_list.begin(), task_list.end(), field.function) == task_list.end())
 			{
 				task_list.emplace_back(field.function);

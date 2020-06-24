@@ -31,9 +31,9 @@ bool GeneratorBase::Read(PARAMETERS &parameters, std::string *error)
 
 	ASSERT(error != NULL);
 
-	if (!boost::filesystem::exists(parameters.map_file_path.string()))
+	if (!boost::filesystem::exists(parameters.map_file_path))
 	{
-		*error = "file " + parameters.map_file_path.filename().string() + " not found";
+		*error = "file " + parameters.map_file_path.string() + " not found";
 		return (false);
 	}
 
@@ -141,22 +141,4 @@ std::string GeneratorBase::Pad(const char *input, size_t length)
 	std::ostringstream ss;
 	ss << std::left << std::setfill(' ') << std::setw(length) << input;
 	return (std::move(ss.str()));
-}
-
-/*****************************************************************************/
-bool GeneratorBase::CheckPattern(std::string &input, std::vector<std::string> &pattern_vector)
-/*****************************************************************************/
-{
-	size_t found;
-
-	for (std::string patter : pattern_vector)
-	{
-		found = input.find(patter);
-		if (found != std::string::npos)
-		{
-			return (true);
-		}
-	}
-
-	return (false);
 }

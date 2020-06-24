@@ -24,25 +24,11 @@ const std::string App_Version = "v1.0.0";
 const std::string App_Author  = "Alessandro Barbieri";
 
 /******************************************************************************/
-void split(const std::string &input, char delimiter, std::vector<std::string> &output)
-/******************************************************************************/
-{
-	std::stringstream string_stream(input);
-	std::string       token;
-
-	while (std::getline(string_stream, token, delimiter))
-	{
-		output.push_back(token);
-	}
-}
-
-/******************************************************************************/
-void read_ini(const boost::filesystem::path &ini_file_path, PARAMETERS *parameters)
+static void read_ini(const boost::filesystem::path &ini_file_path, PARAMETERS *parameters)
 /******************************************************************************/
 {
 	boost::property_tree::ptree property_tree;
 	std::string                 message;
-	std::string                 buffer;
 	std::string                 key;
 	boost::filesystem::path     path;
 
@@ -59,12 +45,16 @@ void read_ini(const boost::filesystem::path &ini_file_path, PARAMETERS *paramete
 	// Architecture.Name
 	try
 	{
-		parameters->architecture = property_tree.get<std::string>("Architecture.Name");
+		if (parameters->architecture.empty())
+		{
+			parameters->architecture = property_tree.get<std::string>("Architecture.Name");
+		}
 		if (parameters->architecture.empty())
 		{
 			parameters->architecture = "STM32";
-			property_tree.put<std::string>("Architecture.Name", parameters->architecture);
 		}
+
+		property_tree.put<std::string>("Architecture.Name", parameters->architecture);
 	}
 	catch (...)
 	{
@@ -75,48 +65,61 @@ void read_ini(const boost::filesystem::path &ini_file_path, PARAMETERS *paramete
 	// Map.FilePath
 	try
 	{
-		buffer = property_tree.get<std::string>("Map.FilePath");
-		if (buffer.empty())
+		if (parameters->map_file_path.empty())
 		{
-	    	parameters->map_file_path = boost::filesystem::absolute(ini_file_path.parent_path());
-    		parameters->map_file_path.append("Application.map");
-			path = boost::filesystem::relative(parameters->map_file_path.string());
-			property_tree.put<std::string>("Map.FilePath", path.string());
+			parameters->map_file_path = property_tree.get<std::string>("Map.FilePath");
+		}
+		if (parameters->map_file_path.empty())
+		{
+			parameters->map_file_path = boost::filesystem::absolute(ini_file_path.parent_path());
+			parameters->map_file_path.append("Application.map");
 		}
 		else
 		{
-            boost::algorithm::trim_if(buffer, boost::is_any_of("\""));
-			parameters->map_file_path = boost::filesystem::absolute(buffer);
-			path = boost::filesystem::relative(parameters->map_file_path.string());
-			property_tree.put<std::string>("Map.FilePath", path.string());
+			parameters->map_file_path = boost::algorithm::trim_copy_if(parameters->map_file_path.string(), boost::is_any_of("\""));
+			if (boost::filesystem::is_directory(parameters->map_file_path))
+			{
+				parameters->map_file_path.append("Application.map");
+			}
+			parameters->map_file_path = boost::filesystem::absolute(parameters->map_file_path);
 		}
+
+		path = boost::filesystem::relative(parameters->map_file_path);
+		property_tree.put<std::string>("Map.FilePath", path.string());
 	}
 	catch (...)
 	{
-    	parameters->map_file_path = boost::filesystem::absolute(ini_file_path.parent_path());
-   		parameters->map_file_path.append("Application.map");
-		path = boost::filesystem::relative(parameters->map_file_path.string(), boost::filesystem::current_path());
+		parameters->map_file_path = boost::filesystem::absolute(ini_file_path.parent_path());
+		parameters->map_file_path.append("Application.map");
+		path = boost::filesystem::relative(parameters->map_file_path, boost::filesystem::current_path());
 		property_tree.put<std::string>("Map.FilePath", path.string());
 	}
 
 	// Output.FilePath
 	try
 	{
-		buffer = property_tree.get<std::string>("Output.FilePath");
-		if (buffer.empty())
+		if (parameters->output_file_path.empty())
+		{
+			parameters->output_file_path = property_tree.get<std::string>("Output.FilePath");
+		}
+		if (parameters->output_file_path.empty())
 		{
 			parameters->output_file_path = boost::filesystem::current_path();
 			parameters->output_file_path.append("Src");
 			parameters->output_file_path.append("os_threads_stack_size.h");
-
-			path = boost::filesystem::relative(parameters->output_file_path.string(), boost::filesystem::current_path());
-			property_tree.put<std::string>("Output.FilePath", path.string());
 		}
 		else
 		{
-            boost::algorithm::trim_if(buffer, boost::is_any_of("\""));
-			parameters->output_file_path = boost::filesystem::absolute(buffer);
+			parameters->output_file_path = boost::algorithm::trim_copy_if(parameters->output_file_path.string(), boost::is_any_of("\""));
+			parameters->output_file_path = boost::filesystem::absolute(parameters->output_file_path);
+			if (boost::filesystem::is_directory(parameters->output_file_path))
+			{
+				parameters->output_file_path.append("os_threads_stack_size.h");
+			}
 		}
+
+		path = boost::filesystem::relative(parameters->output_file_path, boost::filesystem::current_path());
+		property_tree.put<std::string>("Output.FilePath", path.string());
 	}
 	catch (...)
 	{
@@ -124,33 +127,39 @@ void read_ini(const boost::filesystem::path &ini_file_path, PARAMETERS *paramete
 		parameters->output_file_path.append("Src");
 		parameters->output_file_path.append("os_threads_stack_size.h");
 
-		path = boost::filesystem::relative(parameters->output_file_path.string(), boost::filesystem::current_path());
+		path = boost::filesystem::relative(parameters->output_file_path, boost::filesystem::current_path());
 		property_tree.put<std::string>("Output.FilePath", path.string());
 	}
 
-	// Threads.SubString
+	// Threads.Regex
 	try
 	{
-		buffer = property_tree.get<std::string>("Threads.Patterns");
-		if (buffer == "")
+		if (parameters->thread_regex.empty())
 		{
-			buffer = "thread,task";
-			property_tree.put<std::string>("Threads.Patterns", buffer);
+			parameters->thread_regex = property_tree.get<std::string>("Threads.Regex");
+		}
+		if (parameters->thread_regex.empty())
+		{
+			parameters->thread_regex = "thread|task";
 		}
 
-		split(buffer, ',', parameters->thread_patterns);
+		property_tree.put<std::string>("Threads.Regex", parameters->thread_regex);
 	}
 	catch (...)
 	{
-		buffer = "thread,task";
-		split(buffer, ',', parameters->thread_patterns);
-		property_tree.put<std::string>("Threads.Patterns", buffer);
+		parameters->thread_regex = "thread|task";
+		property_tree.put<std::string>("Threads.Regex", parameters->thread_regex);
 	}
 
 	// Stack.Oversizing
 	try
 	{
-		parameters->stack_oversizing = property_tree.get<size_t>("Stack.Oversizing");
+        if (parameters->stack_oversizing != 0)
+        {
+		    parameters->stack_oversizing = property_tree.get<size_t>("Stack.Oversizing");
+        }
+
+		property_tree.put<size_t>("Stack.Oversizing", parameters->stack_oversizing);
 	}
 	catch (...)
 	{
@@ -170,9 +179,12 @@ int main(int argc, char *argv[])
 	std::unique_ptr<GeneratorBase>  generator;
 	std::string                     buffer;
 	std::string                     error;
-	int                             result;
 
-	result = 1;
+    parameters.architecture     = "";
+    parameters.map_file_path    = "";
+    parameters.output_file_path = "";
+    parameters.stack_oversizing = 0;
+    parameters.thread_regex     = "";
 
 	try
 	{
@@ -181,8 +193,13 @@ int main(int argc, char *argv[])
 
 		description.add_options()
 		("help",                                                    "produce help message")
-		("ini",       boost::program_options::value<std::string>(), "set ini configuration file")
 		("debug",     boost::program_options::value<std::string>(), "enable debug info")
+		("ini",       boost::program_options::value<std::string>(), "set ini configuration file/folder")
+		("map",       boost::program_options::value<std::string>(), "set map file")
+		("out",       boost::program_options::value<std::string>(), "set output file/folder")
+		("arg",       boost::program_options::value<std::string>(), "set architecture")
+		("regex",     boost::program_options::value<std::string>(), "set thread search regex")
+		("oversize",  boost::program_options::value<size_t>(),      "set thread stack oversizing")
 		;
 
 		boost::program_options::store(boost::program_options::parse_command_line(argc, argv, description), variable_map);
@@ -196,12 +213,47 @@ int main(int argc, char *argv[])
 
 		if (variable_map.count("ini"))
 		{
-            buffer = variable_map["ini"].as<std::string>();
-            boost::algorithm::trim_if(buffer, boost::is_any_of("\""));
+			buffer = variable_map["ini"].as<std::string>();
+			boost::algorithm::trim_if(buffer, boost::is_any_of("\""));
 			ini_file_path = boost::filesystem::absolute(buffer);
 			if (!boost::filesystem::is_regular_file(ini_file_path))
 			{
-				ini_file_path.append("KeilRtxStackSize.ini");
+				ini_file_path.append("KeilMapTools.ini");
+			}
+
+			if (variable_map.count("map"))
+			{
+				buffer = variable_map["map"].as<std::string>();
+				boost::algorithm::trim_if(buffer, boost::is_any_of("\""));
+
+				parameters.map_file_path = buffer;
+			}
+
+			if (variable_map.count("out"))
+			{
+				buffer = variable_map["out"].as<std::string>();
+				boost::algorithm::trim_if(buffer, boost::is_any_of("\""));
+
+				parameters.output_file_path = buffer;
+			}
+
+			if (variable_map.count("arc"))
+			{
+				buffer = variable_map["arc"].as<std::string>();
+
+				parameters.architecture = buffer;
+			}
+
+			if (variable_map.count("regex"))
+			{
+				buffer = variable_map["regex"].as<std::string>();
+
+				parameters.architecture = buffer;
+			}
+
+			if (variable_map.count("oversize"))
+			{
+				parameters.stack_oversizing = variable_map["oversize"].as<size_t>();
 			}
 
 			read_ini(ini_file_path, &parameters);
@@ -215,12 +267,12 @@ int main(int argc, char *argv[])
 		std::cout << App_Name << " " << App_Version << " by " << App_Author << std::endl;
 
 		if (variable_map.count("debug"))
-        {
-		    std::cout << "    Architecture: " << parameters.architecture     << std::endl;
-		    std::cout << "    Map file:     " << parameters.map_file_path    << std::endl;
-		    std::cout << "    Output file:  " << parameters.output_file_path << std::endl;
-		    std::cout << "    Oversizing:   " << parameters.stack_oversizing << std::endl;
-        }
+		{
+			std::cout << "    Architecture: " << parameters.architecture     << std::endl;
+			std::cout << "    Map file:     " << parameters.map_file_path    << std::endl;
+			std::cout << "    Output file:  " << parameters.output_file_path << std::endl;
+			std::cout << "    Oversizing:   " << parameters.stack_oversizing << std::endl;
+		}
 
 		generator = GeneratorFactory::Make(parameters.architecture);
 		if (generator == NULL)

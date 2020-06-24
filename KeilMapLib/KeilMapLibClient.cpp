@@ -80,12 +80,12 @@ std::vector<CROSS_REFERENCE_FIELD> KeilMapLibClient::GetCrossReference(void)
 	try
 	{
 		manager.Manage(_File);
-		return (std::move(manager.Get()));
+		return (manager.Get());
 	}
 	catch (...)
 	{
 		std::vector<CROSS_REFERENCE_FIELD> error;
-		return (std::move(error));
+		return (error);
 	}
 }
 
@@ -98,12 +98,12 @@ std::vector<FUNCTION_POINTER_FIELD> KeilMapLibClient::GetFunctionPointer(void)
 	try
 	{
 		manager.Manage(_File);
-		return (std::move(manager.Get()));
+		return (manager.Get());
 	}
 	catch (...)
 	{
 		std::vector<FUNCTION_POINTER_FIELD> error;
-		return (std::move(error));
+		return (error);
 	}
 }
 
@@ -116,12 +116,12 @@ std::vector<GLOBAL_SYMBOL_FIELD> KeilMapLibClient::GetGlobalSymbols(void)
 	try
 	{
 		manager.Manage(_File);
-		return (std::move(manager.Get()));
+		return (manager.Get());
 	}
 	catch (...)
 	{
 		std::vector<GLOBAL_SYMBOL_FIELD> error;
-		return (std::move(error));
+		return (error);
 	}
 }
 
@@ -134,12 +134,12 @@ std::vector<IMAGE_COMPONENT_SIZE_FIELD> KeilMapLibClient::GetImageComponentSize(
 	try
 	{
 		manager.Manage(_File);
-		return (std::move(manager.Get()));
+		return (manager.Get());
 	}
 	catch (...)
 	{
 		std::vector<IMAGE_COMPONENT_SIZE_FIELD> error;
-		return (std::move(error));
+		return (error);
 	}
 }
 
@@ -172,7 +172,7 @@ IMAGE_SIZE_DATA KeilMapLibClient::GetImageSize(void)
 		result.total_rom_size        = "";
 	}
 
-	return (std::move(result));
+	return (result);
 }
 
 /*****************************************************************************/
@@ -184,12 +184,12 @@ std::vector<LOCAL_SYMBOL_FIELD> KeilMapLibClient::GetLocalSymbols(void)
 	try
 	{
 		manager.Manage(_File);
-		return (std::move(manager.Get()));
+		return (manager.Get());
 	}
 	catch (...)
 	{
 		std::vector<LOCAL_SYMBOL_FIELD> error;
-		return (std::move(error));
+		return (error);
 	}
 }
 
@@ -202,12 +202,12 @@ std::vector<MAXIMUM_STACK_USAGE_FIELD> KeilMapLibClient::GetMaximumStackUsage(vo
 	try
 	{
 		manager.Manage(_File);
-		return (std::move(manager.Get()));
+		return (manager.Get());
 	}
 	catch (...)
 	{
 		std::vector<MAXIMUM_STACK_USAGE_FIELD> error;
-		return (std::move(error));
+		return (error);
 	}
 }
 
@@ -236,7 +236,7 @@ MEMORY_MAP_IMAGE KeilMapLibClient::GetMemoryMapImage(void)
 		result.entry_point = "";
 	}
 
-	return (std::move(result));
+	return (result);
 }
 
 /*****************************************************************************/
@@ -248,12 +248,12 @@ std::vector<MUTUALLY_RECURSIVE_FIELD> KeilMapLibClient::GetMutualRecursive(void)
 	try
 	{
 		manager.Manage(_File);
-		return (std::move(manager.Get()));
+		return (manager.Get());
 	}
 	catch (...)
 	{
 		std::vector<MUTUALLY_RECURSIVE_FIELD> error;
-		return (std::move(error));
+		return (error);
 	}
 }
 
@@ -266,12 +266,12 @@ std::vector<REMOVED_SYMBOL_FIELD> KeilMapLibClient::GetRemovedSymbols(void)
 	try
 	{
 		manager.Manage(_File);
-		return (std::move(manager.Get()));
+		return (manager.Get());
 	}
 	catch (...)
 	{
 		std::vector<REMOVED_SYMBOL_FIELD> error;
-		return (std::move(error));
+		return (error);
 	}
 }
 
@@ -284,12 +284,12 @@ std::vector<STACK_USAGE_FIELD> KeilMapLibClient::GetStackUsage(void)
 	try
 	{
 		manager.Manage(_File);
-		return (std::move(manager.Get()));
+		return (manager.Get());
 	}
 	catch (...)
 	{
 		std::vector<STACK_USAGE_FIELD> error;
-		return (std::move(error));
+		return (error);
 	}
 }
 

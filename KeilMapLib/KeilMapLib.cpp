@@ -48,7 +48,7 @@ std::vector<CROSS_REFERENCE_FIELD> KeilMapLib::GetCrossReference(std::string &fi
 	CrossReferencesSection manager;
 
 	manager.Manage(file);
-	return (std::move(manager.Get()));
+	return (manager.Get());
 }
 
 /*****************************************************************************/
@@ -58,7 +58,7 @@ std::vector<FUNCTION_POINTER_FIELD> KeilMapLib::GetFunctionPointer(std::string &
 	FunctionPointerSection manager;
 
 	manager.Manage(file);
-	return (std::move(manager.Get()));
+	return (manager.Get());
 }
 
 /*****************************************************************************/
@@ -68,7 +68,7 @@ std::vector<GLOBAL_SYMBOL_FIELD> KeilMapLib::GetGlobalSymbols(std::string &file)
 	GlobalSymbolsSection manager;
 
 	manager.Manage(file);
-	return (std::move(manager.Get()));
+	return (manager.Get());
 }
 
 /*****************************************************************************/
@@ -78,7 +78,7 @@ std::vector<IMAGE_COMPONENT_SIZE_FIELD> KeilMapLib::GetImageComponentSize(std::s
 	ImageComponentSizeSection manager;
 
 	manager.Manage(file);
-	return (std::move(manager.Get()));
+	return (manager.Get());
 }
 
 /*****************************************************************************/
@@ -101,7 +101,7 @@ IMAGE_SIZE_DATA KeilMapLib::GetImageSize(std::string &file)
 		result.total_rom_size        = "";
 	}
 
-	return (std::move(result));
+	return (result);
 }
 
 /*****************************************************************************/
@@ -111,7 +111,7 @@ std::vector<LOCAL_SYMBOL_FIELD> KeilMapLib::GetLocalSymbols(std::string &file)
 	LocalSymbolsSection manager;
 
 	manager.Manage(file);
-	return (std::move(manager.Get()));
+	return (manager.Get());
 }
 
 /*****************************************************************************/
@@ -121,7 +121,7 @@ std::vector<MAXIMUM_STACK_USAGE_FIELD> KeilMapLib::GetMaximumStackUsage(std::str
 	MaximumStackUsageSection manager;
 
 	manager.Manage(file);
-	return (std::move(manager.Get()));
+	return (manager.Get());
 }
 
 /*****************************************************************************/
@@ -142,7 +142,7 @@ MEMORY_MAP_IMAGE KeilMapLib::GetMemoryMapImage(std::string &file)
 		result.entry_point = "";
 	}
 
-	return (std::move(result));
+	return (result);
 }
 
 /*****************************************************************************/
@@ -152,7 +152,7 @@ std::vector<MUTUALLY_RECURSIVE_FIELD> KeilMapLib::GetMutualRecursive(std::string
 	MutuallyRecursiveSection manager;
 
 	manager.Manage(file);
-	return (std::move(manager.Get()));
+	return (manager.Get());
 }
 
 /*****************************************************************************/
@@ -162,7 +162,7 @@ std::vector<REMOVED_SYMBOL_FIELD> KeilMapLib::GetRemovedSymbols(std::string &fil
 	RemovedSymbolSection manager;
 
 	manager.Manage(file);
-	return (std::move(manager.Get()));
+	return (manager.Get());
 }
 
 /*****************************************************************************/
@@ -172,6 +172,6 @@ std::vector<STACK_USAGE_FIELD> KeilMapLib::GetStackUsage(std::string &file)
 	StackUsageSection manager;
 
 	manager.Manage(file);
-	return (std::move(manager.Get()));
+	return (manager.Get());
 }
 

@@ -63,7 +63,7 @@
       <AdditionalLibraryDirectories>C:\boost\boost_1_70_0\lib\win64\msvc\debug\lib;C:\Program Files (x86)\Visual Leak Detector\lib\Win64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>copy "$(TargetPath)" "$(SolutionDir)TestCs\bin\x64\Debug\$(TargetFileName)"</Command>
+      <Command>copy "$(TargetPath)" "$(SolutionDir)KeilMapViewer\bin\$(Platform)\$(Configuration)\$(TargetFileName)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -84,6 +84,9 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>C:\boost\boost_1_70_0\lib\win64\msvc\release\lib;C:\Program Files (x86)\Visual Leak Detector\lib\Win64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
+    <PostBuildEvent>
+      <Command>copy "$(TargetPath)" "$(SolutionDir)KeilMapViewer\bin\$(Platform)\$(Configuration)\$(TargetFileName)"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -146,9 +149,12 @@
     <CustomBuild Include="KeilMapLibClient.i">
       <FileType>Document</FileType>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">echo Invoking SWIG...
-$(SolutionDir)swigwin\swig.exe -c++ -csharp -outdir "$(SolutionDir)TestCs\swig" "%(FullPath)"
+$(SolutionDir)swigwin\swig.exe -c++ -csharp -outdir "$(SolutionDir)KeilMapViewer\swig" "%(FullPath)"
 </Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(Filename)_wrap.cxx;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">echo Invoking SWIG...
+$(SolutionDir)swigwin\swig.exe -c++ -csharp -outdir "$(SolutionDir)KeilMapViewer\swig" "%(FullPath)"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(Filename)_wrap.cxx;%(Outputs)</Outputs>
     </CustomBuild>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

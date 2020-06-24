@@ -23,7 +23,7 @@ typedef struct
 	std::string              architecture;
 	boost::filesystem::path  map_file_path;
 	boost::filesystem::path  output_file_path;
-	std::vector<std::string> thread_patterns;
+	std::string              thread_regex;
 	size_t                   stack_oversizing;
 } PARAMETERS;
 

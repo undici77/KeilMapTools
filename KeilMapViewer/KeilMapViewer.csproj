@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2E2908BC-EE69-42BB-A8C9-F0619332AEBD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KeilMapViewer</RootNamespace>
+    <AssemblyName>KeilMapViewer</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Viewer.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ComboBoxEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataGridViewEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataManager\DataConverter.cs" />
+    <Compile Include="DataManager\ImageSizeDataManager.cs" />
+    <Compile Include="IniFile.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainFormDelegates.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MapFileManager.cs" />
+    <Compile Include="DataManager\CrossReferenceDataManager.cs" />
+    <Compile Include="DataManager\DataFilter.cs" />
+    <Compile Include="DataManager\DataManager.cs" />
+    <Compile Include="DataManager\FunctionPointerDataManager.cs" />
+    <Compile Include="DataManager\GlobalSymbolDataManager.cs" />
+    <Compile Include="DataManager\ImageComponentSizeDataManager.cs" />
+    <Compile Include="DataManager\LocalSymbolDataManager.cs" />
+    <Compile Include="DataManager\MaximumStackUsageDataManager.cs" />
+    <Compile Include="DataManager\MemoryMapImageDataManager.cs" />
+    <Compile Include="DataManager\MutuallyRecursiveDataManager.cs" />
+    <Compile Include="DataManager\RemovedSymbolDataManager.cs" />
+    <Compile Include="DataManager\StackUsageDataManager.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Swig\CROSS_REFERENCE_FIELD.cs" />
+    <Compile Include="Swig\CROSS_REFERENCE_VECTOR.cs" />
+    <Compile Include="Swig\FUNCTION_POINTER_FIELD.cs" />
+    <Compile Include="Swig\FUNCTION_POINTER_VECTOR.cs" />
+    <Compile Include="Swig\GLOBAL_SYMBOL_FIELD.cs" />
+    <Compile Include="Swig\GLOBAL_SYMBOL_VECTOR.cs" />
+    <Compile Include="Swig\IMAGE_COMPONENT_SIZE_FIELD.cs" />
+    <Compile Include="Swig\IMAGE_COMPONENT_SIZE_VECTOR.cs" />
+    <Compile Include="Swig\IMAGE_SIZE_DATA.cs" />
+    <Compile Include="Swig\KeilMapLib.cs" />
+    <Compile Include="Swig\KeilMapLibClient.cs" />
+    <Compile Include="Swig\KeilMapLibPINVOKE.cs" />
+    <Compile Include="Swig\LOCAL_SYMBOL_FIELD.cs" />
+    <Compile Include="Swig\LOCAL_SYMBOL_VECTOR.cs" />
+    <Compile Include="Swig\MAXIMUM_STACK_USAGE_FIELD.cs" />
+    <Compile Include="Swig\MAXIMUM_STACK_USAGE_VECTOR.cs" />
+    <Compile Include="Swig\MEMORY_MAP_IMAGE.cs" />
+    <Compile Include="Swig\MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD.cs" />
+    <Compile Include="Swig\MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR.cs" />
+    <Compile Include="Swig\MEMORY_MAP_IMAGE_LOAD_REGION_FIELD.cs" />
+    <Compile Include="Swig\MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR.cs" />
+    <Compile Include="Swig\MEMORY_MAP_IMAGE_OBJECT_FIELD.cs" />
+    <Compile Include="Swig\MEMORY_MAP_IMAGE_OBJECT_VECTOR.cs" />
+    <Compile Include="Swig\MUTUALLY_RECURSIVE_FIELD.cs" />
+    <Compile Include="Swig\MUTUALLY_RECURSIVE_VECTOR.cs" />
+    <Compile Include="Swig\REMOVED_SYMBOL_FIELD.cs" />
+    <Compile Include="Swig\REMOVED_SYMBOL_VECTOR.cs" />
+    <Compile Include="Swig\STACK_USAGE_FIELD.cs" />
+    <Compile Include="Swig\STACK_USAGE_VECTOR.cs" />
+    <Compile Include="ToolStripTextBoxEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Viewer.ico" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
