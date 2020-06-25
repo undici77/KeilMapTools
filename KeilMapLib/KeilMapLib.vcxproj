@@ -85,7 +85,8 @@
       <AdditionalLibraryDirectories>C:\boost\boost_1_70_0\lib\win64\msvc\release\lib;C:\Program Files (x86)\Visual Leak Detector\lib\Win64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>copy "$(TargetPath)" "$(SolutionDir)KeilMapViewer\bin\$(Platform)\$(Configuration)\$(TargetFileName)"</Command>
+      <Command>copy "$(TargetPath)" "$(SolutionDir)KeilMapViewer\bin\$(Platform)\$(Configuration)\$(TargetFileName)"
+copy "$(TargetPath)" "$(SolutionDir)Bin\$(TargetFileName)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
