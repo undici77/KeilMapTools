@@ -1,9 +1,6 @@
 # Keil Map Tools
 
 Hi, the question is:
-# Keil Map Tools
-
-Hi, the question is:
 
 - Are you working with Keil Compiler?
 - Are you working with Keil RTX Operating System?
