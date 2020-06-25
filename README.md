@@ -42,13 +42,14 @@ Command line and parameters are:
 ![](https://github.com/undici77/KeilMapTools/blob/master/Images/KeilRtxStackSize.png)
 
 ## .Integration
-###Linker Options
+
+*Linker Options*
 ![](https://github.com/undici77/KeilMapTools/blob/master/Images/KeilLinkerOptions.png)
 
-###Post Build Options
+*Post Build Options*
 ![](https://github.com/undici77/KeilMapTools/blob/master/Images/KeilProjectOptions.png)
 
-###Tool Menu Options
+*Tool Menu Options*
 ![](https://github.com/undici77/KeilMapTools/blob/master/Images/KeilExternalTools.png)
 
 ## .KeilMapTools.ini
