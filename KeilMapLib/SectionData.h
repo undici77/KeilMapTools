@@ -20,13 +20,13 @@
 template <class T>
 class SectionData
 {
-	public:
-		virtual std::vector<T> Get(void)
-		{
-			return (_Data);
-		}
+public:
+	virtual std::vector<T> Get(void)
+	{
+		return (_Data);
+	}
 
-	protected:
-		std::vector<T>_Data;
+protected:
+	std::vector<T>_Data;
 };
 

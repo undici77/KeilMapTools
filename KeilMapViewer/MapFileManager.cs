@@ -1,4 +1,19 @@
-﻿using System;
+﻿// This file is part of KeilMapViewer.
+//
+// KeilMapViewer is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Lesser General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// KeilMapViewer is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Lesser General Public License for more details.
+//
+// You should have received a copy of the GNU Lesser General Public License
+// along with KeilMapViewer.  If not, see <https://www.gnu.org/licenses/>.
+
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -205,7 +220,7 @@ namespace KeilMapViewer
 			_Worker_Thread.Start();
 
 			while (!_Worker_Thread.IsAlive)
-				;		
+				;
 		}
 
 		private void WorkerThread()
@@ -220,7 +235,7 @@ namespace KeilMapViewer
 			LocalSymbolDataManager		  local_symbol_data_manager;
 			GlobalSymbolDataManager		  global_symbol_data_manager;
 			MemoryMapImageDataManager     memory_map_image_data_manager;
-			ImageComponentSizeDataManager image_component_size_data_manager;    
+			ImageComponentSizeDataManager image_component_size_data_manager;
 
 			client = new KeilMapLibClient();
 
@@ -233,7 +248,7 @@ namespace KeilMapViewer
 			local_symbol_data_manager         = null;
 			global_symbol_data_manager        = null;
 			memory_map_image_data_manager     = null;
-			image_component_size_data_manager = null;    
+			image_component_size_data_manager = null;
 
 			_Watcher = new FileSystemWatcher();
 			_Watcher.EnableRaisingEvents = false;
@@ -259,7 +274,7 @@ namespace KeilMapViewer
 							App.Instance.BeginInvoke(App.Instance.ShowErrorDelegate, "Unable to read " + _Map_File, "MapFileManager");
 						}
 
-						Task image_size_data_task = Task.Run(() => 
+						Task image_size_data_task = Task.Run(() =>
 						{
 							ImageSizeData result = new ImageSizeData(client.GetImageSize());
 
@@ -270,56 +285,56 @@ namespace KeilMapViewer
 							App.Instance.BeginInvoke(App.Instance.UpdateImageSizeDataDelegate);
 						});
 
-						Task cross_reference_task = Task.Run(() => 
+						Task cross_reference_task = Task.Run(() =>
 						{
 							cross_reference_manager = new CrossReferenceDataManager(client.GetCrossReference().ToArray());
-						});					
+						});
 
-						Task removed_symbol_task = Task.Run(() => 
+						Task removed_symbol_task = Task.Run(() =>
 						{
 							removed_symbol_data_manager = new RemovedSymbolDataManager(client.GetRemovedSymbols().ToArray());
-						});					
+						});
 
-						Task maximum_stack_usage_task = Task.Run(() => 
+						Task maximum_stack_usage_task = Task.Run(() =>
 						{
 							maximum_stack_usage_data_manager = new MaximumStackUsageDataManager(client.GetMaximumStackUsage().ToArray());
-						});					
+						});
 
-						Task stack_usage_task = Task.Run(() => 
+						Task stack_usage_task = Task.Run(() =>
 						{
 							stack_usage_data_manager = new StackUsageDataManager(client.GetStackUsage().ToArray());
-						});					
+						});
 
-						Task mutually_recursive_task = Task.Run(() => 
+						Task mutually_recursive_task = Task.Run(() =>
 						{
 							mutually_recursive_data_manager = new MutuallyRecursiveDataManager(client.GetMutualRecursive().ToArray());
-						});					
+						});
 
-						Task function_pointer_task = Task.Run(() => 
+						Task function_pointer_task = Task.Run(() =>
 						{
 							function_pointer_data_manager = new FunctionPointerDataManager(client.GetFunctionPointer().ToArray());
 						});
-					
-						Task local_symbol_task = Task.Run(() => 
+
+						Task local_symbol_task = Task.Run(() =>
 						{
 							local_symbol_data_manager = new LocalSymbolDataManager(client.GetLocalSymbols().ToArray());
 						});
-					
-						Task global_symbol_task = Task.Run(() => 
+
+						Task global_symbol_task = Task.Run(() =>
 						{
 							global_symbol_data_manager = new GlobalSymbolDataManager(client.GetGlobalSymbols().ToArray());
 						});
-					
-						Task memory_map_image_task = Task.Run(() => 
+
+						Task memory_map_image_task = Task.Run(() =>
 						{
 							memory_map_image_data_manager = new MemoryMapImageDataManager(client.GetMemoryMapImage());
 						});
-					
-						Task image_component_size_task = Task.Run(() => 
+
+						Task image_component_size_task = Task.Run(() =>
 						{
 							image_component_size_data_manager = new ImageComponentSizeDataManager(client.GetImageComponentSize().ToArray());
 						});
-						
+
 						image_size_data_task.Wait();
 						cross_reference_task.Wait();
 						removed_symbol_task.Wait();
@@ -339,7 +354,7 @@ namespace KeilMapViewer
 
 						filter_string = FilterString;
 
-						Task cross_reference_task = Task.Run(() => 
+						Task cross_reference_task = Task.Run(() =>
 						{
 							CrossReferenceField[] result = cross_reference_manager.Get(filter_string);
 							lock (_Cross_Reference_Data_Lock)
@@ -347,9 +362,9 @@ namespace KeilMapViewer
 								_Cross_Reference_Data = result;
 							}
 							App.Instance.BeginInvoke(App.Instance.UpdateCrossReferenceDelegate);
-						});					
+						});
 
-						Task removed_symbol_task = Task.Run(() => 
+						Task removed_symbol_task = Task.Run(() =>
 						{
 							RemovedSymbolField[] result = removed_symbol_data_manager.Get(filter_string);
 							lock (_Removed_Symbol_Data_Lock)
@@ -357,9 +372,9 @@ namespace KeilMapViewer
 								_Removed_Symbol_Data = result;
 							}
 							App.Instance.BeginInvoke(App.Instance.UpdateRemovedSymbolDelegate);
-						});					
+						});
 
-						Task maximum_stack_usage_task = Task.Run(() => 
+						Task maximum_stack_usage_task = Task.Run(() =>
 						{
 							MaximumStackUsageField[] result = maximum_stack_usage_data_manager.Get(filter_string);
 							lock (_Maximum_Stack_Usage_Data_Lock)
@@ -367,9 +382,9 @@ namespace KeilMapViewer
 								_Maximum_Stack_Usage_Data = result;
 							}
 							App.Instance.BeginInvoke(App.Instance.UpdateMaximumStackUsageDelegate);
-						});					
+						});
 
-						Task stack_usage_task = Task.Run(() => 
+						Task stack_usage_task = Task.Run(() =>
 						{
 							StackUsageField[] result = stack_usage_data_manager.Get(filter_string);
 							lock (_Stack_Usage_Data_Lock)
@@ -377,9 +392,9 @@ namespace KeilMapViewer
 								_Stack_Usage_Data = result;
 							}
 							App.Instance.BeginInvoke(App.Instance.UpdateStackUsageDelegate);
-						});					
+						});
 
-						Task mutually_recursive_task = Task.Run(() => 
+						Task mutually_recursive_task = Task.Run(() =>
 						{
 							MutuallyRecursiveField[] result = mutually_recursive_data_manager.Get(filter_string);
 							lock (_Mutually_Recursive_Data_Lock)
@@ -387,9 +402,9 @@ namespace KeilMapViewer
 								_Mutually_Recursive_Data = result;
 							}
 							App.Instance.BeginInvoke(App.Instance.UpdateMutuallyRecursiveDelegate);
-						});					
+						});
 
-						Task function_pointer_task = Task.Run(() => 
+						Task function_pointer_task = Task.Run(() =>
 						{
 							FunctionPointerField[] result = function_pointer_data_manager.Get(filter_string);
 							lock (_Function_Pointer_Data_Lock)
@@ -398,8 +413,8 @@ namespace KeilMapViewer
 							}
 							App.Instance.BeginInvoke(App.Instance.UpdateFunctionPointerDelegate);
 						});
-					
-						Task local_symbol_task = Task.Run(() => 
+
+						Task local_symbol_task = Task.Run(() =>
 						{
 							LocalSymbolField[] result = local_symbol_data_manager.Get(filter_string);
 							lock (_Local_Symbol_Data_Lock)
@@ -408,8 +423,8 @@ namespace KeilMapViewer
 							}
 							App.Instance.BeginInvoke(App.Instance.UpdateLocalSymbolDelegate);
 						});
-					
-						Task global_symbol_task = Task.Run(() => 
+
+						Task global_symbol_task = Task.Run(() =>
 						{
 							GlobalSymbolField[] result = global_symbol_data_manager.Get(filter_string);
 							lock (_Global_Symbol_Data_Lock)
@@ -418,8 +433,8 @@ namespace KeilMapViewer
 							}
 							App.Instance.BeginInvoke(App.Instance.UpdateGlobalSymbolDelegate);
 						});
-					
-						Task memory_map_image_task = Task.Run(() => 
+
+						Task memory_map_image_task = Task.Run(() =>
 						{
 							MemoryMapImage result = memory_map_image_data_manager.Get(filter_string);
 							lock (_Memory_Map_Image_Data_Lock)
@@ -428,8 +443,8 @@ namespace KeilMapViewer
 							}
 							App.Instance.BeginInvoke(App.Instance.UpdateMemoryMapImageDelegate);
 						});
-					
-						Task image_component_size_task = Task.Run(() => 
+
+						Task image_component_size_task = Task.Run(() =>
 						{
 							ImageComponentSizeField[] result = image_component_size_data_manager.Get(filter_string);
 							lock (_Image_Component_Size_Data_Lock)
@@ -438,7 +453,7 @@ namespace KeilMapViewer
 							}
 							App.Instance.BeginInvoke(App.Instance.UpdateImageComponentSizeDelegate);
 						});
-					
+
 						cross_reference_task.Wait();
 						removed_symbol_task.Wait();
 						maximum_stack_usage_task.Wait();
@@ -449,10 +464,10 @@ namespace KeilMapViewer
 						global_symbol_task.Wait();
 						memory_map_image_task.Wait();
 						image_component_size_task.Wait();
-								
+
 						_Worker_Thread_Update_Event.WaitOne();
 						while (_Worker_Thread_Update_Event.WaitOne(500))
-								;
+							;
 					}
 				}
 			}

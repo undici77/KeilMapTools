@@ -9,65 +9,93 @@
 //------------------------------------------------------------------------------
 
 
-public class STACK_USAGE_FIELD : global::System.IDisposable {
-  private global::System.Runtime.InteropServices.HandleRef swigCPtr;
-  protected bool swigCMemOwn;
+public class STACK_USAGE_FIELD : global::System.IDisposable
+{
+	private global::System.Runtime.InteropServices.HandleRef swigCPtr;
+	protected bool swigCMemOwn;
 
-  internal STACK_USAGE_FIELD(global::System.IntPtr cPtr, bool cMemoryOwn) {
-    swigCMemOwn = cMemoryOwn;
-    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
-  }
+	internal STACK_USAGE_FIELD(global::System.IntPtr cPtr, bool cMemoryOwn)
+	{
+		swigCMemOwn = cMemoryOwn;
+		swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
+	}
 
-  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(STACK_USAGE_FIELD obj) {
-    return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
-  }
+	internal static global::System.Runtime.InteropServices.HandleRef getCPtr(STACK_USAGE_FIELD obj)
+	{
+		return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
+	}
 
-  ~STACK_USAGE_FIELD() {
-    Dispose(false);
-  }
+	~STACK_USAGE_FIELD()
+	{
+		Dispose(false);
+	}
 
-  public void Dispose() {
-    Dispose(true);
-    global::System.GC.SuppressFinalize(this);
-  }
+	public void Dispose()
+	{
+		Dispose(true);
+		global::System.GC.SuppressFinalize(this);
+	}
 
-  protected virtual void Dispose(bool disposing) {
-    lock(this) {
-      if (swigCPtr.Handle != global::System.IntPtr.Zero) {
-        if (swigCMemOwn) {
-          swigCMemOwn = false;
-          KeilMapLibPINVOKE.delete_STACK_USAGE_FIELD(swigCPtr);
-        }
-        swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
-      }
-    }
-  }
+	protected virtual void Dispose(bool disposing)
+	{
+		lock (this)
+		{
+			if (swigCPtr.Handle != global::System.IntPtr.Zero)
+			{
+				if (swigCMemOwn)
+				{
+					swigCMemOwn = false;
+					KeilMapLibPINVOKE.delete_STACK_USAGE_FIELD(swigCPtr);
+				}
+				swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
+			}
+		}
+	}
 
-  public string function {
-    set {
-      KeilMapLibPINVOKE.STACK_USAGE_FIELD_function_set(swigCPtr, value);
-      if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-    } 
-    get {
-      string ret = KeilMapLibPINVOKE.STACK_USAGE_FIELD_function_get(swigCPtr);
-      if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-      return ret;
-    } 
-  }
+	public string function
+	{
+		set
+		{
+			KeilMapLibPINVOKE.STACK_USAGE_FIELD_function_set(swigCPtr, value);
+			if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
+			{
+				throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+			}
+		}
+		get
+		{
+			string ret = KeilMapLibPINVOKE.STACK_USAGE_FIELD_function_get(swigCPtr);
+			if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
+			{
+				throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+			}
+			return ret;
+		}
+	}
 
-  public string size {
-    set {
-      KeilMapLibPINVOKE.STACK_USAGE_FIELD_size_set(swigCPtr, value);
-      if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-    } 
-    get {
-      string ret = KeilMapLibPINVOKE.STACK_USAGE_FIELD_size_get(swigCPtr);
-      if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-      return ret;
-    } 
-  }
+	public string size
+	{
+		set
+		{
+			KeilMapLibPINVOKE.STACK_USAGE_FIELD_size_set(swigCPtr, value);
+			if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
+			{
+				throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+			}
+		}
+		get
+		{
+			string ret = KeilMapLibPINVOKE.STACK_USAGE_FIELD_size_get(swigCPtr);
+			if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
+			{
+				throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+			}
+			return ret;
+		}
+	}
 
-  public STACK_USAGE_FIELD() : this(KeilMapLibPINVOKE.new_STACK_USAGE_FIELD(), true) {
-  }
+	public STACK_USAGE_FIELD() : this(KeilMapLibPINVOKE.new_STACK_USAGE_FIELD(), true)
+	{
+	}
 
 }

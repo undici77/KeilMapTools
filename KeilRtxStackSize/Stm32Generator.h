@@ -25,10 +25,10 @@
 
 class Stm32Generator : public GeneratorBase
 {
-	public:
-		Stm32Generator();
-		~Stm32Generator();
+public:
+	Stm32Generator();
+	~Stm32Generator();
 
-		void Generate(PARAMETERS &parameters);
+	void Generate(PARAMETERS &parameters);
 };
 

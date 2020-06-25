@@ -1,4 +1,19 @@
-﻿using System;
+﻿// This file is part of KeilMapViewer.
+//
+// KeilMapViewer is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Lesser General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// KeilMapViewer is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Lesser General Public License for more details.
+//
+// You should have received a copy of the GNU Lesser General Public License
+// along with KeilMapViewer.  If not, see <https://www.gnu.org/licenses/>.
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -29,7 +44,7 @@ class DataGridViewEx : DataGridView
 		cell_2 = e.CellValue2.ToString();
 
 		if ((uint.TryParse(cell_1, out cell_value_1)) &&
-			(uint.TryParse(cell_2, out cell_value_2)))
+		    (uint.TryParse(cell_2, out cell_value_2)))
 		{
 			e.SortResult = cell_value_1.CompareTo(cell_value_2);
 		}

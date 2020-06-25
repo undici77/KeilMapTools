@@ -2,115 +2,115 @@
  * functions like fopen will not solve the problem on all platforms as fopen
  * might be a macro on Windows but not necessarily on other operating systems. */
 #ifdef do_open
-  #undef do_open
+#undef do_open
 #endif
 #ifdef do_close
-  #undef do_close
+#undef do_close
 #endif
 #ifdef do_exec
-  #undef do_exec
+#undef do_exec
 #endif
 #ifdef scalar
-  #undef scalar
+#undef scalar
 #endif
 #ifdef list
-  #undef list
+#undef list
 #endif
 #ifdef apply
-  #undef apply
+#undef apply
 #endif
 #ifdef convert
-  #undef convert
+#undef convert
 #endif
 #ifdef Error
-  #undef Error
+#undef Error
 #endif
 #ifdef form
-  #undef form
+#undef form
 #endif
 #ifdef vform
-  #undef vform
+#undef vform
 #endif
 #ifdef LABEL
-  #undef LABEL
+#undef LABEL
 #endif
 #ifdef METHOD
-  #undef METHOD
+#undef METHOD
 #endif
 #ifdef Move
-  #undef Move
+#undef Move
 #endif
 #ifdef yylex
-  #undef yylex
+#undef yylex
 #endif
 #ifdef yyparse
-  #undef yyparse
+#undef yyparse
 #endif
 #ifdef yyerror
-  #undef yyerror
+#undef yyerror
 #endif
 #ifdef invert
-  #undef invert
+#undef invert
 #endif
 #ifdef ref
-  #undef ref
+#undef ref
 #endif
 #ifdef read
-  #undef read
+#undef read
 #endif
 #ifdef write
-  #undef write
+#undef write
 #endif
 #ifdef eof
-  #undef eof
+#undef eof
 #endif
 #ifdef close
-  #undef close
+#undef close
 #endif
 #ifdef rewind
-  #undef rewind
+#undef rewind
 #endif
 #ifdef free
-  #undef free
+#undef free
 #endif
 #ifdef malloc
-  #undef malloc
+#undef malloc
 #endif
 #ifdef calloc
-  #undef calloc
+#undef calloc
 #endif
 #ifdef Stat
-  #undef Stat
+#undef Stat
 #endif
 #ifdef check
-  #undef check
+#undef check
 #endif
 #ifdef seekdir
-  #undef seekdir
+#undef seekdir
 #endif
 #ifdef open
-  #undef open
+#undef open
 #endif
 #ifdef readdir
-  #undef readdir
+#undef readdir
 #endif
 #ifdef bind
-  #undef bind
+#undef bind
 #endif
 #ifdef access
-  #undef access
+#undef access
 #endif
 #ifdef stat
-  #undef stat
+#undef stat
 #endif
 #ifdef seed
-  #undef seed
+#undef seed
 #endif
 
 #ifdef bool
-  /* Leave if macro is from C99 stdbool.h */
-  #ifndef __bool_true_false_are_defined
-    #undef bool
-  #endif
+/* Leave if macro is from C99 stdbool.h */
+#ifndef __bool_true_false_are_defined
+#undef bool
+#endif
 #endif
 

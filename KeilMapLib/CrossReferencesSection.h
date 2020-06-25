@@ -22,12 +22,12 @@
 
 class CrossReferencesSection : public SectionBase, public SectionData<CROSS_REFERENCE_FIELD>
 {
-	public:
-		CrossReferencesSection();
-		~CrossReferencesSection();
+public:
+	CrossReferencesSection();
+	~CrossReferencesSection();
 
-		bool Manage(const std::string &file);
+	bool Manage(const std::string &file);
 
-	private:
+private:
 };
 

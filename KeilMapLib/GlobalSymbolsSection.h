@@ -22,10 +22,10 @@
 
 class GlobalSymbolsSection : public SectionBase, public SectionData<GLOBAL_SYMBOL_FIELD>
 {
-	public:
-		GlobalSymbolsSection();
-		~GlobalSymbolsSection();
+public:
+	GlobalSymbolsSection();
+	~GlobalSymbolsSection();
 
-		bool Manage(const std::string &file);
+	bool Manage(const std::string &file);
 };
 

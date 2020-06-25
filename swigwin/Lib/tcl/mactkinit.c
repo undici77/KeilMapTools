@@ -5,7 +5,7 @@
  * Normally, this capability is found in TkAppInit.c, but this creates
  * tons of namespace problems for many applications.
  * ----------------------------------------------------------------------------- */
-   
+
 #include <Gestalt.h>
 #include <ToolUtils.h>
 #include <Fonts.h>
@@ -30,7 +30,7 @@ short			InstallConsole _ANSI_ARGS_((short fd));
 void			RemoveConsole _ANSI_ARGS_((void));
 long			WriteCharsToConsole _ANSI_ARGS_((char *buff, long n));
 long			ReadCharsFromConsole _ANSI_ARGS_((char *buff, long n));
-char *			__ttyname _ANSI_ARGS_((long fildes));
+char 			*__ttyname _ANSI_ARGS_((long fildes));
 short			SIOUXHandleOneEvent _ANSI_ARGS_((EventRecord *event));
 
 /*
@@ -47,7 +47,7 @@ short			SIOUXHandleOneEvent _ANSI_ARGS_((EventRecord *event));
  *	process.
  *
  * Results:
- *	Returns TCL_OK if everything went fine.  If it didn't the 
+ *	Returns TCL_OK if everything went fine.  If it didn't the
  *	application should probably fail.
  *
  * Side effects:
@@ -59,64 +59,67 @@ short			SIOUXHandleOneEvent _ANSI_ARGS_((EventRecord *event));
 int
 MacintoshInit()
 {
-    int i;
-    long result, mask = 0x0700; 		/* mask = system 7.x */
+	int i;
+	long result, mask = 0x0700; 		/* mask = system 7.x */
 
-    /*
-     * Tk needs us to set the qd pointer it uses.  This is needed
-     * so Tk doesn't have to assume the availiblity of the qd global
-     * variable.  Which in turn allows Tk to be used in code resources.
-     */
-    tcl_macQdPtr = &qd;
+	/*
+	 * Tk needs us to set the qd pointer it uses.  This is needed
+	 * so Tk doesn't have to assume the availiblity of the qd global
+	 * variable.  Which in turn allows Tk to be used in code resources.
+	 */
+	tcl_macQdPtr = &qd;
 
-    InitGraf(&tcl_macQdPtr->thePort);
-    InitFonts();
-    InitWindows();
-    InitMenus();
-    InitDialogs((long) NULL);		
-    InitCursor();
+	InitGraf(&tcl_macQdPtr->thePort);
+	InitFonts();
+	InitWindows();
+	InitMenus();
+	InitDialogs((long) NULL);
+	InitCursor();
 
-    /*
-     * Make sure we are running on system 7 or higher
-     */
-     
-    if ((NGetTrapAddress(_Gestalt, ToolTrap) == 
-    	    NGetTrapAddress(_Unimplemented, ToolTrap))
-    	    || (((Gestalt(gestaltSystemVersion, &result) != noErr)
-	    || (mask != (result & mask))))) {
-	panic("Tcl/Tk requires System 7 or higher.");
-    }
+	/*
+	 * Make sure we are running on system 7 or higher
+	 */
 
-    /*
-     * Make sure we have color quick draw 
-     * (this means we can't run on 68000 macs)
-     */
-     
-    if (((Gestalt(gestaltQuickdrawVersion, &result) != noErr)
-	    || (result < gestalt32BitQD13))) {
-	panic("Tk requires Color QuickDraw.");
-    }
+	if ((NGetTrapAddress(_Gestalt, ToolTrap) ==
+	     NGetTrapAddress(_Unimplemented, ToolTrap))
+	    || (((Gestalt(gestaltSystemVersion, &result) != noErr)
+	         || (mask != (result & mask)))))
+	{
+		panic("Tcl/Tk requires System 7 or higher.");
+	}
 
-    
-    FlushEvents(everyEvent, 0);
-    SetEventMask(everyEvent);
+	/*
+	 * Make sure we have color quick draw
+	 * (this means we can't run on 68000 macs)
+	 */
 
-    /*
-     * Set up stack & heap sizes
-     */
-    /* TODO: stack size
-       size = StackSpace();
-       SetAppLimit(GetAppLimit() - 8192);
-     */
-    MaxApplZone();
-    for (i = 0; i < 4; i++) {
-	(void) MoreMasters();
-    }
+	if (((Gestalt(gestaltQuickdrawVersion, &result) != noErr)
+	     || (result < gestalt32BitQD13)))
+	{
+		panic("Tk requires Color QuickDraw.");
+	}
 
-    TclMacSetEventProc(TkMacConvertEvent);
-    TkConsoleCreate();
 
-    return TCL_OK;
+	FlushEvents(everyEvent, 0);
+	SetEventMask(everyEvent);
+
+	/*
+	 * Set up stack & heap sizes
+	 */
+	/* TODO: stack size
+	   size = StackSpace();
+	   SetAppLimit(GetAppLimit() - 8192);
+	 */
+	MaxApplZone();
+	for (i = 0; i < 4; i++)
+	{
+		(void) MoreMasters();
+	}
+
+	TclMacSetEventProc(TkMacConvertEvent);
+	TkConsoleCreate();
+
+	return TCL_OK;
 }
 
 /*
@@ -124,12 +127,12 @@ MacintoshInit()
  *
  * SetupMainInterp --
  *
- *	This procedure calls initialization routines require a Tcl 
+ *	This procedure calls initialization routines require a Tcl
  *	interp as an argument.  This call effectively makes the passed
  *	iterpreter the "main" interpreter for the application.
  *
  * Results:
- *	Returns TCL_OK if everything went fine.  If it didn't the 
+ *	Returns TCL_OK if everything went fine.  If it didn't the
  *	application should probably fail.
  *
  * Side effects:
@@ -142,32 +145,34 @@ int
 SetupMainInterp(
     Tcl_Interp *interp)
 {
-    /*
-     * Initialize the console only if we are running as an interactive
-     * application.
-     */
+	/*
+	 * Initialize the console only if we are running as an interactive
+	 * application.
+	 */
 
-    TkMacInitAppleEvents(interp);
-    TkMacInitMenus(interp);
+	TkMacInitAppleEvents(interp);
+	TkMacInitMenus(interp);
 
-    if (strcmp(Tcl_GetVar(interp, "tcl_interactive", TCL_GLOBAL_ONLY), "1")
-	    == 0) {
-	if (TkConsoleInit(interp) == TCL_ERROR) {
-	    goto error;
+	if (strcmp(Tcl_GetVar(interp, "tcl_interactive", TCL_GLOBAL_ONLY), "1")
+	    == 0)
+	{
+		if (TkConsoleInit(interp) == TCL_ERROR)
+		{
+			goto error;
+		}
 	}
-    }
 
-    /*
-     * Attach the global interpreter to tk's expected global console
-     */
+	/*
+	 * Attach the global interpreter to tk's expected global console
+	 */
 
-    gStdoutInterp = interp;
+	gStdoutInterp = interp;
 
-    return TCL_OK;
+	return TCL_OK;
 
 error:
-    panic(interp->result);
-    return TCL_ERROR;
+	panic(interp->result);
+	return TCL_ERROR;
 }
 
 /*
@@ -176,7 +181,7 @@ error:
  * InstallConsole, RemoveConsole, etc. --
  *
  *	The following functions provide the UI for the console package.
- *	Users wishing to replace SIOUX with their own console package 
+ *	Users wishing to replace SIOUX with their own console package
  *	need only provide the four functions below in a library.
  *
  * Results:
@@ -188,7 +193,7 @@ error:
  *----------------------------------------------------------------------
  */
 
-short 
+short
 InstallConsole(short fd)
 {
 #pragma unused (fd)
@@ -196,38 +201,39 @@ InstallConsole(short fd)
 	return 0;
 }
 
-void 
+void
 RemoveConsole(void)
 {
 }
 
-long 
+long
 WriteCharsToConsole(char *buffer, long n)
 {
-    TkConsolePrint(gStdoutInterp, TCL_STDOUT, buffer, n);
-    return n;
+	TkConsolePrint(gStdoutInterp, TCL_STDOUT, buffer, n);
+	return n;
 }
 
-long 
+long
 ReadCharsFromConsole(char *buffer, long n)
 {
-    return 0;
+	return 0;
 }
 
 extern char *
 __ttyname(long fildes)
 {
-    static char *devicename = "null device";
+	static char *devicename = "null device";
 
-    if (fildes >= 0 && fildes <= 2) {
-	return (devicename);
-    }
-    
-    return (0L);
+	if (fildes >= 0 && fildes <= 2)
+	{
+		return (devicename);
+	}
+
+	return (0L);
 }
 
 short
 SIOUXHandleOneEvent(EventRecord *event)
 {
-    return 0;
+	return 0;
 }

@@ -22,10 +22,10 @@
 
 class MutuallyRecursiveSection : public SectionBase, public SectionData<MUTUALLY_RECURSIVE_FIELD>
 {
-	public:
-		MutuallyRecursiveSection();
-		~MutuallyRecursiveSection();
+public:
+	MutuallyRecursiveSection();
+	~MutuallyRecursiveSection();
 
-		bool Manage(const std::string &file);
+	bool Manage(const std::string &file);
 };
 

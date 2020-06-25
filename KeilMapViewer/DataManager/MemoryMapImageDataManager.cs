@@ -1,4 +1,19 @@
-﻿using System;
+﻿// This file is part of KeilMapViewer.
+//
+// KeilMapViewer is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Lesser General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// KeilMapViewer is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Lesser General Public License for more details.
+//
+// You should have received a copy of the GNU Lesser General Public License
+// along with KeilMapViewer.  If not, see <https://www.gnu.org/licenses/>.
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,7 +45,7 @@ namespace KeilMapViewer
 			Section_Name      = "";
 			Object_Name       = "";
 		}
-		
+
 		public MemoryMapImageObjectField(MEMORY_MAP_IMAGE_OBJECT_FIELD field)
 		{
 			Execution_Address = field.execution_address;
@@ -57,7 +72,7 @@ namespace KeilMapViewer
 			Data   = "";
 			Fields = new List<MemoryMapImageObjectField>();
 		}
-		
+
 		public MemoryMapImageExecutionRegionField(MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD field)
 		{
 			Name = field.name;
@@ -82,7 +97,7 @@ namespace KeilMapViewer
 			Data             = "";
 			Execution_Region = new List<MemoryMapImageExecutionRegionField>();
 		}
-	
+
 		public MemoryMapImageLoadRegionField(MEMORY_MAP_IMAGE_LOAD_REGION_FIELD field)
 		{
 			Name             = field.name;
@@ -105,7 +120,7 @@ namespace KeilMapViewer
 			Entry_Point = "";
 			Load_Region = new List<MemoryMapImageLoadRegionField>();
 		}
-	
+
 		public MemoryMapImage(MEMORY_MAP_IMAGE field)
 		{
 			Entry_Point = field.entry_point;
@@ -121,32 +136,32 @@ namespace KeilMapViewer
 	{
 		static readonly Func<MemoryMapImageObjectField, string, bool> _Filter_Function = new Func<MemoryMapImageObjectField, string, bool>
 		(
-			(MemoryMapImageObjectField field, string filter) =>
-			{
-				return ((field.Execution_Address.IndexOf(filter) != -1) ||
-						(field.Load_Address.IndexOf(filter)      != -1) ||
-						(field.Size.IndexOf(filter)              != -1) ||
-						(field.Type.IndexOf(filter)              != -1) ||
-						(field.Attribute.IndexOf(filter)         != -1) ||
-						(field.Id.IndexOf(filter)                != -1) ||
-						(field.Section_Name.IndexOf(filter)      != -1) ||
-						(field.Object_Name.IndexOf(filter)       != -1));
-			}
+		    (MemoryMapImageObjectField field, string filter) =>
+		{
+			return ((field.Execution_Address.IndexOf(filter) != -1) ||
+			        (field.Load_Address.IndexOf(filter)      != -1) ||
+			        (field.Size.IndexOf(filter)              != -1) ||
+			        (field.Type.IndexOf(filter)              != -1) ||
+			        (field.Attribute.IndexOf(filter)         != -1) ||
+			        (field.Id.IndexOf(filter)                != -1) ||
+			        (field.Section_Name.IndexOf(filter)      != -1) ||
+			        (field.Object_Name.IndexOf(filter)       != -1));
+		}
 		);
 
 		private MemoryMapImage _Input_Data;
 
 		public MemoryMapImageDataManager(MEMORY_MAP_IMAGE input_data) :
-							                   base (_Filter_Function)
+			base (_Filter_Function)
 		{
-			_Input_Data = new MemoryMapImage(input_data);	
+			_Input_Data = new MemoryMapImage(input_data);
 		}
 
 		public MemoryMapImage Get(string filter_string)
 		{
 			MemoryMapImage result = new MemoryMapImage();
 
-			result.Entry_Point = _Input_Data.Entry_Point; 
+			result.Entry_Point = _Input_Data.Entry_Point;
 			foreach (MemoryMapImageLoadRegionField load_region in _Input_Data.Load_Region)
 			{
 				MemoryMapImageLoadRegionField result_load_region;
@@ -166,22 +181,22 @@ namespace KeilMapViewer
 						if (Filter(field, filter_string))
 						{
 							result_execution_region.Fields.Add(field);
-						} 					
+						}
 					}
 
 					if (result_execution_region.Fields.Count > 0)
 					{
-						result_load_region.Execution_Region.Add(result_execution_region);		
+						result_load_region.Execution_Region.Add(result_execution_region);
 					}
 				}
 
 				if (result_load_region.Execution_Region.Count > 0)
 				{
-					result.Load_Region.Add(result_load_region);		
+					result.Load_Region.Add(result_load_region);
 				}
 			}
 
-			return(result);	
+			return (result);
 		}
 	}
 }

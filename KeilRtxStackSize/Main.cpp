@@ -154,10 +154,10 @@ static void read_ini(const boost::filesystem::path &ini_file_path, PARAMETERS *p
 	// Stack.Oversizing
 	try
 	{
-        if (parameters->stack_oversizing != 0)
-        {
-		    parameters->stack_oversizing = property_tree.get<size_t>("Stack.Oversizing");
-        }
+		if (parameters->stack_oversizing != 0)
+		{
+			parameters->stack_oversizing = property_tree.get<size_t>("Stack.Oversizing");
+		}
 
 		property_tree.put<size_t>("Stack.Oversizing", parameters->stack_oversizing);
 	}
@@ -180,11 +180,11 @@ int main(int argc, char *argv[])
 	std::string                     buffer;
 	std::string                     error;
 
-    parameters.architecture     = "";
-    parameters.map_file_path    = "";
-    parameters.output_file_path = "";
-    parameters.stack_oversizing = 0;
-    parameters.thread_regex     = "";
+	parameters.architecture     = "";
+	parameters.map_file_path    = "";
+	parameters.output_file_path = "";
+	parameters.stack_oversizing = 0;
+	parameters.thread_regex     = "";
 
 	try
 	{

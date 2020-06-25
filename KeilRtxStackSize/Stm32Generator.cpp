@@ -33,7 +33,7 @@ void Stm32Generator::Generate(PARAMETERS &parameters)
 /*****************************************************************************/
 {
 	std::vector<std::string> task_list;
-    boost::regex             regex(parameters.thread_regex);
+	boost::regex             regex(parameters.thread_regex);
 
 	_Header_File.clear();
 
@@ -70,30 +70,30 @@ void Stm32Generator::Generate(PARAMETERS &parameters)
 		size_t      size;
 		std::string name;
 
-	    if (boost::regex_search(field.function, regex))
-	    {
+		if (boost::regex_search(field.function, regex))
+		{
 			if (std::find(task_list.begin(), task_list.end(), field.function) == task_list.end())
 			{
-			    task_list.emplace_back(field.function);
+				task_list.emplace_back(field.function);
 
-			    _Header_File.emplace_back("// " + field.call_chain);
-			    name = field.function;
-			    try
-			    {
-				    size = std::stol (field.size, 0, 16);
-			    }
-			    catch (...)
-			    {
-				    size = 0;
-			    }
+				_Header_File.emplace_back("// " + field.call_chain);
+				name = field.function;
+				try
+				{
+					size = std::stol (field.size, 0, 16);
+				}
+				catch (...)
+				{
+					size = 0;
+				}
 
-			    std::transform(name.begin(), name.end(), name.begin(), ::toupper);
-			    name += "_STACK_SIZE";
-			    size = CalculareStackSize(size, STM32_STDIO_DEFAULT_STACK_SIZE, parameters.stack_oversizing);
+				std::transform(name.begin(), name.end(), name.begin(), ::toupper);
+				name += "_STACK_SIZE";
+				size = CalculareStackSize(size, STM32_STDIO_DEFAULT_STACK_SIZE, parameters.stack_oversizing);
 
-			    _Header_File.emplace_back("#define " + Pad(name.c_str(), 64) + " (SYSTEM_ARCHITECTURE_STACK_USAGE + " + std::to_string(size) + ")");
-			    _Header_File.emplace_back("");
-    		}
+				_Header_File.emplace_back("#define " + Pad(name.c_str(), 64) + " (SYSTEM_ARCHITECTURE_STACK_USAGE + " + std::to_string(size) + ")");
+				_Header_File.emplace_back("");
+			}
 		}
 	}
 
@@ -101,8 +101,8 @@ void Stm32Generator::Generate(PARAMETERS &parameters)
 	{
 		size_t      size;
 		std::string name;
-	    if (boost::regex_search(field.function, regex))
-	    {
+		if (boost::regex_search(field.function, regex))
+		{
 			if (std::find(task_list.begin(), task_list.end(), field.function) == task_list.end())
 			{
 				task_list.emplace_back(field.function);

@@ -10,314 +10,448 @@
 
 
 public class FUNCTION_POINTER_VECTOR : global::System.IDisposable, global::System.Collections.IEnumerable, global::System.Collections.Generic.IEnumerable<FUNCTION_POINTER_FIELD>
- {
-  private global::System.Runtime.InteropServices.HandleRef swigCPtr;
-  protected bool swigCMemOwn;
+{
+	private global::System.Runtime.InteropServices.HandleRef swigCPtr;
+	protected bool swigCMemOwn;
 
-  internal FUNCTION_POINTER_VECTOR(global::System.IntPtr cPtr, bool cMemoryOwn) {
-    swigCMemOwn = cMemoryOwn;
-    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
-  }
+	internal FUNCTION_POINTER_VECTOR(global::System.IntPtr cPtr, bool cMemoryOwn)
+	{
+		swigCMemOwn = cMemoryOwn;
+		swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
+	}
 
-  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(FUNCTION_POINTER_VECTOR obj) {
-    return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
-  }
+	internal static global::System.Runtime.InteropServices.HandleRef getCPtr(FUNCTION_POINTER_VECTOR obj)
+	{
+		return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
+	}
 
-  ~FUNCTION_POINTER_VECTOR() {
-    Dispose(false);
-  }
+	~FUNCTION_POINTER_VECTOR()
+	{
+		Dispose(false);
+	}
 
-  public void Dispose() {
-    Dispose(true);
-    global::System.GC.SuppressFinalize(this);
-  }
+	public void Dispose()
+	{
+		Dispose(true);
+		global::System.GC.SuppressFinalize(this);
+	}
 
-  protected virtual void Dispose(bool disposing) {
-    lock(this) {
-      if (swigCPtr.Handle != global::System.IntPtr.Zero) {
-        if (swigCMemOwn) {
-          swigCMemOwn = false;
-          KeilMapLibPINVOKE.delete_FUNCTION_POINTER_VECTOR(swigCPtr);
-        }
-        swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
-      }
-    }
-  }
+	protected virtual void Dispose(bool disposing)
+	{
+		lock (this)
+		{
+			if (swigCPtr.Handle != global::System.IntPtr.Zero)
+			{
+				if (swigCMemOwn)
+				{
+					swigCMemOwn = false;
+					KeilMapLibPINVOKE.delete_FUNCTION_POINTER_VECTOR(swigCPtr);
+				}
+				swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
+			}
+		}
+	}
 
-  public FUNCTION_POINTER_VECTOR(global::System.Collections.IEnumerable c) : this() {
-    if (c == null)
-      throw new global::System.ArgumentNullException("c");
-    foreach (FUNCTION_POINTER_FIELD element in c) {
-      this.Add(element);
-    }
-  }
+	public FUNCTION_POINTER_VECTOR(global::System.Collections.IEnumerable c) : this()
+	{
+		if (c == null)
+		{
+			throw new global::System.ArgumentNullException("c");
+		}
+		foreach (FUNCTION_POINTER_FIELD element in c)
+		{
+			this.Add(element);
+		}
+	}
 
-  public FUNCTION_POINTER_VECTOR(global::System.Collections.Generic.IEnumerable<FUNCTION_POINTER_FIELD> c) : this() {
-    if (c == null)
-      throw new global::System.ArgumentNullException("c");
-    foreach (FUNCTION_POINTER_FIELD element in c) {
-      this.Add(element);
-    }
-  }
+	public FUNCTION_POINTER_VECTOR(global::System.Collections.Generic.IEnumerable<FUNCTION_POINTER_FIELD> c) : this()
+	{
+		if (c == null)
+		{
+			throw new global::System.ArgumentNullException("c");
+		}
+		foreach (FUNCTION_POINTER_FIELD element in c)
+		{
+			this.Add(element);
+		}
+	}
 
-  public bool IsFixedSize {
-    get {
-      return false;
-    }
-  }
+	public bool IsFixedSize
+	{
+		get
+		{
+			return false;
+		}
+	}
 
-  public bool IsReadOnly {
-    get {
-      return false;
-    }
-  }
+	public bool IsReadOnly
+	{
+		get
+		{
+			return false;
+		}
+	}
 
-  public FUNCTION_POINTER_FIELD this[int index]  {
-    get {
-      return getitem(index);
-    }
-    set {
-      setitem(index, value);
-    }
-  }
+	public FUNCTION_POINTER_FIELD this[int index]
+	{
+		get
+		{
+			return getitem(index);
+		}
+		set
+		{
+			setitem(index, value);
+		}
+	}
 
-  public int Capacity {
-    get {
-      return (int)capacity();
-    }
-    set {
-      if (value < size())
-        throw new global::System.ArgumentOutOfRangeException("Capacity");
-      reserve((uint)value);
-    }
-  }
+	public int Capacity
+	{
+		get
+		{
+			return (int)capacity();
+		}
+		set
+		{
+			if (value < size())
+			{
+				throw new global::System.ArgumentOutOfRangeException("Capacity");
+			}
+			reserve((uint)value);
+		}
+	}
 
-  public int Count {
-    get {
-      return (int)size();
-    }
-  }
+	public int Count
+	{
+		get
+		{
+			return (int)size();
+		}
+	}
 
-  public bool IsSynchronized {
-    get {
-      return false;
-    }
-  }
+	public bool IsSynchronized
+	{
+		get
+		{
+			return false;
+		}
+	}
 
-  public void CopyTo(FUNCTION_POINTER_FIELD[] array)
-  {
-    CopyTo(0, array, 0, this.Count);
-  }
+	public void CopyTo(FUNCTION_POINTER_FIELD[] array)
+	{
+		CopyTo(0, array, 0, this.Count);
+	}
 
-  public void CopyTo(FUNCTION_POINTER_FIELD[] array, int arrayIndex)
-  {
-    CopyTo(0, array, arrayIndex, this.Count);
-  }
+	public void CopyTo(FUNCTION_POINTER_FIELD[] array, int arrayIndex)
+	{
+		CopyTo(0, array, arrayIndex, this.Count);
+	}
 
-  public void CopyTo(int index, FUNCTION_POINTER_FIELD[] array, int arrayIndex, int count)
-  {
-    if (array == null)
-      throw new global::System.ArgumentNullException("array");
-    if (index < 0)
-      throw new global::System.ArgumentOutOfRangeException("index", "Value is less than zero");
-    if (arrayIndex < 0)
-      throw new global::System.ArgumentOutOfRangeException("arrayIndex", "Value is less than zero");
-    if (count < 0)
-      throw new global::System.ArgumentOutOfRangeException("count", "Value is less than zero");
-    if (array.Rank > 1)
-      throw new global::System.ArgumentException("Multi dimensional array.", "array");
-    if (index+count > this.Count || arrayIndex+count > array.Length)
-      throw new global::System.ArgumentException("Number of elements to copy is too large.");
-    for (int i=0; i<count; i++)
-      array.SetValue(getitemcopy(index+i), arrayIndex+i);
-  }
+	public void CopyTo(int index, FUNCTION_POINTER_FIELD[] array, int arrayIndex, int count)
+	{
+		if (array == null)
+		{
+			throw new global::System.ArgumentNullException("array");
+		}
+		if (index < 0)
+		{
+			throw new global::System.ArgumentOutOfRangeException("index", "Value is less than zero");
+		}
+		if (arrayIndex < 0)
+		{
+			throw new global::System.ArgumentOutOfRangeException("arrayIndex", "Value is less than zero");
+		}
+		if (count < 0)
+		{
+			throw new global::System.ArgumentOutOfRangeException("count", "Value is less than zero");
+		}
+		if (array.Rank > 1)
+		{
+			throw new global::System.ArgumentException("Multi dimensional array.", "array");
+		}
+		if (index + count > this.Count || arrayIndex + count > array.Length)
+		{
+			throw new global::System.ArgumentException("Number of elements to copy is too large.");
+		}
+		for (int i = 0; i < count; i++)
+		{
+			array.SetValue(getitemcopy(index + i), arrayIndex + i);
+		}
+	}
 
-  public FUNCTION_POINTER_FIELD[] ToArray() {
-    FUNCTION_POINTER_FIELD[] array = new FUNCTION_POINTER_FIELD[this.Count];
-    this.CopyTo(array);
-    return array;
-  }
+	public FUNCTION_POINTER_FIELD[] ToArray()
+	{
+		FUNCTION_POINTER_FIELD[] array = new FUNCTION_POINTER_FIELD[this.Count];
+		this.CopyTo(array);
+		return array;
+	}
 
-  global::System.Collections.Generic.IEnumerator<FUNCTION_POINTER_FIELD> global::System.Collections.Generic.IEnumerable<FUNCTION_POINTER_FIELD>.GetEnumerator() {
-    return new FUNCTION_POINTER_VECTOREnumerator(this);
-  }
+	global::System.Collections.Generic.IEnumerator<FUNCTION_POINTER_FIELD> global::System.Collections.Generic.IEnumerable<FUNCTION_POINTER_FIELD>.GetEnumerator()
+	{
+		return new FUNCTION_POINTER_VECTOREnumerator(this);
+	}
 
-  global::System.Collections.IEnumerator global::System.Collections.IEnumerable.GetEnumerator() {
-    return new FUNCTION_POINTER_VECTOREnumerator(this);
-  }
+	global::System.Collections.IEnumerator global::System.Collections.IEnumerable.GetEnumerator()
+	{
+		return new FUNCTION_POINTER_VECTOREnumerator(this);
+	}
 
-  public FUNCTION_POINTER_VECTOREnumerator GetEnumerator() {
-    return new FUNCTION_POINTER_VECTOREnumerator(this);
-  }
+	public FUNCTION_POINTER_VECTOREnumerator GetEnumerator()
+	{
+		return new FUNCTION_POINTER_VECTOREnumerator(this);
+	}
 
-  // Type-safe enumerator
-  /// Note that the IEnumerator documentation requires an InvalidOperationException to be thrown
-  /// whenever the collection is modified. This has been done for changes in the size of the
-  /// collection but not when one of the elements of the collection is modified as it is a bit
-  /// tricky to detect unmanaged code that modifies the collection under our feet.
-  public sealed class FUNCTION_POINTER_VECTOREnumerator : global::System.Collections.IEnumerator
-    , global::System.Collections.Generic.IEnumerator<FUNCTION_POINTER_FIELD>
-  {
-    private FUNCTION_POINTER_VECTOR collectionRef;
-    private int currentIndex;
-    private object currentObject;
-    private int currentSize;
+	// Type-safe enumerator
+	/// Note that the IEnumerator documentation requires an InvalidOperationException to be thrown
+	/// whenever the collection is modified. This has been done for changes in the size of the
+	/// collection but not when one of the elements of the collection is modified as it is a bit
+	/// tricky to detect unmanaged code that modifies the collection under our feet.
+	public sealed class FUNCTION_POINTER_VECTOREnumerator : global::System.Collections.IEnumerator
+		, global::System.Collections.Generic.IEnumerator<FUNCTION_POINTER_FIELD>
+	{
+		private FUNCTION_POINTER_VECTOR collectionRef;
+		private int currentIndex;
+		private object currentObject;
+		private int currentSize;
 
-    public FUNCTION_POINTER_VECTOREnumerator(FUNCTION_POINTER_VECTOR collection) {
-      collectionRef = collection;
-      currentIndex = -1;
-      currentObject = null;
-      currentSize = collectionRef.Count;
-    }
+		public FUNCTION_POINTER_VECTOREnumerator(FUNCTION_POINTER_VECTOR collection)
+		{
+			collectionRef = collection;
+			currentIndex = -1;
+			currentObject = null;
+			currentSize = collectionRef.Count;
+		}
 
-    // Type-safe iterator Current
-    public FUNCTION_POINTER_FIELD Current {
-      get {
-        if (currentIndex == -1)
-          throw new global::System.InvalidOperationException("Enumeration not started.");
-        if (currentIndex > currentSize - 1)
-          throw new global::System.InvalidOperationException("Enumeration finished.");
-        if (currentObject == null)
-          throw new global::System.InvalidOperationException("Collection modified.");
-        return (FUNCTION_POINTER_FIELD)currentObject;
-      }
-    }
+		// Type-safe iterator Current
+		public FUNCTION_POINTER_FIELD Current
+		{
+			get
+			{
+				if (currentIndex == -1)
+				{
+					throw new global::System.InvalidOperationException("Enumeration not started.");
+				}
+				if (currentIndex > currentSize - 1)
+				{
+					throw new global::System.InvalidOperationException("Enumeration finished.");
+				}
+				if (currentObject == null)
+				{
+					throw new global::System.InvalidOperationException("Collection modified.");
+				}
+				return (FUNCTION_POINTER_FIELD)currentObject;
+			}
+		}
 
-    // Type-unsafe IEnumerator.Current
-    object global::System.Collections.IEnumerator.Current {
-      get {
-        return Current;
-      }
-    }
+		// Type-unsafe IEnumerator.Current
+		object global::System.Collections.IEnumerator.Current
+		{
+			get
+			{
+				return Current;
+			}
+		}
 
-    public bool MoveNext() {
-      int size = collectionRef.Count;
-      bool moveOkay = (currentIndex+1 < size) && (size == currentSize);
-      if (moveOkay) {
-        currentIndex++;
-        currentObject = collectionRef[currentIndex];
-      } else {
-        currentObject = null;
-      }
-      return moveOkay;
-    }
+		public bool MoveNext()
+		{
+			int size = collectionRef.Count;
+			bool moveOkay = (currentIndex + 1 < size) && (size == currentSize);
+			if (moveOkay)
+			{
+				currentIndex++;
+				currentObject = collectionRef[currentIndex];
+			}
+			else
+			{
+				currentObject = null;
+			}
+			return moveOkay;
+		}
 
-    public void Reset() {
-      currentIndex = -1;
-      currentObject = null;
-      if (collectionRef.Count != currentSize) {
-        throw new global::System.InvalidOperationException("Collection modified.");
-      }
-    }
+		public void Reset()
+		{
+			currentIndex = -1;
+			currentObject = null;
+			if (collectionRef.Count != currentSize)
+			{
+				throw new global::System.InvalidOperationException("Collection modified.");
+			}
+		}
 
-    public void Dispose() {
-        currentIndex = -1;
-        currentObject = null;
-    }
-  }
+		public void Dispose()
+		{
+			currentIndex = -1;
+			currentObject = null;
+		}
+	}
 
-  public void Clear() {
-    KeilMapLibPINVOKE.FUNCTION_POINTER_VECTOR_Clear(swigCPtr);
-  }
+	public void Clear()
+	{
+		KeilMapLibPINVOKE.FUNCTION_POINTER_VECTOR_Clear(swigCPtr);
+	}
 
-  public void Add(FUNCTION_POINTER_FIELD x) {
-    KeilMapLibPINVOKE.FUNCTION_POINTER_VECTOR_Add(swigCPtr, FUNCTION_POINTER_FIELD.getCPtr(x));
-    if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-  }
+	public void Add(FUNCTION_POINTER_FIELD x)
+	{
+		KeilMapLibPINVOKE.FUNCTION_POINTER_VECTOR_Add(swigCPtr, FUNCTION_POINTER_FIELD.getCPtr(x));
+		if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
+		{
+			throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+		}
+	}
 
-  private uint size() {
-    uint ret = KeilMapLibPINVOKE.FUNCTION_POINTER_VECTOR_size(swigCPtr);
-    return ret;
-  }
+	private uint size()
+	{
+		uint ret = KeilMapLibPINVOKE.FUNCTION_POINTER_VECTOR_size(swigCPtr);
+		return ret;
+	}
 
-  private uint capacity() {
-    uint ret = KeilMapLibPINVOKE.FUNCTION_POINTER_VECTOR_capacity(swigCPtr);
-    return ret;
-  }
+	private uint capacity()
+	{
+		uint ret = KeilMapLibPINVOKE.FUNCTION_POINTER_VECTOR_capacity(swigCPtr);
+		return ret;
+	}
 
-  private void reserve(uint n) {
-    KeilMapLibPINVOKE.FUNCTION_POINTER_VECTOR_reserve(swigCPtr, n);
-  }
+	private void reserve(uint n)
+	{
+		KeilMapLibPINVOKE.FUNCTION_POINTER_VECTOR_reserve(swigCPtr, n);
+	}
 
-  public FUNCTION_POINTER_VECTOR() : this(KeilMapLibPINVOKE.new_FUNCTION_POINTER_VECTOR__SWIG_0(), true) {
-  }
+	public FUNCTION_POINTER_VECTOR() : this(KeilMapLibPINVOKE.new_FUNCTION_POINTER_VECTOR__SWIG_0(), true)
+	{
+	}
 
-  public FUNCTION_POINTER_VECTOR(FUNCTION_POINTER_VECTOR other) : this(KeilMapLibPINVOKE.new_FUNCTION_POINTER_VECTOR__SWIG_1(FUNCTION_POINTER_VECTOR.getCPtr(other)), true) {
-    if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-  }
+	public FUNCTION_POINTER_VECTOR(FUNCTION_POINTER_VECTOR other) : this(KeilMapLibPINVOKE.new_FUNCTION_POINTER_VECTOR__SWIG_1(FUNCTION_POINTER_VECTOR.getCPtr(other)), true)
+	{
+		if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
+		{
+			throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+		}
+	}
 
-  public FUNCTION_POINTER_VECTOR(int capacity) : this(KeilMapLibPINVOKE.new_FUNCTION_POINTER_VECTOR__SWIG_2(capacity), true) {
-    if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-  }
+	public FUNCTION_POINTER_VECTOR(int capacity) : this(KeilMapLibPINVOKE.new_FUNCTION_POINTER_VECTOR__SWIG_2(capacity), true)
+	{
+		if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
+		{
+			throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+		}
+	}
 
-  private FUNCTION_POINTER_FIELD getitemcopy(int index) {
-    FUNCTION_POINTER_FIELD ret = new FUNCTION_POINTER_FIELD(KeilMapLibPINVOKE.FUNCTION_POINTER_VECTOR_getitemcopy(swigCPtr, index), true);
-    if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-    return ret;
-  }
+	private FUNCTION_POINTER_FIELD getitemcopy(int index)
+	{
+		FUNCTION_POINTER_FIELD ret = new FUNCTION_POINTER_FIELD(KeilMapLibPINVOKE.FUNCTION_POINTER_VECTOR_getitemcopy(swigCPtr, index), true);
+		if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
+		{
+			throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+		}
+		return ret;
+	}
 
-  private FUNCTION_POINTER_FIELD getitem(int index) {
-    FUNCTION_POINTER_FIELD ret = new FUNCTION_POINTER_FIELD(KeilMapLibPINVOKE.FUNCTION_POINTER_VECTOR_getitem(swigCPtr, index), false);
-    if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-    return ret;
-  }
+	private FUNCTION_POINTER_FIELD getitem(int index)
+	{
+		FUNCTION_POINTER_FIELD ret = new FUNCTION_POINTER_FIELD(KeilMapLibPINVOKE.FUNCTION_POINTER_VECTOR_getitem(swigCPtr, index), false);
+		if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
+		{
+			throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+		}
+		return ret;
+	}
 
-  private void setitem(int index, FUNCTION_POINTER_FIELD val) {
-    KeilMapLibPINVOKE.FUNCTION_POINTER_VECTOR_setitem(swigCPtr, index, FUNCTION_POINTER_FIELD.getCPtr(val));
-    if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-  }
+	private void setitem(int index, FUNCTION_POINTER_FIELD val)
+	{
+		KeilMapLibPINVOKE.FUNCTION_POINTER_VECTOR_setitem(swigCPtr, index, FUNCTION_POINTER_FIELD.getCPtr(val));
+		if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
+		{
+			throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+		}
+	}
 
-  public void AddRange(FUNCTION_POINTER_VECTOR values) {
-    KeilMapLibPINVOKE.FUNCTION_POINTER_VECTOR_AddRange(swigCPtr, FUNCTION_POINTER_VECTOR.getCPtr(values));
-    if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-  }
+	public void AddRange(FUNCTION_POINTER_VECTOR values)
+	{
+		KeilMapLibPINVOKE.FUNCTION_POINTER_VECTOR_AddRange(swigCPtr, FUNCTION_POINTER_VECTOR.getCPtr(values));
+		if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
+		{
+			throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+		}
+	}
 
-  public FUNCTION_POINTER_VECTOR GetRange(int index, int count) {
-    global::System.IntPtr cPtr = KeilMapLibPINVOKE.FUNCTION_POINTER_VECTOR_GetRange(swigCPtr, index, count);
-    FUNCTION_POINTER_VECTOR ret = (cPtr == global::System.IntPtr.Zero) ? null : new FUNCTION_POINTER_VECTOR(cPtr, true);
-    if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-    return ret;
-  }
+	public FUNCTION_POINTER_VECTOR GetRange(int index, int count)
+	{
+		global::System.IntPtr cPtr = KeilMapLibPINVOKE.FUNCTION_POINTER_VECTOR_GetRange(swigCPtr, index, count);
+		FUNCTION_POINTER_VECTOR ret = (cPtr == global::System.IntPtr.Zero) ? null : new FUNCTION_POINTER_VECTOR(cPtr, true);
+		if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
+		{
+			throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+		}
+		return ret;
+	}
 
-  public void Insert(int index, FUNCTION_POINTER_FIELD x) {
-    KeilMapLibPINVOKE.FUNCTION_POINTER_VECTOR_Insert(swigCPtr, index, FUNCTION_POINTER_FIELD.getCPtr(x));
-    if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-  }
+	public void Insert(int index, FUNCTION_POINTER_FIELD x)
+	{
+		KeilMapLibPINVOKE.FUNCTION_POINTER_VECTOR_Insert(swigCPtr, index, FUNCTION_POINTER_FIELD.getCPtr(x));
+		if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
+		{
+			throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+		}
+	}
 
-  public void InsertRange(int index, FUNCTION_POINTER_VECTOR values) {
-    KeilMapLibPINVOKE.FUNCTION_POINTER_VECTOR_InsertRange(swigCPtr, index, FUNCTION_POINTER_VECTOR.getCPtr(values));
-    if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-  }
+	public void InsertRange(int index, FUNCTION_POINTER_VECTOR values)
+	{
+		KeilMapLibPINVOKE.FUNCTION_POINTER_VECTOR_InsertRange(swigCPtr, index, FUNCTION_POINTER_VECTOR.getCPtr(values));
+		if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
+		{
+			throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+		}
+	}
 
-  public void RemoveAt(int index) {
-    KeilMapLibPINVOKE.FUNCTION_POINTER_VECTOR_RemoveAt(swigCPtr, index);
-    if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-  }
+	public void RemoveAt(int index)
+	{
+		KeilMapLibPINVOKE.FUNCTION_POINTER_VECTOR_RemoveAt(swigCPtr, index);
+		if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
+		{
+			throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+		}
+	}
 
-  public void RemoveRange(int index, int count) {
-    KeilMapLibPINVOKE.FUNCTION_POINTER_VECTOR_RemoveRange(swigCPtr, index, count);
-    if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-  }
+	public void RemoveRange(int index, int count)
+	{
+		KeilMapLibPINVOKE.FUNCTION_POINTER_VECTOR_RemoveRange(swigCPtr, index, count);
+		if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
+		{
+			throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+		}
+	}
 
-  public static FUNCTION_POINTER_VECTOR Repeat(FUNCTION_POINTER_FIELD value, int count) {
-    global::System.IntPtr cPtr = KeilMapLibPINVOKE.FUNCTION_POINTER_VECTOR_Repeat(FUNCTION_POINTER_FIELD.getCPtr(value), count);
-    FUNCTION_POINTER_VECTOR ret = (cPtr == global::System.IntPtr.Zero) ? null : new FUNCTION_POINTER_VECTOR(cPtr, true);
-    if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-    return ret;
-  }
+	public static FUNCTION_POINTER_VECTOR Repeat(FUNCTION_POINTER_FIELD value, int count)
+	{
+		global::System.IntPtr cPtr = KeilMapLibPINVOKE.FUNCTION_POINTER_VECTOR_Repeat(FUNCTION_POINTER_FIELD.getCPtr(value), count);
+		FUNCTION_POINTER_VECTOR ret = (cPtr == global::System.IntPtr.Zero) ? null : new FUNCTION_POINTER_VECTOR(cPtr, true);
+		if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
+		{
+			throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+		}
+		return ret;
+	}
 
-  public void Reverse() {
-    KeilMapLibPINVOKE.FUNCTION_POINTER_VECTOR_Reverse__SWIG_0(swigCPtr);
-  }
+	public void Reverse()
+	{
+		KeilMapLibPINVOKE.FUNCTION_POINTER_VECTOR_Reverse__SWIG_0(swigCPtr);
+	}
 
-  public void Reverse(int index, int count) {
-    KeilMapLibPINVOKE.FUNCTION_POINTER_VECTOR_Reverse__SWIG_1(swigCPtr, index, count);
-    if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-  }
+	public void Reverse(int index, int count)
+	{
+		KeilMapLibPINVOKE.FUNCTION_POINTER_VECTOR_Reverse__SWIG_1(swigCPtr, index, count);
+		if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
+		{
+			throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+		}
+	}
 
-  public void SetRange(int index, FUNCTION_POINTER_VECTOR values) {
-    KeilMapLibPINVOKE.FUNCTION_POINTER_VECTOR_SetRange(swigCPtr, index, FUNCTION_POINTER_VECTOR.getCPtr(values));
-    if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-  }
+	public void SetRange(int index, FUNCTION_POINTER_VECTOR values)
+	{
+		KeilMapLibPINVOKE.FUNCTION_POINTER_VECTOR_SetRange(swigCPtr, index, FUNCTION_POINTER_VECTOR.getCPtr(values));
+		if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
+		{
+			throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+		}
+	}
 
 }

@@ -1,4 +1,19 @@
-﻿using System;
+﻿// This file is part of KeilMapViewer.
+//
+// KeilMapViewer is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Lesser General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// KeilMapViewer is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Lesser General Public License for more details.
+//
+// You should have received a copy of the GNU Lesser General Public License
+// along with KeilMapViewer.  If not, see <https://www.gnu.org/licenses/>.
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -43,21 +58,21 @@ namespace KeilMapViewer
 	{
 		static readonly Func<ImageComponentSizeField, string, bool> _Filter_Function = new Func<ImageComponentSizeField, string, bool>
 		(
-			(ImageComponentSizeField field, string filter) =>
-			{
-				return ((field.Code.IndexOf(filter)            != -1) ||
-						(field.Inline_Data.IndexOf(filter)     != -1) ||
-						(field.Read_Only_Data.IndexOf(filter)  != -1) ||
-						(field.Read_Write_Data.IndexOf(filter) != -1) ||
-						(field.Zero_Init_Data.IndexOf(filter)  != -1) ||
-						(field.Debug_Data.IndexOf(filter)      != -1) ||
-						(field.Object_Name.IndexOf(filter)     != -1));
-			}
+		    (ImageComponentSizeField field, string filter) =>
+		{
+			return ((field.Code.IndexOf(filter)            != -1) ||
+			        (field.Inline_Data.IndexOf(filter)     != -1) ||
+			        (field.Read_Only_Data.IndexOf(filter)  != -1) ||
+			        (field.Read_Write_Data.IndexOf(filter) != -1) ||
+			        (field.Zero_Init_Data.IndexOf(filter)  != -1) ||
+			        (field.Debug_Data.IndexOf(filter)      != -1) ||
+			        (field.Object_Name.IndexOf(filter)     != -1));
+		}
 		);
 
 		public ImageComponentSizeDataManager(IMAGE_COMPONENT_SIZE_FIELD[] input_data_vector) :
-							             base (DataConverter<IMAGE_COMPONENT_SIZE_FIELD, ImageComponentSizeField>.Converter(input_data_vector), 
-										       _Filter_Function)
+			base (DataConverter<IMAGE_COMPONENT_SIZE_FIELD, ImageComponentSizeField>.Converter(input_data_vector),
+			      _Filter_Function)
 		{
 		}
 	}

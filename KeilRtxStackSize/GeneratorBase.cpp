@@ -61,7 +61,7 @@ bool GeneratorBase::Read(PARAMETERS &parameters, std::string *error)
 void GeneratorBase::Generate(PARAMETERS &parameters)
 /*****************************************************************************/
 {
-    ASSERT(false);
+	ASSERT(false);
 }
 
 /*****************************************************************************/

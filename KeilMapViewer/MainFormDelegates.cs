@@ -1,4 +1,19 @@
-﻿using System;
+﻿// This file is part of KeilMapViewer.
+//
+// KeilMapViewer is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Lesser General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// KeilMapViewer is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Lesser General Public License for more details.
+//
+// You should have received a copy of the GNU Lesser General Public License
+// along with KeilMapViewer.  If not, see <https://www.gnu.org/licenses/>.
+
+using System;
 using System.IO;
 using System.IO.Ports;
 using System.Collections.Generic;
@@ -353,17 +368,17 @@ namespace KeilMapViewer
 					MemoryMapImageLoadRegionField      load_region;
 					MemoryMapImageExecutionRegionField execution_region;
 					string                             tooltip_text;
-				
-					load_region      = data.Load_Region[load_region_index - 1]; 
-					execution_region = load_region.Execution_Region[execution_region_index - 1]; 
-					tooltip_text     = "LOAD REGION: " + load_region.Name + " " + load_region.Data + "\r\n" + 
-								       "EXEC REGION: " + execution_region.Name + " " + execution_region.Data;
+
+					load_region      = data.Load_Region[load_region_index - 1];
+					execution_region = load_region.Execution_Region[execution_region_index - 1];
+					tooltip_text     = "LOAD REGION: " + load_region.Name + " " + load_region.Data + "\r\n" +
+					                   "EXEC REGION: " + execution_region.Name + " " + execution_region.Data;
 
 					foreach (MemoryMapImageObjectField field in execution_region.Fields)
 					{
 
-								MemoryMapImageDataGridView.Rows.Add(field.Section_Name, field.Object_Name, field.Execution_Address, field.Load_Address, 
-																	 field.Size, field.Type, field.Attribute, field.Id, field.Entry_Point);
+						MemoryMapImageDataGridView.Rows.Add(field.Section_Name, field.Object_Name, field.Execution_Address, field.Load_Address,
+						                                    field.Size, field.Type, field.Attribute, field.Id, field.Entry_Point);
 						foreach (DataGridViewCell cell in MemoryMapImageDataGridView.Rows[MemoryMapImageDataGridView.RowCount - 1].Cells)
 						{
 							cell.ToolTipText = tooltip_text;
@@ -374,15 +389,15 @@ namespace KeilMapViewer
 				{
 					MemoryMapImageLoadRegionField load_region;
 					string                        tooltip_text;
-				
-					load_region = data.Load_Region[load_region_index - 1]; 
+
+					load_region = data.Load_Region[load_region_index - 1];
 					foreach (MemoryMapImageExecutionRegionField execution_region in load_region.Execution_Region)
 					{
 						foreach (MemoryMapImageObjectField field in execution_region.Fields)
 						{
-							MemoryMapImageDataGridView.Rows.Add(field.Section_Name, field.Object_Name, field.Execution_Address, field.Load_Address, 
-																 field.Size, field.Type, field.Attribute, field.Id, field.Entry_Point);
-							tooltip_text = "LOAD REGION: " + load_region.Name + " " + load_region.Data + "\r\n" + 
+							MemoryMapImageDataGridView.Rows.Add(field.Section_Name, field.Object_Name, field.Execution_Address, field.Load_Address,
+							                                    field.Size, field.Type, field.Attribute, field.Id, field.Entry_Point);
+							tooltip_text = "LOAD REGION: " + load_region.Name + " " + load_region.Data + "\r\n" +
 							               "EXEC REGION: " + execution_region.Name + " " + execution_region.Data;
 							foreach (DataGridViewCell cell in MemoryMapImageDataGridView.Rows[MemoryMapImageDataGridView.RowCount - 1].Cells)
 							{
@@ -399,12 +414,12 @@ namespace KeilMapViewer
 					{
 						foreach (MemoryMapImageExecutionRegionField execution_region in load_region.Execution_Region)
 						{
-							tooltip_text = "LOAD REGION: " + load_region.Name + " " + load_region.Data + "\r\n" + 
+							tooltip_text = "LOAD REGION: " + load_region.Name + " " + load_region.Data + "\r\n" +
 							               "EXEC REGION: " + execution_region.Name + " " + execution_region.Data;
 							foreach (MemoryMapImageObjectField field in execution_region.Fields)
 							{
-								MemoryMapImageDataGridView.Rows.Add(field.Section_Name, field.Object_Name, field.Execution_Address, field.Load_Address, 
-																	 field.Size, field.Type, field.Attribute, field.Id, field.Entry_Point);
+								MemoryMapImageDataGridView.Rows.Add(field.Section_Name, field.Object_Name, field.Execution_Address, field.Load_Address,
+								                                    field.Size, field.Type, field.Attribute, field.Id, field.Entry_Point);
 								foreach (DataGridViewCell cell in MemoryMapImageDataGridView.Rows[MemoryMapImageDataGridView.RowCount - 1].Cells)
 								{
 									cell.ToolTipText = tooltip_text;

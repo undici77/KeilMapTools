@@ -22,10 +22,10 @@
 
 class LocalSymbolsSection : public SectionBase, public SectionData<LOCAL_SYMBOL_FIELD>
 {
-	public:
-		LocalSymbolsSection();
-		~LocalSymbolsSection();
+public:
+	LocalSymbolsSection();
+	~LocalSymbolsSection();
 
-		bool Manage(const std::string &file);
+	bool Manage(const std::string &file);
 };
 

@@ -23,14 +23,14 @@
 
 class GeneratorFactory
 {
-	public:
-		static std::unique_ptr<GeneratorBase> Make(std::string architecture);
+public:
+	static std::unique_ptr<GeneratorBase> Make(std::string architecture);
 
-	private:
-		GeneratorFactory(void);
+private:
+	GeneratorFactory(void);
 
-		static std::unique_ptr<GeneratorBase> MakeStm32Generator(void);
+	static std::unique_ptr<GeneratorBase> MakeStm32Generator(void);
 
-		static std::unordered_map <std::string, std::unique_ptr<GeneratorBase>(*)(void)> _Map;
+	static std::unordered_map <std::string, std::unique_ptr<GeneratorBase>(*)(void)> _Map;
 };
 

@@ -16,7 +16,11 @@
 
 static void *ptr = 0;
 SWIGEXPORT void *
-SWIG_ReturnGlobalTypeList(void *t) {
- if (!ptr && !t) ptr = t;
- return ptr;
+SWIG_ReturnGlobalTypeList(void *t)
+{
+	if (!ptr && !t)
+	{
+		ptr = t;
+	}
+	return ptr;
 }

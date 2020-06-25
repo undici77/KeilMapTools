@@ -40,46 +40,46 @@
 
 class HandleErrorException : public std::runtime_error
 {
-	public:
-		HandleErrorException(const char *what, const char *expression, const char *file, int line) : std::runtime_error(what)
-		{
-			_Expression = expression;
-			_File       = file;
-			_Line       = line;
-		}
+public:
+	HandleErrorException(const char *what, const char *expression, const char *file, int line) : std::runtime_error(what)
+	{
+		_Expression = expression;
+		_File       = file;
+		_Line       = line;
+	}
 
-		virtual ~HandleErrorException() throw() { };
+	virtual ~HandleErrorException() throw() { };
 
-		std::string GetExpression(void)
-		{
-			return (_Expression);
-		};
+	std::string GetExpression(void)
+	{
+		return (_Expression);
+	};
 
-		std::string GetFile(void)
-		{
-			return (_File);
-		};
+	std::string GetFile(void)
+	{
+		return (_File);
+	};
 
-		int GetLine(void)
-		{
-			return (_Line);
-		};
+	int GetLine(void)
+	{
+		return (_Line);
+	};
 
-	private:
-		std::string _Expression;
-		std::string _File;
-		int         _Line;
+private:
+	std::string _Expression;
+	std::string _File;
+	int         _Line;
 };
 
 class HandleError
 {
-	public:
-		HandleError(const char *expression, const char *file, int line)
-		{
-			std::string what;
-			what = (boost::format("ASSERT(%s) in %s at line %u is false") % expression % file % line).str();
-			std::cout << what << std::endl;
+public:
+	HandleError(const char *expression, const char *file, int line)
+	{
+		std::string what;
+		what = (boost::format("ASSERT(%s) in %s at line %u is false") % expression % file % line).str();
+		std::cout << what << std::endl;
 
-			throw HandleErrorException(what.c_str(), expression, file, line);
-		}
+		throw HandleErrorException(what.c_str(), expression, file, line);
+	}
 };
