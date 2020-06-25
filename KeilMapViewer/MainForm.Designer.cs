@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-			this.components = new System.ComponentModel.Container();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -138,8 +137,6 @@
 			this.MemoryMapImageExecutionRegionLabel = new System.Windows.Forms.Label();
 			this.MemoryMapImageLoadRegionComboBox = new KeilMapViewer.ComboBoxEx();
 			this.MemoryMapImageExecutionRegionComboBox = new KeilMapViewer.ComboBoxEx();
-			this.MemoryMapImageLoadRegionToolTip = new System.Windows.Forms.ToolTip(this.components);
-			this.MemoryMapImageExecutionRegionToolTip = new System.Windows.Forms.ToolTip(this.components);
 			this.AppInfoStatusStrip.SuspendLayout();
 			this.MainFromMenuStrip.SuspendLayout();
 			this.MaximumStackUsageTab.SuspendLayout();
@@ -250,7 +247,7 @@
 			this.MaximumStackUsageTab.Location = new System.Drawing.Point(4, 22);
 			this.MaximumStackUsageTab.Name = "MaximumStackUsageTab";
 			this.MaximumStackUsageTab.Padding = new System.Windows.Forms.Padding(3);
-			this.MaximumStackUsageTab.Size = new System.Drawing.Size(952, 377);
+			this.MaximumStackUsageTab.Size = new System.Drawing.Size(1038, 377);
 			this.MaximumStackUsageTab.TabIndex = 13;
 			this.MaximumStackUsageTab.Text = "Maximum Stack Usage";
 			this.MaximumStackUsageTab.UseVisualStyleBackColor = true;
@@ -298,7 +295,7 @@
 			this.MaximumStackUsageDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
 			this.MaximumStackUsageDataGridView.RowHeadersVisible = false;
 			this.MaximumStackUsageDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.MaximumStackUsageDataGridView.Size = new System.Drawing.Size(955, 322);
+			this.MaximumStackUsageDataGridView.Size = new System.Drawing.Size(1025, 365);
 			this.MaximumStackUsageDataGridView.TabIndex = 10;
 			// 
 			// MaximumStackUsageDataGridViewFunction
@@ -321,7 +318,7 @@
 			this.LocalSymbolTab.Location = new System.Drawing.Point(4, 22);
 			this.LocalSymbolTab.Name = "LocalSymbolTab";
 			this.LocalSymbolTab.Padding = new System.Windows.Forms.Padding(3);
-			this.LocalSymbolTab.Size = new System.Drawing.Size(952, 377);
+			this.LocalSymbolTab.Size = new System.Drawing.Size(1038, 377);
 			this.LocalSymbolTab.TabIndex = 12;
 			this.LocalSymbolTab.Text = "Local Symbol";
 			this.LocalSymbolTab.UseVisualStyleBackColor = true;
@@ -372,7 +369,7 @@
 			this.LocalSymbolDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
 			this.LocalSymbolDataGridView.RowHeadersVisible = false;
 			this.LocalSymbolDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.LocalSymbolDataGridView.Size = new System.Drawing.Size(955, 322);
+			this.LocalSymbolDataGridView.Size = new System.Drawing.Size(1025, 365);
 			this.LocalSymbolDataGridView.TabIndex = 11;
 			// 
 			// LocalSymbolDataGridViewSymbolicName
@@ -416,7 +413,7 @@
 			this.ImageComponentSizeTab.Location = new System.Drawing.Point(4, 22);
 			this.ImageComponentSizeTab.Name = "ImageComponentSizeTab";
 			this.ImageComponentSizeTab.Padding = new System.Windows.Forms.Padding(3);
-			this.ImageComponentSizeTab.Size = new System.Drawing.Size(952, 377);
+			this.ImageComponentSizeTab.Size = new System.Drawing.Size(1038, 377);
 			this.ImageComponentSizeTab.TabIndex = 11;
 			this.ImageComponentSizeTab.Text = "Image Component Size";
 			this.ImageComponentSizeTab.UseVisualStyleBackColor = true;
@@ -469,7 +466,7 @@
 			this.ImageComponentSizeDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
 			this.ImageComponentSizeDataGridView.RowHeadersVisible = false;
 			this.ImageComponentSizeDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.ImageComponentSizeDataGridView.Size = new System.Drawing.Size(955, 322);
+			this.ImageComponentSizeDataGridView.Size = new System.Drawing.Size(1025, 365);
 			this.ImageComponentSizeDataGridView.TabIndex = 11;
 			// 
 			// ImageComponentSizeDataGridViewObjectName
@@ -527,7 +524,7 @@
 			this.FunctionPointerTab.Location = new System.Drawing.Point(4, 22);
 			this.FunctionPointerTab.Name = "FunctionPointerTab";
 			this.FunctionPointerTab.Padding = new System.Windows.Forms.Padding(3);
-			this.FunctionPointerTab.Size = new System.Drawing.Size(952, 377);
+			this.FunctionPointerTab.Size = new System.Drawing.Size(1038, 377);
 			this.FunctionPointerTab.TabIndex = 9;
 			this.FunctionPointerTab.Text = "Function Pointer";
 			this.FunctionPointerTab.UseVisualStyleBackColor = true;
@@ -577,7 +574,7 @@
 			this.FunctionPointerDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
 			this.FunctionPointerDataGridView.RowHeadersVisible = false;
 			this.FunctionPointerDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.FunctionPointerDataGridView.Size = new System.Drawing.Size(955, 322);
+			this.FunctionPointerDataGridView.Size = new System.Drawing.Size(1025, 365);
 			this.FunctionPointerDataGridView.TabIndex = 9;
 			// 
 			// FunctionPointerDataGridViewSymbol
@@ -614,7 +611,7 @@
 			this.GlobalSymbolTab.Location = new System.Drawing.Point(4, 22);
 			this.GlobalSymbolTab.Name = "GlobalSymbolTab";
 			this.GlobalSymbolTab.Padding = new System.Windows.Forms.Padding(3);
-			this.GlobalSymbolTab.Size = new System.Drawing.Size(952, 377);
+			this.GlobalSymbolTab.Size = new System.Drawing.Size(1038, 377);
 			this.GlobalSymbolTab.TabIndex = 10;
 			this.GlobalSymbolTab.Text = "Global Symbol";
 			this.GlobalSymbolTab.UseVisualStyleBackColor = true;
@@ -665,7 +662,7 @@
 			this.GlobalSymbolDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
 			this.GlobalSymbolDataGridView.RowHeadersVisible = false;
 			this.GlobalSymbolDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.GlobalSymbolDataGridView.Size = new System.Drawing.Size(955, 322);
+			this.GlobalSymbolDataGridView.Size = new System.Drawing.Size(1025, 365);
 			this.GlobalSymbolDataGridView.TabIndex = 10;
 			// 
 			// GlobalSymboldDataGridSymbolicName
@@ -709,7 +706,7 @@
 			this.CrossReferenceTab.Location = new System.Drawing.Point(4, 22);
 			this.CrossReferenceTab.Name = "CrossReferenceTab";
 			this.CrossReferenceTab.Padding = new System.Windows.Forms.Padding(3);
-			this.CrossReferenceTab.Size = new System.Drawing.Size(952, 377);
+			this.CrossReferenceTab.Size = new System.Drawing.Size(1038, 377);
 			this.CrossReferenceTab.TabIndex = 8;
 			this.CrossReferenceTab.Text = "Cross Reference";
 			this.CrossReferenceTab.UseVisualStyleBackColor = true;
@@ -758,7 +755,7 @@
 			this.CrossReferenceDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
 			this.CrossReferenceDataGridView.RowHeadersVisible = false;
 			this.CrossReferenceDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.CrossReferenceDataGridView.Size = new System.Drawing.Size(939, 364);
+			this.CrossReferenceDataGridView.Size = new System.Drawing.Size(1025, 364);
 			this.CrossReferenceDataGridView.TabIndex = 8;
 			// 
 			// CrossReferenceDataGridViewModule
@@ -812,7 +809,7 @@
 			this.RemovedSymbolTab.Location = new System.Drawing.Point(4, 22);
 			this.RemovedSymbolTab.Name = "RemovedSymbolTab";
 			this.RemovedSymbolTab.Padding = new System.Windows.Forms.Padding(3);
-			this.RemovedSymbolTab.Size = new System.Drawing.Size(952, 377);
+			this.RemovedSymbolTab.Size = new System.Drawing.Size(1038, 377);
 			this.RemovedSymbolTab.TabIndex = 16;
 			this.RemovedSymbolTab.Text = "Removed Symbol";
 			this.RemovedSymbolTab.UseVisualStyleBackColor = true;
@@ -861,7 +858,7 @@
 			this.RemovedSymbolDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle21;
 			this.RemovedSymbolDataGridView.RowHeadersVisible = false;
 			this.RemovedSymbolDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.RemovedSymbolDataGridView.Size = new System.Drawing.Size(955, 322);
+			this.RemovedSymbolDataGridView.Size = new System.Drawing.Size(1025, 365);
 			this.RemovedSymbolDataGridView.TabIndex = 12;
 			// 
 			// RemovedSymbolDataGridViewModule
@@ -891,7 +888,7 @@
 			this.StackUsageTab.Location = new System.Drawing.Point(4, 22);
 			this.StackUsageTab.Name = "StackUsageTab";
 			this.StackUsageTab.Padding = new System.Windows.Forms.Padding(3);
-			this.StackUsageTab.Size = new System.Drawing.Size(952, 377);
+			this.StackUsageTab.Size = new System.Drawing.Size(1038, 377);
 			this.StackUsageTab.TabIndex = 17;
 			this.StackUsageTab.Text = "Stack Usage";
 			this.StackUsageTab.UseVisualStyleBackColor = true;
@@ -939,7 +936,7 @@
 			this.StackUsageDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
 			this.StackUsageDataGridView.RowHeadersVisible = false;
 			this.StackUsageDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.StackUsageDataGridView.Size = new System.Drawing.Size(955, 322);
+			this.StackUsageDataGridView.Size = new System.Drawing.Size(1025, 365);
 			this.StackUsageDataGridView.TabIndex = 11;
 			// 
 			// StackUsageDataFunction
@@ -962,7 +959,7 @@
 			this.MutuallyRecursiveTab.Location = new System.Drawing.Point(4, 22);
 			this.MutuallyRecursiveTab.Name = "MutuallyRecursiveTab";
 			this.MutuallyRecursiveTab.Padding = new System.Windows.Forms.Padding(3);
-			this.MutuallyRecursiveTab.Size = new System.Drawing.Size(952, 377);
+			this.MutuallyRecursiveTab.Size = new System.Drawing.Size(1038, 377);
 			this.MutuallyRecursiveTab.TabIndex = 15;
 			this.MutuallyRecursiveTab.Text = "Mutually Recursive";
 			this.MutuallyRecursiveTab.UseVisualStyleBackColor = true;
@@ -1010,7 +1007,7 @@
 			this.MutuallyRecursiveDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle27;
 			this.MutuallyRecursiveDataGridView.RowHeadersVisible = false;
 			this.MutuallyRecursiveDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.MutuallyRecursiveDataGridView.Size = new System.Drawing.Size(955, 322);
+			this.MutuallyRecursiveDataGridView.Size = new System.Drawing.Size(1025, 365);
 			this.MutuallyRecursiveDataGridView.TabIndex = 11;
 			// 
 			// MutuallyRecursiveDataGridViewFunction
@@ -1355,8 +1352,6 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn RemovedSymbolDataGridViewModule;
 		private System.Windows.Forms.DataGridViewTextBoxColumn RemovedSymbolDataGridViewSize;
 		private System.Windows.Forms.DataGridViewTextBoxColumn RemovedSymbolDataGridViewSymbol;
-		private System.Windows.Forms.ToolTip MemoryMapImageLoadRegionToolTip;
-		private System.Windows.Forms.ToolTip MemoryMapImageExecutionRegionToolTip;
 		private System.Windows.Forms.DataGridViewTextBoxColumn ImageComponentSizeDataGridViewObjectName;
 		private System.Windows.Forms.DataGridViewTextBoxColumn ImageComponentSizeDataGridViewCode;
 		private System.Windows.Forms.DataGridViewTextBoxColumn ImageComponentSizeDataGridViewlineData;

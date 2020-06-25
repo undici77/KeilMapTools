@@ -164,7 +164,7 @@ bool MemoryMapImageSection::Manage(const std::string &file)
 							field.type              = match_result[7].str();
 							field.attribute         = match_result[8].str();
 							field.id                = match_result[9].str();
-							field.entry_point       = !match_result[10].str().empty();
+							field.entry_point       = (match_result[10].str() == "*");
 							field.section_name      = match_result[11].str();
 							field.object_name       = match_result[12].str();
 						}

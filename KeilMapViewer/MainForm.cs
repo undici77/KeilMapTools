@@ -238,7 +238,6 @@ namespace KeilMapViewer
 		{
 			App.Instance.BeginInvoke(App.Instance.UpdateMemoryMapImageDelegate);
 		}
-
 	}
 }
 

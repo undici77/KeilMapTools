@@ -25,82 +25,46 @@
 
 /******************************************************************************/
 
-// ird_net_master_task => read_extended_status => user_eq_ird_net_crc => user_eq_helpers_get_crc => user_eq_helpers_get => flash_disk_read_field => __handle_error => ampli_error (Cycle)
-#define IRD_NET_MASTER_TASK_STACK_SIZE                                   (SYSTEM_ARCHITECTURE_STACK_USAGE + 1600)
+// terminal_task => execute => parameter => write_parameter_by_field => atof
+#define TERMINAL_TASK_STACK_SIZE                                         (SYSTEM_ARCHITECTURE_STACK_USAGE + 1216)
 
-// accelerometer_task => mma8653_read_data => i2c_device_memory_read => HAL_I2C_Mem_Read_DMA => I2C_RequestMemoryRead => I2C_WaitOnMasterAddressFlagUntilTimeout => HAL_GetTick
-#define ACCELEROMETER_TASK_STACK_SIZE                                    (SYSTEM_ARCHITECTURE_STACK_USAGE + 576)
-
-// adc12_task => HAL_ADC_Start_DMA => HAL_DMA_Start_IT => DMA_SetConfig
+// adc12_task => osThreadFlagsWait
 #define ADC12_TASK_STACK_SIZE                                            (SYSTEM_ARCHITECTURE_STACK_USAGE + 320)
 
-// ampli_protocol_digipro_task => init_connection => import_log_session => read => i2c_ampli_memory_read => i2c_stop => set_sda_as_out => HAL_GPIO_Init
-#define AMPLI_PROTOCOL_DIGIPRO_TASK_STACK_SIZE                           (SYSTEM_ARCHITECTURE_STACK_USAGE + 640)
+// evse_task => socket_init_max_current => socket_set_current => _trace_log_append => log_append => queue_push => osThreadFlagsSet => osRtxPostProcess => osRtxErrorNotify => __ARM_common_switch8
+#define EVSE_TASK_STACK_SIZE                                             (SYSTEM_ARCHITECTURE_STACK_USAGE + 576)
 
-// dsp_task => read_data => adau145x_read_block => read_data => spi_device_rx => HAL_SPI_Receive_DMA => HAL_SPI_TransmitReceive_DMA => HAL_DMA_Start_IT => DMA_SetConfig
-#define DSP_TASK_STACK_SIZE                                              (SYSTEM_ARCHITECTURE_STACK_USAGE + 512)
-
-// encoder_task => __handle_error => ampli_error (Cycle)
-#define ENCODER_TASK_STACK_SIZE                                          (SYSTEM_ARCHITECTURE_STACK_USAGE + 320)
-
-// flash_disk_task => write_sector => flash_archive_write => ext_flash_program => write_disable => send_byte
-#define FLASH_DISK_TASK_STACK_SIZE                                       (SYSTEM_ARCHITECTURE_STACK_USAGE + 448)
-
-// flash_led_driver_task => set_torch => lm2759_write_torch_current_register => i2c_device_memory_write => _trace_log_append => log_append => queue_push => osThreadFlagsSet => osRtxPostProcess => osRtxErrorNotify => ___handle_error => ampli_error => __handle_error => ampli_error (Cycle)
-#define FLASH_LED_DRIVER_TASK_STACK_SIZE                                 (SYSTEM_ARCHITECTURE_STACK_USAGE + 576)
-
-// gui_task => __handle_error => ampli_error (Cycle)
-#define GUI_TASK_STACK_SIZE                                              (SYSTEM_ARCHITECTURE_STACK_USAGE + 320)
-
-// inputs_task => __handle_error => ampli_error (Cycle)
+// inputs_task => osDelay
 #define INPUTS_TASK_STACK_SIZE                                           (SYSTEM_ARCHITECTURE_STACK_USAGE + 320)
 
-// ird_net_slave_task => receive_command => _trace_log_append => log_append => queue_push => osThreadFlagsSet => osRtxPostProcess => osRtxErrorNotify => ___handle_error => ampli_error => __handle_error => ampli_error (Cycle)
-#define IRD_NET_SLAVE_TASK_STACK_SIZE                                    (SYSTEM_ARCHITECTURE_STACK_USAGE + 576)
+// kernel_task => application_init => parameters_module_init => set_parameters_to_default => ext_flash_read => spi_device_rx => HAL_SPI_Receive_DMA => HAL_SPI_TransmitReceive_DMA => HAL_DMA_Start_IT => DMA_SetConfig
+#define KERNEL_TASK_STACK_SIZE                                           (SYSTEM_ARCHITECTURE_STACK_USAGE + 896)
 
-// kernel_task => application_init => parameters_module_init => set_parameters_to_default => ext_flash_read => __handle_error => ampli_error (Cycle)
-#define KERNEL_TASK_STACK_SIZE                                           (SYSTEM_ARCHITECTURE_STACK_USAGE + 768)
-
-// leds_bicolor_task => __handle_error => ampli_error (Cycle)
-#define LEDS_BICOLOR_TASK_STACK_SIZE                                     (SYSTEM_ARCHITECTURE_STACK_USAGE + 320)
-
-// leds_task => __handle_error => ampli_error (Cycle)
+// leds_task => osKernelGetTickCount
 #define LEDS_TASK_STACK_SIZE                                             (SYSTEM_ARCHITECTURE_STACK_USAGE + 320)
 
-// log_task => ext_flash_program => write_disable => send_byte
-#define LOG_TASK_STACK_SIZE                                              (SYSTEM_ARCHITECTURE_STACK_USAGE + 448)
+// log_task => ext_flash_program => write_disable => spi_device_rx => HAL_SPI_Receive_DMA => HAL_SPI_TransmitReceive_DMA => HAL_DMA_Start_IT => DMA_SetConfig
+#define LOG_TASK_STACK_SIZE                                              (SYSTEM_ARCHITECTURE_STACK_USAGE + 576)
 
-// rd_net_485_bus_task => rd_net_on_line_event => user_eq_set => user_eq_helpers_initialize => user_eq_helpers_set_switch_high_pass_filter => dsp_sigma_studio_filter => __hardfp_pow => __aeabi_dmul => _double_epilogue => _double_round
-#define RD_NET_485_BUS_TASK_STACK_SIZE                                   (SYSTEM_ARCHITECTURE_STACK_USAGE + 1216)
+// socket_charge_task => pwm_charge => pwm_charge_stop => socket_control_pilot => __aeabi_dsub => __aeabi_dadd => _double_epilogue => __aeabi_llsr
+#define SOCKET_CHARGE_TASK_STACK_SIZE                                    (SYSTEM_ARCHITECTURE_STACK_USAGE + 512)
 
-// rd_net_log_event_task => generate_log => queue_push => osThreadFlagsSet => osRtxPostProcess => osRtxErrorNotify => ___handle_error => ampli_error => __handle_error => ampli_error (Cycle)
-#define RD_NET_LOG_EVENT_TASK_STACK_SIZE                                 (SYSTEM_ARCHITECTURE_STACK_USAGE + 448)
+// socket_control_pilot_create_task => osThreadNew
+#define SOCKET_CONTROL_PILOT_CREATE_TASK_STACK_SIZE                      (SYSTEM_ARCHITECTURE_STACK_USAGE + 320)
 
-// rd_net_task => send_response => _trace_log_append => log_append => queue_push => osThreadFlagsSet => osRtxPostProcess => osRtxErrorNotify => ___handle_error => ampli_error => __handle_error => ampli_error (Cycle)
-#define RD_NET_TASK_STACK_SIZE                                           (SYSTEM_ARCHITECTURE_STACK_USAGE + 768)
+// socket_control_pilot_task => wait_control_pilot_disconnected => socket_control_pilot => __aeabi_dsub => __aeabi_dadd => _double_epilogue => __aeabi_llsr
+#define SOCKET_CONTROL_PILOT_TASK_STACK_SIZE                             (SYSTEM_ARCHITECTURE_STACK_USAGE + 448)
 
-// serial_bridge_task => rx_data => sc16is7xx_clear_rx_fifo => write_single_register => i2c_device_memory_write => _trace_log_append => log_append => queue_push => osThreadFlagsSet => osRtxPostProcess => osRtxErrorNotify => ___handle_error => ampli_error => __handle_error => ampli_error (Cycle)
-#define SERIAL_BRIDGE_TASK_STACK_SIZE                                    (SYSTEM_ARCHITECTURE_STACK_USAGE + 576)
+// socket_plug_switch_create_task => osThreadNew
+#define SOCKET_PLUG_SWITCH_CREATE_TASK_STACK_SIZE                        (SYSTEM_ARCHITECTURE_STACK_USAGE + 320)
 
-// speaker_test_task => running_test => ext_adc_set_line => pcm1862_write_data => i2c_device_memory_write => _trace_log_append => log_append => queue_push => osThreadFlagsSet => osRtxPostProcess => osRtxErrorNotify => ___handle_error => ampli_error => __handle_error => ampli_error (Cycle)
-#define SPEAKER_TEST_TASK_STACK_SIZE                                     (SYSTEM_ARCHITECTURE_STACK_USAGE + 704)
+// socket_plug_switch_task => wait_plug_switch_disconnected => _trace_log_append => log_append => queue_push => osThreadFlagsSet => osRtxPostProcess => osRtxErrorNotify => __ARM_common_switch8
+#define SOCKET_PLUG_SWITCH_TASK_STACK_SIZE                               (SYSTEM_ARCHITECTURE_STACK_USAGE + 448)
 
-// system_manager_main_task => initialize => user_eq_initialize => user_eq_set => user_eq_helpers_initialize => user_eq_helpers_set_switch_high_pass_filter => dsp_sigma_studio_filter => __hardfp_pow => __aeabi_dmul => _double_epilogue => _double_round
-#define SYSTEM_MANAGER_MAIN_TASK_STACK_SIZE                              (SYSTEM_ARCHITECTURE_STACK_USAGE + 1280)
+// socket_proximity_create_task => osThreadNew
+#define SOCKET_PROXIMITY_CREATE_TASK_STACK_SIZE                          (SYSTEM_ARCHITECTURE_STACK_USAGE + 320)
 
-// system_manager_periodic_task => ampli_mute_status_manager => user_eq_get => user_eq_helpers_get => flash_disk_read_field => __handle_error => ampli_error (Cycle)
-#define SYSTEM_MANAGER_PERIODIC_TASK_STACK_SIZE                          (SYSTEM_ARCHITECTURE_STACK_USAGE + 704)
-
-// temperature_limiter_task => ntc_read => adc12_read => __handle_error => ampli_error (Cycle)
-#define TEMPERATURE_LIMITER_TASK_STACK_SIZE                              (SYSTEM_ARCHITECTURE_STACK_USAGE + 384)
-
-// usb_app_task => terminal_session => execute => parameter => write_parameter_by_field => __hardfp_atof
-#define USB_APP_TASK_STACK_SIZE                                          (SYSTEM_ARCHITECTURE_STACK_USAGE + 1216)
-
-// user_eq_task => user_eq_command_manager => load_eq => user_eq_helpers_initialize => user_eq_helpers_set_switch_high_pass_filter => dsp_sigma_studio_filter => __hardfp_pow => __aeabi_dmul => _double_epilogue => _double_round
-#define USER_EQ_TASK_STACK_SIZE                                          (SYSTEM_ARCHITECTURE_STACK_USAGE + 1408)
-
-// CALL CHAIN NOT AVAILABLE
-#define FLASH_ARCHIVE_SET_FLASH_DISK_TASK_ID_STACK_SIZE                  (SYSTEM_ARCHITECTURE_STACK_USAGE + 320)
+// socket_proximity_task => wait_proximity_disconnected => _trace_log_append => log_append => queue_push => osThreadFlagsSet => osRtxPostProcess => osRtxErrorNotify => __ARM_common_switch8
+#define SOCKET_PROXIMITY_TASK_STACK_SIZE                                 (SYSTEM_ARCHITECTURE_STACK_USAGE + 448)
 
 #endif
