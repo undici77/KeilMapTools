@@ -100,6 +100,10 @@ namespace KeilMapViewer
 					_Map_File_Name = map_path.AbsolutePath;
 				}
 			}
+			else
+			{
+				_Map_File_Name = new Uri(current_path, _Map_File_Name).AbsolutePath;
+			}
 
 			if (!File.Exists(_Map_File_Name))
 			{
@@ -174,7 +178,7 @@ namespace KeilMapViewer
 
 			MainTabs.SelectedIndex = id;
 
-			this.Text = App.Name + " " + App.Version + " - " + (new Uri(current_path, _Map_File_Name).AbsolutePath);
+			this.Text = App.Name + " " + App.Version + " - " + _Map_File_Name;
 		}
 
 		private void FilterTextBox_TextChanged(object sender, EventArgs e)
