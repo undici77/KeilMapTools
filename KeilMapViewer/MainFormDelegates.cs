@@ -169,7 +169,7 @@ namespace KeilMapViewer
 			foreach (CrossReferenceField field in data)
 			{
 				tooltip_text = "REFERENCE QUALIFIER: " + field.Reference_Qualifier;
-				CrossReferenceDataGridView.Rows.Add(field.Module, field.Module_Reference, field.Symbol);
+				CrossReferenceDataGridView.Rows.Add(field.Symbol, field.Module_Reference, field.Module);
 				foreach (DataGridViewCell cell in CrossReferenceDataGridView.Rows[CrossReferenceDataGridView.RowCount - 1].Cells)
 				{
 					cell.ToolTipText = tooltip_text;
@@ -191,7 +191,7 @@ namespace KeilMapViewer
 			data = _Map_File_Manager.RemovedSymbolSectionData;
 			foreach (RemovedSymbolField field in data)
 			{
-				RemovedSymbolDataGridView.Rows.Add(field.Module, field.Size, field.Symbol);
+				RemovedSymbolDataGridView.Rows.Add(field.Symbol, field.Size, field.Module);
 			}
 
 			RemovedSymbolDataGridView.RestoreData();
@@ -287,7 +287,7 @@ namespace KeilMapViewer
 			data = _Map_File_Manager.LocalSymbolSectionData;
 			foreach (LocalSymbolField field in data)
 			{
-				LocalSymbolDataGridView.Rows.Add(field.Symbolic_Name, field.Address, field.Type, field.Size, field.Object_Name);
+				LocalSymbolDataGridView.Rows.Add(field.Symbolic_Name, field.Address, field.Size, field.Type, field.Object_Name);
 			}
 
 			LocalSymbolDataGridView.RestoreData();
@@ -305,7 +305,7 @@ namespace KeilMapViewer
 			data = _Map_File_Manager.GlobalSymbolData;
 			foreach (GlobalSymbolField field in data)
 			{
-				GlobalSymbolDataGridView.Rows.Add(field.Symbolic_Name, field.Address, field.Type, field.Size, field.Object_Name);
+				GlobalSymbolDataGridView.Rows.Add(field.Symbolic_Name, field.Address, field.Size, field.Type, field.Object_Name);
 			}
 
 			GlobalSymbolDataGridView.RestoreData();

@@ -253,6 +253,271 @@ namespace KeilMapViewer
 		{
 			App.Instance.BeginInvoke(App.Instance.UpdateMemoryMapImageDelegate);
 		}
+
+		private void RemovedSymbolDataGridView_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+		{
+			uint total_size;
+			string buffer;
+			ContextMenu menu;
+			DataGridView data_grid_view;
+
+			data_grid_view = (DataGridView)sender; 
+			if (e.Button == MouseButtons.Right)
+			{
+				total_size = 0;
+				foreach (DataGridViewRow row in data_grid_view.SelectedRows)
+				{
+					try
+					{
+						total_size += uint.Parse(row.Cells[1].Value.ToString());
+					}
+					catch
+					{
+					}
+				}
+
+				menu = new ContextMenu();
+				buffer = String.Format("TOTAL SIZE: {0:#,0} bytes", total_size);
+				menu.MenuItems.Add(buffer);
+
+				menu.Show(data_grid_view, data_grid_view.PointToClient(Cursor.Position));
+			}
+		}
+
+		private void MaximumStackUsageDataGridView_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+		{
+			uint total_size;
+			string buffer;
+			ContextMenu menu;
+			DataGridView data_grid_view;
+
+			data_grid_view = (DataGridView)sender; 
+			if (e.Button == MouseButtons.Right)
+			{
+				total_size = 0;
+				foreach (DataGridViewRow row in data_grid_view.SelectedRows)
+				{
+					try
+					{
+						total_size += uint.Parse(row.Cells[1].Value.ToString());
+					}
+					catch
+					{
+					}
+				}
+
+				menu = new ContextMenu();
+				buffer = String.Format("TOTAL SIZE: {0:#,0} bytes", total_size);
+				menu.MenuItems.Add(buffer);
+
+				menu.Show(data_grid_view, data_grid_view.PointToClient(Cursor.Position));
+			}
+		}
+
+		private void StackUsageDataGridView_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+		{
+			uint total_size;
+			string buffer;
+			ContextMenu menu;
+			DataGridView data_grid_view;
+
+			data_grid_view = (DataGridView)sender; 
+			if (e.Button == MouseButtons.Right)
+			{
+				total_size = 0;
+				foreach (DataGridViewRow row in data_grid_view.SelectedRows)
+				{
+					try
+					{
+						total_size += uint.Parse(row.Cells[1].Value.ToString());
+					}
+					catch
+					{
+					}
+				}
+
+				menu = new ContextMenu();
+				buffer = String.Format("TOTAL SIZE: {0:#,0} bytes", total_size);
+				menu.MenuItems.Add(buffer);
+
+				menu.Show(data_grid_view, data_grid_view.PointToClient(Cursor.Position));
+			}
+		}
+
+		private void LocalSymbolDataGridView_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+		{
+			uint total_size;
+			string buffer;
+			ContextMenu menu;
+			DataGridView data_grid_view;
+
+			data_grid_view = (DataGridView)sender; 
+			if (e.Button == MouseButtons.Right)
+			{
+				total_size = 0;
+				foreach (DataGridViewRow row in data_grid_view.SelectedRows)
+				{
+					try
+					{
+						total_size += uint.Parse(row.Cells[2].Value.ToString());
+					}
+					catch
+					{
+					}
+				}
+
+				menu = new ContextMenu();
+				buffer = String.Format("TOTAL SIZE: {0:#,0} bytes", total_size);
+				menu.MenuItems.Add(buffer);
+
+				menu.Show(data_grid_view, data_grid_view.PointToClient(Cursor.Position));
+			}
+		}
+
+		private void GlobalSymbolDataGridView_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+		{
+			uint total_size;
+			string buffer;
+			ContextMenu menu;
+			DataGridView data_grid_view;
+
+			data_grid_view = (DataGridView)sender; 
+			if (e.Button == MouseButtons.Right)
+			{
+				total_size = 0;
+				foreach (DataGridViewRow row in data_grid_view.SelectedRows)
+				{
+					try
+					{
+						total_size += uint.Parse(row.Cells[2].Value.ToString());
+					}
+					catch
+					{
+					}
+				}
+
+				menu = new ContextMenu();
+				buffer = String.Format("TOTAL SIZE: {0:#,0} bytes", total_size);
+				menu.MenuItems.Add(buffer);
+
+				menu.Show(data_grid_view, data_grid_view.PointToClient(Cursor.Position));
+			}
+		}
+
+		private void MemoryMapImageDataGridView_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+		{
+			uint total_size;
+			string buffer;
+			ContextMenu menu;
+			DataGridView data_grid_view;
+
+			data_grid_view = (DataGridView)sender; 
+			if (e.Button == MouseButtons.Right)
+			{
+				total_size = 0;
+				foreach (DataGridViewRow row in data_grid_view.SelectedRows)
+				{
+					try
+					{
+						total_size += uint.Parse(row.Cells[4].Value.ToString());
+					}
+					catch
+					{
+					}
+				}
+
+				menu = new ContextMenu();
+				buffer = String.Format("TOTAL SIZE: {0:#,0} bytes", total_size);
+				menu.MenuItems.Add(buffer);
+
+				menu.Show(data_grid_view, data_grid_view.PointToClient(Cursor.Position));
+			}
+		}
+
+		private void ImageComponentSizeDataGridView_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+		{
+			uint total_code_size;
+			uint total_init_data_size;
+			uint total_read_only_data_size;
+			uint total_read_write_data_size;
+			uint total_zero_init_data_size;
+			uint total_debug_data_size;
+			string buffer;
+			ContextMenu menu;
+			DataGridView data_grid_view;
+
+			data_grid_view = (DataGridView)sender; 
+			if (e.Button == MouseButtons.Right)
+			{
+				total_code_size            = 0;
+				total_init_data_size       = 0;
+				total_read_only_data_size  = 0;
+				total_read_write_data_size = 0;
+				total_zero_init_data_size  = 0;
+				total_debug_data_size      = 0;
+				foreach (DataGridViewRow row in data_grid_view.SelectedRows)
+				{
+					try
+					{
+						total_code_size += uint.Parse(row.Cells[1].Value.ToString());
+					}
+					catch
+					{
+					}
+					try
+					{
+						total_init_data_size += uint.Parse(row.Cells[2].Value.ToString());
+					}
+					catch
+					{
+					}
+					try
+					{
+						total_read_only_data_size += uint.Parse(row.Cells[3].Value.ToString());
+					}
+					catch
+					{
+					}
+					try
+					{
+						total_read_write_data_size += uint.Parse(row.Cells[4].Value.ToString());
+					}
+					catch
+					{
+					}
+					try
+					{
+						total_zero_init_data_size += uint.Parse(row.Cells[5].Value.ToString());
+					}
+					catch
+					{
+					}
+					try
+					{
+						total_debug_data_size += uint.Parse(row.Cells[6].Value.ToString());
+					}
+					catch
+					{
+					}
+				}
+
+				menu = new ContextMenu();
+				buffer = String.Format("CODE: {0:#,0} bytes", total_code_size);
+				menu.MenuItems.Add(buffer);
+				buffer = String.Format("INIT DATA: {0:#,0} bytes", total_init_data_size);
+				menu.MenuItems.Add(buffer);
+				buffer = String.Format("READ ONLY DATA: {0:#,0} bytes", total_read_only_data_size);
+				menu.MenuItems.Add(buffer);
+				buffer = String.Format("READ WRITE DATA: {0:#,0} bytes", total_read_write_data_size);
+				menu.MenuItems.Add(buffer);
+				buffer = String.Format("ZERO INIT DATA: {0:#,0} bytes", total_zero_init_data_size);
+				menu.MenuItems.Add(buffer);
+				buffer = String.Format("DEBUG DATA: {0:#,0} bytes", total_debug_data_size);
+				menu.MenuItems.Add(buffer);
+
+				menu.Show(data_grid_view, data_grid_view.PointToClient(Cursor.Position));
+			}
+		}
 	}
 }
 

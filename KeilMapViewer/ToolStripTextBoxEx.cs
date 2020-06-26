@@ -13,7 +13,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with KeilMapViewer.  If not, see <https://www.gnu.org/licenses/>.
 
-sing System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;

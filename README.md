@@ -13,6 +13,7 @@ Keil Map Viewer has some killer features:
 
 - Organize Map file in readable, orderable and useful view
 - Filter real-time by searching text pattern in each single field
+- Sum context menu in Removed Symbol, Maximum Stack Usage, Stack Usage, Local Symbol, Global Symbol, Memory Map Image, Image Component Size
 - Auto reload map file data
 
 To integrate it in Keil compiler it&#39;s enough to add as external tools

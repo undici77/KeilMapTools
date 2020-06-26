@@ -50,7 +50,7 @@ namespace KeilMapViewer
 		{
 			Execution_Address = field.execution_address;
 			Load_Address      = field.load_address;
-			Size              = field.size;
+			Size              = Convert.ToInt32(field.size, 16).ToString();
 			Type              = field.type;
 			Attribute         = field.attribute;
 			Id                = field.id;
