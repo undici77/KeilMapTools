@@ -27,6 +27,7 @@ using System.Windows.Forms;
 namespace KeilMapViewer
 {
 	public delegate void UPDATE_UI_DELEGATE();
+	public delegate void UPDATE_UI_OK_DELEGATE(bool ok);
 	public delegate void SHOW_ERROR(string text, string caption);
 
 	public partial class MainForm : Form
@@ -49,41 +50,41 @@ namespace KeilMapViewer
 		}
 		private UPDATE_UI_DELEGATE _Update_Removed_Symbol_Delegate;
 
-		public UPDATE_UI_DELEGATE UpdateMaximumStackUsageDelegate
+		public UPDATE_UI_OK_DELEGATE UpdateMaximumStackUsageDelegate
 		{
 			get
 			{
 				return (_Update_Maximum_Stack_Usage_Delegate);
 			}
 		}
-		private UPDATE_UI_DELEGATE _Update_Maximum_Stack_Usage_Delegate;
+		private UPDATE_UI_OK_DELEGATE _Update_Maximum_Stack_Usage_Delegate;
 
-		public UPDATE_UI_DELEGATE UpdateStackUsageDelegate
+		public UPDATE_UI_OK_DELEGATE UpdateStackUsageDelegate
 		{
 			get
 			{
 				return (_Update_Stack_Usage_Delegate);
 			}
 		}
-		private UPDATE_UI_DELEGATE _Update_Stack_Usage_Delegate;
+		private UPDATE_UI_OK_DELEGATE _Update_Stack_Usage_Delegate;
 
-		public UPDATE_UI_DELEGATE UpdateMutuallyRecursiveDelegate
+		public UPDATE_UI_OK_DELEGATE UpdateMutuallyRecursiveDelegate
 		{
 			get
 			{
 				return (_Update_Mutually_Recursive_Delegate);
 			}
 		}
-		private UPDATE_UI_DELEGATE _Update_Mutually_Recursive_Delegate;
+		private UPDATE_UI_OK_DELEGATE _Update_Mutually_Recursive_Delegate;
 
-		public UPDATE_UI_DELEGATE UpdateFunctionPointerDelegate
+		public UPDATE_UI_OK_DELEGATE UpdateFunctionPointerDelegate
 		{
 			get
 			{
 				return (_Update_Function_Pointer_Delegate);
 			}
 		}
-		private UPDATE_UI_DELEGATE _Update_Function_Pointer_Delegate;
+		private UPDATE_UI_OK_DELEGATE _Update_Function_Pointer_Delegate;
 
 		public UPDATE_UI_DELEGATE UpdateLocalSymbolDelegate
 		{
@@ -144,10 +145,10 @@ namespace KeilMapViewer
 
 			_Update_Cross_Reference_Delegate      = new UPDATE_UI_DELEGATE(UpdateCrossReference);
 			_Update_Removed_Symbol_Delegate       = new UPDATE_UI_DELEGATE(UpdateRemovedSymbol);
-			_Update_Maximum_Stack_Usage_Delegate  = new UPDATE_UI_DELEGATE(UpdateMaximumStackUsage);
-			_Update_Stack_Usage_Delegate          = new UPDATE_UI_DELEGATE(UpdateStackUsage);
-			_Update_Mutually_Recursive_Delegate   = new UPDATE_UI_DELEGATE(UpdateMutuallyRecursive);
-			_Update_Function_Pointer_Delegate     = new UPDATE_UI_DELEGATE(UpdateFunctionPointer);
+			_Update_Maximum_Stack_Usage_Delegate  = new UPDATE_UI_OK_DELEGATE(UpdateMaximumStackUsage);
+			_Update_Stack_Usage_Delegate          = new UPDATE_UI_OK_DELEGATE(UpdateStackUsage);
+			_Update_Mutually_Recursive_Delegate   = new UPDATE_UI_OK_DELEGATE(UpdateMutuallyRecursive);
+			_Update_Function_Pointer_Delegate     = new UPDATE_UI_OK_DELEGATE(UpdateFunctionPointer);
 			_Update_Local_Symbol_Delegate         = new UPDATE_UI_DELEGATE(UpdateLocalSymbol);
 			_Update_Global_Symbol_Delegate        = new UPDATE_UI_DELEGATE(UpdateGlobalSymbol);
 			_Update_Memory_Map_Image_Delegate     = new UPDATE_UI_DELEGATE(UpdateMemoryMapImage);
@@ -198,10 +199,12 @@ namespace KeilMapViewer
 			RemovedSymbolDataGridView.ResumeLayout();
 		}
 
-		private void UpdateMaximumStackUsage()
+		private void UpdateMaximumStackUsage(bool ok)
 		{
 			MaximumStackUsageField[] data;
 			string                   tooltip_text;
+
+			MaximumStackUsageErrorLabel.Visible = !ok;
 
 			MaximumStackUsageDataGridView.PopSelections();
 			MaximumStackUsageDataGridView.Rows.Clear();
@@ -222,9 +225,11 @@ namespace KeilMapViewer
 			MaximumStackUsageDataGridView.ResumeLayout();
 		}
 
-		private void UpdateStackUsage()
+		private void UpdateStackUsage(bool ok)
 		{
 			StackUsageField[] data;
+
+			StackUsageErrorLabel.Visible = !ok;
 
 			StackUsageDataGridView.PopSelections();
 			StackUsageDataGridView.Rows.Clear();
@@ -240,9 +245,11 @@ namespace KeilMapViewer
 			StackUsageDataGridView.ResumeLayout();
 		}
 
-		private void UpdateMutuallyRecursive()
+		private void UpdateMutuallyRecursive(bool ok)
 		{
 			MutuallyRecursiveField[] data;
+
+			MutuallyRecursiveErrorLabel.Visible = !ok;
 
 			MutuallyRecursiveDataGridView.PopSelections();
 			MutuallyRecursiveDataGridView.Rows.Clear();
@@ -258,9 +265,11 @@ namespace KeilMapViewer
 			MutuallyRecursiveDataGridView.ResumeLayout();
 		}
 
-		private void UpdateFunctionPointer()
+		private void UpdateFunctionPointer(bool ok)
 		{
 			FunctionPointerField[] data;
+
+			FunctionPointerErrorLabel.Visible = !ok;
 
 			FunctionPointerDataGridView.PopSelections();
 			FunctionPointerDataGridView.Rows.Clear();

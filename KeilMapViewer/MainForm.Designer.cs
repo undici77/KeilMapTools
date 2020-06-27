@@ -83,6 +83,7 @@ namespace KeilMapViewer
 			this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.MaximumStackUsageTab = new System.Windows.Forms.TabPage();
+			this.MaximumStackUsageErrorLabel = new System.Windows.Forms.Label();
 			this.MaximumStackUsageDataGridView = new DataGridViewEx();
 			this.MaximumStackUsageDataGridViewFunction = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.MaximumStackUsageDataGridViewSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -103,6 +104,7 @@ namespace KeilMapViewer
 			this.ImageComponentSizeDataGridZeroInitData = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.ImageComponentSizeDataGridViewDebugData = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.FunctionPointerTab = new System.Windows.Forms.TabPage();
+			this.FunctionPointerErrorLabel = new System.Windows.Forms.Label();
 			this.FunctionPointerDataGridView = new DataGridViewEx();
 			this.FunctionPointerDataGridViewSymbol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.FunctionPointerDataGridViewModule = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -127,18 +129,26 @@ namespace KeilMapViewer
 			this.RemovedSymbolDataGridViewSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.RemovedSymbolDataGridViewModule = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.StackUsageTab = new System.Windows.Forms.TabPage();
+			this.StackUsageErrorLabel = new System.Windows.Forms.Label();
 			this.StackUsageDataGridView = new DataGridViewEx();
 			this.StackUsageDataFunction = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.StackUsageDataSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.MutuallyRecursiveTab = new System.Windows.Forms.TabPage();
+			this.MutuallyRecursiveErrorLabel = new System.Windows.Forms.Label();
 			this.MutuallyRecursiveDataGridView = new DataGridViewEx();
 			this.MutuallyRecursiveDataGridViewFunction = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.MutuallyRecursiveDataGridViewCaller = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.MemoryMapImageTab = new System.Windows.Forms.TabPage();
 			this.MainTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
 			this.MemoryMapImageDataGridView = new DataGridViewEx();
-			this.MemoryMapImageDataGridViewObjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.MemoryMapImageEntryPointAddressLabel = new System.Windows.Forms.Label();
+			this.MemoryMapImageEntryPointLabel = new System.Windows.Forms.Label();
+			this.MemoryMapImageLoadRegionLabel = new System.Windows.Forms.Label();
+			this.MemoryMapImageExecutionRegionLabel = new System.Windows.Forms.Label();
+			this.MemoryMapImageLoadRegionComboBox = new KeilMapViewer.ComboBoxEx();
+			this.MemoryMapImageExecutionRegionComboBox = new KeilMapViewer.ComboBoxEx();
 			this.MemoryMapImageDataGridViewSectionName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.MemoryMapImageDataGridViewObjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.MemoryMapImageDataGridViewExecutionAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.MemoryMapImageDataGridViewLoadAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.MemoryMapImageDataGridViewSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -146,12 +156,6 @@ namespace KeilMapViewer
 			this.MemoryMapImageDataGridViewAttribute = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.MemoryMapImageDataGridViewIndex = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.MemoryMapImageDataGridViewEntryPoint = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-			this.MemoryMapImageEntryPointAddressLabel = new System.Windows.Forms.Label();
-			this.MemoryMapImageEntryPointLabel = new System.Windows.Forms.Label();
-			this.MemoryMapImageLoadRegionLabel = new System.Windows.Forms.Label();
-			this.MemoryMapImageExecutionRegionLabel = new System.Windows.Forms.Label();
-			this.MemoryMapImageLoadRegionComboBox = new KeilMapViewer.ComboBoxEx();
-			this.MemoryMapImageExecutionRegionComboBox = new KeilMapViewer.ComboBoxEx();
 			this.AppInfoStatusStrip.SuspendLayout();
 			this.MainFromMenuStrip.SuspendLayout();
 			this.MaximumStackUsageTab.SuspendLayout();
@@ -258,6 +262,7 @@ namespace KeilMapViewer
 			// 
 			// MaximumStackUsageTab
 			// 
+			this.MaximumStackUsageTab.Controls.Add(this.MaximumStackUsageErrorLabel);
 			this.MaximumStackUsageTab.Controls.Add(this.MaximumStackUsageDataGridView);
 			this.MaximumStackUsageTab.Location = new System.Drawing.Point(4, 22);
 			this.MaximumStackUsageTab.Name = "MaximumStackUsageTab";
@@ -266,6 +271,18 @@ namespace KeilMapViewer
 			this.MaximumStackUsageTab.TabIndex = 13;
 			this.MaximumStackUsageTab.Text = "Maximum Stack Usage";
 			this.MaximumStackUsageTab.UseVisualStyleBackColor = true;
+			// 
+			// MaximumStackUsageErrorLabel
+			// 
+			this.MaximumStackUsageErrorLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.MaximumStackUsageErrorLabel.AutoSize = true;
+			this.MaximumStackUsageErrorLabel.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.MaximumStackUsageErrorLabel.Location = new System.Drawing.Point(378, 182);
+			this.MaximumStackUsageErrorLabel.Name = "MaximumStackUsageErrorLabel";
+			this.MaximumStackUsageErrorLabel.Size = new System.Drawing.Size(387, 19);
+			this.MaximumStackUsageErrorLabel.TabIndex = 11;
+			this.MaximumStackUsageErrorLabel.Text = "Please enable linker option \'--info=stack\'";
+			this.MaximumStackUsageErrorLabel.Visible = false;
 			// 
 			// MaximumStackUsageDataGridView
 			// 
@@ -549,6 +566,7 @@ namespace KeilMapViewer
 			// 
 			// FunctionPointerTab
 			// 
+			this.FunctionPointerTab.Controls.Add(this.FunctionPointerErrorLabel);
 			this.FunctionPointerTab.Controls.Add(this.FunctionPointerDataGridView);
 			this.FunctionPointerTab.Location = new System.Drawing.Point(4, 22);
 			this.FunctionPointerTab.Name = "FunctionPointerTab";
@@ -557,6 +575,18 @@ namespace KeilMapViewer
 			this.FunctionPointerTab.TabIndex = 9;
 			this.FunctionPointerTab.Text = "Function Pointer";
 			this.FunctionPointerTab.UseVisualStyleBackColor = true;
+			// 
+			// FunctionPointerErrorLabel
+			// 
+			this.FunctionPointerErrorLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.FunctionPointerErrorLabel.AutoSize = true;
+			this.FunctionPointerErrorLabel.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.FunctionPointerErrorLabel.Location = new System.Drawing.Point(378, 182);
+			this.FunctionPointerErrorLabel.Name = "FunctionPointerErrorLabel";
+			this.FunctionPointerErrorLabel.Size = new System.Drawing.Size(387, 19);
+			this.FunctionPointerErrorLabel.TabIndex = 14;
+			this.FunctionPointerErrorLabel.Text = "Please enable linker option \'--info=stack\'";
+			this.FunctionPointerErrorLabel.Visible = false;
 			// 
 			// FunctionPointerDataGridView
 			// 
@@ -925,6 +955,7 @@ namespace KeilMapViewer
 			// 
 			// StackUsageTab
 			// 
+			this.StackUsageTab.Controls.Add(this.StackUsageErrorLabel);
 			this.StackUsageTab.Controls.Add(this.StackUsageDataGridView);
 			this.StackUsageTab.Location = new System.Drawing.Point(4, 22);
 			this.StackUsageTab.Name = "StackUsageTab";
@@ -933,6 +964,18 @@ namespace KeilMapViewer
 			this.StackUsageTab.TabIndex = 17;
 			this.StackUsageTab.Text = "Stack Usage";
 			this.StackUsageTab.UseVisualStyleBackColor = true;
+			// 
+			// StackUsageErrorLabel
+			// 
+			this.StackUsageErrorLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.StackUsageErrorLabel.AutoSize = true;
+			this.StackUsageErrorLabel.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.StackUsageErrorLabel.Location = new System.Drawing.Point(378, 182);
+			this.StackUsageErrorLabel.Name = "StackUsageErrorLabel";
+			this.StackUsageErrorLabel.Size = new System.Drawing.Size(387, 19);
+			this.StackUsageErrorLabel.TabIndex = 12;
+			this.StackUsageErrorLabel.Text = "Please enable linker option \'--info=stack\'";
+			this.StackUsageErrorLabel.Visible = false;
 			// 
 			// StackUsageDataGridView
 			// 
@@ -998,6 +1041,7 @@ namespace KeilMapViewer
 			// 
 			// MutuallyRecursiveTab
 			// 
+			this.MutuallyRecursiveTab.Controls.Add(this.MutuallyRecursiveErrorLabel);
 			this.MutuallyRecursiveTab.Controls.Add(this.MutuallyRecursiveDataGridView);
 			this.MutuallyRecursiveTab.Location = new System.Drawing.Point(4, 22);
 			this.MutuallyRecursiveTab.Name = "MutuallyRecursiveTab";
@@ -1006,6 +1050,18 @@ namespace KeilMapViewer
 			this.MutuallyRecursiveTab.TabIndex = 15;
 			this.MutuallyRecursiveTab.Text = "Mutually Recursive";
 			this.MutuallyRecursiveTab.UseVisualStyleBackColor = true;
+			// 
+			// MutuallyRecursiveErrorLabel
+			// 
+			this.MutuallyRecursiveErrorLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.MutuallyRecursiveErrorLabel.AutoSize = true;
+			this.MutuallyRecursiveErrorLabel.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.MutuallyRecursiveErrorLabel.Location = new System.Drawing.Point(378, 182);
+			this.MutuallyRecursiveErrorLabel.Name = "MutuallyRecursiveErrorLabel";
+			this.MutuallyRecursiveErrorLabel.Size = new System.Drawing.Size(387, 19);
+			this.MutuallyRecursiveErrorLabel.TabIndex = 13;
+			this.MutuallyRecursiveErrorLabel.Text = "Please enable linker option \'--info=stack\'";
+			this.MutuallyRecursiveErrorLabel.Visible = false;
 			// 
 			// MutuallyRecursiveDataGridView
 			// 
@@ -1036,7 +1092,7 @@ namespace KeilMapViewer
 			dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
 			dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
 			this.MutuallyRecursiveDataGridView.DefaultCellStyle = dataGridViewCellStyle26;
-			this.MutuallyRecursiveDataGridView.Location = new System.Drawing.Point(6, 6);
+			this.MutuallyRecursiveDataGridView.Location = new System.Drawing.Point(7, 6);
 			this.MutuallyRecursiveDataGridView.MultiSelect = false;
 			this.MutuallyRecursiveDataGridView.Name = "MutuallyRecursiveDataGridView";
 			this.MutuallyRecursiveDataGridView.ReadOnly = true;
@@ -1050,7 +1106,7 @@ namespace KeilMapViewer
 			this.MutuallyRecursiveDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle27;
 			this.MutuallyRecursiveDataGridView.RowHeadersVisible = false;
 			this.MutuallyRecursiveDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.MutuallyRecursiveDataGridView.Size = new System.Drawing.Size(1129, 365);
+			this.MutuallyRecursiveDataGridView.Size = new System.Drawing.Size(1128, 365);
 			this.MutuallyRecursiveDataGridView.TabIndex = 11;
 			// 
 			// MutuallyRecursiveDataGridViewFunction
@@ -1125,8 +1181,8 @@ namespace KeilMapViewer
 			this.MemoryMapImageDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle28;
 			this.MemoryMapImageDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.MemoryMapImageDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MemoryMapImageDataGridViewObjectName,
             this.MemoryMapImageDataGridViewSectionName,
+            this.MemoryMapImageDataGridViewObjectName,
             this.MemoryMapImageDataGridViewExecutionAddress,
             this.MemoryMapImageDataGridViewLoadAddress,
             this.MemoryMapImageDataGridViewSize,
@@ -1159,76 +1215,6 @@ namespace KeilMapViewer
 			this.MemoryMapImageDataGridView.Size = new System.Drawing.Size(1132, 338);
 			this.MemoryMapImageDataGridView.TabIndex = 12;
 			this.MemoryMapImageDataGridView.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.MemoryMapImageDataGridView_CellMouseDown);
-			// 
-			// MemoryMapImageDataGridViewObjectName
-			// 
-			this.MemoryMapImageDataGridViewObjectName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.MemoryMapImageDataGridViewObjectName.HeaderText = "Object Name";
-			this.MemoryMapImageDataGridViewObjectName.Name = "MemoryMapImageDataGridViewObjectName";
-			this.MemoryMapImageDataGridViewObjectName.ReadOnly = true;
-			// 
-			// MemoryMapImageDataGridViewSectionName
-			// 
-			this.MemoryMapImageDataGridViewSectionName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.MemoryMapImageDataGridViewSectionName.HeaderText = "Section Name";
-			this.MemoryMapImageDataGridViewSectionName.Name = "MemoryMapImageDataGridViewSectionName";
-			this.MemoryMapImageDataGridViewSectionName.ReadOnly = true;
-			// 
-			// MemoryMapImageDataGridViewExecutionAddress
-			// 
-			this.MemoryMapImageDataGridViewExecutionAddress.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.MemoryMapImageDataGridViewExecutionAddress.FillWeight = 30F;
-			this.MemoryMapImageDataGridViewExecutionAddress.HeaderText = "Exec Address";
-			this.MemoryMapImageDataGridViewExecutionAddress.Name = "MemoryMapImageDataGridViewExecutionAddress";
-			this.MemoryMapImageDataGridViewExecutionAddress.ReadOnly = true;
-			// 
-			// MemoryMapImageDataGridViewLoadAddress
-			// 
-			this.MemoryMapImageDataGridViewLoadAddress.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.MemoryMapImageDataGridViewLoadAddress.FillWeight = 30F;
-			this.MemoryMapImageDataGridViewLoadAddress.HeaderText = "Load Address";
-			this.MemoryMapImageDataGridViewLoadAddress.Name = "MemoryMapImageDataGridViewLoadAddress";
-			this.MemoryMapImageDataGridViewLoadAddress.ReadOnly = true;
-			// 
-			// MemoryMapImageDataGridViewSize
-			// 
-			this.MemoryMapImageDataGridViewSize.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.MemoryMapImageDataGridViewSize.FillWeight = 30F;
-			this.MemoryMapImageDataGridViewSize.HeaderText = "Size";
-			this.MemoryMapImageDataGridViewSize.Name = "MemoryMapImageDataGridViewSize";
-			this.MemoryMapImageDataGridViewSize.ReadOnly = true;
-			// 
-			// MemoryMapImageDataGridViewType
-			// 
-			this.MemoryMapImageDataGridViewType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.MemoryMapImageDataGridViewType.FillWeight = 30F;
-			this.MemoryMapImageDataGridViewType.HeaderText = "Type";
-			this.MemoryMapImageDataGridViewType.Name = "MemoryMapImageDataGridViewType";
-			this.MemoryMapImageDataGridViewType.ReadOnly = true;
-			// 
-			// MemoryMapImageDataGridViewAttribute
-			// 
-			this.MemoryMapImageDataGridViewAttribute.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.MemoryMapImageDataGridViewAttribute.FillWeight = 30F;
-			this.MemoryMapImageDataGridViewAttribute.HeaderText = "Attribute";
-			this.MemoryMapImageDataGridViewAttribute.Name = "MemoryMapImageDataGridViewAttribute";
-			this.MemoryMapImageDataGridViewAttribute.ReadOnly = true;
-			// 
-			// MemoryMapImageDataGridViewIndex
-			// 
-			this.MemoryMapImageDataGridViewIndex.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.MemoryMapImageDataGridViewIndex.FillWeight = 30F;
-			this.MemoryMapImageDataGridViewIndex.HeaderText = "Index";
-			this.MemoryMapImageDataGridViewIndex.Name = "MemoryMapImageDataGridViewIndex";
-			this.MemoryMapImageDataGridViewIndex.ReadOnly = true;
-			// 
-			// MemoryMapImageDataGridViewEntryPoint
-			// 
-			this.MemoryMapImageDataGridViewEntryPoint.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.MemoryMapImageDataGridViewEntryPoint.FillWeight = 20F;
-			this.MemoryMapImageDataGridViewEntryPoint.HeaderText = "Entry Point";
-			this.MemoryMapImageDataGridViewEntryPoint.Name = "MemoryMapImageDataGridViewEntryPoint";
-			this.MemoryMapImageDataGridViewEntryPoint.ReadOnly = true;
 			// 
 			// MemoryMapImageEntryPointAddressLabel
 			// 
@@ -1292,6 +1278,76 @@ namespace KeilMapViewer
 			this.MemoryMapImageExecutionRegionComboBox.TabIndex = 4;
 			this.MemoryMapImageExecutionRegionComboBox.SelectionChangeCommitted += new System.EventHandler(this.MemoryMapImageExecutionRegionComboBox_SelectionChangeCommitted);
 			// 
+			// MemoryMapImageDataGridViewSectionName
+			// 
+			this.MemoryMapImageDataGridViewSectionName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.MemoryMapImageDataGridViewSectionName.HeaderText = "Section Name";
+			this.MemoryMapImageDataGridViewSectionName.Name = "MemoryMapImageDataGridViewSectionName";
+			this.MemoryMapImageDataGridViewSectionName.ReadOnly = true;
+			// 
+			// MemoryMapImageDataGridViewObjectName
+			// 
+			this.MemoryMapImageDataGridViewObjectName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.MemoryMapImageDataGridViewObjectName.HeaderText = "Object Name";
+			this.MemoryMapImageDataGridViewObjectName.Name = "MemoryMapImageDataGridViewObjectName";
+			this.MemoryMapImageDataGridViewObjectName.ReadOnly = true;
+			// 
+			// MemoryMapImageDataGridViewExecutionAddress
+			// 
+			this.MemoryMapImageDataGridViewExecutionAddress.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.MemoryMapImageDataGridViewExecutionAddress.FillWeight = 30F;
+			this.MemoryMapImageDataGridViewExecutionAddress.HeaderText = "Exec Address";
+			this.MemoryMapImageDataGridViewExecutionAddress.Name = "MemoryMapImageDataGridViewExecutionAddress";
+			this.MemoryMapImageDataGridViewExecutionAddress.ReadOnly = true;
+			// 
+			// MemoryMapImageDataGridViewLoadAddress
+			// 
+			this.MemoryMapImageDataGridViewLoadAddress.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.MemoryMapImageDataGridViewLoadAddress.FillWeight = 30F;
+			this.MemoryMapImageDataGridViewLoadAddress.HeaderText = "Load Address";
+			this.MemoryMapImageDataGridViewLoadAddress.Name = "MemoryMapImageDataGridViewLoadAddress";
+			this.MemoryMapImageDataGridViewLoadAddress.ReadOnly = true;
+			// 
+			// MemoryMapImageDataGridViewSize
+			// 
+			this.MemoryMapImageDataGridViewSize.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.MemoryMapImageDataGridViewSize.FillWeight = 30F;
+			this.MemoryMapImageDataGridViewSize.HeaderText = "Size";
+			this.MemoryMapImageDataGridViewSize.Name = "MemoryMapImageDataGridViewSize";
+			this.MemoryMapImageDataGridViewSize.ReadOnly = true;
+			// 
+			// MemoryMapImageDataGridViewType
+			// 
+			this.MemoryMapImageDataGridViewType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.MemoryMapImageDataGridViewType.FillWeight = 30F;
+			this.MemoryMapImageDataGridViewType.HeaderText = "Type";
+			this.MemoryMapImageDataGridViewType.Name = "MemoryMapImageDataGridViewType";
+			this.MemoryMapImageDataGridViewType.ReadOnly = true;
+			// 
+			// MemoryMapImageDataGridViewAttribute
+			// 
+			this.MemoryMapImageDataGridViewAttribute.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.MemoryMapImageDataGridViewAttribute.FillWeight = 30F;
+			this.MemoryMapImageDataGridViewAttribute.HeaderText = "Attribute";
+			this.MemoryMapImageDataGridViewAttribute.Name = "MemoryMapImageDataGridViewAttribute";
+			this.MemoryMapImageDataGridViewAttribute.ReadOnly = true;
+			// 
+			// MemoryMapImageDataGridViewIndex
+			// 
+			this.MemoryMapImageDataGridViewIndex.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.MemoryMapImageDataGridViewIndex.FillWeight = 30F;
+			this.MemoryMapImageDataGridViewIndex.HeaderText = "Index";
+			this.MemoryMapImageDataGridViewIndex.Name = "MemoryMapImageDataGridViewIndex";
+			this.MemoryMapImageDataGridViewIndex.ReadOnly = true;
+			// 
+			// MemoryMapImageDataGridViewEntryPoint
+			// 
+			this.MemoryMapImageDataGridViewEntryPoint.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.MemoryMapImageDataGridViewEntryPoint.FillWeight = 20F;
+			this.MemoryMapImageDataGridViewEntryPoint.HeaderText = "Entry Point";
+			this.MemoryMapImageDataGridViewEntryPoint.Name = "MemoryMapImageDataGridViewEntryPoint";
+			this.MemoryMapImageDataGridViewEntryPoint.ReadOnly = true;
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1312,12 +1368,14 @@ namespace KeilMapViewer
 			this.MainFromMenuStrip.ResumeLayout(false);
 			this.MainFromMenuStrip.PerformLayout();
 			this.MaximumStackUsageTab.ResumeLayout(false);
+			this.MaximumStackUsageTab.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.MaximumStackUsageDataGridView)).EndInit();
 			this.LocalSymbolTab.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.LocalSymbolDataGridView)).EndInit();
 			this.ImageComponentSizeTab.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.ImageComponentSizeDataGridView)).EndInit();
 			this.FunctionPointerTab.ResumeLayout(false);
+			this.FunctionPointerTab.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.FunctionPointerDataGridView)).EndInit();
 			this.GlobalSymbolTab.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.GlobalSymbolDataGridView)).EndInit();
@@ -1327,8 +1385,10 @@ namespace KeilMapViewer
 			this.RemovedSymbolTab.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.RemovedSymbolDataGridView)).EndInit();
 			this.StackUsageTab.ResumeLayout(false);
+			this.StackUsageTab.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.StackUsageDataGridView)).EndInit();
 			this.MutuallyRecursiveTab.ResumeLayout(false);
+			this.MutuallyRecursiveTab.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.MutuallyRecursiveDataGridView)).EndInit();
 			this.MemoryMapImageTab.ResumeLayout(false);
 			this.MainTableLayoutPanel.ResumeLayout(false);
@@ -1409,8 +1469,12 @@ namespace KeilMapViewer
 		private System.Windows.Forms.DataGridViewTextBoxColumn RemovedSymbolDataGridViewModule;
 		private System.Windows.Forms.DataGridViewTextBoxColumn StackUsageDataFunction;
 		private System.Windows.Forms.DataGridViewTextBoxColumn StackUsageDataSize;
-		private System.Windows.Forms.DataGridViewTextBoxColumn MemoryMapImageDataGridViewObjectName;
+		private System.Windows.Forms.Label MaximumStackUsageErrorLabel;
+		private System.Windows.Forms.Label FunctionPointerErrorLabel;
+		private System.Windows.Forms.Label StackUsageErrorLabel;
+		private System.Windows.Forms.Label MutuallyRecursiveErrorLabel;
 		private System.Windows.Forms.DataGridViewTextBoxColumn MemoryMapImageDataGridViewSectionName;
+		private System.Windows.Forms.DataGridViewTextBoxColumn MemoryMapImageDataGridViewObjectName;
 		private System.Windows.Forms.DataGridViewTextBoxColumn MemoryMapImageDataGridViewExecutionAddress;
 		private System.Windows.Forms.DataGridViewTextBoxColumn MemoryMapImageDataGridViewLoadAddress;
 		private System.Windows.Forms.DataGridViewTextBoxColumn MemoryMapImageDataGridViewSize;

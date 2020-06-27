@@ -23,9 +23,9 @@ namespace KeilMapViewer
 {
 	class DataManager<INPUT> : DataFilter<INPUT>
 	{
-		IEnumerable<INPUT> _Vector;
+		INPUT[] _Vector;
 
-		public DataManager(IEnumerable<INPUT> input_data_vector,
+		public DataManager(INPUT[] input_data_vector,
 		                   Func<INPUT, string, bool> filter_function) : base(filter_function)
 		{
 			_Vector = input_data_vector;
@@ -46,6 +46,14 @@ namespace KeilMapViewer
 			}
 
 			return (result.ToArray());
+		}
+
+		virtual public int Length
+		{
+			get
+			{
+				return (_Vector.Length);
+			}
 		}
 	}
 }

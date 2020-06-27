@@ -233,6 +233,7 @@ namespace KeilMapViewer
 			GlobalSymbolDataManager		  global_symbol_data_manager;
 			MemoryMapImageDataManager     memory_map_image_data_manager;
 			ImageComponentSizeDataManager image_component_size_data_manager;
+			bool                          stack_info_ok;
 
 			cross_reference_manager           = null;
 			removed_symbol_data_manager       = null;
@@ -257,6 +258,7 @@ namespace KeilMapViewer
 
 			_Map_File_Update = true;
 
+			stack_info_ok = false;
 			try
 			{
 				while (true)
@@ -376,6 +378,11 @@ namespace KeilMapViewer
 							global_symbol_task.Wait();
 							memory_map_image_task.Wait();
 							image_component_size_task.Wait();
+
+							stack_info_ok = ((maximum_stack_usage_data_manager.Length > 0) ||
+							                (stack_usage_data_manager.Length > 0)         ||
+											(mutually_recursive_data_manager.Length > 0)  ||
+											(function_pointer_data_manager.Length > 0)); 
 						}
 					}
 
@@ -412,7 +419,7 @@ namespace KeilMapViewer
 							{
 								_Maximum_Stack_Usage_Data = result;
 							}
-							App.Instance.BeginInvoke(App.Instance.UpdateMaximumStackUsageDelegate);
+							App.Instance.BeginInvoke(App.Instance.UpdateMaximumStackUsageDelegate, stack_info_ok);
 						});
 
 						Task stack_usage_task = Task.Run(() =>
@@ -422,7 +429,7 @@ namespace KeilMapViewer
 							{
 								_Stack_Usage_Data = result;
 							}
-							App.Instance.BeginInvoke(App.Instance.UpdateStackUsageDelegate);
+							App.Instance.BeginInvoke(App.Instance.UpdateStackUsageDelegate, stack_info_ok);
 						});
 
 						Task mutually_recursive_task = Task.Run(() =>
@@ -432,7 +439,7 @@ namespace KeilMapViewer
 							{
 								_Mutually_Recursive_Data = result;
 							}
-							App.Instance.BeginInvoke(App.Instance.UpdateMutuallyRecursiveDelegate);
+							App.Instance.BeginInvoke(App.Instance.UpdateMutuallyRecursiveDelegate, stack_info_ok);
 						});
 
 						Task function_pointer_task = Task.Run(() =>
@@ -442,7 +449,7 @@ namespace KeilMapViewer
 							{
 								_Function_Pointer_Data = result;
 							}
-							App.Instance.BeginInvoke(App.Instance.UpdateFunctionPointerDelegate);
+							App.Instance.BeginInvoke(App.Instance.UpdateFunctionPointerDelegate, stack_info_ok);
 						});
 
 						Task local_symbol_task = Task.Run(() =>
