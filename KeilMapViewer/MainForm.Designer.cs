@@ -1306,7 +1306,6 @@ namespace KeilMapViewer
 			this.Name = "MainForm";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
 			this.Load += new System.EventHandler(this.MainForm_Load);
-			this.Shown += new System.EventHandler(this.MainForm_Shown);
 			this.SizeChanged += new System.EventHandler(this.MainForm_SizeChanged);
 			this.AppInfoStatusStrip.ResumeLayout(false);
 			this.AppInfoStatusStrip.PerformLayout();

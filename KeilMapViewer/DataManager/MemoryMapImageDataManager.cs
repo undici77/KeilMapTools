@@ -154,6 +154,7 @@ namespace KeilMapViewer
 		public MemoryMapImageDataManager(MEMORY_MAP_IMAGE input_data) :
 			base (_Filter_Function)
 		{
+			GC.KeepAlive(input_data);
 			_Input_Data = new MemoryMapImage(input_data);
 		}
 

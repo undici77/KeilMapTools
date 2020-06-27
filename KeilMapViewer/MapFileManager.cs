@@ -234,8 +234,6 @@ namespace KeilMapViewer
 			MemoryMapImageDataManager     memory_map_image_data_manager;
 			ImageComponentSizeDataManager image_component_size_data_manager;
 
-			client = new KeilMapLibClient();
-
 			cross_reference_manager           = null;
 			removed_symbol_data_manager       = null;
 			maximum_stack_usage_data_manager  = null;
@@ -265,84 +263,120 @@ namespace KeilMapViewer
 				{
 					if (_Map_File_Update)
 					{
-						_Map_File_Update = false;
-						if (!client.ReadFile(_Map_File))
+						using (client = new KeilMapLibClient())
 						{
-							App.Instance.BeginInvoke(App.Instance.ShowErrorDelegate, "Unable to read " + _Map_File, "MapFileManager");
-						}
-
-						Task image_size_data_task = Task.Run(() =>
-						{
-							ImageSizeData result = new ImageSizeData(client.GetImageSize());
-
-							lock (_Image_Size_Data_Lock)
+							_Map_File_Update = false;
+							if (!client.ReadFile(_Map_File))
 							{
-								_Image_Size_Data = result;
+								App.Instance.BeginInvoke(App.Instance.ShowErrorDelegate, "Unable to read " + _Map_File, "MapFileManager");
 							}
-							App.Instance.BeginInvoke(App.Instance.UpdateImageSizeDataDelegate);
-						});
 
-						Task cross_reference_task = Task.Run(() =>
-						{
-							cross_reference_manager = new CrossReferenceDataManager(client.GetCrossReference().ToArray());
-						});
+							Task image_size_data_task = Task.Run(() =>
+							{
+								using (IMAGE_SIZE_DATA data = client.GetImageSize())
+								{
+									ImageSizeData result = new ImageSizeData(client.GetImageSize());
 
-						Task removed_symbol_task = Task.Run(() =>
-						{
-							removed_symbol_data_manager = new RemovedSymbolDataManager(client.GetRemovedSymbols().ToArray());
-						});
+									lock (_Image_Size_Data_Lock)
+									{
+										_Image_Size_Data = result;
+									}
+									App.Instance.BeginInvoke(App.Instance.UpdateImageSizeDataDelegate);
+								}
+							});
 
-						Task maximum_stack_usage_task = Task.Run(() =>
-						{
-							maximum_stack_usage_data_manager = new MaximumStackUsageDataManager(client.GetMaximumStackUsage().ToArray());
-						});
+							Task cross_reference_task = Task.Run(() =>
+							{
+								using (CROSS_REFERENCE_VECTOR vector = client.GetCrossReference())
+								{
+									cross_reference_manager = new CrossReferenceDataManager(vector.ToArray());
+								}
+							});
 
-						Task stack_usage_task = Task.Run(() =>
-						{
-							stack_usage_data_manager = new StackUsageDataManager(client.GetStackUsage().ToArray());
-						});
+							Task removed_symbol_task = Task.Run(() =>
+							{
+								using (REMOVED_SYMBOL_VECTOR vector = client.GetRemovedSymbols())
+								{
+									removed_symbol_data_manager = new RemovedSymbolDataManager(vector.ToArray());
+								}
+							});
 
-						Task mutually_recursive_task = Task.Run(() =>
-						{
-							mutually_recursive_data_manager = new MutuallyRecursiveDataManager(client.GetMutualRecursive().ToArray());
-						});
+							Task maximum_stack_usage_task = Task.Run(() =>
+							{
+								using (MAXIMUM_STACK_USAGE_VECTOR vector = client.GetMaximumStackUsage())
+								{
+									maximum_stack_usage_data_manager = new MaximumStackUsageDataManager(vector.ToArray());
+								}
+							});
 
-						Task function_pointer_task = Task.Run(() =>
-						{
-							function_pointer_data_manager = new FunctionPointerDataManager(client.GetFunctionPointer().ToArray());
-						});
+							Task stack_usage_task = Task.Run(() =>
+							{
+								using (STACK_USAGE_VECTOR vector = client.GetStackUsage())
+								{
+									stack_usage_data_manager = new StackUsageDataManager(vector.ToArray());
+								}
+							});
 
-						Task local_symbol_task = Task.Run(() =>
-						{
-							local_symbol_data_manager = new LocalSymbolDataManager(client.GetLocalSymbols().ToArray());
-						});
+							Task mutually_recursive_task = Task.Run(() =>
+							{
+								using (MUTUALLY_RECURSIVE_VECTOR vector = client.GetMutualRecursive())
+								{
+									mutually_recursive_data_manager = new MutuallyRecursiveDataManager(vector.ToArray());
+								}
+							});
 
-						Task global_symbol_task = Task.Run(() =>
-						{
-							global_symbol_data_manager = new GlobalSymbolDataManager(client.GetGlobalSymbols().ToArray());
-						});
+							Task function_pointer_task = Task.Run(() =>
+							{
+								using (FUNCTION_POINTER_VECTOR vector = client.GetFunctionPointer())
+								{
+									function_pointer_data_manager = new FunctionPointerDataManager(vector.ToArray());
+								}
+							});
 
-						Task memory_map_image_task = Task.Run(() =>
-						{
-							memory_map_image_data_manager = new MemoryMapImageDataManager(client.GetMemoryMapImage());
-						});
+							Task local_symbol_task = Task.Run(() =>
+							{
+								using (LOCAL_SYMBOL_VECTOR vector = client.GetLocalSymbols())
+								{
+									local_symbol_data_manager = new LocalSymbolDataManager(vector.ToArray());
+								}
+							});
 
-						Task image_component_size_task = Task.Run(() =>
-						{
-							image_component_size_data_manager = new ImageComponentSizeDataManager(client.GetImageComponentSize().ToArray());
-						});
+							Task global_symbol_task = Task.Run(() =>
+							{
+								using (GLOBAL_SYMBOL_VECTOR vector = client.GetGlobalSymbols())
+								{
+									global_symbol_data_manager = new GlobalSymbolDataManager(vector.ToArray());
+								}
+							});
 
-						image_size_data_task.Wait();
-						cross_reference_task.Wait();
-						removed_symbol_task.Wait();
-						maximum_stack_usage_task.Wait();
-						stack_usage_task.Wait();
-						mutually_recursive_task.Wait();
-						function_pointer_task.Wait();
-						local_symbol_task.Wait();
-						global_symbol_task.Wait();
-						memory_map_image_task.Wait();
-						image_component_size_task.Wait();
+							Task memory_map_image_task = Task.Run(() =>
+							{
+								using (MEMORY_MAP_IMAGE data = client.GetMemoryMapImage())
+								{
+									memory_map_image_data_manager = new MemoryMapImageDataManager(data);
+								}
+							});
+
+							Task image_component_size_task = Task.Run(() =>
+							{
+								using (IMAGE_COMPONENT_SIZE_VECTOR vector = client.GetImageComponentSize())
+								{
+									image_component_size_data_manager = new ImageComponentSizeDataManager(vector.ToArray());
+								}
+							});
+
+							image_size_data_task.Wait();
+							cross_reference_task.Wait();
+							removed_symbol_task.Wait();
+							maximum_stack_usage_task.Wait();
+							stack_usage_task.Wait();
+							mutually_recursive_task.Wait();
+							function_pointer_task.Wait();
+							local_symbol_task.Wait();
+							global_symbol_task.Wait();
+							memory_map_image_task.Wait();
+							image_component_size_task.Wait();
+						}
 					}
 
 					while (!_Map_File_Update)

@@ -27,6 +27,8 @@ namespace KeilMapViewer
 		{
 			List<OUTPUT> result;
 
+			GC.KeepAlive(input);
+
 			result = new List<OUTPUT>();
 
 			foreach (INPUT field in input)

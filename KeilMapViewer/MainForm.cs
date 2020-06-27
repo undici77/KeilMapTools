@@ -150,6 +150,8 @@ namespace KeilMapViewer
 				_Map_File_Name = dialog.FileName;
 			}
 
+			_Map_File_Manager = new MapFileManager(_Map_File_Name);
+
 			try
 			{
 				System.IO.File.ReadAllLines(_Map_File_Name);
@@ -206,11 +208,6 @@ namespace KeilMapViewer
 			MainTabs.SelectedIndex = id;
 
 			this.Text = App.Name + " " + App.Version + " - " + _Map_File_Name;
-		}
-
-		private void MainForm_Shown(object sender, EventArgs e)
-		{
-			_Map_File_Manager = new MapFileManager(_Map_File_Name);
 		}
 
 		private void FilterTextBox_TextChanged(object sender, EventArgs e)
