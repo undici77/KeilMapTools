@@ -124,12 +124,12 @@ bool GeneratorBase::Write(PARAMETERS &parameters)
 size_t GeneratorBase::CalculareStackSize(size_t value, size_t stdio_stack_size, size_t stack_oversize)
 /*****************************************************************************/
 {
-	// Adding 5% of free stack
+	// Adding 4% of free stack
 	value = ((value * 104) / 100);
 	// Adding stdio usage (architecture dependency) and stack needed from KEIL RTX
 	value += stdio_stack_size + OS_RTX_DEFAULT_STACK_SIZE;
 	// Take align of 64 bytes in order to reduce project rebuild
-	value = (((value + 64) / 64) * 64) + stack_oversize;
+	value = (((value + (64 - 1)) / 64) * 64) + stack_oversize;
 
 	return (value);
 }

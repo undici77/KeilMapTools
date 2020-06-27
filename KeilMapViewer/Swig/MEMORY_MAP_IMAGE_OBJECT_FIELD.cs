@@ -9,232 +9,147 @@
 //------------------------------------------------------------------------------
 
 
-public class MEMORY_MAP_IMAGE_OBJECT_FIELD : global::System.IDisposable
-{
-	private global::System.Runtime.InteropServices.HandleRef swigCPtr;
-	protected bool swigCMemOwn;
+public class MEMORY_MAP_IMAGE_OBJECT_FIELD : global::System.IDisposable {
+  private global::System.Runtime.InteropServices.HandleRef swigCPtr;
+  protected bool swigCMemOwn;
 
-	internal MEMORY_MAP_IMAGE_OBJECT_FIELD(global::System.IntPtr cPtr, bool cMemoryOwn)
-	{
-		swigCMemOwn = cMemoryOwn;
-		swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
-	}
+  internal MEMORY_MAP_IMAGE_OBJECT_FIELD(global::System.IntPtr cPtr, bool cMemoryOwn) {
+    swigCMemOwn = cMemoryOwn;
+    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
+  }
 
-	internal static global::System.Runtime.InteropServices.HandleRef getCPtr(MEMORY_MAP_IMAGE_OBJECT_FIELD obj)
-	{
-		return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
-	}
+  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(MEMORY_MAP_IMAGE_OBJECT_FIELD obj) {
+    return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
+  }
 
-	~MEMORY_MAP_IMAGE_OBJECT_FIELD()
-	{
-		Dispose(false);
-	}
+  ~MEMORY_MAP_IMAGE_OBJECT_FIELD() {
+    Dispose(false);
+  }
 
-	public void Dispose()
-	{
-		Dispose(true);
-		global::System.GC.SuppressFinalize(this);
-	}
+  public void Dispose() {
+    Dispose(true);
+    global::System.GC.SuppressFinalize(this);
+  }
 
-	protected virtual void Dispose(bool disposing)
-	{
-		lock (this)
-		{
-			if (swigCPtr.Handle != global::System.IntPtr.Zero)
-			{
-				if (swigCMemOwn)
-				{
-					swigCMemOwn = false;
-					KeilMapLibPINVOKE.delete_MEMORY_MAP_IMAGE_OBJECT_FIELD(swigCPtr);
-				}
-				swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
-			}
-		}
-	}
+  protected virtual void Dispose(bool disposing) {
+    lock(this) {
+      if (swigCPtr.Handle != global::System.IntPtr.Zero) {
+        if (swigCMemOwn) {
+          swigCMemOwn = false;
+          KeilMapLibPINVOKE.delete_MEMORY_MAP_IMAGE_OBJECT_FIELD(swigCPtr);
+        }
+        swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
+      }
+    }
+  }
 
-	public string execution_address
-	{
-		set
-		{
-			KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_OBJECT_FIELD_execution_address_set(swigCPtr, value);
-			if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-			{
-				throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-			}
-		}
-		get
-		{
-			string ret = KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_OBJECT_FIELD_execution_address_get(swigCPtr);
-			if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-			{
-				throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-			}
-			return ret;
-		}
-	}
+  public string execution_address {
+    set {
+      KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_OBJECT_FIELD_execution_address_set(swigCPtr, value);
+      if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+    } 
+    get {
+      string ret = KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_OBJECT_FIELD_execution_address_get(swigCPtr);
+      if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+      return ret;
+    } 
+  }
 
-	public string load_address
-	{
-		set
-		{
-			KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_OBJECT_FIELD_load_address_set(swigCPtr, value);
-			if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-			{
-				throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-			}
-		}
-		get
-		{
-			string ret = KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_OBJECT_FIELD_load_address_get(swigCPtr);
-			if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-			{
-				throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-			}
-			return ret;
-		}
-	}
+  public string load_address {
+    set {
+      KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_OBJECT_FIELD_load_address_set(swigCPtr, value);
+      if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+    } 
+    get {
+      string ret = KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_OBJECT_FIELD_load_address_get(swigCPtr);
+      if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+      return ret;
+    } 
+  }
 
-	public string size
-	{
-		set
-		{
-			KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_OBJECT_FIELD_size_set(swigCPtr, value);
-			if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-			{
-				throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-			}
-		}
-		get
-		{
-			string ret = KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_OBJECT_FIELD_size_get(swigCPtr);
-			if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-			{
-				throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-			}
-			return ret;
-		}
-	}
+  public string size {
+    set {
+      KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_OBJECT_FIELD_size_set(swigCPtr, value);
+      if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+    } 
+    get {
+      string ret = KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_OBJECT_FIELD_size_get(swigCPtr);
+      if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+      return ret;
+    } 
+  }
 
-	public string type
-	{
-		set
-		{
-			KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_OBJECT_FIELD_type_set(swigCPtr, value);
-			if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-			{
-				throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-			}
-		}
-		get
-		{
-			string ret = KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_OBJECT_FIELD_type_get(swigCPtr);
-			if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-			{
-				throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-			}
-			return ret;
-		}
-	}
+  public string type {
+    set {
+      KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_OBJECT_FIELD_type_set(swigCPtr, value);
+      if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+    } 
+    get {
+      string ret = KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_OBJECT_FIELD_type_get(swigCPtr);
+      if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+      return ret;
+    } 
+  }
 
-	public string attribute
-	{
-		set
-		{
-			KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_OBJECT_FIELD_attribute_set(swigCPtr, value);
-			if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-			{
-				throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-			}
-		}
-		get
-		{
-			string ret = KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_OBJECT_FIELD_attribute_get(swigCPtr);
-			if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-			{
-				throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-			}
-			return ret;
-		}
-	}
+  public string attribute {
+    set {
+      KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_OBJECT_FIELD_attribute_set(swigCPtr, value);
+      if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+    } 
+    get {
+      string ret = KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_OBJECT_FIELD_attribute_get(swigCPtr);
+      if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+      return ret;
+    } 
+  }
 
-	public string id
-	{
-		set
-		{
-			KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_OBJECT_FIELD_id_set(swigCPtr, value);
-			if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-			{
-				throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-			}
-		}
-		get
-		{
-			string ret = KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_OBJECT_FIELD_id_get(swigCPtr);
-			if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-			{
-				throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-			}
-			return ret;
-		}
-	}
+  public string id {
+    set {
+      KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_OBJECT_FIELD_id_set(swigCPtr, value);
+      if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+    } 
+    get {
+      string ret = KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_OBJECT_FIELD_id_get(swigCPtr);
+      if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+      return ret;
+    } 
+  }
 
-	public bool entry_point
-	{
-		set
-		{
-			KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_OBJECT_FIELD_entry_point_set(swigCPtr, value);
-		}
-		get
-		{
-			bool ret = KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_OBJECT_FIELD_entry_point_get(swigCPtr);
-			return ret;
-		}
-	}
+  public bool entry_point {
+    set {
+      KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_OBJECT_FIELD_entry_point_set(swigCPtr, value);
+    } 
+    get {
+      bool ret = KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_OBJECT_FIELD_entry_point_get(swigCPtr);
+      return ret;
+    } 
+  }
 
-	public string section_name
-	{
-		set
-		{
-			KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_OBJECT_FIELD_section_name_set(swigCPtr, value);
-			if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-			{
-				throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-			}
-		}
-		get
-		{
-			string ret = KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_OBJECT_FIELD_section_name_get(swigCPtr);
-			if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-			{
-				throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-			}
-			return ret;
-		}
-	}
+  public string section_name {
+    set {
+      KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_OBJECT_FIELD_section_name_set(swigCPtr, value);
+      if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+    } 
+    get {
+      string ret = KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_OBJECT_FIELD_section_name_get(swigCPtr);
+      if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+      return ret;
+    } 
+  }
 
-	public string object_name
-	{
-		set
-		{
-			KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_OBJECT_FIELD_object_name_set(swigCPtr, value);
-			if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-			{
-				throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-			}
-		}
-		get
-		{
-			string ret = KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_OBJECT_FIELD_object_name_get(swigCPtr);
-			if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-			{
-				throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-			}
-			return ret;
-		}
-	}
+  public string object_name {
+    set {
+      KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_OBJECT_FIELD_object_name_set(swigCPtr, value);
+      if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+    } 
+    get {
+      string ret = KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_OBJECT_FIELD_object_name_get(swigCPtr);
+      if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+      return ret;
+    } 
+  }
 
-	public MEMORY_MAP_IMAGE_OBJECT_FIELD() : this(KeilMapLibPINVOKE.new_MEMORY_MAP_IMAGE_OBJECT_FIELD(), true)
-	{
-	}
+  public MEMORY_MAP_IMAGE_OBJECT_FIELD() : this(KeilMapLibPINVOKE.new_MEMORY_MAP_IMAGE_OBJECT_FIELD(), true) {
+  }
 
 }

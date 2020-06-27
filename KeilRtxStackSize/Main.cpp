@@ -20,7 +20,7 @@
 /******************************************************************************/
 
 const std::string App_Name    = "KeilRtxStackSize";
-const std::string App_Version = "v1.1.0.0";
+const std::string App_Version = "v1.2.0.0";
 const std::string App_Author  = "Alessandro Barbieri";
 
 /******************************************************************************/

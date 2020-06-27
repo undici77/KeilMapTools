@@ -53,17 +53,16 @@ namespace KeilMapViewer
 			InitializeComponent();
 			InitializeDelegates();
 
-			_Ini_File_Path = "";
-
 			_Ini_File = new IniFile();
 			if (String.IsNullOrEmpty(ini_file_path))
 			{
-				_Ini_File_Name = "KeilMapTools.ini";
+				_Ini_File_Path = "";
+				_Ini_File_Name = new Uri(Path.Combine(System.IO.Directory.GetCurrentDirectory() + "\\", ("KeilMapTools.ini"))).LocalPath;
 			}
 			else
 			{
 				_Ini_File_Path = ini_file_path;
-				_Ini_File_Name = Path.Combine(ini_file_path, ("KeilMapTools.ini"));
+				_Ini_File_Name = new Uri(Path.GetFullPath(Path.Combine(_Ini_File_Path + "\\", ("KeilMapTools.ini")))).LocalPath;
 			}
 
 			_Filter_Text_Box = new ToolStripTextBoxEx();
@@ -82,27 +81,57 @@ namespace KeilMapViewer
 			Uri map_path;
 			Uri current_path;
 
-			_Ini_File.Load(_Ini_File_Name);
+			current_path = new Uri(System.IO.Directory.GetCurrentDirectory() + "\\");
+
+			try
+			{
+				_Ini_File.Load(_Ini_File_Name);
+			}
+			catch
+			{
+				MessageBox.Show(this, "Unable to open/create " + _Ini_File_Name, "Fatal error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				Close();
+
+				return;
+			}
+
+			CrossReferenceDataGridView.SetupFromIni(_Ini_File);
+			RemovedSymbolDataGridView.SetupFromIni(_Ini_File);
+			MaximumStackUsageDataGridView.SetupFromIni(_Ini_File);
+			StackUsageDataGridView.SetupFromIni(_Ini_File);
+			MutuallyRecursiveDataGridView.SetupFromIni(_Ini_File);
+			FunctionPointerDataGridView.SetupFromIni(_Ini_File);
+			LocalSymbolDataGridView.SetupFromIni(_Ini_File);
+			GlobalSymbolDataGridView.SetupFromIni(_Ini_File);
+			MemoryMapImageDataGridView.SetupFromIni(_Ini_File);
+			ImageComponentSizeDataGridView.SetupFromIni(_Ini_File);
 
 			current_path = new Uri(System.IO.Directory.GetCurrentDirectory() + "\\");
 
-			_Map_File_Name = Uri.UnescapeDataString(_Ini_File.GetKeyValue("Map", "FilePath"));
-			if (String.IsNullOrEmpty(_Map_File_Name))
+			try
 			{
-				if (String.IsNullOrEmpty(_Ini_File_Path))
+				_Map_File_Name = Uri.UnescapeDataString(_Ini_File.GetKeyValue("Map", "FilePath"));
+				if (String.IsNullOrEmpty(_Map_File_Name))
 				{
-					map_path = new Uri(Path.Combine(System.IO.Directory.GetCurrentDirectory() + "\\", ("Application.map")));
-					_Map_File_Name = map_path.AbsolutePath;
+					if (String.IsNullOrEmpty(_Ini_File_Path))
+					{
+						map_path = new Uri(Path.Combine(System.IO.Directory.GetCurrentDirectory() + "\\", ("Application.map")));
+						_Map_File_Name = map_path.LocalPath;
+					}
+					else
+					{
+						map_path = new Uri(Path.GetFullPath(Path.Combine(_Ini_File_Path + "\\", ("Application.map"))));
+						_Map_File_Name = map_path.LocalPath;
+					}
 				}
 				else
 				{
-					map_path = new Uri(Path.Combine(_Ini_File_Path + "\\", ("Application.map")));
-					_Map_File_Name = map_path.AbsolutePath;
+					_Map_File_Name = new Uri(current_path, _Map_File_Name).LocalPath;
 				}
 			}
-			else
+			catch
 			{
-				_Map_File_Name = new Uri(current_path, _Map_File_Name).AbsolutePath;
+				_Map_File_Name = "";
 			}
 
 			if (!File.Exists(_Map_File_Name))
@@ -132,8 +161,6 @@ namespace KeilMapViewer
 
 				return;
 			}
-
-			_Map_File_Manager = new MapFileManager(_Map_File_Name);
 
 			try
 			{
@@ -181,9 +208,17 @@ namespace KeilMapViewer
 			this.Text = App.Name + " " + App.Version + " - " + _Map_File_Name;
 		}
 
+		private void MainForm_Shown(object sender, EventArgs e)
+		{
+			_Map_File_Manager = new MapFileManager(_Map_File_Name);
+		}
+
 		private void FilterTextBox_TextChanged(object sender, EventArgs e)
 		{
-			_Map_File_Manager.FilterString = _Filter_Text_Box.Text;
+			if (_Map_File_Manager != null)
+			{
+				_Map_File_Manager.FilterString = _Filter_Text_Box.Text;
+			}
 		}
 
 		private void MainForm_SizeChanged(object sender, EventArgs e)
@@ -215,7 +250,11 @@ namespace KeilMapViewer
 			current_path   = new Uri(System.IO.Directory.GetCurrentDirectory() + "\\");
 			_Map_File_Name = dialog.FileName;
 
-			_Map_File_Manager.Close();
+			if (_Map_File_Manager != null)
+			{
+				_Map_File_Manager.Close();
+			}
+
 			_Map_File_Manager = new MapFileManager(_Map_File_Name);
 
 			map_path = new Uri(_Map_File_Name);
@@ -233,7 +272,10 @@ namespace KeilMapViewer
 		{
 			try
 			{
-				_Map_File_Manager.Close();
+				if (_Map_File_Manager != null)
+				{
+					_Map_File_Manager.Close();
+				}
 			}
 			catch
 			{
@@ -241,6 +283,18 @@ namespace KeilMapViewer
 
 			try
 			{
+				CrossReferenceDataGridView.SetupToIni(_Ini_File);
+				CrossReferenceDataGridView.SetupToIni(_Ini_File);
+				RemovedSymbolDataGridView.SetupToIni(_Ini_File);
+				MaximumStackUsageDataGridView.SetupToIni(_Ini_File);
+				StackUsageDataGridView.SetupToIni(_Ini_File);
+				MutuallyRecursiveDataGridView.SetupToIni(_Ini_File);
+				FunctionPointerDataGridView.SetupToIni(_Ini_File);
+				LocalSymbolDataGridView.SetupToIni(_Ini_File);
+				GlobalSymbolDataGridView.SetupToIni(_Ini_File);
+				MemoryMapImageDataGridView.SetupToIni(_Ini_File);
+				ImageComponentSizeDataGridView.SetupToIni(_Ini_File);
+
 				_Ini_File.Save(_Ini_File_Name);
 			}
 			catch

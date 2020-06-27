@@ -110,11 +110,13 @@ namespace KeilMapViewer
 					_Main_Form = null;
 					ini_path   = null;
 
-					if (args.Length >= 1)
+					if (args.Length > 1)
 					{
 						if (args[0] == "ini")
 						{
 							ini_path = args[1];
+							ini_path = ini_path.TrimStart('\"');
+							ini_path = ini_path.TrimEnd('\"');
 						}
 					}
 

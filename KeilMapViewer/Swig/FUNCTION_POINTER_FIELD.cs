@@ -9,135 +9,89 @@
 //------------------------------------------------------------------------------
 
 
-public class FUNCTION_POINTER_FIELD : global::System.IDisposable
-{
-	private global::System.Runtime.InteropServices.HandleRef swigCPtr;
-	protected bool swigCMemOwn;
+public class FUNCTION_POINTER_FIELD : global::System.IDisposable {
+  private global::System.Runtime.InteropServices.HandleRef swigCPtr;
+  protected bool swigCMemOwn;
 
-	internal FUNCTION_POINTER_FIELD(global::System.IntPtr cPtr, bool cMemoryOwn)
-	{
-		swigCMemOwn = cMemoryOwn;
-		swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
-	}
+  internal FUNCTION_POINTER_FIELD(global::System.IntPtr cPtr, bool cMemoryOwn) {
+    swigCMemOwn = cMemoryOwn;
+    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
+  }
 
-	internal static global::System.Runtime.InteropServices.HandleRef getCPtr(FUNCTION_POINTER_FIELD obj)
-	{
-		return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
-	}
+  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(FUNCTION_POINTER_FIELD obj) {
+    return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
+  }
 
-	~FUNCTION_POINTER_FIELD()
-	{
-		Dispose(false);
-	}
+  ~FUNCTION_POINTER_FIELD() {
+    Dispose(false);
+  }
 
-	public void Dispose()
-	{
-		Dispose(true);
-		global::System.GC.SuppressFinalize(this);
-	}
+  public void Dispose() {
+    Dispose(true);
+    global::System.GC.SuppressFinalize(this);
+  }
 
-	protected virtual void Dispose(bool disposing)
-	{
-		lock (this)
-		{
-			if (swigCPtr.Handle != global::System.IntPtr.Zero)
-			{
-				if (swigCMemOwn)
-				{
-					swigCMemOwn = false;
-					KeilMapLibPINVOKE.delete_FUNCTION_POINTER_FIELD(swigCPtr);
-				}
-				swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
-			}
-		}
-	}
+  protected virtual void Dispose(bool disposing) {
+    lock(this) {
+      if (swigCPtr.Handle != global::System.IntPtr.Zero) {
+        if (swigCMemOwn) {
+          swigCMemOwn = false;
+          KeilMapLibPINVOKE.delete_FUNCTION_POINTER_FIELD(swigCPtr);
+        }
+        swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
+      }
+    }
+  }
 
-	public string symbol
-	{
-		set
-		{
-			KeilMapLibPINVOKE.FUNCTION_POINTER_FIELD_symbol_set(swigCPtr, value);
-			if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-			{
-				throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-			}
-		}
-		get
-		{
-			string ret = KeilMapLibPINVOKE.FUNCTION_POINTER_FIELD_symbol_get(swigCPtr);
-			if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-			{
-				throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-			}
-			return ret;
-		}
-	}
+  public string symbol {
+    set {
+      KeilMapLibPINVOKE.FUNCTION_POINTER_FIELD_symbol_set(swigCPtr, value);
+      if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+    } 
+    get {
+      string ret = KeilMapLibPINVOKE.FUNCTION_POINTER_FIELD_symbol_get(swigCPtr);
+      if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+      return ret;
+    } 
+  }
 
-	public string module
-	{
-		set
-		{
-			KeilMapLibPINVOKE.FUNCTION_POINTER_FIELD_module_set(swigCPtr, value);
-			if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-			{
-				throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-			}
-		}
-		get
-		{
-			string ret = KeilMapLibPINVOKE.FUNCTION_POINTER_FIELD_module_get(swigCPtr);
-			if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-			{
-				throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-			}
-			return ret;
-		}
-	}
+  public string module {
+    set {
+      KeilMapLibPINVOKE.FUNCTION_POINTER_FIELD_module_set(swigCPtr, value);
+      if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+    } 
+    get {
+      string ret = KeilMapLibPINVOKE.FUNCTION_POINTER_FIELD_module_get(swigCPtr);
+      if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+      return ret;
+    } 
+  }
 
-	public string counts
-	{
-		set
-		{
-			KeilMapLibPINVOKE.FUNCTION_POINTER_FIELD_counts_set(swigCPtr, value);
-			if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-			{
-				throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-			}
-		}
-		get
-		{
-			string ret = KeilMapLibPINVOKE.FUNCTION_POINTER_FIELD_counts_get(swigCPtr);
-			if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-			{
-				throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-			}
-			return ret;
-		}
-	}
+  public string counts {
+    set {
+      KeilMapLibPINVOKE.FUNCTION_POINTER_FIELD_counts_set(swigCPtr, value);
+      if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+    } 
+    get {
+      string ret = KeilMapLibPINVOKE.FUNCTION_POINTER_FIELD_counts_get(swigCPtr);
+      if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+      return ret;
+    } 
+  }
 
-	public string module_reference
-	{
-		set
-		{
-			KeilMapLibPINVOKE.FUNCTION_POINTER_FIELD_module_reference_set(swigCPtr, value);
-			if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-			{
-				throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-			}
-		}
-		get
-		{
-			string ret = KeilMapLibPINVOKE.FUNCTION_POINTER_FIELD_module_reference_get(swigCPtr);
-			if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-			{
-				throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-			}
-			return ret;
-		}
-	}
+  public string module_reference {
+    set {
+      KeilMapLibPINVOKE.FUNCTION_POINTER_FIELD_module_reference_set(swigCPtr, value);
+      if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+    } 
+    get {
+      string ret = KeilMapLibPINVOKE.FUNCTION_POINTER_FIELD_module_reference_get(swigCPtr);
+      if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+      return ret;
+    } 
+  }
 
-	public FUNCTION_POINTER_FIELD() : this(KeilMapLibPINVOKE.new_FUNCTION_POINTER_FIELD(), true)
-	{
-	}
+  public FUNCTION_POINTER_FIELD() : this(KeilMapLibPINVOKE.new_FUNCTION_POINTER_FIELD(), true) {
+  }
 
 }

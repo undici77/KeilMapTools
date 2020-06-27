@@ -9,1476 +9,1434 @@
 //------------------------------------------------------------------------------
 
 
-class KeilMapLibPINVOKE
-{
-
-	protected class SWIGExceptionHelper
-	{
-
-		public delegate void ExceptionDelegate(string message);
-		public delegate void ExceptionArgumentDelegate(string message, string paramName);
-
-		static ExceptionDelegate applicationDelegate = new ExceptionDelegate(SetPendingApplicationException);
-		static ExceptionDelegate arithmeticDelegate = new ExceptionDelegate(SetPendingArithmeticException);
-		static ExceptionDelegate divideByZeroDelegate = new ExceptionDelegate(SetPendingDivideByZeroException);
-		static ExceptionDelegate indexOutOfRangeDelegate = new ExceptionDelegate(SetPendingIndexOutOfRangeException);
-		static ExceptionDelegate invalidCastDelegate = new ExceptionDelegate(SetPendingInvalidCastException);
-		static ExceptionDelegate invalidOperationDelegate = new ExceptionDelegate(SetPendingInvalidOperationException);
-		static ExceptionDelegate ioDelegate = new ExceptionDelegate(SetPendingIOException);
-		static ExceptionDelegate nullReferenceDelegate = new ExceptionDelegate(SetPendingNullReferenceException);
-		static ExceptionDelegate outOfMemoryDelegate = new ExceptionDelegate(SetPendingOutOfMemoryException);
-		static ExceptionDelegate overflowDelegate = new ExceptionDelegate(SetPendingOverflowException);
-		static ExceptionDelegate systemDelegate = new ExceptionDelegate(SetPendingSystemException);
-
-		static ExceptionArgumentDelegate argumentDelegate = new ExceptionArgumentDelegate(SetPendingArgumentException);
-		static ExceptionArgumentDelegate argumentNullDelegate = new ExceptionArgumentDelegate(SetPendingArgumentNullException);
-		static ExceptionArgumentDelegate argumentOutOfRangeDelegate = new ExceptionArgumentDelegate(SetPendingArgumentOutOfRangeException);
-
-		[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "SWIGRegisterExceptionCallbacks_KeilMapLib")]
-		public static extern void SWIGRegisterExceptionCallbacks_KeilMapLib(
-		    ExceptionDelegate applicationDelegate,
-		    ExceptionDelegate arithmeticDelegate,
-		    ExceptionDelegate divideByZeroDelegate,
-		    ExceptionDelegate indexOutOfRangeDelegate,
-		    ExceptionDelegate invalidCastDelegate,
-		    ExceptionDelegate invalidOperationDelegate,
-		    ExceptionDelegate ioDelegate,
-		    ExceptionDelegate nullReferenceDelegate,
-		    ExceptionDelegate outOfMemoryDelegate,
-		    ExceptionDelegate overflowDelegate,
-		    ExceptionDelegate systemExceptionDelegate);
-
-		[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "SWIGRegisterExceptionArgumentCallbacks_KeilMapLib")]
-		public static extern void SWIGRegisterExceptionCallbacksArgument_KeilMapLib(
-		    ExceptionArgumentDelegate argumentDelegate,
-		    ExceptionArgumentDelegate argumentNullDelegate,
-		    ExceptionArgumentDelegate argumentOutOfRangeDelegate);
-
-		static void SetPendingApplicationException(string message)
-		{
-			SWIGPendingException.Set(new global::System.ApplicationException(message, SWIGPendingException.Retrieve()));
-		}
-		static void SetPendingArithmeticException(string message)
-		{
-			SWIGPendingException.Set(new global::System.ArithmeticException(message, SWIGPendingException.Retrieve()));
-		}
-		static void SetPendingDivideByZeroException(string message)
-		{
-			SWIGPendingException.Set(new global::System.DivideByZeroException(message, SWIGPendingException.Retrieve()));
-		}
-		static void SetPendingIndexOutOfRangeException(string message)
-		{
-			SWIGPendingException.Set(new global::System.IndexOutOfRangeException(message, SWIGPendingException.Retrieve()));
-		}
-		static void SetPendingInvalidCastException(string message)
-		{
-			SWIGPendingException.Set(new global::System.InvalidCastException(message, SWIGPendingException.Retrieve()));
-		}
-		static void SetPendingInvalidOperationException(string message)
-		{
-			SWIGPendingException.Set(new global::System.InvalidOperationException(message, SWIGPendingException.Retrieve()));
-		}
-		static void SetPendingIOException(string message)
-		{
-			SWIGPendingException.Set(new global::System.IO.IOException(message, SWIGPendingException.Retrieve()));
-		}
-		static void SetPendingNullReferenceException(string message)
-		{
-			SWIGPendingException.Set(new global::System.NullReferenceException(message, SWIGPendingException.Retrieve()));
-		}
-		static void SetPendingOutOfMemoryException(string message)
-		{
-			SWIGPendingException.Set(new global::System.OutOfMemoryException(message, SWIGPendingException.Retrieve()));
-		}
-		static void SetPendingOverflowException(string message)
-		{
-			SWIGPendingException.Set(new global::System.OverflowException(message, SWIGPendingException.Retrieve()));
-		}
-		static void SetPendingSystemException(string message)
-		{
-			SWIGPendingException.Set(new global::System.SystemException(message, SWIGPendingException.Retrieve()));
-		}
-
-		static void SetPendingArgumentException(string message, string paramName)
-		{
-			SWIGPendingException.Set(new global::System.ArgumentException(message, paramName, SWIGPendingException.Retrieve()));
-		}
-		static void SetPendingArgumentNullException(string message, string paramName)
-		{
-			global::System.Exception e = SWIGPendingException.Retrieve();
-			if (e != null)
-			{
-				message = message + " Inner Exception: " + e.Message;
-			}
-			SWIGPendingException.Set(new global::System.ArgumentNullException(paramName, message));
-		}
-		static void SetPendingArgumentOutOfRangeException(string message, string paramName)
-		{
-			global::System.Exception e = SWIGPendingException.Retrieve();
-			if (e != null)
-			{
-				message = message + " Inner Exception: " + e.Message;
-			}
-			SWIGPendingException.Set(new global::System.ArgumentOutOfRangeException(paramName, message));
-		}
-
-		static SWIGExceptionHelper()
-		{
-			SWIGRegisterExceptionCallbacks_KeilMapLib(
-			    applicationDelegate,
-			    arithmeticDelegate,
-			    divideByZeroDelegate,
-			    indexOutOfRangeDelegate,
-			    invalidCastDelegate,
-			    invalidOperationDelegate,
-			    ioDelegate,
-			    nullReferenceDelegate,
-			    outOfMemoryDelegate,
-			    overflowDelegate,
-			    systemDelegate);
-
-			SWIGRegisterExceptionCallbacksArgument_KeilMapLib(
-			    argumentDelegate,
-			    argumentNullDelegate,
-			    argumentOutOfRangeDelegate);
-		}
-	}
-
-	protected static SWIGExceptionHelper swigExceptionHelper = new SWIGExceptionHelper();
-
-	public class SWIGPendingException
-	{
-		[global::System.ThreadStatic]
-		private static global::System.Exception pendingException = null;
-		private static int numExceptionsPending = 0;
-		private static global::System.Object exceptionsLock = null;
-
-		public static bool Pending
-		{
-			get
-			{
-				bool pending = false;
-				if (numExceptionsPending > 0)
-					if (pendingException != null)
-					{
-						pending = true;
-					}
-				return pending;
-			}
-		}
-
-		public static void Set(global::System.Exception e)
-		{
-			if (pendingException != null)
-			{
-				throw new global::System.ApplicationException("FATAL: An earlier pending exception from unmanaged code was missed and thus not thrown (" + pendingException.ToString() + ")", e);
-			}
-			pendingException = e;
-			lock (exceptionsLock)
-			{
-				numExceptionsPending++;
-			}
-		}
-
-		public static global::System.Exception Retrieve()
-		{
-			global::System.Exception e = null;
-			if (numExceptionsPending > 0)
-			{
-				if (pendingException != null)
-				{
-					e = pendingException;
-					pendingException = null;
-					lock (exceptionsLock)
-					{
-						numExceptionsPending--;
-					}
-				}
-			}
-			return e;
-		}
-
-		static SWIGPendingException()
-		{
-			exceptionsLock = new global::System.Object();
-		}
-	}
-
-
-	protected class SWIGStringHelper
-	{
-
-		public delegate string SWIGStringDelegate(string message);
-		static SWIGStringDelegate stringDelegate = new SWIGStringDelegate(CreateString);
-
-		[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "SWIGRegisterStringCallback_KeilMapLib")]
-		public static extern void SWIGRegisterStringCallback_KeilMapLib(SWIGStringDelegate stringDelegate);
-
-		static string CreateString(string cString)
-		{
-			return cString;
-		}
-
-		static SWIGStringHelper()
-		{
-			SWIGRegisterStringCallback_KeilMapLib(stringDelegate);
-		}
-	}
-
-	static protected SWIGStringHelper swigStringHelper = new SWIGStringHelper();
-
-
-	static KeilMapLibPINVOKE()
-	{
-	}
-
-
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_CROSS_REFERENCE_FIELD_module_set")]
-	public static extern void CROSS_REFERENCE_FIELD_module_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
-
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_CROSS_REFERENCE_FIELD_module_get")]
-	public static extern string CROSS_REFERENCE_FIELD_module_get(global::System.Runtime.InteropServices.HandleRef jarg1);
-
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_CROSS_REFERENCE_FIELD_module_reference_set")]
-	public static extern void CROSS_REFERENCE_FIELD_module_reference_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
-
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_CROSS_REFERENCE_FIELD_module_reference_get")]
-	public static extern string CROSS_REFERENCE_FIELD_module_reference_get(global::System.Runtime.InteropServices.HandleRef jarg1);
-
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_CROSS_REFERENCE_FIELD_reference_qualifier_set")]
-	public static extern void CROSS_REFERENCE_FIELD_reference_qualifier_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
-
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_CROSS_REFERENCE_FIELD_reference_qualifier_get")]
-	public static extern string CROSS_REFERENCE_FIELD_reference_qualifier_get(global::System.Runtime.InteropServices.HandleRef jarg1);
-
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_CROSS_REFERENCE_FIELD_symbol_set")]
-	public static extern void CROSS_REFERENCE_FIELD_symbol_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
-
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_CROSS_REFERENCE_FIELD_symbol_get")]
-	public static extern string CROSS_REFERENCE_FIELD_symbol_get(global::System.Runtime.InteropServices.HandleRef jarg1);
-
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_new_CROSS_REFERENCE_FIELD")]
-	public static extern global::System.IntPtr new_CROSS_REFERENCE_FIELD();
-
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_delete_CROSS_REFERENCE_FIELD")]
-	public static extern void delete_CROSS_REFERENCE_FIELD(global::System.Runtime.InteropServices.HandleRef jarg1);
-
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_FUNCTION_POINTER_FIELD_symbol_set")]
-	public static extern void FUNCTION_POINTER_FIELD_symbol_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
-
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_FUNCTION_POINTER_FIELD_symbol_get")]
-	public static extern string FUNCTION_POINTER_FIELD_symbol_get(global::System.Runtime.InteropServices.HandleRef jarg1);
-
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_FUNCTION_POINTER_FIELD_module_set")]
-	public static extern void FUNCTION_POINTER_FIELD_module_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
-
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_FUNCTION_POINTER_FIELD_module_get")]
-	public static extern string FUNCTION_POINTER_FIELD_module_get(global::System.Runtime.InteropServices.HandleRef jarg1);
-
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_FUNCTION_POINTER_FIELD_counts_set")]
-	public static extern void FUNCTION_POINTER_FIELD_counts_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
+class KeilMapLibPINVOKE {
+
+  protected class SWIGExceptionHelper {
+
+    public delegate void ExceptionDelegate(string message);
+    public delegate void ExceptionArgumentDelegate(string message, string paramName);
+
+    static ExceptionDelegate applicationDelegate = new ExceptionDelegate(SetPendingApplicationException);
+    static ExceptionDelegate arithmeticDelegate = new ExceptionDelegate(SetPendingArithmeticException);
+    static ExceptionDelegate divideByZeroDelegate = new ExceptionDelegate(SetPendingDivideByZeroException);
+    static ExceptionDelegate indexOutOfRangeDelegate = new ExceptionDelegate(SetPendingIndexOutOfRangeException);
+    static ExceptionDelegate invalidCastDelegate = new ExceptionDelegate(SetPendingInvalidCastException);
+    static ExceptionDelegate invalidOperationDelegate = new ExceptionDelegate(SetPendingInvalidOperationException);
+    static ExceptionDelegate ioDelegate = new ExceptionDelegate(SetPendingIOException);
+    static ExceptionDelegate nullReferenceDelegate = new ExceptionDelegate(SetPendingNullReferenceException);
+    static ExceptionDelegate outOfMemoryDelegate = new ExceptionDelegate(SetPendingOutOfMemoryException);
+    static ExceptionDelegate overflowDelegate = new ExceptionDelegate(SetPendingOverflowException);
+    static ExceptionDelegate systemDelegate = new ExceptionDelegate(SetPendingSystemException);
+
+    static ExceptionArgumentDelegate argumentDelegate = new ExceptionArgumentDelegate(SetPendingArgumentException);
+    static ExceptionArgumentDelegate argumentNullDelegate = new ExceptionArgumentDelegate(SetPendingArgumentNullException);
+    static ExceptionArgumentDelegate argumentOutOfRangeDelegate = new ExceptionArgumentDelegate(SetPendingArgumentOutOfRangeException);
+
+    [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="SWIGRegisterExceptionCallbacks_KeilMapLib")]
+    public static extern void SWIGRegisterExceptionCallbacks_KeilMapLib(
+                                ExceptionDelegate applicationDelegate,
+                                ExceptionDelegate arithmeticDelegate,
+                                ExceptionDelegate divideByZeroDelegate, 
+                                ExceptionDelegate indexOutOfRangeDelegate, 
+                                ExceptionDelegate invalidCastDelegate,
+                                ExceptionDelegate invalidOperationDelegate,
+                                ExceptionDelegate ioDelegate,
+                                ExceptionDelegate nullReferenceDelegate,
+                                ExceptionDelegate outOfMemoryDelegate, 
+                                ExceptionDelegate overflowDelegate, 
+                                ExceptionDelegate systemExceptionDelegate);
+
+    [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="SWIGRegisterExceptionArgumentCallbacks_KeilMapLib")]
+    public static extern void SWIGRegisterExceptionCallbacksArgument_KeilMapLib(
+                                ExceptionArgumentDelegate argumentDelegate,
+                                ExceptionArgumentDelegate argumentNullDelegate,
+                                ExceptionArgumentDelegate argumentOutOfRangeDelegate);
+
+    static void SetPendingApplicationException(string message) {
+      SWIGPendingException.Set(new global::System.ApplicationException(message, SWIGPendingException.Retrieve()));
+    }
+    static void SetPendingArithmeticException(string message) {
+      SWIGPendingException.Set(new global::System.ArithmeticException(message, SWIGPendingException.Retrieve()));
+    }
+    static void SetPendingDivideByZeroException(string message) {
+      SWIGPendingException.Set(new global::System.DivideByZeroException(message, SWIGPendingException.Retrieve()));
+    }
+    static void SetPendingIndexOutOfRangeException(string message) {
+      SWIGPendingException.Set(new global::System.IndexOutOfRangeException(message, SWIGPendingException.Retrieve()));
+    }
+    static void SetPendingInvalidCastException(string message) {
+      SWIGPendingException.Set(new global::System.InvalidCastException(message, SWIGPendingException.Retrieve()));
+    }
+    static void SetPendingInvalidOperationException(string message) {
+      SWIGPendingException.Set(new global::System.InvalidOperationException(message, SWIGPendingException.Retrieve()));
+    }
+    static void SetPendingIOException(string message) {
+      SWIGPendingException.Set(new global::System.IO.IOException(message, SWIGPendingException.Retrieve()));
+    }
+    static void SetPendingNullReferenceException(string message) {
+      SWIGPendingException.Set(new global::System.NullReferenceException(message, SWIGPendingException.Retrieve()));
+    }
+    static void SetPendingOutOfMemoryException(string message) {
+      SWIGPendingException.Set(new global::System.OutOfMemoryException(message, SWIGPendingException.Retrieve()));
+    }
+    static void SetPendingOverflowException(string message) {
+      SWIGPendingException.Set(new global::System.OverflowException(message, SWIGPendingException.Retrieve()));
+    }
+    static void SetPendingSystemException(string message) {
+      SWIGPendingException.Set(new global::System.SystemException(message, SWIGPendingException.Retrieve()));
+    }
+
+    static void SetPendingArgumentException(string message, string paramName) {
+      SWIGPendingException.Set(new global::System.ArgumentException(message, paramName, SWIGPendingException.Retrieve()));
+    }
+    static void SetPendingArgumentNullException(string message, string paramName) {
+      global::System.Exception e = SWIGPendingException.Retrieve();
+      if (e != null) message = message + " Inner Exception: " + e.Message;
+      SWIGPendingException.Set(new global::System.ArgumentNullException(paramName, message));
+    }
+    static void SetPendingArgumentOutOfRangeException(string message, string paramName) {
+      global::System.Exception e = SWIGPendingException.Retrieve();
+      if (e != null) message = message + " Inner Exception: " + e.Message;
+      SWIGPendingException.Set(new global::System.ArgumentOutOfRangeException(paramName, message));
+    }
+
+    static SWIGExceptionHelper() {
+      SWIGRegisterExceptionCallbacks_KeilMapLib(
+                                applicationDelegate,
+                                arithmeticDelegate,
+                                divideByZeroDelegate,
+                                indexOutOfRangeDelegate,
+                                invalidCastDelegate,
+                                invalidOperationDelegate,
+                                ioDelegate,
+                                nullReferenceDelegate,
+                                outOfMemoryDelegate,
+                                overflowDelegate,
+                                systemDelegate);
+
+      SWIGRegisterExceptionCallbacksArgument_KeilMapLib(
+                                argumentDelegate,
+                                argumentNullDelegate,
+                                argumentOutOfRangeDelegate);
+    }
+  }
+
+  protected static SWIGExceptionHelper swigExceptionHelper = new SWIGExceptionHelper();
+
+  public class SWIGPendingException {
+    [global::System.ThreadStatic]
+    private static global::System.Exception pendingException = null;
+    private static int numExceptionsPending = 0;
+    private static global::System.Object exceptionsLock = null;
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_FUNCTION_POINTER_FIELD_counts_get")]
-	public static extern string FUNCTION_POINTER_FIELD_counts_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+    public static bool Pending {
+      get {
+        bool pending = false;
+        if (numExceptionsPending > 0)
+          if (pendingException != null)
+            pending = true;
+        return pending;
+      } 
+    }
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_FUNCTION_POINTER_FIELD_module_reference_set")]
-	public static extern void FUNCTION_POINTER_FIELD_module_reference_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
+    public static void Set(global::System.Exception e) {
+      if (pendingException != null)
+        throw new global::System.ApplicationException("FATAL: An earlier pending exception from unmanaged code was missed and thus not thrown (" + pendingException.ToString() + ")", e);
+      pendingException = e;
+      lock(exceptionsLock) {
+        numExceptionsPending++;
+      }
+    }
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_FUNCTION_POINTER_FIELD_module_reference_get")]
-	public static extern string FUNCTION_POINTER_FIELD_module_reference_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+    public static global::System.Exception Retrieve() {
+      global::System.Exception e = null;
+      if (numExceptionsPending > 0) {
+        if (pendingException != null) {
+          e = pendingException;
+          pendingException = null;
+          lock(exceptionsLock) {
+            numExceptionsPending--;
+          }
+        }
+      }
+      return e;
+    }
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_new_FUNCTION_POINTER_FIELD")]
-	public static extern global::System.IntPtr new_FUNCTION_POINTER_FIELD();
+    static SWIGPendingException() {
+      exceptionsLock = new global::System.Object();
+    }
+  }
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_delete_FUNCTION_POINTER_FIELD")]
-	public static extern void delete_FUNCTION_POINTER_FIELD(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_GLOBAL_SYMBOL_FIELD_symbolic_name_set")]
-	public static extern void GLOBAL_SYMBOL_FIELD_symbolic_name_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
+  protected class SWIGStringHelper {
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_GLOBAL_SYMBOL_FIELD_symbolic_name_get")]
-	public static extern string GLOBAL_SYMBOL_FIELD_symbolic_name_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+    public delegate string SWIGStringDelegate(string message);
+    static SWIGStringDelegate stringDelegate = new SWIGStringDelegate(CreateString);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_GLOBAL_SYMBOL_FIELD_address_set")]
-	public static extern void GLOBAL_SYMBOL_FIELD_address_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
+    [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="SWIGRegisterStringCallback_KeilMapLib")]
+    public static extern void SWIGRegisterStringCallback_KeilMapLib(SWIGStringDelegate stringDelegate);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_GLOBAL_SYMBOL_FIELD_address_get")]
-	public static extern string GLOBAL_SYMBOL_FIELD_address_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+    static string CreateString(string cString) {
+      return cString;
+    }
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_GLOBAL_SYMBOL_FIELD_type_set")]
-	public static extern void GLOBAL_SYMBOL_FIELD_type_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
+    static SWIGStringHelper() {
+      SWIGRegisterStringCallback_KeilMapLib(stringDelegate);
+    }
+  }
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_GLOBAL_SYMBOL_FIELD_type_get")]
-	public static extern string GLOBAL_SYMBOL_FIELD_type_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+  static protected SWIGStringHelper swigStringHelper = new SWIGStringHelper();
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_GLOBAL_SYMBOL_FIELD_size_set")]
-	public static extern void GLOBAL_SYMBOL_FIELD_size_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_GLOBAL_SYMBOL_FIELD_size_get")]
-	public static extern string GLOBAL_SYMBOL_FIELD_size_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+  static KeilMapLibPINVOKE() {
+  }
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_GLOBAL_SYMBOL_FIELD_object_name_set")]
-	public static extern void GLOBAL_SYMBOL_FIELD_object_name_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_GLOBAL_SYMBOL_FIELD_object_name_get")]
-	public static extern string GLOBAL_SYMBOL_FIELD_object_name_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_CROSS_REFERENCE_FIELD_module_set")]
+  public static extern void CROSS_REFERENCE_FIELD_module_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_new_GLOBAL_SYMBOL_FIELD")]
-	public static extern global::System.IntPtr new_GLOBAL_SYMBOL_FIELD();
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_CROSS_REFERENCE_FIELD_module_get")]
+  public static extern string CROSS_REFERENCE_FIELD_module_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_delete_GLOBAL_SYMBOL_FIELD")]
-	public static extern void delete_GLOBAL_SYMBOL_FIELD(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_CROSS_REFERENCE_FIELD_module_reference_set")]
+  public static extern void CROSS_REFERENCE_FIELD_module_reference_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_IMAGE_COMPONENT_SIZE_FIELD_code_set")]
-	public static extern void IMAGE_COMPONENT_SIZE_FIELD_code_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_CROSS_REFERENCE_FIELD_module_reference_get")]
+  public static extern string CROSS_REFERENCE_FIELD_module_reference_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_IMAGE_COMPONENT_SIZE_FIELD_code_get")]
-	public static extern string IMAGE_COMPONENT_SIZE_FIELD_code_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_CROSS_REFERENCE_FIELD_reference_qualifier_set")]
+  public static extern void CROSS_REFERENCE_FIELD_reference_qualifier_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_IMAGE_COMPONENT_SIZE_FIELD_inline_data_set")]
-	public static extern void IMAGE_COMPONENT_SIZE_FIELD_inline_data_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_CROSS_REFERENCE_FIELD_reference_qualifier_get")]
+  public static extern string CROSS_REFERENCE_FIELD_reference_qualifier_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_IMAGE_COMPONENT_SIZE_FIELD_inline_data_get")]
-	public static extern string IMAGE_COMPONENT_SIZE_FIELD_inline_data_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_CROSS_REFERENCE_FIELD_symbol_set")]
+  public static extern void CROSS_REFERENCE_FIELD_symbol_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_IMAGE_COMPONENT_SIZE_FIELD_read_only_data_set")]
-	public static extern void IMAGE_COMPONENT_SIZE_FIELD_read_only_data_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_CROSS_REFERENCE_FIELD_symbol_get")]
+  public static extern string CROSS_REFERENCE_FIELD_symbol_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_IMAGE_COMPONENT_SIZE_FIELD_read_only_data_get")]
-	public static extern string IMAGE_COMPONENT_SIZE_FIELD_read_only_data_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_new_CROSS_REFERENCE_FIELD")]
+  public static extern global::System.IntPtr new_CROSS_REFERENCE_FIELD();
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_IMAGE_COMPONENT_SIZE_FIELD_read_write_data_set")]
-	public static extern void IMAGE_COMPONENT_SIZE_FIELD_read_write_data_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_delete_CROSS_REFERENCE_FIELD")]
+  public static extern void delete_CROSS_REFERENCE_FIELD(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_IMAGE_COMPONENT_SIZE_FIELD_read_write_data_get")]
-	public static extern string IMAGE_COMPONENT_SIZE_FIELD_read_write_data_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_FUNCTION_POINTER_FIELD_symbol_set")]
+  public static extern void FUNCTION_POINTER_FIELD_symbol_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_IMAGE_COMPONENT_SIZE_FIELD_zero_init_data_set")]
-	public static extern void IMAGE_COMPONENT_SIZE_FIELD_zero_init_data_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_FUNCTION_POINTER_FIELD_symbol_get")]
+  public static extern string FUNCTION_POINTER_FIELD_symbol_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_IMAGE_COMPONENT_SIZE_FIELD_zero_init_data_get")]
-	public static extern string IMAGE_COMPONENT_SIZE_FIELD_zero_init_data_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_FUNCTION_POINTER_FIELD_module_set")]
+  public static extern void FUNCTION_POINTER_FIELD_module_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_IMAGE_COMPONENT_SIZE_FIELD_debug_data_set")]
-	public static extern void IMAGE_COMPONENT_SIZE_FIELD_debug_data_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_FUNCTION_POINTER_FIELD_module_get")]
+  public static extern string FUNCTION_POINTER_FIELD_module_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_IMAGE_COMPONENT_SIZE_FIELD_debug_data_get")]
-	public static extern string IMAGE_COMPONENT_SIZE_FIELD_debug_data_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_FUNCTION_POINTER_FIELD_counts_set")]
+  public static extern void FUNCTION_POINTER_FIELD_counts_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_IMAGE_COMPONENT_SIZE_FIELD_object_name_set")]
-	public static extern void IMAGE_COMPONENT_SIZE_FIELD_object_name_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_FUNCTION_POINTER_FIELD_counts_get")]
+  public static extern string FUNCTION_POINTER_FIELD_counts_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_IMAGE_COMPONENT_SIZE_FIELD_object_name_get")]
-	public static extern string IMAGE_COMPONENT_SIZE_FIELD_object_name_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_FUNCTION_POINTER_FIELD_module_reference_set")]
+  public static extern void FUNCTION_POINTER_FIELD_module_reference_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_new_IMAGE_COMPONENT_SIZE_FIELD")]
-	public static extern global::System.IntPtr new_IMAGE_COMPONENT_SIZE_FIELD();
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_FUNCTION_POINTER_FIELD_module_reference_get")]
+  public static extern string FUNCTION_POINTER_FIELD_module_reference_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_delete_IMAGE_COMPONENT_SIZE_FIELD")]
-	public static extern void delete_IMAGE_COMPONENT_SIZE_FIELD(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_new_FUNCTION_POINTER_FIELD")]
+  public static extern global::System.IntPtr new_FUNCTION_POINTER_FIELD();
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_IMAGE_SIZE_DATA_total_read_only_size_set")]
-	public static extern void IMAGE_SIZE_DATA_total_read_only_size_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_delete_FUNCTION_POINTER_FIELD")]
+  public static extern void delete_FUNCTION_POINTER_FIELD(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_IMAGE_SIZE_DATA_total_read_only_size_get")]
-	public static extern string IMAGE_SIZE_DATA_total_read_only_size_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_GLOBAL_SYMBOL_FIELD_symbolic_name_set")]
+  public static extern void GLOBAL_SYMBOL_FIELD_symbolic_name_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_IMAGE_SIZE_DATA_total_read_write_size_set")]
-	public static extern void IMAGE_SIZE_DATA_total_read_write_size_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_GLOBAL_SYMBOL_FIELD_symbolic_name_get")]
+  public static extern string GLOBAL_SYMBOL_FIELD_symbolic_name_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_IMAGE_SIZE_DATA_total_read_write_size_get")]
-	public static extern string IMAGE_SIZE_DATA_total_read_write_size_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_GLOBAL_SYMBOL_FIELD_address_set")]
+  public static extern void GLOBAL_SYMBOL_FIELD_address_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_IMAGE_SIZE_DATA_total_rom_size_set")]
-	public static extern void IMAGE_SIZE_DATA_total_rom_size_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_GLOBAL_SYMBOL_FIELD_address_get")]
+  public static extern string GLOBAL_SYMBOL_FIELD_address_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_IMAGE_SIZE_DATA_total_rom_size_get")]
-	public static extern string IMAGE_SIZE_DATA_total_rom_size_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_GLOBAL_SYMBOL_FIELD_type_set")]
+  public static extern void GLOBAL_SYMBOL_FIELD_type_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_new_IMAGE_SIZE_DATA")]
-	public static extern global::System.IntPtr new_IMAGE_SIZE_DATA();
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_GLOBAL_SYMBOL_FIELD_type_get")]
+  public static extern string GLOBAL_SYMBOL_FIELD_type_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_delete_IMAGE_SIZE_DATA")]
-	public static extern void delete_IMAGE_SIZE_DATA(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_GLOBAL_SYMBOL_FIELD_size_set")]
+  public static extern void GLOBAL_SYMBOL_FIELD_size_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_LOCAL_SYMBOL_FIELD_symbolic_name_set")]
-	public static extern void LOCAL_SYMBOL_FIELD_symbolic_name_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_GLOBAL_SYMBOL_FIELD_size_get")]
+  public static extern string GLOBAL_SYMBOL_FIELD_size_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_LOCAL_SYMBOL_FIELD_symbolic_name_get")]
-	public static extern string LOCAL_SYMBOL_FIELD_symbolic_name_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_GLOBAL_SYMBOL_FIELD_object_name_set")]
+  public static extern void GLOBAL_SYMBOL_FIELD_object_name_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_LOCAL_SYMBOL_FIELD_address_set")]
-	public static extern void LOCAL_SYMBOL_FIELD_address_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_GLOBAL_SYMBOL_FIELD_object_name_get")]
+  public static extern string GLOBAL_SYMBOL_FIELD_object_name_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_LOCAL_SYMBOL_FIELD_address_get")]
-	public static extern string LOCAL_SYMBOL_FIELD_address_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_new_GLOBAL_SYMBOL_FIELD")]
+  public static extern global::System.IntPtr new_GLOBAL_SYMBOL_FIELD();
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_LOCAL_SYMBOL_FIELD_type_set")]
-	public static extern void LOCAL_SYMBOL_FIELD_type_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_delete_GLOBAL_SYMBOL_FIELD")]
+  public static extern void delete_GLOBAL_SYMBOL_FIELD(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_LOCAL_SYMBOL_FIELD_type_get")]
-	public static extern string LOCAL_SYMBOL_FIELD_type_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_IMAGE_COMPONENT_SIZE_FIELD_code_set")]
+  public static extern void IMAGE_COMPONENT_SIZE_FIELD_code_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_LOCAL_SYMBOL_FIELD_size_set")]
-	public static extern void LOCAL_SYMBOL_FIELD_size_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_IMAGE_COMPONENT_SIZE_FIELD_code_get")]
+  public static extern string IMAGE_COMPONENT_SIZE_FIELD_code_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_LOCAL_SYMBOL_FIELD_size_get")]
-	public static extern string LOCAL_SYMBOL_FIELD_size_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_IMAGE_COMPONENT_SIZE_FIELD_inline_data_set")]
+  public static extern void IMAGE_COMPONENT_SIZE_FIELD_inline_data_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_LOCAL_SYMBOL_FIELD_object_name_set")]
-	public static extern void LOCAL_SYMBOL_FIELD_object_name_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_IMAGE_COMPONENT_SIZE_FIELD_inline_data_get")]
+  public static extern string IMAGE_COMPONENT_SIZE_FIELD_inline_data_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_LOCAL_SYMBOL_FIELD_object_name_get")]
-	public static extern string LOCAL_SYMBOL_FIELD_object_name_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_IMAGE_COMPONENT_SIZE_FIELD_read_only_data_set")]
+  public static extern void IMAGE_COMPONENT_SIZE_FIELD_read_only_data_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_new_LOCAL_SYMBOL_FIELD")]
-	public static extern global::System.IntPtr new_LOCAL_SYMBOL_FIELD();
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_IMAGE_COMPONENT_SIZE_FIELD_read_only_data_get")]
+  public static extern string IMAGE_COMPONENT_SIZE_FIELD_read_only_data_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_delete_LOCAL_SYMBOL_FIELD")]
-	public static extern void delete_LOCAL_SYMBOL_FIELD(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_IMAGE_COMPONENT_SIZE_FIELD_read_write_data_set")]
+  public static extern void IMAGE_COMPONENT_SIZE_FIELD_read_write_data_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MAXIMUM_STACK_USAGE_FIELD_function_set")]
-	public static extern void MAXIMUM_STACK_USAGE_FIELD_function_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_IMAGE_COMPONENT_SIZE_FIELD_read_write_data_get")]
+  public static extern string IMAGE_COMPONENT_SIZE_FIELD_read_write_data_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MAXIMUM_STACK_USAGE_FIELD_function_get")]
-	public static extern string MAXIMUM_STACK_USAGE_FIELD_function_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_IMAGE_COMPONENT_SIZE_FIELD_zero_init_data_set")]
+  public static extern void IMAGE_COMPONENT_SIZE_FIELD_zero_init_data_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MAXIMUM_STACK_USAGE_FIELD_size_set")]
-	public static extern void MAXIMUM_STACK_USAGE_FIELD_size_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_IMAGE_COMPONENT_SIZE_FIELD_zero_init_data_get")]
+  public static extern string IMAGE_COMPONENT_SIZE_FIELD_zero_init_data_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MAXIMUM_STACK_USAGE_FIELD_size_get")]
-	public static extern string MAXIMUM_STACK_USAGE_FIELD_size_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_IMAGE_COMPONENT_SIZE_FIELD_debug_data_set")]
+  public static extern void IMAGE_COMPONENT_SIZE_FIELD_debug_data_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MAXIMUM_STACK_USAGE_FIELD_call_chain_set")]
-	public static extern void MAXIMUM_STACK_USAGE_FIELD_call_chain_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_IMAGE_COMPONENT_SIZE_FIELD_debug_data_get")]
+  public static extern string IMAGE_COMPONENT_SIZE_FIELD_debug_data_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MAXIMUM_STACK_USAGE_FIELD_call_chain_get")]
-	public static extern string MAXIMUM_STACK_USAGE_FIELD_call_chain_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_IMAGE_COMPONENT_SIZE_FIELD_object_name_set")]
+  public static extern void IMAGE_COMPONENT_SIZE_FIELD_object_name_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_new_MAXIMUM_STACK_USAGE_FIELD")]
-	public static extern global::System.IntPtr new_MAXIMUM_STACK_USAGE_FIELD();
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_IMAGE_COMPONENT_SIZE_FIELD_object_name_get")]
+  public static extern string IMAGE_COMPONENT_SIZE_FIELD_object_name_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_delete_MAXIMUM_STACK_USAGE_FIELD")]
-	public static extern void delete_MAXIMUM_STACK_USAGE_FIELD(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_new_IMAGE_COMPONENT_SIZE_FIELD")]
+  public static extern global::System.IntPtr new_IMAGE_COMPONENT_SIZE_FIELD();
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_OBJECT_FIELD_execution_address_set")]
-	public static extern void MEMORY_MAP_IMAGE_OBJECT_FIELD_execution_address_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_delete_IMAGE_COMPONENT_SIZE_FIELD")]
+  public static extern void delete_IMAGE_COMPONENT_SIZE_FIELD(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_OBJECT_FIELD_execution_address_get")]
-	public static extern string MEMORY_MAP_IMAGE_OBJECT_FIELD_execution_address_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_IMAGE_SIZE_DATA_total_read_only_size_set")]
+  public static extern void IMAGE_SIZE_DATA_total_read_only_size_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_OBJECT_FIELD_load_address_set")]
-	public static extern void MEMORY_MAP_IMAGE_OBJECT_FIELD_load_address_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_IMAGE_SIZE_DATA_total_read_only_size_get")]
+  public static extern string IMAGE_SIZE_DATA_total_read_only_size_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_OBJECT_FIELD_load_address_get")]
-	public static extern string MEMORY_MAP_IMAGE_OBJECT_FIELD_load_address_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_IMAGE_SIZE_DATA_total_read_write_size_set")]
+  public static extern void IMAGE_SIZE_DATA_total_read_write_size_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_OBJECT_FIELD_size_set")]
-	public static extern void MEMORY_MAP_IMAGE_OBJECT_FIELD_size_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_IMAGE_SIZE_DATA_total_read_write_size_get")]
+  public static extern string IMAGE_SIZE_DATA_total_read_write_size_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_OBJECT_FIELD_size_get")]
-	public static extern string MEMORY_MAP_IMAGE_OBJECT_FIELD_size_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_IMAGE_SIZE_DATA_total_rom_size_set")]
+  public static extern void IMAGE_SIZE_DATA_total_rom_size_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_OBJECT_FIELD_type_set")]
-	public static extern void MEMORY_MAP_IMAGE_OBJECT_FIELD_type_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_IMAGE_SIZE_DATA_total_rom_size_get")]
+  public static extern string IMAGE_SIZE_DATA_total_rom_size_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_OBJECT_FIELD_type_get")]
-	public static extern string MEMORY_MAP_IMAGE_OBJECT_FIELD_type_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_new_IMAGE_SIZE_DATA")]
+  public static extern global::System.IntPtr new_IMAGE_SIZE_DATA();
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_OBJECT_FIELD_attribute_set")]
-	public static extern void MEMORY_MAP_IMAGE_OBJECT_FIELD_attribute_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_delete_IMAGE_SIZE_DATA")]
+  public static extern void delete_IMAGE_SIZE_DATA(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_OBJECT_FIELD_attribute_get")]
-	public static extern string MEMORY_MAP_IMAGE_OBJECT_FIELD_attribute_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_LOCAL_SYMBOL_FIELD_symbolic_name_set")]
+  public static extern void LOCAL_SYMBOL_FIELD_symbolic_name_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_OBJECT_FIELD_id_set")]
-	public static extern void MEMORY_MAP_IMAGE_OBJECT_FIELD_id_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_LOCAL_SYMBOL_FIELD_symbolic_name_get")]
+  public static extern string LOCAL_SYMBOL_FIELD_symbolic_name_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_OBJECT_FIELD_id_get")]
-	public static extern string MEMORY_MAP_IMAGE_OBJECT_FIELD_id_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_LOCAL_SYMBOL_FIELD_address_set")]
+  public static extern void LOCAL_SYMBOL_FIELD_address_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_OBJECT_FIELD_entry_point_set")]
-	public static extern void MEMORY_MAP_IMAGE_OBJECT_FIELD_entry_point_set(global::System.Runtime.InteropServices.HandleRef jarg1, bool jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_LOCAL_SYMBOL_FIELD_address_get")]
+  public static extern string LOCAL_SYMBOL_FIELD_address_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_OBJECT_FIELD_entry_point_get")]
-	public static extern bool MEMORY_MAP_IMAGE_OBJECT_FIELD_entry_point_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_LOCAL_SYMBOL_FIELD_type_set")]
+  public static extern void LOCAL_SYMBOL_FIELD_type_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_OBJECT_FIELD_section_name_set")]
-	public static extern void MEMORY_MAP_IMAGE_OBJECT_FIELD_section_name_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_LOCAL_SYMBOL_FIELD_type_get")]
+  public static extern string LOCAL_SYMBOL_FIELD_type_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_OBJECT_FIELD_section_name_get")]
-	public static extern string MEMORY_MAP_IMAGE_OBJECT_FIELD_section_name_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_LOCAL_SYMBOL_FIELD_size_set")]
+  public static extern void LOCAL_SYMBOL_FIELD_size_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_OBJECT_FIELD_object_name_set")]
-	public static extern void MEMORY_MAP_IMAGE_OBJECT_FIELD_object_name_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_LOCAL_SYMBOL_FIELD_size_get")]
+  public static extern string LOCAL_SYMBOL_FIELD_size_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_OBJECT_FIELD_object_name_get")]
-	public static extern string MEMORY_MAP_IMAGE_OBJECT_FIELD_object_name_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_LOCAL_SYMBOL_FIELD_object_name_set")]
+  public static extern void LOCAL_SYMBOL_FIELD_object_name_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_new_MEMORY_MAP_IMAGE_OBJECT_FIELD")]
-	public static extern global::System.IntPtr new_MEMORY_MAP_IMAGE_OBJECT_FIELD();
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_LOCAL_SYMBOL_FIELD_object_name_get")]
+  public static extern string LOCAL_SYMBOL_FIELD_object_name_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_delete_MEMORY_MAP_IMAGE_OBJECT_FIELD")]
-	public static extern void delete_MEMORY_MAP_IMAGE_OBJECT_FIELD(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_new_LOCAL_SYMBOL_FIELD")]
+  public static extern global::System.IntPtr new_LOCAL_SYMBOL_FIELD();
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD_name_set")]
-	public static extern void MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD_name_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_delete_LOCAL_SYMBOL_FIELD")]
+  public static extern void delete_LOCAL_SYMBOL_FIELD(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD_name_get")]
-	public static extern string MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD_name_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MAXIMUM_STACK_USAGE_FIELD_function_set")]
+  public static extern void MAXIMUM_STACK_USAGE_FIELD_function_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD_data_set")]
-	public static extern void MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD_data_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MAXIMUM_STACK_USAGE_FIELD_function_get")]
+  public static extern string MAXIMUM_STACK_USAGE_FIELD_function_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD_data_get")]
-	public static extern string MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD_data_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MAXIMUM_STACK_USAGE_FIELD_size_set")]
+  public static extern void MAXIMUM_STACK_USAGE_FIELD_size_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD_fields_set")]
-	public static extern void MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD_fields_set(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MAXIMUM_STACK_USAGE_FIELD_size_get")]
+  public static extern string MAXIMUM_STACK_USAGE_FIELD_size_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD_fields_get")]
-	public static extern global::System.IntPtr MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD_fields_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MAXIMUM_STACK_USAGE_FIELD_call_chain_set")]
+  public static extern void MAXIMUM_STACK_USAGE_FIELD_call_chain_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_new_MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD")]
-	public static extern global::System.IntPtr new_MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD();
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MAXIMUM_STACK_USAGE_FIELD_call_chain_get")]
+  public static extern string MAXIMUM_STACK_USAGE_FIELD_call_chain_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_delete_MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD")]
-	public static extern void delete_MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_new_MAXIMUM_STACK_USAGE_FIELD")]
+  public static extern global::System.IntPtr new_MAXIMUM_STACK_USAGE_FIELD();
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_LOAD_REGION_FIELD_name_set")]
-	public static extern void MEMORY_MAP_IMAGE_LOAD_REGION_FIELD_name_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_delete_MAXIMUM_STACK_USAGE_FIELD")]
+  public static extern void delete_MAXIMUM_STACK_USAGE_FIELD(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_LOAD_REGION_FIELD_name_get")]
-	public static extern string MEMORY_MAP_IMAGE_LOAD_REGION_FIELD_name_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_OBJECT_FIELD_execution_address_set")]
+  public static extern void MEMORY_MAP_IMAGE_OBJECT_FIELD_execution_address_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_LOAD_REGION_FIELD_data_set")]
-	public static extern void MEMORY_MAP_IMAGE_LOAD_REGION_FIELD_data_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_OBJECT_FIELD_execution_address_get")]
+  public static extern string MEMORY_MAP_IMAGE_OBJECT_FIELD_execution_address_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_LOAD_REGION_FIELD_data_get")]
-	public static extern string MEMORY_MAP_IMAGE_LOAD_REGION_FIELD_data_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_OBJECT_FIELD_load_address_set")]
+  public static extern void MEMORY_MAP_IMAGE_OBJECT_FIELD_load_address_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_LOAD_REGION_FIELD_execution_region_set")]
-	public static extern void MEMORY_MAP_IMAGE_LOAD_REGION_FIELD_execution_region_set(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_OBJECT_FIELD_load_address_get")]
+  public static extern string MEMORY_MAP_IMAGE_OBJECT_FIELD_load_address_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_LOAD_REGION_FIELD_execution_region_get")]
-	public static extern global::System.IntPtr MEMORY_MAP_IMAGE_LOAD_REGION_FIELD_execution_region_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_OBJECT_FIELD_size_set")]
+  public static extern void MEMORY_MAP_IMAGE_OBJECT_FIELD_size_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_new_MEMORY_MAP_IMAGE_LOAD_REGION_FIELD")]
-	public static extern global::System.IntPtr new_MEMORY_MAP_IMAGE_LOAD_REGION_FIELD();
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_OBJECT_FIELD_size_get")]
+  public static extern string MEMORY_MAP_IMAGE_OBJECT_FIELD_size_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_delete_MEMORY_MAP_IMAGE_LOAD_REGION_FIELD")]
-	public static extern void delete_MEMORY_MAP_IMAGE_LOAD_REGION_FIELD(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_OBJECT_FIELD_type_set")]
+  public static extern void MEMORY_MAP_IMAGE_OBJECT_FIELD_type_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_entry_point_set")]
-	public static extern void MEMORY_MAP_IMAGE_entry_point_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_OBJECT_FIELD_type_get")]
+  public static extern string MEMORY_MAP_IMAGE_OBJECT_FIELD_type_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_entry_point_get")]
-	public static extern string MEMORY_MAP_IMAGE_entry_point_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_OBJECT_FIELD_attribute_set")]
+  public static extern void MEMORY_MAP_IMAGE_OBJECT_FIELD_attribute_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_load_region_set")]
-	public static extern void MEMORY_MAP_IMAGE_load_region_set(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_OBJECT_FIELD_attribute_get")]
+  public static extern string MEMORY_MAP_IMAGE_OBJECT_FIELD_attribute_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_load_region_get")]
-	public static extern global::System.IntPtr MEMORY_MAP_IMAGE_load_region_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_OBJECT_FIELD_id_set")]
+  public static extern void MEMORY_MAP_IMAGE_OBJECT_FIELD_id_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_new_MEMORY_MAP_IMAGE")]
-	public static extern global::System.IntPtr new_MEMORY_MAP_IMAGE();
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_OBJECT_FIELD_id_get")]
+  public static extern string MEMORY_MAP_IMAGE_OBJECT_FIELD_id_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_delete_MEMORY_MAP_IMAGE")]
-	public static extern void delete_MEMORY_MAP_IMAGE(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_OBJECT_FIELD_entry_point_set")]
+  public static extern void MEMORY_MAP_IMAGE_OBJECT_FIELD_entry_point_set(global::System.Runtime.InteropServices.HandleRef jarg1, bool jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MUTUALLY_RECURSIVE_FIELD_function_set")]
-	public static extern void MUTUALLY_RECURSIVE_FIELD_function_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_OBJECT_FIELD_entry_point_get")]
+  public static extern bool MEMORY_MAP_IMAGE_OBJECT_FIELD_entry_point_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MUTUALLY_RECURSIVE_FIELD_function_get")]
-	public static extern string MUTUALLY_RECURSIVE_FIELD_function_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_OBJECT_FIELD_section_name_set")]
+  public static extern void MEMORY_MAP_IMAGE_OBJECT_FIELD_section_name_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MUTUALLY_RECURSIVE_FIELD_caller_set")]
-	public static extern void MUTUALLY_RECURSIVE_FIELD_caller_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_OBJECT_FIELD_section_name_get")]
+  public static extern string MEMORY_MAP_IMAGE_OBJECT_FIELD_section_name_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MUTUALLY_RECURSIVE_FIELD_caller_get")]
-	public static extern string MUTUALLY_RECURSIVE_FIELD_caller_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_OBJECT_FIELD_object_name_set")]
+  public static extern void MEMORY_MAP_IMAGE_OBJECT_FIELD_object_name_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_new_MUTUALLY_RECURSIVE_FIELD")]
-	public static extern global::System.IntPtr new_MUTUALLY_RECURSIVE_FIELD();
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_OBJECT_FIELD_object_name_get")]
+  public static extern string MEMORY_MAP_IMAGE_OBJECT_FIELD_object_name_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_delete_MUTUALLY_RECURSIVE_FIELD")]
-	public static extern void delete_MUTUALLY_RECURSIVE_FIELD(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_new_MEMORY_MAP_IMAGE_OBJECT_FIELD")]
+  public static extern global::System.IntPtr new_MEMORY_MAP_IMAGE_OBJECT_FIELD();
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_REMOVED_SYMBOL_FIELD_module_set")]
-	public static extern void REMOVED_SYMBOL_FIELD_module_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_delete_MEMORY_MAP_IMAGE_OBJECT_FIELD")]
+  public static extern void delete_MEMORY_MAP_IMAGE_OBJECT_FIELD(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_REMOVED_SYMBOL_FIELD_module_get")]
-	public static extern string REMOVED_SYMBOL_FIELD_module_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD_name_set")]
+  public static extern void MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD_name_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_REMOVED_SYMBOL_FIELD_symbol_set")]
-	public static extern void REMOVED_SYMBOL_FIELD_symbol_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD_name_get")]
+  public static extern string MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD_name_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_REMOVED_SYMBOL_FIELD_symbol_get")]
-	public static extern string REMOVED_SYMBOL_FIELD_symbol_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD_data_set")]
+  public static extern void MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD_data_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_REMOVED_SYMBOL_FIELD_size_set")]
-	public static extern void REMOVED_SYMBOL_FIELD_size_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD_data_get")]
+  public static extern string MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD_data_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_REMOVED_SYMBOL_FIELD_size_get")]
-	public static extern string REMOVED_SYMBOL_FIELD_size_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD_fields_set")]
+  public static extern void MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD_fields_set(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_new_REMOVED_SYMBOL_FIELD")]
-	public static extern global::System.IntPtr new_REMOVED_SYMBOL_FIELD();
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD_fields_get")]
+  public static extern global::System.IntPtr MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD_fields_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_delete_REMOVED_SYMBOL_FIELD")]
-	public static extern void delete_REMOVED_SYMBOL_FIELD(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_new_MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD")]
+  public static extern global::System.IntPtr new_MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD();
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_STACK_USAGE_FIELD_function_set")]
-	public static extern void STACK_USAGE_FIELD_function_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_delete_MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD")]
+  public static extern void delete_MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_STACK_USAGE_FIELD_function_get")]
-	public static extern string STACK_USAGE_FIELD_function_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_LOAD_REGION_FIELD_name_set")]
+  public static extern void MEMORY_MAP_IMAGE_LOAD_REGION_FIELD_name_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_STACK_USAGE_FIELD_size_set")]
-	public static extern void STACK_USAGE_FIELD_size_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_LOAD_REGION_FIELD_name_get")]
+  public static extern string MEMORY_MAP_IMAGE_LOAD_REGION_FIELD_name_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_STACK_USAGE_FIELD_size_get")]
-	public static extern string STACK_USAGE_FIELD_size_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_LOAD_REGION_FIELD_data_set")]
+  public static extern void MEMORY_MAP_IMAGE_LOAD_REGION_FIELD_data_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_new_STACK_USAGE_FIELD")]
-	public static extern global::System.IntPtr new_STACK_USAGE_FIELD();
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_LOAD_REGION_FIELD_data_get")]
+  public static extern string MEMORY_MAP_IMAGE_LOAD_REGION_FIELD_data_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_delete_STACK_USAGE_FIELD")]
-	public static extern void delete_STACK_USAGE_FIELD(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_LOAD_REGION_FIELD_execution_region_set")]
+  public static extern void MEMORY_MAP_IMAGE_LOAD_REGION_FIELD_execution_region_set(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_new_KeilMapLibClient")]
-	public static extern global::System.IntPtr new_KeilMapLibClient();
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_LOAD_REGION_FIELD_execution_region_get")]
+  public static extern global::System.IntPtr MEMORY_MAP_IMAGE_LOAD_REGION_FIELD_execution_region_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_delete_KeilMapLibClient")]
-	public static extern void delete_KeilMapLibClient(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_new_MEMORY_MAP_IMAGE_LOAD_REGION_FIELD")]
+  public static extern global::System.IntPtr new_MEMORY_MAP_IMAGE_LOAD_REGION_FIELD();
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_KeilMapLibClient_ReadFile")]
-	public static extern bool KeilMapLibClient_ReadFile(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_delete_MEMORY_MAP_IMAGE_LOAD_REGION_FIELD")]
+  public static extern void delete_MEMORY_MAP_IMAGE_LOAD_REGION_FIELD(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_KeilMapLibClient_GetCrossReference")]
-	public static extern global::System.IntPtr KeilMapLibClient_GetCrossReference(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_entry_point_set")]
+  public static extern void MEMORY_MAP_IMAGE_entry_point_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_KeilMapLibClient_GetFunctionPointer")]
-	public static extern global::System.IntPtr KeilMapLibClient_GetFunctionPointer(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_entry_point_get")]
+  public static extern string MEMORY_MAP_IMAGE_entry_point_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_KeilMapLibClient_GetGlobalSymbols")]
-	public static extern global::System.IntPtr KeilMapLibClient_GetGlobalSymbols(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_load_region_set")]
+  public static extern void MEMORY_MAP_IMAGE_load_region_set(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_KeilMapLibClient_GetImageComponentSize")]
-	public static extern global::System.IntPtr KeilMapLibClient_GetImageComponentSize(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_load_region_get")]
+  public static extern global::System.IntPtr MEMORY_MAP_IMAGE_load_region_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_KeilMapLibClient_GetImageSize")]
-	public static extern global::System.IntPtr KeilMapLibClient_GetImageSize(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_new_MEMORY_MAP_IMAGE")]
+  public static extern global::System.IntPtr new_MEMORY_MAP_IMAGE();
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_KeilMapLibClient_GetLocalSymbols")]
-	public static extern global::System.IntPtr KeilMapLibClient_GetLocalSymbols(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_delete_MEMORY_MAP_IMAGE")]
+  public static extern void delete_MEMORY_MAP_IMAGE(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_KeilMapLibClient_GetMaximumStackUsage")]
-	public static extern global::System.IntPtr KeilMapLibClient_GetMaximumStackUsage(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MUTUALLY_RECURSIVE_FIELD_function_set")]
+  public static extern void MUTUALLY_RECURSIVE_FIELD_function_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_KeilMapLibClient_GetMemoryMapImage")]
-	public static extern global::System.IntPtr KeilMapLibClient_GetMemoryMapImage(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MUTUALLY_RECURSIVE_FIELD_function_get")]
+  public static extern string MUTUALLY_RECURSIVE_FIELD_function_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_KeilMapLibClient_GetMutualRecursive")]
-	public static extern global::System.IntPtr KeilMapLibClient_GetMutualRecursive(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MUTUALLY_RECURSIVE_FIELD_caller_set")]
+  public static extern void MUTUALLY_RECURSIVE_FIELD_caller_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_KeilMapLibClient_GetRemovedSymbols")]
-	public static extern global::System.IntPtr KeilMapLibClient_GetRemovedSymbols(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MUTUALLY_RECURSIVE_FIELD_caller_get")]
+  public static extern string MUTUALLY_RECURSIVE_FIELD_caller_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_KeilMapLibClient_GetStackUsage")]
-	public static extern global::System.IntPtr KeilMapLibClient_GetStackUsage(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_new_MUTUALLY_RECURSIVE_FIELD")]
+  public static extern global::System.IntPtr new_MUTUALLY_RECURSIVE_FIELD();
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_CROSS_REFERENCE_VECTOR_Clear")]
-	public static extern void CROSS_REFERENCE_VECTOR_Clear(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_delete_MUTUALLY_RECURSIVE_FIELD")]
+  public static extern void delete_MUTUALLY_RECURSIVE_FIELD(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_CROSS_REFERENCE_VECTOR_Add")]
-	public static extern void CROSS_REFERENCE_VECTOR_Add(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_REMOVED_SYMBOL_FIELD_module_set")]
+  public static extern void REMOVED_SYMBOL_FIELD_module_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_CROSS_REFERENCE_VECTOR_size")]
-	public static extern uint CROSS_REFERENCE_VECTOR_size(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_REMOVED_SYMBOL_FIELD_module_get")]
+  public static extern string REMOVED_SYMBOL_FIELD_module_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_CROSS_REFERENCE_VECTOR_capacity")]
-	public static extern uint CROSS_REFERENCE_VECTOR_capacity(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_REMOVED_SYMBOL_FIELD_symbol_set")]
+  public static extern void REMOVED_SYMBOL_FIELD_symbol_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_CROSS_REFERENCE_VECTOR_reserve")]
-	public static extern void CROSS_REFERENCE_VECTOR_reserve(global::System.Runtime.InteropServices.HandleRef jarg1, uint jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_REMOVED_SYMBOL_FIELD_symbol_get")]
+  public static extern string REMOVED_SYMBOL_FIELD_symbol_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_new_CROSS_REFERENCE_VECTOR__SWIG_0")]
-	public static extern global::System.IntPtr new_CROSS_REFERENCE_VECTOR__SWIG_0();
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_REMOVED_SYMBOL_FIELD_size_set")]
+  public static extern void REMOVED_SYMBOL_FIELD_size_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_new_CROSS_REFERENCE_VECTOR__SWIG_1")]
-	public static extern global::System.IntPtr new_CROSS_REFERENCE_VECTOR__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_REMOVED_SYMBOL_FIELD_size_get")]
+  public static extern string REMOVED_SYMBOL_FIELD_size_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_new_CROSS_REFERENCE_VECTOR__SWIG_2")]
-	public static extern global::System.IntPtr new_CROSS_REFERENCE_VECTOR__SWIG_2(int jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_new_REMOVED_SYMBOL_FIELD")]
+  public static extern global::System.IntPtr new_REMOVED_SYMBOL_FIELD();
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_CROSS_REFERENCE_VECTOR_getitemcopy")]
-	public static extern global::System.IntPtr CROSS_REFERENCE_VECTOR_getitemcopy(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_delete_REMOVED_SYMBOL_FIELD")]
+  public static extern void delete_REMOVED_SYMBOL_FIELD(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_CROSS_REFERENCE_VECTOR_getitem")]
-	public static extern global::System.IntPtr CROSS_REFERENCE_VECTOR_getitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_STACK_USAGE_FIELD_function_set")]
+  public static extern void STACK_USAGE_FIELD_function_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_CROSS_REFERENCE_VECTOR_setitem")]
-	public static extern void CROSS_REFERENCE_VECTOR_setitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_STACK_USAGE_FIELD_function_get")]
+  public static extern string STACK_USAGE_FIELD_function_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_CROSS_REFERENCE_VECTOR_AddRange")]
-	public static extern void CROSS_REFERENCE_VECTOR_AddRange(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_STACK_USAGE_FIELD_size_set")]
+  public static extern void STACK_USAGE_FIELD_size_set(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_CROSS_REFERENCE_VECTOR_GetRange")]
-	public static extern global::System.IntPtr CROSS_REFERENCE_VECTOR_GetRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_STACK_USAGE_FIELD_size_get")]
+  public static extern string STACK_USAGE_FIELD_size_get(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_CROSS_REFERENCE_VECTOR_Insert")]
-	public static extern void CROSS_REFERENCE_VECTOR_Insert(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_new_STACK_USAGE_FIELD")]
+  public static extern global::System.IntPtr new_STACK_USAGE_FIELD();
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_CROSS_REFERENCE_VECTOR_InsertRange")]
-	public static extern void CROSS_REFERENCE_VECTOR_InsertRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_delete_STACK_USAGE_FIELD")]
+  public static extern void delete_STACK_USAGE_FIELD(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_CROSS_REFERENCE_VECTOR_RemoveAt")]
-	public static extern void CROSS_REFERENCE_VECTOR_RemoveAt(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_new_KeilMapLibClient")]
+  public static extern global::System.IntPtr new_KeilMapLibClient();
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_CROSS_REFERENCE_VECTOR_RemoveRange")]
-	public static extern void CROSS_REFERENCE_VECTOR_RemoveRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_delete_KeilMapLibClient")]
+  public static extern void delete_KeilMapLibClient(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_CROSS_REFERENCE_VECTOR_Repeat")]
-	public static extern global::System.IntPtr CROSS_REFERENCE_VECTOR_Repeat(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_KeilMapLibClient_ReadFile")]
+  public static extern bool KeilMapLibClient_ReadFile(global::System.Runtime.InteropServices.HandleRef jarg1, string jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_CROSS_REFERENCE_VECTOR_Reverse__SWIG_0")]
-	public static extern void CROSS_REFERENCE_VECTOR_Reverse__SWIG_0(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_KeilMapLibClient_GetCrossReference")]
+  public static extern global::System.IntPtr KeilMapLibClient_GetCrossReference(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_CROSS_REFERENCE_VECTOR_Reverse__SWIG_1")]
-	public static extern void CROSS_REFERENCE_VECTOR_Reverse__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_KeilMapLibClient_GetFunctionPointer")]
+  public static extern global::System.IntPtr KeilMapLibClient_GetFunctionPointer(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_CROSS_REFERENCE_VECTOR_SetRange")]
-	public static extern void CROSS_REFERENCE_VECTOR_SetRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_KeilMapLibClient_GetGlobalSymbols")]
+  public static extern global::System.IntPtr KeilMapLibClient_GetGlobalSymbols(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_delete_CROSS_REFERENCE_VECTOR")]
-	public static extern void delete_CROSS_REFERENCE_VECTOR(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_KeilMapLibClient_GetImageComponentSize")]
+  public static extern global::System.IntPtr KeilMapLibClient_GetImageComponentSize(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_FUNCTION_POINTER_VECTOR_Clear")]
-	public static extern void FUNCTION_POINTER_VECTOR_Clear(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_KeilMapLibClient_GetImageSize")]
+  public static extern global::System.IntPtr KeilMapLibClient_GetImageSize(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_FUNCTION_POINTER_VECTOR_Add")]
-	public static extern void FUNCTION_POINTER_VECTOR_Add(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_KeilMapLibClient_GetLocalSymbols")]
+  public static extern global::System.IntPtr KeilMapLibClient_GetLocalSymbols(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_FUNCTION_POINTER_VECTOR_size")]
-	public static extern uint FUNCTION_POINTER_VECTOR_size(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_KeilMapLibClient_GetMaximumStackUsage")]
+  public static extern global::System.IntPtr KeilMapLibClient_GetMaximumStackUsage(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_FUNCTION_POINTER_VECTOR_capacity")]
-	public static extern uint FUNCTION_POINTER_VECTOR_capacity(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_KeilMapLibClient_GetMemoryMapImage")]
+  public static extern global::System.IntPtr KeilMapLibClient_GetMemoryMapImage(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_FUNCTION_POINTER_VECTOR_reserve")]
-	public static extern void FUNCTION_POINTER_VECTOR_reserve(global::System.Runtime.InteropServices.HandleRef jarg1, uint jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_KeilMapLibClient_GetMutualRecursive")]
+  public static extern global::System.IntPtr KeilMapLibClient_GetMutualRecursive(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_new_FUNCTION_POINTER_VECTOR__SWIG_0")]
-	public static extern global::System.IntPtr new_FUNCTION_POINTER_VECTOR__SWIG_0();
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_KeilMapLibClient_GetRemovedSymbols")]
+  public static extern global::System.IntPtr KeilMapLibClient_GetRemovedSymbols(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_new_FUNCTION_POINTER_VECTOR__SWIG_1")]
-	public static extern global::System.IntPtr new_FUNCTION_POINTER_VECTOR__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_KeilMapLibClient_GetStackUsage")]
+  public static extern global::System.IntPtr KeilMapLibClient_GetStackUsage(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_new_FUNCTION_POINTER_VECTOR__SWIG_2")]
-	public static extern global::System.IntPtr new_FUNCTION_POINTER_VECTOR__SWIG_2(int jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_CROSS_REFERENCE_VECTOR_Clear")]
+  public static extern void CROSS_REFERENCE_VECTOR_Clear(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_FUNCTION_POINTER_VECTOR_getitemcopy")]
-	public static extern global::System.IntPtr FUNCTION_POINTER_VECTOR_getitemcopy(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_CROSS_REFERENCE_VECTOR_Add")]
+  public static extern void CROSS_REFERENCE_VECTOR_Add(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_FUNCTION_POINTER_VECTOR_getitem")]
-	public static extern global::System.IntPtr FUNCTION_POINTER_VECTOR_getitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_CROSS_REFERENCE_VECTOR_size")]
+  public static extern uint CROSS_REFERENCE_VECTOR_size(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_FUNCTION_POINTER_VECTOR_setitem")]
-	public static extern void FUNCTION_POINTER_VECTOR_setitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_CROSS_REFERENCE_VECTOR_capacity")]
+  public static extern uint CROSS_REFERENCE_VECTOR_capacity(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_FUNCTION_POINTER_VECTOR_AddRange")]
-	public static extern void FUNCTION_POINTER_VECTOR_AddRange(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_CROSS_REFERENCE_VECTOR_reserve")]
+  public static extern void CROSS_REFERENCE_VECTOR_reserve(global::System.Runtime.InteropServices.HandleRef jarg1, uint jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_FUNCTION_POINTER_VECTOR_GetRange")]
-	public static extern global::System.IntPtr FUNCTION_POINTER_VECTOR_GetRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_new_CROSS_REFERENCE_VECTOR__SWIG_0")]
+  public static extern global::System.IntPtr new_CROSS_REFERENCE_VECTOR__SWIG_0();
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_FUNCTION_POINTER_VECTOR_Insert")]
-	public static extern void FUNCTION_POINTER_VECTOR_Insert(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_new_CROSS_REFERENCE_VECTOR__SWIG_1")]
+  public static extern global::System.IntPtr new_CROSS_REFERENCE_VECTOR__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_FUNCTION_POINTER_VECTOR_InsertRange")]
-	public static extern void FUNCTION_POINTER_VECTOR_InsertRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_new_CROSS_REFERENCE_VECTOR__SWIG_2")]
+  public static extern global::System.IntPtr new_CROSS_REFERENCE_VECTOR__SWIG_2(int jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_FUNCTION_POINTER_VECTOR_RemoveAt")]
-	public static extern void FUNCTION_POINTER_VECTOR_RemoveAt(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_CROSS_REFERENCE_VECTOR_getitemcopy")]
+  public static extern global::System.IntPtr CROSS_REFERENCE_VECTOR_getitemcopy(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_FUNCTION_POINTER_VECTOR_RemoveRange")]
-	public static extern void FUNCTION_POINTER_VECTOR_RemoveRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_CROSS_REFERENCE_VECTOR_getitem")]
+  public static extern global::System.IntPtr CROSS_REFERENCE_VECTOR_getitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_FUNCTION_POINTER_VECTOR_Repeat")]
-	public static extern global::System.IntPtr FUNCTION_POINTER_VECTOR_Repeat(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_CROSS_REFERENCE_VECTOR_setitem")]
+  public static extern void CROSS_REFERENCE_VECTOR_setitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_FUNCTION_POINTER_VECTOR_Reverse__SWIG_0")]
-	public static extern void FUNCTION_POINTER_VECTOR_Reverse__SWIG_0(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_CROSS_REFERENCE_VECTOR_AddRange")]
+  public static extern void CROSS_REFERENCE_VECTOR_AddRange(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_FUNCTION_POINTER_VECTOR_Reverse__SWIG_1")]
-	public static extern void FUNCTION_POINTER_VECTOR_Reverse__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_CROSS_REFERENCE_VECTOR_GetRange")]
+  public static extern global::System.IntPtr CROSS_REFERENCE_VECTOR_GetRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_FUNCTION_POINTER_VECTOR_SetRange")]
-	public static extern void FUNCTION_POINTER_VECTOR_SetRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_CROSS_REFERENCE_VECTOR_Insert")]
+  public static extern void CROSS_REFERENCE_VECTOR_Insert(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_delete_FUNCTION_POINTER_VECTOR")]
-	public static extern void delete_FUNCTION_POINTER_VECTOR(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_CROSS_REFERENCE_VECTOR_InsertRange")]
+  public static extern void CROSS_REFERENCE_VECTOR_InsertRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_GLOBAL_SYMBOL_VECTOR_Clear")]
-	public static extern void GLOBAL_SYMBOL_VECTOR_Clear(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_CROSS_REFERENCE_VECTOR_RemoveAt")]
+  public static extern void CROSS_REFERENCE_VECTOR_RemoveAt(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_GLOBAL_SYMBOL_VECTOR_Add")]
-	public static extern void GLOBAL_SYMBOL_VECTOR_Add(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_CROSS_REFERENCE_VECTOR_RemoveRange")]
+  public static extern void CROSS_REFERENCE_VECTOR_RemoveRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_GLOBAL_SYMBOL_VECTOR_size")]
-	public static extern uint GLOBAL_SYMBOL_VECTOR_size(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_CROSS_REFERENCE_VECTOR_Repeat")]
+  public static extern global::System.IntPtr CROSS_REFERENCE_VECTOR_Repeat(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_GLOBAL_SYMBOL_VECTOR_capacity")]
-	public static extern uint GLOBAL_SYMBOL_VECTOR_capacity(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_CROSS_REFERENCE_VECTOR_Reverse__SWIG_0")]
+  public static extern void CROSS_REFERENCE_VECTOR_Reverse__SWIG_0(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_GLOBAL_SYMBOL_VECTOR_reserve")]
-	public static extern void GLOBAL_SYMBOL_VECTOR_reserve(global::System.Runtime.InteropServices.HandleRef jarg1, uint jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_CROSS_REFERENCE_VECTOR_Reverse__SWIG_1")]
+  public static extern void CROSS_REFERENCE_VECTOR_Reverse__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_new_GLOBAL_SYMBOL_VECTOR__SWIG_0")]
-	public static extern global::System.IntPtr new_GLOBAL_SYMBOL_VECTOR__SWIG_0();
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_CROSS_REFERENCE_VECTOR_SetRange")]
+  public static extern void CROSS_REFERENCE_VECTOR_SetRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_new_GLOBAL_SYMBOL_VECTOR__SWIG_1")]
-	public static extern global::System.IntPtr new_GLOBAL_SYMBOL_VECTOR__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_delete_CROSS_REFERENCE_VECTOR")]
+  public static extern void delete_CROSS_REFERENCE_VECTOR(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_new_GLOBAL_SYMBOL_VECTOR__SWIG_2")]
-	public static extern global::System.IntPtr new_GLOBAL_SYMBOL_VECTOR__SWIG_2(int jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_FUNCTION_POINTER_VECTOR_Clear")]
+  public static extern void FUNCTION_POINTER_VECTOR_Clear(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_GLOBAL_SYMBOL_VECTOR_getitemcopy")]
-	public static extern global::System.IntPtr GLOBAL_SYMBOL_VECTOR_getitemcopy(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_FUNCTION_POINTER_VECTOR_Add")]
+  public static extern void FUNCTION_POINTER_VECTOR_Add(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_GLOBAL_SYMBOL_VECTOR_getitem")]
-	public static extern global::System.IntPtr GLOBAL_SYMBOL_VECTOR_getitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_FUNCTION_POINTER_VECTOR_size")]
+  public static extern uint FUNCTION_POINTER_VECTOR_size(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_GLOBAL_SYMBOL_VECTOR_setitem")]
-	public static extern void GLOBAL_SYMBOL_VECTOR_setitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_FUNCTION_POINTER_VECTOR_capacity")]
+  public static extern uint FUNCTION_POINTER_VECTOR_capacity(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_GLOBAL_SYMBOL_VECTOR_AddRange")]
-	public static extern void GLOBAL_SYMBOL_VECTOR_AddRange(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_FUNCTION_POINTER_VECTOR_reserve")]
+  public static extern void FUNCTION_POINTER_VECTOR_reserve(global::System.Runtime.InteropServices.HandleRef jarg1, uint jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_GLOBAL_SYMBOL_VECTOR_GetRange")]
-	public static extern global::System.IntPtr GLOBAL_SYMBOL_VECTOR_GetRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_new_FUNCTION_POINTER_VECTOR__SWIG_0")]
+  public static extern global::System.IntPtr new_FUNCTION_POINTER_VECTOR__SWIG_0();
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_GLOBAL_SYMBOL_VECTOR_Insert")]
-	public static extern void GLOBAL_SYMBOL_VECTOR_Insert(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_new_FUNCTION_POINTER_VECTOR__SWIG_1")]
+  public static extern global::System.IntPtr new_FUNCTION_POINTER_VECTOR__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_GLOBAL_SYMBOL_VECTOR_InsertRange")]
-	public static extern void GLOBAL_SYMBOL_VECTOR_InsertRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_new_FUNCTION_POINTER_VECTOR__SWIG_2")]
+  public static extern global::System.IntPtr new_FUNCTION_POINTER_VECTOR__SWIG_2(int jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_GLOBAL_SYMBOL_VECTOR_RemoveAt")]
-	public static extern void GLOBAL_SYMBOL_VECTOR_RemoveAt(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_FUNCTION_POINTER_VECTOR_getitemcopy")]
+  public static extern global::System.IntPtr FUNCTION_POINTER_VECTOR_getitemcopy(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_GLOBAL_SYMBOL_VECTOR_RemoveRange")]
-	public static extern void GLOBAL_SYMBOL_VECTOR_RemoveRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_FUNCTION_POINTER_VECTOR_getitem")]
+  public static extern global::System.IntPtr FUNCTION_POINTER_VECTOR_getitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_GLOBAL_SYMBOL_VECTOR_Repeat")]
-	public static extern global::System.IntPtr GLOBAL_SYMBOL_VECTOR_Repeat(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_FUNCTION_POINTER_VECTOR_setitem")]
+  public static extern void FUNCTION_POINTER_VECTOR_setitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_GLOBAL_SYMBOL_VECTOR_Reverse__SWIG_0")]
-	public static extern void GLOBAL_SYMBOL_VECTOR_Reverse__SWIG_0(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_FUNCTION_POINTER_VECTOR_AddRange")]
+  public static extern void FUNCTION_POINTER_VECTOR_AddRange(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_GLOBAL_SYMBOL_VECTOR_Reverse__SWIG_1")]
-	public static extern void GLOBAL_SYMBOL_VECTOR_Reverse__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_FUNCTION_POINTER_VECTOR_GetRange")]
+  public static extern global::System.IntPtr FUNCTION_POINTER_VECTOR_GetRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_GLOBAL_SYMBOL_VECTOR_SetRange")]
-	public static extern void GLOBAL_SYMBOL_VECTOR_SetRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_FUNCTION_POINTER_VECTOR_Insert")]
+  public static extern void FUNCTION_POINTER_VECTOR_Insert(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_delete_GLOBAL_SYMBOL_VECTOR")]
-	public static extern void delete_GLOBAL_SYMBOL_VECTOR(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_FUNCTION_POINTER_VECTOR_InsertRange")]
+  public static extern void FUNCTION_POINTER_VECTOR_InsertRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_IMAGE_COMPONENT_SIZE_VECTOR_Clear")]
-	public static extern void IMAGE_COMPONENT_SIZE_VECTOR_Clear(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_FUNCTION_POINTER_VECTOR_RemoveAt")]
+  public static extern void FUNCTION_POINTER_VECTOR_RemoveAt(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_IMAGE_COMPONENT_SIZE_VECTOR_Add")]
-	public static extern void IMAGE_COMPONENT_SIZE_VECTOR_Add(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_FUNCTION_POINTER_VECTOR_RemoveRange")]
+  public static extern void FUNCTION_POINTER_VECTOR_RemoveRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_IMAGE_COMPONENT_SIZE_VECTOR_size")]
-	public static extern uint IMAGE_COMPONENT_SIZE_VECTOR_size(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_FUNCTION_POINTER_VECTOR_Repeat")]
+  public static extern global::System.IntPtr FUNCTION_POINTER_VECTOR_Repeat(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_IMAGE_COMPONENT_SIZE_VECTOR_capacity")]
-	public static extern uint IMAGE_COMPONENT_SIZE_VECTOR_capacity(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_FUNCTION_POINTER_VECTOR_Reverse__SWIG_0")]
+  public static extern void FUNCTION_POINTER_VECTOR_Reverse__SWIG_0(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_IMAGE_COMPONENT_SIZE_VECTOR_reserve")]
-	public static extern void IMAGE_COMPONENT_SIZE_VECTOR_reserve(global::System.Runtime.InteropServices.HandleRef jarg1, uint jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_FUNCTION_POINTER_VECTOR_Reverse__SWIG_1")]
+  public static extern void FUNCTION_POINTER_VECTOR_Reverse__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_new_IMAGE_COMPONENT_SIZE_VECTOR__SWIG_0")]
-	public static extern global::System.IntPtr new_IMAGE_COMPONENT_SIZE_VECTOR__SWIG_0();
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_FUNCTION_POINTER_VECTOR_SetRange")]
+  public static extern void FUNCTION_POINTER_VECTOR_SetRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_new_IMAGE_COMPONENT_SIZE_VECTOR__SWIG_1")]
-	public static extern global::System.IntPtr new_IMAGE_COMPONENT_SIZE_VECTOR__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_delete_FUNCTION_POINTER_VECTOR")]
+  public static extern void delete_FUNCTION_POINTER_VECTOR(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_new_IMAGE_COMPONENT_SIZE_VECTOR__SWIG_2")]
-	public static extern global::System.IntPtr new_IMAGE_COMPONENT_SIZE_VECTOR__SWIG_2(int jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_GLOBAL_SYMBOL_VECTOR_Clear")]
+  public static extern void GLOBAL_SYMBOL_VECTOR_Clear(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_IMAGE_COMPONENT_SIZE_VECTOR_getitemcopy")]
-	public static extern global::System.IntPtr IMAGE_COMPONENT_SIZE_VECTOR_getitemcopy(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_GLOBAL_SYMBOL_VECTOR_Add")]
+  public static extern void GLOBAL_SYMBOL_VECTOR_Add(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_IMAGE_COMPONENT_SIZE_VECTOR_getitem")]
-	public static extern global::System.IntPtr IMAGE_COMPONENT_SIZE_VECTOR_getitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_GLOBAL_SYMBOL_VECTOR_size")]
+  public static extern uint GLOBAL_SYMBOL_VECTOR_size(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_IMAGE_COMPONENT_SIZE_VECTOR_setitem")]
-	public static extern void IMAGE_COMPONENT_SIZE_VECTOR_setitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_GLOBAL_SYMBOL_VECTOR_capacity")]
+  public static extern uint GLOBAL_SYMBOL_VECTOR_capacity(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_IMAGE_COMPONENT_SIZE_VECTOR_AddRange")]
-	public static extern void IMAGE_COMPONENT_SIZE_VECTOR_AddRange(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_GLOBAL_SYMBOL_VECTOR_reserve")]
+  public static extern void GLOBAL_SYMBOL_VECTOR_reserve(global::System.Runtime.InteropServices.HandleRef jarg1, uint jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_IMAGE_COMPONENT_SIZE_VECTOR_GetRange")]
-	public static extern global::System.IntPtr IMAGE_COMPONENT_SIZE_VECTOR_GetRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_new_GLOBAL_SYMBOL_VECTOR__SWIG_0")]
+  public static extern global::System.IntPtr new_GLOBAL_SYMBOL_VECTOR__SWIG_0();
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_IMAGE_COMPONENT_SIZE_VECTOR_Insert")]
-	public static extern void IMAGE_COMPONENT_SIZE_VECTOR_Insert(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_new_GLOBAL_SYMBOL_VECTOR__SWIG_1")]
+  public static extern global::System.IntPtr new_GLOBAL_SYMBOL_VECTOR__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_IMAGE_COMPONENT_SIZE_VECTOR_InsertRange")]
-	public static extern void IMAGE_COMPONENT_SIZE_VECTOR_InsertRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_new_GLOBAL_SYMBOL_VECTOR__SWIG_2")]
+  public static extern global::System.IntPtr new_GLOBAL_SYMBOL_VECTOR__SWIG_2(int jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_IMAGE_COMPONENT_SIZE_VECTOR_RemoveAt")]
-	public static extern void IMAGE_COMPONENT_SIZE_VECTOR_RemoveAt(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_GLOBAL_SYMBOL_VECTOR_getitemcopy")]
+  public static extern global::System.IntPtr GLOBAL_SYMBOL_VECTOR_getitemcopy(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_IMAGE_COMPONENT_SIZE_VECTOR_RemoveRange")]
-	public static extern void IMAGE_COMPONENT_SIZE_VECTOR_RemoveRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_GLOBAL_SYMBOL_VECTOR_getitem")]
+  public static extern global::System.IntPtr GLOBAL_SYMBOL_VECTOR_getitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_IMAGE_COMPONENT_SIZE_VECTOR_Repeat")]
-	public static extern global::System.IntPtr IMAGE_COMPONENT_SIZE_VECTOR_Repeat(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_GLOBAL_SYMBOL_VECTOR_setitem")]
+  public static extern void GLOBAL_SYMBOL_VECTOR_setitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_IMAGE_COMPONENT_SIZE_VECTOR_Reverse__SWIG_0")]
-	public static extern void IMAGE_COMPONENT_SIZE_VECTOR_Reverse__SWIG_0(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_GLOBAL_SYMBOL_VECTOR_AddRange")]
+  public static extern void GLOBAL_SYMBOL_VECTOR_AddRange(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_IMAGE_COMPONENT_SIZE_VECTOR_Reverse__SWIG_1")]
-	public static extern void IMAGE_COMPONENT_SIZE_VECTOR_Reverse__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_GLOBAL_SYMBOL_VECTOR_GetRange")]
+  public static extern global::System.IntPtr GLOBAL_SYMBOL_VECTOR_GetRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_IMAGE_COMPONENT_SIZE_VECTOR_SetRange")]
-	public static extern void IMAGE_COMPONENT_SIZE_VECTOR_SetRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_GLOBAL_SYMBOL_VECTOR_Insert")]
+  public static extern void GLOBAL_SYMBOL_VECTOR_Insert(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_delete_IMAGE_COMPONENT_SIZE_VECTOR")]
-	public static extern void delete_IMAGE_COMPONENT_SIZE_VECTOR(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_GLOBAL_SYMBOL_VECTOR_InsertRange")]
+  public static extern void GLOBAL_SYMBOL_VECTOR_InsertRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_LOCAL_SYMBOL_VECTOR_Clear")]
-	public static extern void LOCAL_SYMBOL_VECTOR_Clear(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_GLOBAL_SYMBOL_VECTOR_RemoveAt")]
+  public static extern void GLOBAL_SYMBOL_VECTOR_RemoveAt(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_LOCAL_SYMBOL_VECTOR_Add")]
-	public static extern void LOCAL_SYMBOL_VECTOR_Add(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_GLOBAL_SYMBOL_VECTOR_RemoveRange")]
+  public static extern void GLOBAL_SYMBOL_VECTOR_RemoveRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_LOCAL_SYMBOL_VECTOR_size")]
-	public static extern uint LOCAL_SYMBOL_VECTOR_size(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_GLOBAL_SYMBOL_VECTOR_Repeat")]
+  public static extern global::System.IntPtr GLOBAL_SYMBOL_VECTOR_Repeat(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_LOCAL_SYMBOL_VECTOR_capacity")]
-	public static extern uint LOCAL_SYMBOL_VECTOR_capacity(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_GLOBAL_SYMBOL_VECTOR_Reverse__SWIG_0")]
+  public static extern void GLOBAL_SYMBOL_VECTOR_Reverse__SWIG_0(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_LOCAL_SYMBOL_VECTOR_reserve")]
-	public static extern void LOCAL_SYMBOL_VECTOR_reserve(global::System.Runtime.InteropServices.HandleRef jarg1, uint jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_GLOBAL_SYMBOL_VECTOR_Reverse__SWIG_1")]
+  public static extern void GLOBAL_SYMBOL_VECTOR_Reverse__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_new_LOCAL_SYMBOL_VECTOR__SWIG_0")]
-	public static extern global::System.IntPtr new_LOCAL_SYMBOL_VECTOR__SWIG_0();
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_GLOBAL_SYMBOL_VECTOR_SetRange")]
+  public static extern void GLOBAL_SYMBOL_VECTOR_SetRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_new_LOCAL_SYMBOL_VECTOR__SWIG_1")]
-	public static extern global::System.IntPtr new_LOCAL_SYMBOL_VECTOR__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_delete_GLOBAL_SYMBOL_VECTOR")]
+  public static extern void delete_GLOBAL_SYMBOL_VECTOR(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_new_LOCAL_SYMBOL_VECTOR__SWIG_2")]
-	public static extern global::System.IntPtr new_LOCAL_SYMBOL_VECTOR__SWIG_2(int jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_IMAGE_COMPONENT_SIZE_VECTOR_Clear")]
+  public static extern void IMAGE_COMPONENT_SIZE_VECTOR_Clear(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_LOCAL_SYMBOL_VECTOR_getitemcopy")]
-	public static extern global::System.IntPtr LOCAL_SYMBOL_VECTOR_getitemcopy(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_IMAGE_COMPONENT_SIZE_VECTOR_Add")]
+  public static extern void IMAGE_COMPONENT_SIZE_VECTOR_Add(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_LOCAL_SYMBOL_VECTOR_getitem")]
-	public static extern global::System.IntPtr LOCAL_SYMBOL_VECTOR_getitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_IMAGE_COMPONENT_SIZE_VECTOR_size")]
+  public static extern uint IMAGE_COMPONENT_SIZE_VECTOR_size(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_LOCAL_SYMBOL_VECTOR_setitem")]
-	public static extern void LOCAL_SYMBOL_VECTOR_setitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_IMAGE_COMPONENT_SIZE_VECTOR_capacity")]
+  public static extern uint IMAGE_COMPONENT_SIZE_VECTOR_capacity(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_LOCAL_SYMBOL_VECTOR_AddRange")]
-	public static extern void LOCAL_SYMBOL_VECTOR_AddRange(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_IMAGE_COMPONENT_SIZE_VECTOR_reserve")]
+  public static extern void IMAGE_COMPONENT_SIZE_VECTOR_reserve(global::System.Runtime.InteropServices.HandleRef jarg1, uint jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_LOCAL_SYMBOL_VECTOR_GetRange")]
-	public static extern global::System.IntPtr LOCAL_SYMBOL_VECTOR_GetRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_new_IMAGE_COMPONENT_SIZE_VECTOR__SWIG_0")]
+  public static extern global::System.IntPtr new_IMAGE_COMPONENT_SIZE_VECTOR__SWIG_0();
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_LOCAL_SYMBOL_VECTOR_Insert")]
-	public static extern void LOCAL_SYMBOL_VECTOR_Insert(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_new_IMAGE_COMPONENT_SIZE_VECTOR__SWIG_1")]
+  public static extern global::System.IntPtr new_IMAGE_COMPONENT_SIZE_VECTOR__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_LOCAL_SYMBOL_VECTOR_InsertRange")]
-	public static extern void LOCAL_SYMBOL_VECTOR_InsertRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_new_IMAGE_COMPONENT_SIZE_VECTOR__SWIG_2")]
+  public static extern global::System.IntPtr new_IMAGE_COMPONENT_SIZE_VECTOR__SWIG_2(int jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_LOCAL_SYMBOL_VECTOR_RemoveAt")]
-	public static extern void LOCAL_SYMBOL_VECTOR_RemoveAt(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_IMAGE_COMPONENT_SIZE_VECTOR_getitemcopy")]
+  public static extern global::System.IntPtr IMAGE_COMPONENT_SIZE_VECTOR_getitemcopy(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_LOCAL_SYMBOL_VECTOR_RemoveRange")]
-	public static extern void LOCAL_SYMBOL_VECTOR_RemoveRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_IMAGE_COMPONENT_SIZE_VECTOR_getitem")]
+  public static extern global::System.IntPtr IMAGE_COMPONENT_SIZE_VECTOR_getitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_LOCAL_SYMBOL_VECTOR_Repeat")]
-	public static extern global::System.IntPtr LOCAL_SYMBOL_VECTOR_Repeat(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_IMAGE_COMPONENT_SIZE_VECTOR_setitem")]
+  public static extern void IMAGE_COMPONENT_SIZE_VECTOR_setitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_LOCAL_SYMBOL_VECTOR_Reverse__SWIG_0")]
-	public static extern void LOCAL_SYMBOL_VECTOR_Reverse__SWIG_0(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_IMAGE_COMPONENT_SIZE_VECTOR_AddRange")]
+  public static extern void IMAGE_COMPONENT_SIZE_VECTOR_AddRange(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_LOCAL_SYMBOL_VECTOR_Reverse__SWIG_1")]
-	public static extern void LOCAL_SYMBOL_VECTOR_Reverse__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_IMAGE_COMPONENT_SIZE_VECTOR_GetRange")]
+  public static extern global::System.IntPtr IMAGE_COMPONENT_SIZE_VECTOR_GetRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_LOCAL_SYMBOL_VECTOR_SetRange")]
-	public static extern void LOCAL_SYMBOL_VECTOR_SetRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_IMAGE_COMPONENT_SIZE_VECTOR_Insert")]
+  public static extern void IMAGE_COMPONENT_SIZE_VECTOR_Insert(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_delete_LOCAL_SYMBOL_VECTOR")]
-	public static extern void delete_LOCAL_SYMBOL_VECTOR(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_IMAGE_COMPONENT_SIZE_VECTOR_InsertRange")]
+  public static extern void IMAGE_COMPONENT_SIZE_VECTOR_InsertRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MAXIMUM_STACK_USAGE_VECTOR_Clear")]
-	public static extern void MAXIMUM_STACK_USAGE_VECTOR_Clear(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_IMAGE_COMPONENT_SIZE_VECTOR_RemoveAt")]
+  public static extern void IMAGE_COMPONENT_SIZE_VECTOR_RemoveAt(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MAXIMUM_STACK_USAGE_VECTOR_Add")]
-	public static extern void MAXIMUM_STACK_USAGE_VECTOR_Add(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_IMAGE_COMPONENT_SIZE_VECTOR_RemoveRange")]
+  public static extern void IMAGE_COMPONENT_SIZE_VECTOR_RemoveRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MAXIMUM_STACK_USAGE_VECTOR_size")]
-	public static extern uint MAXIMUM_STACK_USAGE_VECTOR_size(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_IMAGE_COMPONENT_SIZE_VECTOR_Repeat")]
+  public static extern global::System.IntPtr IMAGE_COMPONENT_SIZE_VECTOR_Repeat(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MAXIMUM_STACK_USAGE_VECTOR_capacity")]
-	public static extern uint MAXIMUM_STACK_USAGE_VECTOR_capacity(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_IMAGE_COMPONENT_SIZE_VECTOR_Reverse__SWIG_0")]
+  public static extern void IMAGE_COMPONENT_SIZE_VECTOR_Reverse__SWIG_0(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MAXIMUM_STACK_USAGE_VECTOR_reserve")]
-	public static extern void MAXIMUM_STACK_USAGE_VECTOR_reserve(global::System.Runtime.InteropServices.HandleRef jarg1, uint jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_IMAGE_COMPONENT_SIZE_VECTOR_Reverse__SWIG_1")]
+  public static extern void IMAGE_COMPONENT_SIZE_VECTOR_Reverse__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_new_MAXIMUM_STACK_USAGE_VECTOR__SWIG_0")]
-	public static extern global::System.IntPtr new_MAXIMUM_STACK_USAGE_VECTOR__SWIG_0();
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_IMAGE_COMPONENT_SIZE_VECTOR_SetRange")]
+  public static extern void IMAGE_COMPONENT_SIZE_VECTOR_SetRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_new_MAXIMUM_STACK_USAGE_VECTOR__SWIG_1")]
-	public static extern global::System.IntPtr new_MAXIMUM_STACK_USAGE_VECTOR__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_delete_IMAGE_COMPONENT_SIZE_VECTOR")]
+  public static extern void delete_IMAGE_COMPONENT_SIZE_VECTOR(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_new_MAXIMUM_STACK_USAGE_VECTOR__SWIG_2")]
-	public static extern global::System.IntPtr new_MAXIMUM_STACK_USAGE_VECTOR__SWIG_2(int jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_LOCAL_SYMBOL_VECTOR_Clear")]
+  public static extern void LOCAL_SYMBOL_VECTOR_Clear(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MAXIMUM_STACK_USAGE_VECTOR_getitemcopy")]
-	public static extern global::System.IntPtr MAXIMUM_STACK_USAGE_VECTOR_getitemcopy(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_LOCAL_SYMBOL_VECTOR_Add")]
+  public static extern void LOCAL_SYMBOL_VECTOR_Add(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MAXIMUM_STACK_USAGE_VECTOR_getitem")]
-	public static extern global::System.IntPtr MAXIMUM_STACK_USAGE_VECTOR_getitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_LOCAL_SYMBOL_VECTOR_size")]
+  public static extern uint LOCAL_SYMBOL_VECTOR_size(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MAXIMUM_STACK_USAGE_VECTOR_setitem")]
-	public static extern void MAXIMUM_STACK_USAGE_VECTOR_setitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_LOCAL_SYMBOL_VECTOR_capacity")]
+  public static extern uint LOCAL_SYMBOL_VECTOR_capacity(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MAXIMUM_STACK_USAGE_VECTOR_AddRange")]
-	public static extern void MAXIMUM_STACK_USAGE_VECTOR_AddRange(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_LOCAL_SYMBOL_VECTOR_reserve")]
+  public static extern void LOCAL_SYMBOL_VECTOR_reserve(global::System.Runtime.InteropServices.HandleRef jarg1, uint jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MAXIMUM_STACK_USAGE_VECTOR_GetRange")]
-	public static extern global::System.IntPtr MAXIMUM_STACK_USAGE_VECTOR_GetRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_new_LOCAL_SYMBOL_VECTOR__SWIG_0")]
+  public static extern global::System.IntPtr new_LOCAL_SYMBOL_VECTOR__SWIG_0();
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MAXIMUM_STACK_USAGE_VECTOR_Insert")]
-	public static extern void MAXIMUM_STACK_USAGE_VECTOR_Insert(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_new_LOCAL_SYMBOL_VECTOR__SWIG_1")]
+  public static extern global::System.IntPtr new_LOCAL_SYMBOL_VECTOR__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MAXIMUM_STACK_USAGE_VECTOR_InsertRange")]
-	public static extern void MAXIMUM_STACK_USAGE_VECTOR_InsertRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_new_LOCAL_SYMBOL_VECTOR__SWIG_2")]
+  public static extern global::System.IntPtr new_LOCAL_SYMBOL_VECTOR__SWIG_2(int jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MAXIMUM_STACK_USAGE_VECTOR_RemoveAt")]
-	public static extern void MAXIMUM_STACK_USAGE_VECTOR_RemoveAt(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_LOCAL_SYMBOL_VECTOR_getitemcopy")]
+  public static extern global::System.IntPtr LOCAL_SYMBOL_VECTOR_getitemcopy(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MAXIMUM_STACK_USAGE_VECTOR_RemoveRange")]
-	public static extern void MAXIMUM_STACK_USAGE_VECTOR_RemoveRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_LOCAL_SYMBOL_VECTOR_getitem")]
+  public static extern global::System.IntPtr LOCAL_SYMBOL_VECTOR_getitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MAXIMUM_STACK_USAGE_VECTOR_Repeat")]
-	public static extern global::System.IntPtr MAXIMUM_STACK_USAGE_VECTOR_Repeat(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_LOCAL_SYMBOL_VECTOR_setitem")]
+  public static extern void LOCAL_SYMBOL_VECTOR_setitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MAXIMUM_STACK_USAGE_VECTOR_Reverse__SWIG_0")]
-	public static extern void MAXIMUM_STACK_USAGE_VECTOR_Reverse__SWIG_0(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_LOCAL_SYMBOL_VECTOR_AddRange")]
+  public static extern void LOCAL_SYMBOL_VECTOR_AddRange(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MAXIMUM_STACK_USAGE_VECTOR_Reverse__SWIG_1")]
-	public static extern void MAXIMUM_STACK_USAGE_VECTOR_Reverse__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_LOCAL_SYMBOL_VECTOR_GetRange")]
+  public static extern global::System.IntPtr LOCAL_SYMBOL_VECTOR_GetRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MAXIMUM_STACK_USAGE_VECTOR_SetRange")]
-	public static extern void MAXIMUM_STACK_USAGE_VECTOR_SetRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_LOCAL_SYMBOL_VECTOR_Insert")]
+  public static extern void LOCAL_SYMBOL_VECTOR_Insert(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_delete_MAXIMUM_STACK_USAGE_VECTOR")]
-	public static extern void delete_MAXIMUM_STACK_USAGE_VECTOR(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_LOCAL_SYMBOL_VECTOR_InsertRange")]
+  public static extern void LOCAL_SYMBOL_VECTOR_InsertRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_OBJECT_VECTOR_Clear")]
-	public static extern void MEMORY_MAP_IMAGE_OBJECT_VECTOR_Clear(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_LOCAL_SYMBOL_VECTOR_RemoveAt")]
+  public static extern void LOCAL_SYMBOL_VECTOR_RemoveAt(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_OBJECT_VECTOR_Add")]
-	public static extern void MEMORY_MAP_IMAGE_OBJECT_VECTOR_Add(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_LOCAL_SYMBOL_VECTOR_RemoveRange")]
+  public static extern void LOCAL_SYMBOL_VECTOR_RemoveRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_OBJECT_VECTOR_size")]
-	public static extern uint MEMORY_MAP_IMAGE_OBJECT_VECTOR_size(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_LOCAL_SYMBOL_VECTOR_Repeat")]
+  public static extern global::System.IntPtr LOCAL_SYMBOL_VECTOR_Repeat(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_OBJECT_VECTOR_capacity")]
-	public static extern uint MEMORY_MAP_IMAGE_OBJECT_VECTOR_capacity(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_LOCAL_SYMBOL_VECTOR_Reverse__SWIG_0")]
+  public static extern void LOCAL_SYMBOL_VECTOR_Reverse__SWIG_0(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_OBJECT_VECTOR_reserve")]
-	public static extern void MEMORY_MAP_IMAGE_OBJECT_VECTOR_reserve(global::System.Runtime.InteropServices.HandleRef jarg1, uint jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_LOCAL_SYMBOL_VECTOR_Reverse__SWIG_1")]
+  public static extern void LOCAL_SYMBOL_VECTOR_Reverse__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_new_MEMORY_MAP_IMAGE_OBJECT_VECTOR__SWIG_0")]
-	public static extern global::System.IntPtr new_MEMORY_MAP_IMAGE_OBJECT_VECTOR__SWIG_0();
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_LOCAL_SYMBOL_VECTOR_SetRange")]
+  public static extern void LOCAL_SYMBOL_VECTOR_SetRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_new_MEMORY_MAP_IMAGE_OBJECT_VECTOR__SWIG_1")]
-	public static extern global::System.IntPtr new_MEMORY_MAP_IMAGE_OBJECT_VECTOR__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_delete_LOCAL_SYMBOL_VECTOR")]
+  public static extern void delete_LOCAL_SYMBOL_VECTOR(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_new_MEMORY_MAP_IMAGE_OBJECT_VECTOR__SWIG_2")]
-	public static extern global::System.IntPtr new_MEMORY_MAP_IMAGE_OBJECT_VECTOR__SWIG_2(int jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MAXIMUM_STACK_USAGE_VECTOR_Clear")]
+  public static extern void MAXIMUM_STACK_USAGE_VECTOR_Clear(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_OBJECT_VECTOR_getitemcopy")]
-	public static extern global::System.IntPtr MEMORY_MAP_IMAGE_OBJECT_VECTOR_getitemcopy(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MAXIMUM_STACK_USAGE_VECTOR_Add")]
+  public static extern void MAXIMUM_STACK_USAGE_VECTOR_Add(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_OBJECT_VECTOR_getitem")]
-	public static extern global::System.IntPtr MEMORY_MAP_IMAGE_OBJECT_VECTOR_getitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MAXIMUM_STACK_USAGE_VECTOR_size")]
+  public static extern uint MAXIMUM_STACK_USAGE_VECTOR_size(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_OBJECT_VECTOR_setitem")]
-	public static extern void MEMORY_MAP_IMAGE_OBJECT_VECTOR_setitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MAXIMUM_STACK_USAGE_VECTOR_capacity")]
+  public static extern uint MAXIMUM_STACK_USAGE_VECTOR_capacity(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_OBJECT_VECTOR_AddRange")]
-	public static extern void MEMORY_MAP_IMAGE_OBJECT_VECTOR_AddRange(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MAXIMUM_STACK_USAGE_VECTOR_reserve")]
+  public static extern void MAXIMUM_STACK_USAGE_VECTOR_reserve(global::System.Runtime.InteropServices.HandleRef jarg1, uint jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_OBJECT_VECTOR_GetRange")]
-	public static extern global::System.IntPtr MEMORY_MAP_IMAGE_OBJECT_VECTOR_GetRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_new_MAXIMUM_STACK_USAGE_VECTOR__SWIG_0")]
+  public static extern global::System.IntPtr new_MAXIMUM_STACK_USAGE_VECTOR__SWIG_0();
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_OBJECT_VECTOR_Insert")]
-	public static extern void MEMORY_MAP_IMAGE_OBJECT_VECTOR_Insert(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_new_MAXIMUM_STACK_USAGE_VECTOR__SWIG_1")]
+  public static extern global::System.IntPtr new_MAXIMUM_STACK_USAGE_VECTOR__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_OBJECT_VECTOR_InsertRange")]
-	public static extern void MEMORY_MAP_IMAGE_OBJECT_VECTOR_InsertRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_new_MAXIMUM_STACK_USAGE_VECTOR__SWIG_2")]
+  public static extern global::System.IntPtr new_MAXIMUM_STACK_USAGE_VECTOR__SWIG_2(int jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_OBJECT_VECTOR_RemoveAt")]
-	public static extern void MEMORY_MAP_IMAGE_OBJECT_VECTOR_RemoveAt(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MAXIMUM_STACK_USAGE_VECTOR_getitemcopy")]
+  public static extern global::System.IntPtr MAXIMUM_STACK_USAGE_VECTOR_getitemcopy(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_OBJECT_VECTOR_RemoveRange")]
-	public static extern void MEMORY_MAP_IMAGE_OBJECT_VECTOR_RemoveRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MAXIMUM_STACK_USAGE_VECTOR_getitem")]
+  public static extern global::System.IntPtr MAXIMUM_STACK_USAGE_VECTOR_getitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_OBJECT_VECTOR_Repeat")]
-	public static extern global::System.IntPtr MEMORY_MAP_IMAGE_OBJECT_VECTOR_Repeat(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MAXIMUM_STACK_USAGE_VECTOR_setitem")]
+  public static extern void MAXIMUM_STACK_USAGE_VECTOR_setitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_OBJECT_VECTOR_Reverse__SWIG_0")]
-	public static extern void MEMORY_MAP_IMAGE_OBJECT_VECTOR_Reverse__SWIG_0(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MAXIMUM_STACK_USAGE_VECTOR_AddRange")]
+  public static extern void MAXIMUM_STACK_USAGE_VECTOR_AddRange(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_OBJECT_VECTOR_Reverse__SWIG_1")]
-	public static extern void MEMORY_MAP_IMAGE_OBJECT_VECTOR_Reverse__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MAXIMUM_STACK_USAGE_VECTOR_GetRange")]
+  public static extern global::System.IntPtr MAXIMUM_STACK_USAGE_VECTOR_GetRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_OBJECT_VECTOR_SetRange")]
-	public static extern void MEMORY_MAP_IMAGE_OBJECT_VECTOR_SetRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MAXIMUM_STACK_USAGE_VECTOR_Insert")]
+  public static extern void MAXIMUM_STACK_USAGE_VECTOR_Insert(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_delete_MEMORY_MAP_IMAGE_OBJECT_VECTOR")]
-	public static extern void delete_MEMORY_MAP_IMAGE_OBJECT_VECTOR(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MAXIMUM_STACK_USAGE_VECTOR_InsertRange")]
+  public static extern void MAXIMUM_STACK_USAGE_VECTOR_InsertRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_Clear")]
-	public static extern void MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_Clear(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MAXIMUM_STACK_USAGE_VECTOR_RemoveAt")]
+  public static extern void MAXIMUM_STACK_USAGE_VECTOR_RemoveAt(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_Add")]
-	public static extern void MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_Add(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MAXIMUM_STACK_USAGE_VECTOR_RemoveRange")]
+  public static extern void MAXIMUM_STACK_USAGE_VECTOR_RemoveRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_size")]
-	public static extern uint MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_size(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MAXIMUM_STACK_USAGE_VECTOR_Repeat")]
+  public static extern global::System.IntPtr MAXIMUM_STACK_USAGE_VECTOR_Repeat(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_capacity")]
-	public static extern uint MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_capacity(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MAXIMUM_STACK_USAGE_VECTOR_Reverse__SWIG_0")]
+  public static extern void MAXIMUM_STACK_USAGE_VECTOR_Reverse__SWIG_0(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_reserve")]
-	public static extern void MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_reserve(global::System.Runtime.InteropServices.HandleRef jarg1, uint jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MAXIMUM_STACK_USAGE_VECTOR_Reverse__SWIG_1")]
+  public static extern void MAXIMUM_STACK_USAGE_VECTOR_Reverse__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_new_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR__SWIG_0")]
-	public static extern global::System.IntPtr new_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR__SWIG_0();
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MAXIMUM_STACK_USAGE_VECTOR_SetRange")]
+  public static extern void MAXIMUM_STACK_USAGE_VECTOR_SetRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_new_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR__SWIG_1")]
-	public static extern global::System.IntPtr new_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_delete_MAXIMUM_STACK_USAGE_VECTOR")]
+  public static extern void delete_MAXIMUM_STACK_USAGE_VECTOR(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_new_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR__SWIG_2")]
-	public static extern global::System.IntPtr new_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR__SWIG_2(int jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_OBJECT_VECTOR_Clear")]
+  public static extern void MEMORY_MAP_IMAGE_OBJECT_VECTOR_Clear(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_getitemcopy")]
-	public static extern global::System.IntPtr MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_getitemcopy(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_OBJECT_VECTOR_Add")]
+  public static extern void MEMORY_MAP_IMAGE_OBJECT_VECTOR_Add(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_getitem")]
-	public static extern global::System.IntPtr MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_getitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_OBJECT_VECTOR_size")]
+  public static extern uint MEMORY_MAP_IMAGE_OBJECT_VECTOR_size(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_setitem")]
-	public static extern void MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_setitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_OBJECT_VECTOR_capacity")]
+  public static extern uint MEMORY_MAP_IMAGE_OBJECT_VECTOR_capacity(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_AddRange")]
-	public static extern void MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_AddRange(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_OBJECT_VECTOR_reserve")]
+  public static extern void MEMORY_MAP_IMAGE_OBJECT_VECTOR_reserve(global::System.Runtime.InteropServices.HandleRef jarg1, uint jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_GetRange")]
-	public static extern global::System.IntPtr MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_GetRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_new_MEMORY_MAP_IMAGE_OBJECT_VECTOR__SWIG_0")]
+  public static extern global::System.IntPtr new_MEMORY_MAP_IMAGE_OBJECT_VECTOR__SWIG_0();
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_Insert")]
-	public static extern void MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_Insert(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_new_MEMORY_MAP_IMAGE_OBJECT_VECTOR__SWIG_1")]
+  public static extern global::System.IntPtr new_MEMORY_MAP_IMAGE_OBJECT_VECTOR__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_InsertRange")]
-	public static extern void MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_InsertRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2,
-	                                                                               global::System.Runtime.InteropServices.HandleRef jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_new_MEMORY_MAP_IMAGE_OBJECT_VECTOR__SWIG_2")]
+  public static extern global::System.IntPtr new_MEMORY_MAP_IMAGE_OBJECT_VECTOR__SWIG_2(int jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_RemoveAt")]
-	public static extern void MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_RemoveAt(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_OBJECT_VECTOR_getitemcopy")]
+  public static extern global::System.IntPtr MEMORY_MAP_IMAGE_OBJECT_VECTOR_getitemcopy(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_RemoveRange")]
-	public static extern void MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_RemoveRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_OBJECT_VECTOR_getitem")]
+  public static extern global::System.IntPtr MEMORY_MAP_IMAGE_OBJECT_VECTOR_getitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_Repeat")]
-	public static extern global::System.IntPtr MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_Repeat(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_OBJECT_VECTOR_setitem")]
+  public static extern void MEMORY_MAP_IMAGE_OBJECT_VECTOR_setitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_Reverse__SWIG_0")]
-	public static extern void MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_Reverse__SWIG_0(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_OBJECT_VECTOR_AddRange")]
+  public static extern void MEMORY_MAP_IMAGE_OBJECT_VECTOR_AddRange(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_Reverse__SWIG_1")]
-	public static extern void MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_Reverse__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_OBJECT_VECTOR_GetRange")]
+  public static extern global::System.IntPtr MEMORY_MAP_IMAGE_OBJECT_VECTOR_GetRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_SetRange")]
-	public static extern void MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_SetRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_OBJECT_VECTOR_Insert")]
+  public static extern void MEMORY_MAP_IMAGE_OBJECT_VECTOR_Insert(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_delete_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR")]
-	public static extern void delete_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_OBJECT_VECTOR_InsertRange")]
+  public static extern void MEMORY_MAP_IMAGE_OBJECT_VECTOR_InsertRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_Clear")]
-	public static extern void MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_Clear(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_OBJECT_VECTOR_RemoveAt")]
+  public static extern void MEMORY_MAP_IMAGE_OBJECT_VECTOR_RemoveAt(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_Add")]
-	public static extern void MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_Add(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_OBJECT_VECTOR_RemoveRange")]
+  public static extern void MEMORY_MAP_IMAGE_OBJECT_VECTOR_RemoveRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_size")]
-	public static extern uint MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_size(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_OBJECT_VECTOR_Repeat")]
+  public static extern global::System.IntPtr MEMORY_MAP_IMAGE_OBJECT_VECTOR_Repeat(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_capacity")]
-	public static extern uint MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_capacity(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_OBJECT_VECTOR_Reverse__SWIG_0")]
+  public static extern void MEMORY_MAP_IMAGE_OBJECT_VECTOR_Reverse__SWIG_0(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_reserve")]
-	public static extern void MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_reserve(global::System.Runtime.InteropServices.HandleRef jarg1, uint jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_OBJECT_VECTOR_Reverse__SWIG_1")]
+  public static extern void MEMORY_MAP_IMAGE_OBJECT_VECTOR_Reverse__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_new_MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR__SWIG_0")]
-	public static extern global::System.IntPtr new_MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR__SWIG_0();
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_OBJECT_VECTOR_SetRange")]
+  public static extern void MEMORY_MAP_IMAGE_OBJECT_VECTOR_SetRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_new_MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR__SWIG_1")]
-	public static extern global::System.IntPtr new_MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_delete_MEMORY_MAP_IMAGE_OBJECT_VECTOR")]
+  public static extern void delete_MEMORY_MAP_IMAGE_OBJECT_VECTOR(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_new_MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR__SWIG_2")]
-	public static extern global::System.IntPtr new_MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR__SWIG_2(int jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_Clear")]
+  public static extern void MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_Clear(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_getitemcopy")]
-	public static extern global::System.IntPtr MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_getitemcopy(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_Add")]
+  public static extern void MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_Add(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_getitem")]
-	public static extern global::System.IntPtr MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_getitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_size")]
+  public static extern uint MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_size(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_setitem")]
-	public static extern void MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_setitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_capacity")]
+  public static extern uint MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_capacity(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_AddRange")]
-	public static extern void MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_AddRange(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_reserve")]
+  public static extern void MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_reserve(global::System.Runtime.InteropServices.HandleRef jarg1, uint jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_GetRange")]
-	public static extern global::System.IntPtr MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_GetRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_new_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR__SWIG_0")]
+  public static extern global::System.IntPtr new_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR__SWIG_0();
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_Insert")]
-	public static extern void MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_Insert(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_new_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR__SWIG_1")]
+  public static extern global::System.IntPtr new_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_InsertRange")]
-	public static extern void MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_InsertRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_new_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR__SWIG_2")]
+  public static extern global::System.IntPtr new_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR__SWIG_2(int jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_RemoveAt")]
-	public static extern void MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_RemoveAt(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_getitemcopy")]
+  public static extern global::System.IntPtr MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_getitemcopy(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_RemoveRange")]
-	public static extern void MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_RemoveRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_getitem")]
+  public static extern global::System.IntPtr MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_getitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_Repeat")]
-	public static extern global::System.IntPtr MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_Repeat(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_setitem")]
+  public static extern void MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_setitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_Reverse__SWIG_0")]
-	public static extern void MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_Reverse__SWIG_0(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_AddRange")]
+  public static extern void MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_AddRange(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_Reverse__SWIG_1")]
-	public static extern void MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_Reverse__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_GetRange")]
+  public static extern global::System.IntPtr MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_GetRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_SetRange")]
-	public static extern void MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_SetRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_Insert")]
+  public static extern void MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_Insert(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_delete_MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR")]
-	public static extern void delete_MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_InsertRange")]
+  public static extern void MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_InsertRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MUTUALLY_RECURSIVE_VECTOR_Clear")]
-	public static extern void MUTUALLY_RECURSIVE_VECTOR_Clear(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_RemoveAt")]
+  public static extern void MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_RemoveAt(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MUTUALLY_RECURSIVE_VECTOR_Add")]
-	public static extern void MUTUALLY_RECURSIVE_VECTOR_Add(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_RemoveRange")]
+  public static extern void MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_RemoveRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MUTUALLY_RECURSIVE_VECTOR_size")]
-	public static extern uint MUTUALLY_RECURSIVE_VECTOR_size(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_Repeat")]
+  public static extern global::System.IntPtr MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_Repeat(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MUTUALLY_RECURSIVE_VECTOR_capacity")]
-	public static extern uint MUTUALLY_RECURSIVE_VECTOR_capacity(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_Reverse__SWIG_0")]
+  public static extern void MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_Reverse__SWIG_0(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MUTUALLY_RECURSIVE_VECTOR_reserve")]
-	public static extern void MUTUALLY_RECURSIVE_VECTOR_reserve(global::System.Runtime.InteropServices.HandleRef jarg1, uint jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_Reverse__SWIG_1")]
+  public static extern void MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_Reverse__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_new_MUTUALLY_RECURSIVE_VECTOR__SWIG_0")]
-	public static extern global::System.IntPtr new_MUTUALLY_RECURSIVE_VECTOR__SWIG_0();
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_SetRange")]
+  public static extern void MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_SetRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_new_MUTUALLY_RECURSIVE_VECTOR__SWIG_1")]
-	public static extern global::System.IntPtr new_MUTUALLY_RECURSIVE_VECTOR__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_delete_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR")]
+  public static extern void delete_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_new_MUTUALLY_RECURSIVE_VECTOR__SWIG_2")]
-	public static extern global::System.IntPtr new_MUTUALLY_RECURSIVE_VECTOR__SWIG_2(int jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_Clear")]
+  public static extern void MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_Clear(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MUTUALLY_RECURSIVE_VECTOR_getitemcopy")]
-	public static extern global::System.IntPtr MUTUALLY_RECURSIVE_VECTOR_getitemcopy(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_Add")]
+  public static extern void MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_Add(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MUTUALLY_RECURSIVE_VECTOR_getitem")]
-	public static extern global::System.IntPtr MUTUALLY_RECURSIVE_VECTOR_getitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_size")]
+  public static extern uint MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_size(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MUTUALLY_RECURSIVE_VECTOR_setitem")]
-	public static extern void MUTUALLY_RECURSIVE_VECTOR_setitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_capacity")]
+  public static extern uint MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_capacity(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MUTUALLY_RECURSIVE_VECTOR_AddRange")]
-	public static extern void MUTUALLY_RECURSIVE_VECTOR_AddRange(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_reserve")]
+  public static extern void MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_reserve(global::System.Runtime.InteropServices.HandleRef jarg1, uint jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MUTUALLY_RECURSIVE_VECTOR_GetRange")]
-	public static extern global::System.IntPtr MUTUALLY_RECURSIVE_VECTOR_GetRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_new_MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR__SWIG_0")]
+  public static extern global::System.IntPtr new_MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR__SWIG_0();
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MUTUALLY_RECURSIVE_VECTOR_Insert")]
-	public static extern void MUTUALLY_RECURSIVE_VECTOR_Insert(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_new_MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR__SWIG_1")]
+  public static extern global::System.IntPtr new_MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MUTUALLY_RECURSIVE_VECTOR_InsertRange")]
-	public static extern void MUTUALLY_RECURSIVE_VECTOR_InsertRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_new_MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR__SWIG_2")]
+  public static extern global::System.IntPtr new_MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR__SWIG_2(int jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MUTUALLY_RECURSIVE_VECTOR_RemoveAt")]
-	public static extern void MUTUALLY_RECURSIVE_VECTOR_RemoveAt(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_getitemcopy")]
+  public static extern global::System.IntPtr MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_getitemcopy(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MUTUALLY_RECURSIVE_VECTOR_RemoveRange")]
-	public static extern void MUTUALLY_RECURSIVE_VECTOR_RemoveRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_getitem")]
+  public static extern global::System.IntPtr MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_getitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MUTUALLY_RECURSIVE_VECTOR_Repeat")]
-	public static extern global::System.IntPtr MUTUALLY_RECURSIVE_VECTOR_Repeat(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_setitem")]
+  public static extern void MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_setitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MUTUALLY_RECURSIVE_VECTOR_Reverse__SWIG_0")]
-	public static extern void MUTUALLY_RECURSIVE_VECTOR_Reverse__SWIG_0(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_AddRange")]
+  public static extern void MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_AddRange(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MUTUALLY_RECURSIVE_VECTOR_Reverse__SWIG_1")]
-	public static extern void MUTUALLY_RECURSIVE_VECTOR_Reverse__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_GetRange")]
+  public static extern global::System.IntPtr MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_GetRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_MUTUALLY_RECURSIVE_VECTOR_SetRange")]
-	public static extern void MUTUALLY_RECURSIVE_VECTOR_SetRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_Insert")]
+  public static extern void MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_Insert(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_delete_MUTUALLY_RECURSIVE_VECTOR")]
-	public static extern void delete_MUTUALLY_RECURSIVE_VECTOR(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_InsertRange")]
+  public static extern void MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_InsertRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_REMOVED_SYMBOL_VECTOR_Clear")]
-	public static extern void REMOVED_SYMBOL_VECTOR_Clear(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_RemoveAt")]
+  public static extern void MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_RemoveAt(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_REMOVED_SYMBOL_VECTOR_Add")]
-	public static extern void REMOVED_SYMBOL_VECTOR_Add(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_RemoveRange")]
+  public static extern void MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_RemoveRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_REMOVED_SYMBOL_VECTOR_size")]
-	public static extern uint REMOVED_SYMBOL_VECTOR_size(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_Repeat")]
+  public static extern global::System.IntPtr MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_Repeat(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_REMOVED_SYMBOL_VECTOR_capacity")]
-	public static extern uint REMOVED_SYMBOL_VECTOR_capacity(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_Reverse__SWIG_0")]
+  public static extern void MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_Reverse__SWIG_0(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_REMOVED_SYMBOL_VECTOR_reserve")]
-	public static extern void REMOVED_SYMBOL_VECTOR_reserve(global::System.Runtime.InteropServices.HandleRef jarg1, uint jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_Reverse__SWIG_1")]
+  public static extern void MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_Reverse__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_new_REMOVED_SYMBOL_VECTOR__SWIG_0")]
-	public static extern global::System.IntPtr new_REMOVED_SYMBOL_VECTOR__SWIG_0();
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_SetRange")]
+  public static extern void MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR_SetRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_new_REMOVED_SYMBOL_VECTOR__SWIG_1")]
-	public static extern global::System.IntPtr new_REMOVED_SYMBOL_VECTOR__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_delete_MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR")]
+  public static extern void delete_MEMORY_MAP_IMAGE_LOAD_REGION_VECTOR(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_new_REMOVED_SYMBOL_VECTOR__SWIG_2")]
-	public static extern global::System.IntPtr new_REMOVED_SYMBOL_VECTOR__SWIG_2(int jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MUTUALLY_RECURSIVE_VECTOR_Clear")]
+  public static extern void MUTUALLY_RECURSIVE_VECTOR_Clear(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_REMOVED_SYMBOL_VECTOR_getitemcopy")]
-	public static extern global::System.IntPtr REMOVED_SYMBOL_VECTOR_getitemcopy(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MUTUALLY_RECURSIVE_VECTOR_Add")]
+  public static extern void MUTUALLY_RECURSIVE_VECTOR_Add(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_REMOVED_SYMBOL_VECTOR_getitem")]
-	public static extern global::System.IntPtr REMOVED_SYMBOL_VECTOR_getitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MUTUALLY_RECURSIVE_VECTOR_size")]
+  public static extern uint MUTUALLY_RECURSIVE_VECTOR_size(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_REMOVED_SYMBOL_VECTOR_setitem")]
-	public static extern void REMOVED_SYMBOL_VECTOR_setitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MUTUALLY_RECURSIVE_VECTOR_capacity")]
+  public static extern uint MUTUALLY_RECURSIVE_VECTOR_capacity(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_REMOVED_SYMBOL_VECTOR_AddRange")]
-	public static extern void REMOVED_SYMBOL_VECTOR_AddRange(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MUTUALLY_RECURSIVE_VECTOR_reserve")]
+  public static extern void MUTUALLY_RECURSIVE_VECTOR_reserve(global::System.Runtime.InteropServices.HandleRef jarg1, uint jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_REMOVED_SYMBOL_VECTOR_GetRange")]
-	public static extern global::System.IntPtr REMOVED_SYMBOL_VECTOR_GetRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_new_MUTUALLY_RECURSIVE_VECTOR__SWIG_0")]
+  public static extern global::System.IntPtr new_MUTUALLY_RECURSIVE_VECTOR__SWIG_0();
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_REMOVED_SYMBOL_VECTOR_Insert")]
-	public static extern void REMOVED_SYMBOL_VECTOR_Insert(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_new_MUTUALLY_RECURSIVE_VECTOR__SWIG_1")]
+  public static extern global::System.IntPtr new_MUTUALLY_RECURSIVE_VECTOR__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_REMOVED_SYMBOL_VECTOR_InsertRange")]
-	public static extern void REMOVED_SYMBOL_VECTOR_InsertRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_new_MUTUALLY_RECURSIVE_VECTOR__SWIG_2")]
+  public static extern global::System.IntPtr new_MUTUALLY_RECURSIVE_VECTOR__SWIG_2(int jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_REMOVED_SYMBOL_VECTOR_RemoveAt")]
-	public static extern void REMOVED_SYMBOL_VECTOR_RemoveAt(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MUTUALLY_RECURSIVE_VECTOR_getitemcopy")]
+  public static extern global::System.IntPtr MUTUALLY_RECURSIVE_VECTOR_getitemcopy(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_REMOVED_SYMBOL_VECTOR_RemoveRange")]
-	public static extern void REMOVED_SYMBOL_VECTOR_RemoveRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MUTUALLY_RECURSIVE_VECTOR_getitem")]
+  public static extern global::System.IntPtr MUTUALLY_RECURSIVE_VECTOR_getitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_REMOVED_SYMBOL_VECTOR_Repeat")]
-	public static extern global::System.IntPtr REMOVED_SYMBOL_VECTOR_Repeat(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MUTUALLY_RECURSIVE_VECTOR_setitem")]
+  public static extern void MUTUALLY_RECURSIVE_VECTOR_setitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_REMOVED_SYMBOL_VECTOR_Reverse__SWIG_0")]
-	public static extern void REMOVED_SYMBOL_VECTOR_Reverse__SWIG_0(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MUTUALLY_RECURSIVE_VECTOR_AddRange")]
+  public static extern void MUTUALLY_RECURSIVE_VECTOR_AddRange(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_REMOVED_SYMBOL_VECTOR_Reverse__SWIG_1")]
-	public static extern void REMOVED_SYMBOL_VECTOR_Reverse__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MUTUALLY_RECURSIVE_VECTOR_GetRange")]
+  public static extern global::System.IntPtr MUTUALLY_RECURSIVE_VECTOR_GetRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_REMOVED_SYMBOL_VECTOR_SetRange")]
-	public static extern void REMOVED_SYMBOL_VECTOR_SetRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MUTUALLY_RECURSIVE_VECTOR_Insert")]
+  public static extern void MUTUALLY_RECURSIVE_VECTOR_Insert(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_delete_REMOVED_SYMBOL_VECTOR")]
-	public static extern void delete_REMOVED_SYMBOL_VECTOR(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MUTUALLY_RECURSIVE_VECTOR_InsertRange")]
+  public static extern void MUTUALLY_RECURSIVE_VECTOR_InsertRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_STACK_USAGE_VECTOR_Clear")]
-	public static extern void STACK_USAGE_VECTOR_Clear(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MUTUALLY_RECURSIVE_VECTOR_RemoveAt")]
+  public static extern void MUTUALLY_RECURSIVE_VECTOR_RemoveAt(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_STACK_USAGE_VECTOR_Add")]
-	public static extern void STACK_USAGE_VECTOR_Add(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MUTUALLY_RECURSIVE_VECTOR_RemoveRange")]
+  public static extern void MUTUALLY_RECURSIVE_VECTOR_RemoveRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_STACK_USAGE_VECTOR_size")]
-	public static extern uint STACK_USAGE_VECTOR_size(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MUTUALLY_RECURSIVE_VECTOR_Repeat")]
+  public static extern global::System.IntPtr MUTUALLY_RECURSIVE_VECTOR_Repeat(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_STACK_USAGE_VECTOR_capacity")]
-	public static extern uint STACK_USAGE_VECTOR_capacity(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MUTUALLY_RECURSIVE_VECTOR_Reverse__SWIG_0")]
+  public static extern void MUTUALLY_RECURSIVE_VECTOR_Reverse__SWIG_0(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_STACK_USAGE_VECTOR_reserve")]
-	public static extern void STACK_USAGE_VECTOR_reserve(global::System.Runtime.InteropServices.HandleRef jarg1, uint jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MUTUALLY_RECURSIVE_VECTOR_Reverse__SWIG_1")]
+  public static extern void MUTUALLY_RECURSIVE_VECTOR_Reverse__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_new_STACK_USAGE_VECTOR__SWIG_0")]
-	public static extern global::System.IntPtr new_STACK_USAGE_VECTOR__SWIG_0();
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_MUTUALLY_RECURSIVE_VECTOR_SetRange")]
+  public static extern void MUTUALLY_RECURSIVE_VECTOR_SetRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_new_STACK_USAGE_VECTOR__SWIG_1")]
-	public static extern global::System.IntPtr new_STACK_USAGE_VECTOR__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_delete_MUTUALLY_RECURSIVE_VECTOR")]
+  public static extern void delete_MUTUALLY_RECURSIVE_VECTOR(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_new_STACK_USAGE_VECTOR__SWIG_2")]
-	public static extern global::System.IntPtr new_STACK_USAGE_VECTOR__SWIG_2(int jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_REMOVED_SYMBOL_VECTOR_Clear")]
+  public static extern void REMOVED_SYMBOL_VECTOR_Clear(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_STACK_USAGE_VECTOR_getitemcopy")]
-	public static extern global::System.IntPtr STACK_USAGE_VECTOR_getitemcopy(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_REMOVED_SYMBOL_VECTOR_Add")]
+  public static extern void REMOVED_SYMBOL_VECTOR_Add(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_STACK_USAGE_VECTOR_getitem")]
-	public static extern global::System.IntPtr STACK_USAGE_VECTOR_getitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_REMOVED_SYMBOL_VECTOR_size")]
+  public static extern uint REMOVED_SYMBOL_VECTOR_size(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_STACK_USAGE_VECTOR_setitem")]
-	public static extern void STACK_USAGE_VECTOR_setitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_REMOVED_SYMBOL_VECTOR_capacity")]
+  public static extern uint REMOVED_SYMBOL_VECTOR_capacity(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_STACK_USAGE_VECTOR_AddRange")]
-	public static extern void STACK_USAGE_VECTOR_AddRange(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_REMOVED_SYMBOL_VECTOR_reserve")]
+  public static extern void REMOVED_SYMBOL_VECTOR_reserve(global::System.Runtime.InteropServices.HandleRef jarg1, uint jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_STACK_USAGE_VECTOR_GetRange")]
-	public static extern global::System.IntPtr STACK_USAGE_VECTOR_GetRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_new_REMOVED_SYMBOL_VECTOR__SWIG_0")]
+  public static extern global::System.IntPtr new_REMOVED_SYMBOL_VECTOR__SWIG_0();
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_STACK_USAGE_VECTOR_Insert")]
-	public static extern void STACK_USAGE_VECTOR_Insert(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_new_REMOVED_SYMBOL_VECTOR__SWIG_1")]
+  public static extern global::System.IntPtr new_REMOVED_SYMBOL_VECTOR__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_STACK_USAGE_VECTOR_InsertRange")]
-	public static extern void STACK_USAGE_VECTOR_InsertRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_new_REMOVED_SYMBOL_VECTOR__SWIG_2")]
+  public static extern global::System.IntPtr new_REMOVED_SYMBOL_VECTOR__SWIG_2(int jarg1);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_STACK_USAGE_VECTOR_RemoveAt")]
-	public static extern void STACK_USAGE_VECTOR_RemoveAt(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_REMOVED_SYMBOL_VECTOR_getitemcopy")]
+  public static extern global::System.IntPtr REMOVED_SYMBOL_VECTOR_getitemcopy(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_STACK_USAGE_VECTOR_RemoveRange")]
-	public static extern void STACK_USAGE_VECTOR_RemoveRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_REMOVED_SYMBOL_VECTOR_getitem")]
+  public static extern global::System.IntPtr REMOVED_SYMBOL_VECTOR_getitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_STACK_USAGE_VECTOR_Repeat")]
-	public static extern global::System.IntPtr STACK_USAGE_VECTOR_Repeat(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_REMOVED_SYMBOL_VECTOR_setitem")]
+  public static extern void REMOVED_SYMBOL_VECTOR_setitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_STACK_USAGE_VECTOR_Reverse__SWIG_0")]
-	public static extern void STACK_USAGE_VECTOR_Reverse__SWIG_0(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_REMOVED_SYMBOL_VECTOR_AddRange")]
+  public static extern void REMOVED_SYMBOL_VECTOR_AddRange(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_STACK_USAGE_VECTOR_Reverse__SWIG_1")]
-	public static extern void STACK_USAGE_VECTOR_Reverse__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_REMOVED_SYMBOL_VECTOR_GetRange")]
+  public static extern global::System.IntPtr REMOVED_SYMBOL_VECTOR_GetRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_STACK_USAGE_VECTOR_SetRange")]
-	public static extern void STACK_USAGE_VECTOR_SetRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_REMOVED_SYMBOL_VECTOR_Insert")]
+  public static extern void REMOVED_SYMBOL_VECTOR_Insert(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
 
-	[global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint = "CSharp_delete_STACK_USAGE_VECTOR")]
-	public static extern void delete_STACK_USAGE_VECTOR(global::System.Runtime.InteropServices.HandleRef jarg1);
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_REMOVED_SYMBOL_VECTOR_InsertRange")]
+  public static extern void REMOVED_SYMBOL_VECTOR_InsertRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_REMOVED_SYMBOL_VECTOR_RemoveAt")]
+  public static extern void REMOVED_SYMBOL_VECTOR_RemoveAt(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_REMOVED_SYMBOL_VECTOR_RemoveRange")]
+  public static extern void REMOVED_SYMBOL_VECTOR_RemoveRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_REMOVED_SYMBOL_VECTOR_Repeat")]
+  public static extern global::System.IntPtr REMOVED_SYMBOL_VECTOR_Repeat(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_REMOVED_SYMBOL_VECTOR_Reverse__SWIG_0")]
+  public static extern void REMOVED_SYMBOL_VECTOR_Reverse__SWIG_0(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_REMOVED_SYMBOL_VECTOR_Reverse__SWIG_1")]
+  public static extern void REMOVED_SYMBOL_VECTOR_Reverse__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_REMOVED_SYMBOL_VECTOR_SetRange")]
+  public static extern void REMOVED_SYMBOL_VECTOR_SetRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_delete_REMOVED_SYMBOL_VECTOR")]
+  public static extern void delete_REMOVED_SYMBOL_VECTOR(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_STACK_USAGE_VECTOR_Clear")]
+  public static extern void STACK_USAGE_VECTOR_Clear(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_STACK_USAGE_VECTOR_Add")]
+  public static extern void STACK_USAGE_VECTOR_Add(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_STACK_USAGE_VECTOR_size")]
+  public static extern uint STACK_USAGE_VECTOR_size(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_STACK_USAGE_VECTOR_capacity")]
+  public static extern uint STACK_USAGE_VECTOR_capacity(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_STACK_USAGE_VECTOR_reserve")]
+  public static extern void STACK_USAGE_VECTOR_reserve(global::System.Runtime.InteropServices.HandleRef jarg1, uint jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_new_STACK_USAGE_VECTOR__SWIG_0")]
+  public static extern global::System.IntPtr new_STACK_USAGE_VECTOR__SWIG_0();
+
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_new_STACK_USAGE_VECTOR__SWIG_1")]
+  public static extern global::System.IntPtr new_STACK_USAGE_VECTOR__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_new_STACK_USAGE_VECTOR__SWIG_2")]
+  public static extern global::System.IntPtr new_STACK_USAGE_VECTOR__SWIG_2(int jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_STACK_USAGE_VECTOR_getitemcopy")]
+  public static extern global::System.IntPtr STACK_USAGE_VECTOR_getitemcopy(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_STACK_USAGE_VECTOR_getitem")]
+  public static extern global::System.IntPtr STACK_USAGE_VECTOR_getitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_STACK_USAGE_VECTOR_setitem")]
+  public static extern void STACK_USAGE_VECTOR_setitem(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_STACK_USAGE_VECTOR_AddRange")]
+  public static extern void STACK_USAGE_VECTOR_AddRange(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_STACK_USAGE_VECTOR_GetRange")]
+  public static extern global::System.IntPtr STACK_USAGE_VECTOR_GetRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_STACK_USAGE_VECTOR_Insert")]
+  public static extern void STACK_USAGE_VECTOR_Insert(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_STACK_USAGE_VECTOR_InsertRange")]
+  public static extern void STACK_USAGE_VECTOR_InsertRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_STACK_USAGE_VECTOR_RemoveAt")]
+  public static extern void STACK_USAGE_VECTOR_RemoveAt(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_STACK_USAGE_VECTOR_RemoveRange")]
+  public static extern void STACK_USAGE_VECTOR_RemoveRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_STACK_USAGE_VECTOR_Repeat")]
+  public static extern global::System.IntPtr STACK_USAGE_VECTOR_Repeat(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_STACK_USAGE_VECTOR_Reverse__SWIG_0")]
+  public static extern void STACK_USAGE_VECTOR_Reverse__SWIG_0(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_STACK_USAGE_VECTOR_Reverse__SWIG_1")]
+  public static extern void STACK_USAGE_VECTOR_Reverse__SWIG_1(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, int jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_STACK_USAGE_VECTOR_SetRange")]
+  public static extern void STACK_USAGE_VECTOR_SetRange(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
+
+  [global::System.Runtime.InteropServices.DllImport("KeilMapLib", EntryPoint="CSharp_delete_STACK_USAGE_VECTOR")]
+  public static extern void delete_STACK_USAGE_VECTOR(global::System.Runtime.InteropServices.HandleRef jarg1);
 }

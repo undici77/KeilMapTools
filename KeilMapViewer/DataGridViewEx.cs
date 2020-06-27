@@ -56,7 +56,43 @@ class DataGridViewEx : DataGridView
 		e.Handled = true;
 	}
 
-	public void SaveData()
+	public void SetupFromIni(IniFile init_file)
+	{
+		try
+		{
+			foreach (DataGridViewColumn col in Columns)
+			{
+				col.DisplayIndex = int.Parse(init_file.GetKeyValue(Name, col.Name));
+			}
+		}
+		catch
+		{
+			int index;
+
+			index = 0;
+			foreach (DataGridViewColumn col in Columns)
+			{
+				col.DisplayIndex = index;
+				index++;
+			}
+		}
+	}
+
+	public void SetupToIni(IniFile init_file)
+	{
+		try
+		{
+			foreach (DataGridViewColumn col in Columns)
+			{
+				init_file.SetKeyValue(Name, col.Name, col.DisplayIndex.ToString());
+			}
+		}
+		catch
+		{
+		}
+	}
+
+	public void PopSelections()
 	{
 		_Sort_Order = SortOrder;
 		_Sorted_Column = SortedColumn;
@@ -71,7 +107,7 @@ class DataGridViewEx : DataGridView
 		}
 	}
 
-	public void RestoreData()
+	public void PushSelections()
 	{
 		ListSortDirection direction;
 		bool              found;

@@ -9,451 +9,315 @@
 //------------------------------------------------------------------------------
 
 
-public class MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR : global::System.IDisposable, global::System.Collections.IEnumerable,
-	global::System.Collections.Generic.IEnumerable<MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD>
-{
-	private global::System.Runtime.InteropServices.HandleRef swigCPtr;
-	protected bool swigCMemOwn;
+public class MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR : global::System.IDisposable, global::System.Collections.IEnumerable, global::System.Collections.Generic.IEnumerable<MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD>
+ {
+  private global::System.Runtime.InteropServices.HandleRef swigCPtr;
+  protected bool swigCMemOwn;
 
-	internal MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR(global::System.IntPtr cPtr, bool cMemoryOwn)
-	{
-		swigCMemOwn = cMemoryOwn;
-		swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
-	}
+  internal MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR(global::System.IntPtr cPtr, bool cMemoryOwn) {
+    swigCMemOwn = cMemoryOwn;
+    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
+  }
 
-	internal static global::System.Runtime.InteropServices.HandleRef getCPtr(MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR obj)
-	{
-		return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
-	}
+  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR obj) {
+    return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
+  }
 
-	~MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR()
-	{
-		Dispose(false);
-	}
+  ~MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR() {
+    Dispose(false);
+  }
 
-	public void Dispose()
-	{
-		Dispose(true);
-		global::System.GC.SuppressFinalize(this);
-	}
+  public void Dispose() {
+    Dispose(true);
+    global::System.GC.SuppressFinalize(this);
+  }
 
-	protected virtual void Dispose(bool disposing)
-	{
-		lock (this)
-		{
-			if (swigCPtr.Handle != global::System.IntPtr.Zero)
-			{
-				if (swigCMemOwn)
-				{
-					swigCMemOwn = false;
-					KeilMapLibPINVOKE.delete_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR(swigCPtr);
-				}
-				swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
-			}
-		}
-	}
+  protected virtual void Dispose(bool disposing) {
+    lock(this) {
+      if (swigCPtr.Handle != global::System.IntPtr.Zero) {
+        if (swigCMemOwn) {
+          swigCMemOwn = false;
+          KeilMapLibPINVOKE.delete_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR(swigCPtr);
+        }
+        swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
+      }
+    }
+  }
 
-	public MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR(global::System.Collections.IEnumerable c) : this()
-	{
-		if (c == null)
-		{
-			throw new global::System.ArgumentNullException("c");
-		}
-		foreach (MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD element in c)
-		{
-			this.Add(element);
-		}
-	}
+  public MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR(global::System.Collections.IEnumerable c) : this() {
+    if (c == null)
+      throw new global::System.ArgumentNullException("c");
+    foreach (MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD element in c) {
+      this.Add(element);
+    }
+  }
 
-	public MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR(global::System.Collections.Generic.IEnumerable<MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD> c) : this()
-	{
-		if (c == null)
-		{
-			throw new global::System.ArgumentNullException("c");
-		}
-		foreach (MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD element in c)
-		{
-			this.Add(element);
-		}
-	}
+  public MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR(global::System.Collections.Generic.IEnumerable<MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD> c) : this() {
+    if (c == null)
+      throw new global::System.ArgumentNullException("c");
+    foreach (MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD element in c) {
+      this.Add(element);
+    }
+  }
 
-	public bool IsFixedSize
-	{
-		get
-		{
-			return false;
-		}
-	}
+  public bool IsFixedSize {
+    get {
+      return false;
+    }
+  }
 
-	public bool IsReadOnly
-	{
-		get
-		{
-			return false;
-		}
-	}
+  public bool IsReadOnly {
+    get {
+      return false;
+    }
+  }
 
-	public MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD this[int index]
-	{
-		get
-		{
-			return getitem(index);
-		}
-		set
-		{
-			setitem(index, value);
-		}
-	}
+  public MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD this[int index]  {
+    get {
+      return getitem(index);
+    }
+    set {
+      setitem(index, value);
+    }
+  }
 
-	public int Capacity
-	{
-		get
-		{
-			return (int)capacity();
-		}
-		set
-		{
-			if (value < size())
-			{
-				throw new global::System.ArgumentOutOfRangeException("Capacity");
-			}
-			reserve((uint)value);
-		}
-	}
+  public int Capacity {
+    get {
+      return (int)capacity();
+    }
+    set {
+      if (value < size())
+        throw new global::System.ArgumentOutOfRangeException("Capacity");
+      reserve((uint)value);
+    }
+  }
 
-	public int Count
-	{
-		get
-		{
-			return (int)size();
-		}
-	}
+  public int Count {
+    get {
+      return (int)size();
+    }
+  }
 
-	public bool IsSynchronized
-	{
-		get
-		{
-			return false;
-		}
-	}
+  public bool IsSynchronized {
+    get {
+      return false;
+    }
+  }
 
-	public void CopyTo(MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD[] array)
-	{
-		CopyTo(0, array, 0, this.Count);
-	}
+  public void CopyTo(MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD[] array)
+  {
+    CopyTo(0, array, 0, this.Count);
+  }
 
-	public void CopyTo(MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD[] array, int arrayIndex)
-	{
-		CopyTo(0, array, arrayIndex, this.Count);
-	}
+  public void CopyTo(MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD[] array, int arrayIndex)
+  {
+    CopyTo(0, array, arrayIndex, this.Count);
+  }
 
-	public void CopyTo(int index, MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD[] array, int arrayIndex, int count)
-	{
-		if (array == null)
-		{
-			throw new global::System.ArgumentNullException("array");
-		}
-		if (index < 0)
-		{
-			throw new global::System.ArgumentOutOfRangeException("index", "Value is less than zero");
-		}
-		if (arrayIndex < 0)
-		{
-			throw new global::System.ArgumentOutOfRangeException("arrayIndex", "Value is less than zero");
-		}
-		if (count < 0)
-		{
-			throw new global::System.ArgumentOutOfRangeException("count", "Value is less than zero");
-		}
-		if (array.Rank > 1)
-		{
-			throw new global::System.ArgumentException("Multi dimensional array.", "array");
-		}
-		if (index + count > this.Count || arrayIndex + count > array.Length)
-		{
-			throw new global::System.ArgumentException("Number of elements to copy is too large.");
-		}
-		for (int i = 0; i < count; i++)
-		{
-			array.SetValue(getitemcopy(index + i), arrayIndex + i);
-		}
-	}
+  public void CopyTo(int index, MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD[] array, int arrayIndex, int count)
+  {
+    if (array == null)
+      throw new global::System.ArgumentNullException("array");
+    if (index < 0)
+      throw new global::System.ArgumentOutOfRangeException("index", "Value is less than zero");
+    if (arrayIndex < 0)
+      throw new global::System.ArgumentOutOfRangeException("arrayIndex", "Value is less than zero");
+    if (count < 0)
+      throw new global::System.ArgumentOutOfRangeException("count", "Value is less than zero");
+    if (array.Rank > 1)
+      throw new global::System.ArgumentException("Multi dimensional array.", "array");
+    if (index+count > this.Count || arrayIndex+count > array.Length)
+      throw new global::System.ArgumentException("Number of elements to copy is too large.");
+    for (int i=0; i<count; i++)
+      array.SetValue(getitemcopy(index+i), arrayIndex+i);
+  }
 
-	public MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD[] ToArray()
-	{
-		MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD[] array = new MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD[this.Count];
-		this.CopyTo(array);
-		return array;
-	}
+  public MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD[] ToArray() {
+    MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD[] array = new MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD[this.Count];
+    this.CopyTo(array);
+    return array;
+  }
 
-	global::System.Collections.Generic.IEnumerator<MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD> global::System.Collections.Generic.IEnumerable<MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD>.GetEnumerator()
-	{
-		return new MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOREnumerator(this);
-	}
+  global::System.Collections.Generic.IEnumerator<MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD> global::System.Collections.Generic.IEnumerable<MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD>.GetEnumerator() {
+    return new MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOREnumerator(this);
+  }
 
-	global::System.Collections.IEnumerator global::System.Collections.IEnumerable.GetEnumerator()
-	{
-		return new MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOREnumerator(this);
-	}
+  global::System.Collections.IEnumerator global::System.Collections.IEnumerable.GetEnumerator() {
+    return new MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOREnumerator(this);
+  }
 
-	public MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOREnumerator GetEnumerator()
-	{
-		return new MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOREnumerator(this);
-	}
+  public MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOREnumerator GetEnumerator() {
+    return new MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOREnumerator(this);
+  }
 
-	// Type-safe enumerator
-	/// Note that the IEnumerator documentation requires an InvalidOperationException to be thrown
-	/// whenever the collection is modified. This has been done for changes in the size of the
-	/// collection but not when one of the elements of the collection is modified as it is a bit
-	/// tricky to detect unmanaged code that modifies the collection under our feet.
-	public sealed class MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOREnumerator : global::System.Collections.IEnumerator
-		, global::System.Collections.Generic.IEnumerator<MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD>
-	{
-		private MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR collectionRef;
-		private int currentIndex;
-		private object currentObject;
-		private int currentSize;
+  // Type-safe enumerator
+  /// Note that the IEnumerator documentation requires an InvalidOperationException to be thrown
+  /// whenever the collection is modified. This has been done for changes in the size of the
+  /// collection but not when one of the elements of the collection is modified as it is a bit
+  /// tricky to detect unmanaged code that modifies the collection under our feet.
+  public sealed class MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOREnumerator : global::System.Collections.IEnumerator
+    , global::System.Collections.Generic.IEnumerator<MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD>
+  {
+    private MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR collectionRef;
+    private int currentIndex;
+    private object currentObject;
+    private int currentSize;
 
-		public MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOREnumerator(MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR collection)
-		{
-			collectionRef = collection;
-			currentIndex = -1;
-			currentObject = null;
-			currentSize = collectionRef.Count;
-		}
+    public MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOREnumerator(MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR collection) {
+      collectionRef = collection;
+      currentIndex = -1;
+      currentObject = null;
+      currentSize = collectionRef.Count;
+    }
 
-		// Type-safe iterator Current
-		public MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD Current
-		{
-			get
-			{
-				if (currentIndex == -1)
-				{
-					throw new global::System.InvalidOperationException("Enumeration not started.");
-				}
-				if (currentIndex > currentSize - 1)
-				{
-					throw new global::System.InvalidOperationException("Enumeration finished.");
-				}
-				if (currentObject == null)
-				{
-					throw new global::System.InvalidOperationException("Collection modified.");
-				}
-				return (MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD)currentObject;
-			}
-		}
+    // Type-safe iterator Current
+    public MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD Current {
+      get {
+        if (currentIndex == -1)
+          throw new global::System.InvalidOperationException("Enumeration not started.");
+        if (currentIndex > currentSize - 1)
+          throw new global::System.InvalidOperationException("Enumeration finished.");
+        if (currentObject == null)
+          throw new global::System.InvalidOperationException("Collection modified.");
+        return (MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD)currentObject;
+      }
+    }
 
-		// Type-unsafe IEnumerator.Current
-		object global::System.Collections.IEnumerator.Current
-		{
-			get
-			{
-				return Current;
-			}
-		}
+    // Type-unsafe IEnumerator.Current
+    object global::System.Collections.IEnumerator.Current {
+      get {
+        return Current;
+      }
+    }
 
-		public bool MoveNext()
-		{
-			int size = collectionRef.Count;
-			bool moveOkay = (currentIndex + 1 < size) && (size == currentSize);
-			if (moveOkay)
-			{
-				currentIndex++;
-				currentObject = collectionRef[currentIndex];
-			}
-			else
-			{
-				currentObject = null;
-			}
-			return moveOkay;
-		}
+    public bool MoveNext() {
+      int size = collectionRef.Count;
+      bool moveOkay = (currentIndex+1 < size) && (size == currentSize);
+      if (moveOkay) {
+        currentIndex++;
+        currentObject = collectionRef[currentIndex];
+      } else {
+        currentObject = null;
+      }
+      return moveOkay;
+    }
 
-		public void Reset()
-		{
-			currentIndex = -1;
-			currentObject = null;
-			if (collectionRef.Count != currentSize)
-			{
-				throw new global::System.InvalidOperationException("Collection modified.");
-			}
-		}
+    public void Reset() {
+      currentIndex = -1;
+      currentObject = null;
+      if (collectionRef.Count != currentSize) {
+        throw new global::System.InvalidOperationException("Collection modified.");
+      }
+    }
 
-		public void Dispose()
-		{
-			currentIndex = -1;
-			currentObject = null;
-		}
-	}
+    public void Dispose() {
+        currentIndex = -1;
+        currentObject = null;
+    }
+  }
 
-	public void Clear()
-	{
-		KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_Clear(swigCPtr);
-	}
+  public void Clear() {
+    KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_Clear(swigCPtr);
+  }
 
-	public void Add(MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD x)
-	{
-		KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_Add(swigCPtr, MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD.getCPtr(x));
-		if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-		{
-			throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-		}
-	}
+  public void Add(MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD x) {
+    KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_Add(swigCPtr, MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD.getCPtr(x));
+    if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+  }
 
-	private uint size()
-	{
-		uint ret = KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_size(swigCPtr);
-		return ret;
-	}
+  private uint size() {
+    uint ret = KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_size(swigCPtr);
+    return ret;
+  }
 
-	private uint capacity()
-	{
-		uint ret = KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_capacity(swigCPtr);
-		return ret;
-	}
+  private uint capacity() {
+    uint ret = KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_capacity(swigCPtr);
+    return ret;
+  }
 
-	private void reserve(uint n)
-	{
-		KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_reserve(swigCPtr, n);
-	}
+  private void reserve(uint n) {
+    KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_reserve(swigCPtr, n);
+  }
 
-	public MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR() : this(KeilMapLibPINVOKE.new_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR__SWIG_0(), true)
-	{
-	}
+  public MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR() : this(KeilMapLibPINVOKE.new_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR__SWIG_0(), true) {
+  }
 
-	public MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR(MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR other) : this(KeilMapLibPINVOKE.new_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR__SWIG_1(
-		                                                                                                           MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR.getCPtr(other)), true)
-	{
-		if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-		{
-			throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-		}
-	}
+  public MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR(MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR other) : this(KeilMapLibPINVOKE.new_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR__SWIG_1(MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR.getCPtr(other)), true) {
+    if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+  }
 
-	public MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR(int capacity) : this(KeilMapLibPINVOKE.new_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR__SWIG_2(capacity), true)
-	{
-		if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-		{
-			throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-		}
-	}
+  public MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR(int capacity) : this(KeilMapLibPINVOKE.new_MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR__SWIG_2(capacity), true) {
+    if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+  }
 
-	private MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD getitemcopy(int index)
-	{
-		MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD ret = new MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD(KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_getitemcopy(swigCPtr, index), true);
-		if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-		{
-			throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-		}
-		return ret;
-	}
+  private MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD getitemcopy(int index) {
+    MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD ret = new MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD(KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_getitemcopy(swigCPtr, index), true);
+    if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+    return ret;
+  }
 
-	private MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD getitem(int index)
-	{
-		MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD ret = new MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD(KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_getitem(swigCPtr, index), false);
-		if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-		{
-			throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-		}
-		return ret;
-	}
+  private MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD getitem(int index) {
+    MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD ret = new MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD(KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_getitem(swigCPtr, index), false);
+    if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+    return ret;
+  }
 
-	private void setitem(int index, MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD val)
-	{
-		KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_setitem(swigCPtr, index, MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD.getCPtr(val));
-		if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-		{
-			throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-		}
-	}
+  private void setitem(int index, MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD val) {
+    KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_setitem(swigCPtr, index, MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD.getCPtr(val));
+    if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+  }
 
-	public void AddRange(MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR values)
-	{
-		KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_AddRange(swigCPtr, MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR.getCPtr(values));
-		if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-		{
-			throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-		}
-	}
+  public void AddRange(MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR values) {
+    KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_AddRange(swigCPtr, MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR.getCPtr(values));
+    if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+  }
 
-	public MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR GetRange(int index, int count)
-	{
-		global::System.IntPtr cPtr = KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_GetRange(swigCPtr, index, count);
-		MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR ret = (cPtr == global::System.IntPtr.Zero) ? null : new MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR(cPtr, true);
-		if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-		{
-			throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-		}
-		return ret;
-	}
+  public MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR GetRange(int index, int count) {
+    global::System.IntPtr cPtr = KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_GetRange(swigCPtr, index, count);
+    MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR ret = (cPtr == global::System.IntPtr.Zero) ? null : new MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR(cPtr, true);
+    if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+    return ret;
+  }
 
-	public void Insert(int index, MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD x)
-	{
-		KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_Insert(swigCPtr, index, MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD.getCPtr(x));
-		if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-		{
-			throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-		}
-	}
+  public void Insert(int index, MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD x) {
+    KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_Insert(swigCPtr, index, MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD.getCPtr(x));
+    if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+  }
 
-	public void InsertRange(int index, MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR values)
-	{
-		KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_InsertRange(swigCPtr, index, MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR.getCPtr(values));
-		if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-		{
-			throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-		}
-	}
+  public void InsertRange(int index, MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR values) {
+    KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_InsertRange(swigCPtr, index, MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR.getCPtr(values));
+    if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+  }
 
-	public void RemoveAt(int index)
-	{
-		KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_RemoveAt(swigCPtr, index);
-		if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-		{
-			throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-		}
-	}
+  public void RemoveAt(int index) {
+    KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_RemoveAt(swigCPtr, index);
+    if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+  }
 
-	public void RemoveRange(int index, int count)
-	{
-		KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_RemoveRange(swigCPtr, index, count);
-		if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-		{
-			throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-		}
-	}
+  public void RemoveRange(int index, int count) {
+    KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_RemoveRange(swigCPtr, index, count);
+    if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+  }
 
-	public static MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR Repeat(MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD value, int count)
-	{
-		global::System.IntPtr cPtr = KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_Repeat(MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD.getCPtr(value), count);
-		MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR ret = (cPtr == global::System.IntPtr.Zero) ? null : new MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR(cPtr, true);
-		if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-		{
-			throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-		}
-		return ret;
-	}
+  public static MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR Repeat(MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD value, int count) {
+    global::System.IntPtr cPtr = KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_Repeat(MEMORY_MAP_IMAGE_EXECUTION_REGION_FIELD.getCPtr(value), count);
+    MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR ret = (cPtr == global::System.IntPtr.Zero) ? null : new MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR(cPtr, true);
+    if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+    return ret;
+  }
 
-	public void Reverse()
-	{
-		KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_Reverse__SWIG_0(swigCPtr);
-	}
+  public void Reverse() {
+    KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_Reverse__SWIG_0(swigCPtr);
+  }
 
-	public void Reverse(int index, int count)
-	{
-		KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_Reverse__SWIG_1(swigCPtr, index, count);
-		if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-		{
-			throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-		}
-	}
+  public void Reverse(int index, int count) {
+    KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_Reverse__SWIG_1(swigCPtr, index, count);
+    if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+  }
 
-	public void SetRange(int index, MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR values)
-	{
-		KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_SetRange(swigCPtr, index, MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR.getCPtr(values));
-		if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-		{
-			throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-		}
-	}
+  public void SetRange(int index, MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR values) {
+    KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR_SetRange(swigCPtr, index, MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR.getCPtr(values));
+    if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+  }
 
 }

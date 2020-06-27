@@ -17,6 +17,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace KeilMapViewer
@@ -36,9 +37,40 @@ namespace KeilMapViewer
 
 		public ImageSizeData(IMAGE_SIZE_DATA field)
 		{
-			Total_Read_Only_Size  = field.total_read_only_size;
-			Total_Read_Write_Size = field.total_read_write_size;
-			Total_Rom_Size        = field.total_rom_size;
+			Regex regex;
+			Match match;
+
+			regex = new Regex(@"[ \w]*\([ ]*([\w.]*)\)");
+
+			match = regex.Match(field.total_read_only_size);
+			if (match.Success)
+			{
+				Total_Read_Only_Size = match.Groups[1].ToString();
+			}
+			else
+			{
+				Total_Read_Only_Size = field.total_read_only_size;
+			}
+
+			match = regex.Match(field.total_read_write_size);
+			if (match.Success)
+			{
+				Total_Read_Write_Size = match.Groups[1].ToString();
+			}
+			else
+			{
+				Total_Read_Write_Size = field.total_read_write_size;
+			}
+
+			match = regex.Match(field.total_rom_size);
+			if (match.Success)
+			{
+				Total_Rom_Size = match.Groups[1].ToString();
+			}
+			else
+			{
+				Total_Rom_Size = field.total_rom_size;
+			}
 		}
 	}
 }

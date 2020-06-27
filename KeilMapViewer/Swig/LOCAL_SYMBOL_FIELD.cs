@@ -9,156 +9,101 @@
 //------------------------------------------------------------------------------
 
 
-public class LOCAL_SYMBOL_FIELD : global::System.IDisposable
-{
-	private global::System.Runtime.InteropServices.HandleRef swigCPtr;
-	protected bool swigCMemOwn;
+public class LOCAL_SYMBOL_FIELD : global::System.IDisposable {
+  private global::System.Runtime.InteropServices.HandleRef swigCPtr;
+  protected bool swigCMemOwn;
 
-	internal LOCAL_SYMBOL_FIELD(global::System.IntPtr cPtr, bool cMemoryOwn)
-	{
-		swigCMemOwn = cMemoryOwn;
-		swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
-	}
+  internal LOCAL_SYMBOL_FIELD(global::System.IntPtr cPtr, bool cMemoryOwn) {
+    swigCMemOwn = cMemoryOwn;
+    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
+  }
 
-	internal static global::System.Runtime.InteropServices.HandleRef getCPtr(LOCAL_SYMBOL_FIELD obj)
-	{
-		return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
-	}
+  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(LOCAL_SYMBOL_FIELD obj) {
+    return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
+  }
 
-	~LOCAL_SYMBOL_FIELD()
-	{
-		Dispose(false);
-	}
+  ~LOCAL_SYMBOL_FIELD() {
+    Dispose(false);
+  }
 
-	public void Dispose()
-	{
-		Dispose(true);
-		global::System.GC.SuppressFinalize(this);
-	}
+  public void Dispose() {
+    Dispose(true);
+    global::System.GC.SuppressFinalize(this);
+  }
 
-	protected virtual void Dispose(bool disposing)
-	{
-		lock (this)
-		{
-			if (swigCPtr.Handle != global::System.IntPtr.Zero)
-			{
-				if (swigCMemOwn)
-				{
-					swigCMemOwn = false;
-					KeilMapLibPINVOKE.delete_LOCAL_SYMBOL_FIELD(swigCPtr);
-				}
-				swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
-			}
-		}
-	}
+  protected virtual void Dispose(bool disposing) {
+    lock(this) {
+      if (swigCPtr.Handle != global::System.IntPtr.Zero) {
+        if (swigCMemOwn) {
+          swigCMemOwn = false;
+          KeilMapLibPINVOKE.delete_LOCAL_SYMBOL_FIELD(swigCPtr);
+        }
+        swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
+      }
+    }
+  }
 
-	public string symbolic_name
-	{
-		set
-		{
-			KeilMapLibPINVOKE.LOCAL_SYMBOL_FIELD_symbolic_name_set(swigCPtr, value);
-			if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-			{
-				throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-			}
-		}
-		get
-		{
-			string ret = KeilMapLibPINVOKE.LOCAL_SYMBOL_FIELD_symbolic_name_get(swigCPtr);
-			if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-			{
-				throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-			}
-			return ret;
-		}
-	}
+  public string symbolic_name {
+    set {
+      KeilMapLibPINVOKE.LOCAL_SYMBOL_FIELD_symbolic_name_set(swigCPtr, value);
+      if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+    } 
+    get {
+      string ret = KeilMapLibPINVOKE.LOCAL_SYMBOL_FIELD_symbolic_name_get(swigCPtr);
+      if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+      return ret;
+    } 
+  }
 
-	public string address
-	{
-		set
-		{
-			KeilMapLibPINVOKE.LOCAL_SYMBOL_FIELD_address_set(swigCPtr, value);
-			if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-			{
-				throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-			}
-		}
-		get
-		{
-			string ret = KeilMapLibPINVOKE.LOCAL_SYMBOL_FIELD_address_get(swigCPtr);
-			if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-			{
-				throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-			}
-			return ret;
-		}
-	}
+  public string address {
+    set {
+      KeilMapLibPINVOKE.LOCAL_SYMBOL_FIELD_address_set(swigCPtr, value);
+      if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+    } 
+    get {
+      string ret = KeilMapLibPINVOKE.LOCAL_SYMBOL_FIELD_address_get(swigCPtr);
+      if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+      return ret;
+    } 
+  }
 
-	public string type
-	{
-		set
-		{
-			KeilMapLibPINVOKE.LOCAL_SYMBOL_FIELD_type_set(swigCPtr, value);
-			if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-			{
-				throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-			}
-		}
-		get
-		{
-			string ret = KeilMapLibPINVOKE.LOCAL_SYMBOL_FIELD_type_get(swigCPtr);
-			if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-			{
-				throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-			}
-			return ret;
-		}
-	}
+  public string type {
+    set {
+      KeilMapLibPINVOKE.LOCAL_SYMBOL_FIELD_type_set(swigCPtr, value);
+      if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+    } 
+    get {
+      string ret = KeilMapLibPINVOKE.LOCAL_SYMBOL_FIELD_type_get(swigCPtr);
+      if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+      return ret;
+    } 
+  }
 
-	public string size
-	{
-		set
-		{
-			KeilMapLibPINVOKE.LOCAL_SYMBOL_FIELD_size_set(swigCPtr, value);
-			if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-			{
-				throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-			}
-		}
-		get
-		{
-			string ret = KeilMapLibPINVOKE.LOCAL_SYMBOL_FIELD_size_get(swigCPtr);
-			if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-			{
-				throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-			}
-			return ret;
-		}
-	}
+  public string size {
+    set {
+      KeilMapLibPINVOKE.LOCAL_SYMBOL_FIELD_size_set(swigCPtr, value);
+      if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+    } 
+    get {
+      string ret = KeilMapLibPINVOKE.LOCAL_SYMBOL_FIELD_size_get(swigCPtr);
+      if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+      return ret;
+    } 
+  }
 
-	public string object_name
-	{
-		set
-		{
-			KeilMapLibPINVOKE.LOCAL_SYMBOL_FIELD_object_name_set(swigCPtr, value);
-			if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-			{
-				throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-			}
-		}
-		get
-		{
-			string ret = KeilMapLibPINVOKE.LOCAL_SYMBOL_FIELD_object_name_get(swigCPtr);
-			if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-			{
-				throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-			}
-			return ret;
-		}
-	}
+  public string object_name {
+    set {
+      KeilMapLibPINVOKE.LOCAL_SYMBOL_FIELD_object_name_set(swigCPtr, value);
+      if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+    } 
+    get {
+      string ret = KeilMapLibPINVOKE.LOCAL_SYMBOL_FIELD_object_name_get(swigCPtr);
+      if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+      return ret;
+    } 
+  }
 
-	public LOCAL_SYMBOL_FIELD() : this(KeilMapLibPINVOKE.new_LOCAL_SYMBOL_FIELD(), true)
-	{
-	}
+  public LOCAL_SYMBOL_FIELD() : this(KeilMapLibPINVOKE.new_LOCAL_SYMBOL_FIELD(), true) {
+  }
 
 }

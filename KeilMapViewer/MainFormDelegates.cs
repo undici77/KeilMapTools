@@ -161,7 +161,7 @@ namespace KeilMapViewer
 			CrossReferenceField[] data;
 			string                tooltip_text;
 
-			CrossReferenceDataGridView.SaveData();
+			CrossReferenceDataGridView.PopSelections();
 			CrossReferenceDataGridView.Rows.Clear();
 			CrossReferenceDataGridView.SuspendLayout();
 
@@ -176,7 +176,7 @@ namespace KeilMapViewer
 				}
 			}
 
-			CrossReferenceDataGridView.RestoreData();
+			CrossReferenceDataGridView.PushSelections();
 			CrossReferenceDataGridView.ResumeLayout();
 		}
 
@@ -184,7 +184,7 @@ namespace KeilMapViewer
 		{
 			RemovedSymbolField[] data;
 
-			RemovedSymbolDataGridView.SaveData();
+			RemovedSymbolDataGridView.PopSelections();
 			RemovedSymbolDataGridView.Rows.Clear();
 			RemovedSymbolDataGridView.SuspendLayout();
 
@@ -194,7 +194,7 @@ namespace KeilMapViewer
 				RemovedSymbolDataGridView.Rows.Add(field.Symbol, field.Size, field.Module);
 			}
 
-			RemovedSymbolDataGridView.RestoreData();
+			RemovedSymbolDataGridView.PushSelections();
 			RemovedSymbolDataGridView.ResumeLayout();
 		}
 
@@ -203,7 +203,7 @@ namespace KeilMapViewer
 			MaximumStackUsageField[] data;
 			string                   tooltip_text;
 
-			MaximumStackUsageDataGridView.SaveData();
+			MaximumStackUsageDataGridView.PopSelections();
 			MaximumStackUsageDataGridView.Rows.Clear();
 			MaximumStackUsageDataGridView.SuspendLayout();
 
@@ -218,7 +218,7 @@ namespace KeilMapViewer
 				}
 			}
 
-			MaximumStackUsageDataGridView.RestoreData();
+			MaximumStackUsageDataGridView.PushSelections();
 			MaximumStackUsageDataGridView.ResumeLayout();
 		}
 
@@ -226,7 +226,7 @@ namespace KeilMapViewer
 		{
 			StackUsageField[] data;
 
-			StackUsageDataGridView.SaveData();
+			StackUsageDataGridView.PopSelections();
 			StackUsageDataGridView.Rows.Clear();
 			StackUsageDataGridView.SuspendLayout();
 
@@ -236,7 +236,7 @@ namespace KeilMapViewer
 				StackUsageDataGridView.Rows.Add(field.Function, field.Size);
 			}
 
-			StackUsageDataGridView.RestoreData();
+			StackUsageDataGridView.PushSelections();
 			StackUsageDataGridView.ResumeLayout();
 		}
 
@@ -244,7 +244,7 @@ namespace KeilMapViewer
 		{
 			MutuallyRecursiveField[] data;
 
-			MutuallyRecursiveDataGridView.SaveData();
+			MutuallyRecursiveDataGridView.PopSelections();
 			MutuallyRecursiveDataGridView.Rows.Clear();
 			MutuallyRecursiveDataGridView.SuspendLayout();
 
@@ -254,7 +254,7 @@ namespace KeilMapViewer
 				MutuallyRecursiveDataGridView.Rows.Add(field.Function, field.Caller);
 			}
 
-			MutuallyRecursiveDataGridView.RestoreData();
+			MutuallyRecursiveDataGridView.PushSelections();
 			MutuallyRecursiveDataGridView.ResumeLayout();
 		}
 
@@ -262,7 +262,7 @@ namespace KeilMapViewer
 		{
 			FunctionPointerField[] data;
 
-			FunctionPointerDataGridView.SaveData();
+			FunctionPointerDataGridView.PopSelections();
 			FunctionPointerDataGridView.Rows.Clear();
 			FunctionPointerDataGridView.SuspendLayout();
 
@@ -272,7 +272,7 @@ namespace KeilMapViewer
 				FunctionPointerDataGridView.Rows.Add(field.Symbol, field.Module, field.Counts, field.Module_Reference);
 			}
 
-			FunctionPointerDataGridView.RestoreData();
+			FunctionPointerDataGridView.PushSelections();
 			FunctionPointerDataGridView.ResumeLayout();
 		}
 
@@ -280,7 +280,7 @@ namespace KeilMapViewer
 		{
 			LocalSymbolField[] data;
 
-			LocalSymbolDataGridView.SaveData();
+			LocalSymbolDataGridView.PopSelections();
 			LocalSymbolDataGridView.Rows.Clear();
 			LocalSymbolDataGridView.SuspendLayout();
 
@@ -290,7 +290,7 @@ namespace KeilMapViewer
 				LocalSymbolDataGridView.Rows.Add(field.Symbolic_Name, field.Address, field.Size, field.Type, field.Object_Name);
 			}
 
-			LocalSymbolDataGridView.RestoreData();
+			LocalSymbolDataGridView.PushSelections();
 			LocalSymbolDataGridView.ResumeLayout();
 		}
 
@@ -298,7 +298,7 @@ namespace KeilMapViewer
 		{
 			GlobalSymbolField[] data;
 
-			GlobalSymbolDataGridView.SaveData();
+			GlobalSymbolDataGridView.PopSelections();
 			GlobalSymbolDataGridView.Rows.Clear();
 			GlobalSymbolDataGridView.SuspendLayout();
 
@@ -308,7 +308,7 @@ namespace KeilMapViewer
 				GlobalSymbolDataGridView.Rows.Add(field.Symbolic_Name, field.Address, field.Size, field.Type, field.Object_Name);
 			}
 
-			GlobalSymbolDataGridView.RestoreData();
+			GlobalSymbolDataGridView.PushSelections();
 			GlobalSymbolDataGridView.ResumeLayout();
 		}
 
@@ -318,7 +318,7 @@ namespace KeilMapViewer
 			int            load_region_index;
 			int            execution_region_index;
 
-			MemoryMapImageDataGridView.SaveData();
+			MemoryMapImageDataGridView.PopSelections();
 			MemoryMapImageDataGridView.Rows.Clear();
 			MemoryMapImageDataGridView.SuspendLayout();
 
@@ -430,7 +430,7 @@ namespace KeilMapViewer
 				}
 			}
 
-			MemoryMapImageDataGridView.RestoreData();
+			MemoryMapImageDataGridView.PushSelections();
 			MemoryMapImageDataGridView.ResumeLayout();
 		}
 
@@ -438,7 +438,7 @@ namespace KeilMapViewer
 		{
 			ImageComponentSizeField[] data;
 
-			ImageComponentSizeDataGridView.SaveData();
+			ImageComponentSizeDataGridView.PopSelections();
 			ImageComponentSizeDataGridView.Rows.Clear();
 			ImageComponentSizeDataGridView.SuspendLayout();
 
@@ -448,7 +448,7 @@ namespace KeilMapViewer
 				ImageComponentSizeDataGridView.Rows.Add(field.Object_Name, field.Code, field.Inline_Data, field.Read_Only_Data, field.Read_Write_Data, field.Zero_Init_Data, field.Debug_Data);
 			}
 
-			ImageComponentSizeDataGridView.RestoreData();
+			ImageComponentSizeDataGridView.PushSelections();
 			ImageComponentSizeDataGridView.ResumeLayout();
 		}
 

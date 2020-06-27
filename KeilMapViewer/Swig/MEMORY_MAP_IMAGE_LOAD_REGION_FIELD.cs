@@ -9,107 +9,76 @@
 //------------------------------------------------------------------------------
 
 
-public class MEMORY_MAP_IMAGE_LOAD_REGION_FIELD : global::System.IDisposable
-{
-	private global::System.Runtime.InteropServices.HandleRef swigCPtr;
-	protected bool swigCMemOwn;
+public class MEMORY_MAP_IMAGE_LOAD_REGION_FIELD : global::System.IDisposable {
+  private global::System.Runtime.InteropServices.HandleRef swigCPtr;
+  protected bool swigCMemOwn;
 
-	internal MEMORY_MAP_IMAGE_LOAD_REGION_FIELD(global::System.IntPtr cPtr, bool cMemoryOwn)
-	{
-		swigCMemOwn = cMemoryOwn;
-		swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
-	}
+  internal MEMORY_MAP_IMAGE_LOAD_REGION_FIELD(global::System.IntPtr cPtr, bool cMemoryOwn) {
+    swigCMemOwn = cMemoryOwn;
+    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
+  }
 
-	internal static global::System.Runtime.InteropServices.HandleRef getCPtr(MEMORY_MAP_IMAGE_LOAD_REGION_FIELD obj)
-	{
-		return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
-	}
+  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(MEMORY_MAP_IMAGE_LOAD_REGION_FIELD obj) {
+    return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
+  }
 
-	~MEMORY_MAP_IMAGE_LOAD_REGION_FIELD()
-	{
-		Dispose(false);
-	}
+  ~MEMORY_MAP_IMAGE_LOAD_REGION_FIELD() {
+    Dispose(false);
+  }
 
-	public void Dispose()
-	{
-		Dispose(true);
-		global::System.GC.SuppressFinalize(this);
-	}
+  public void Dispose() {
+    Dispose(true);
+    global::System.GC.SuppressFinalize(this);
+  }
 
-	protected virtual void Dispose(bool disposing)
-	{
-		lock (this)
-		{
-			if (swigCPtr.Handle != global::System.IntPtr.Zero)
-			{
-				if (swigCMemOwn)
-				{
-					swigCMemOwn = false;
-					KeilMapLibPINVOKE.delete_MEMORY_MAP_IMAGE_LOAD_REGION_FIELD(swigCPtr);
-				}
-				swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
-			}
-		}
-	}
+  protected virtual void Dispose(bool disposing) {
+    lock(this) {
+      if (swigCPtr.Handle != global::System.IntPtr.Zero) {
+        if (swigCMemOwn) {
+          swigCMemOwn = false;
+          KeilMapLibPINVOKE.delete_MEMORY_MAP_IMAGE_LOAD_REGION_FIELD(swigCPtr);
+        }
+        swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
+      }
+    }
+  }
 
-	public string name
-	{
-		set
-		{
-			KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_LOAD_REGION_FIELD_name_set(swigCPtr, value);
-			if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-			{
-				throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-			}
-		}
-		get
-		{
-			string ret = KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_LOAD_REGION_FIELD_name_get(swigCPtr);
-			if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-			{
-				throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-			}
-			return ret;
-		}
-	}
+  public string name {
+    set {
+      KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_LOAD_REGION_FIELD_name_set(swigCPtr, value);
+      if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+    } 
+    get {
+      string ret = KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_LOAD_REGION_FIELD_name_get(swigCPtr);
+      if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+      return ret;
+    } 
+  }
 
-	public string data
-	{
-		set
-		{
-			KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_LOAD_REGION_FIELD_data_set(swigCPtr, value);
-			if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-			{
-				throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-			}
-		}
-		get
-		{
-			string ret = KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_LOAD_REGION_FIELD_data_get(swigCPtr);
-			if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-			{
-				throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-			}
-			return ret;
-		}
-	}
+  public string data {
+    set {
+      KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_LOAD_REGION_FIELD_data_set(swigCPtr, value);
+      if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+    } 
+    get {
+      string ret = KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_LOAD_REGION_FIELD_data_get(swigCPtr);
+      if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+      return ret;
+    } 
+  }
 
-	public MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR execution_region
-	{
-		set
-		{
-			KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_LOAD_REGION_FIELD_execution_region_set(swigCPtr, MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR.getCPtr(value));
-		}
-		get
-		{
-			global::System.IntPtr cPtr = KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_LOAD_REGION_FIELD_execution_region_get(swigCPtr);
-			MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR ret = (cPtr == global::System.IntPtr.Zero) ? null : new MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR(cPtr, false);
-			return ret;
-		}
-	}
+  public MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR execution_region {
+    set {
+      KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_LOAD_REGION_FIELD_execution_region_set(swigCPtr, MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR.getCPtr(value));
+    } 
+    get {
+      global::System.IntPtr cPtr = KeilMapLibPINVOKE.MEMORY_MAP_IMAGE_LOAD_REGION_FIELD_execution_region_get(swigCPtr);
+      MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR ret = (cPtr == global::System.IntPtr.Zero) ? null : new MEMORY_MAP_IMAGE_EXECUTION_REGION_VECTOR(cPtr, false);
+      return ret;
+    } 
+  }
 
-	public MEMORY_MAP_IMAGE_LOAD_REGION_FIELD() : this(KeilMapLibPINVOKE.new_MEMORY_MAP_IMAGE_LOAD_REGION_FIELD(), true)
-	{
-	}
+  public MEMORY_MAP_IMAGE_LOAD_REGION_FIELD() : this(KeilMapLibPINVOKE.new_MEMORY_MAP_IMAGE_LOAD_REGION_FIELD(), true) {
+  }
 
 }

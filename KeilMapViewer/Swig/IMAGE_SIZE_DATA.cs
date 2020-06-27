@@ -9,114 +9,77 @@
 //------------------------------------------------------------------------------
 
 
-public class IMAGE_SIZE_DATA : global::System.IDisposable
-{
-	private global::System.Runtime.InteropServices.HandleRef swigCPtr;
-	protected bool swigCMemOwn;
+public class IMAGE_SIZE_DATA : global::System.IDisposable {
+  private global::System.Runtime.InteropServices.HandleRef swigCPtr;
+  protected bool swigCMemOwn;
 
-	internal IMAGE_SIZE_DATA(global::System.IntPtr cPtr, bool cMemoryOwn)
-	{
-		swigCMemOwn = cMemoryOwn;
-		swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
-	}
+  internal IMAGE_SIZE_DATA(global::System.IntPtr cPtr, bool cMemoryOwn) {
+    swigCMemOwn = cMemoryOwn;
+    swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
+  }
 
-	internal static global::System.Runtime.InteropServices.HandleRef getCPtr(IMAGE_SIZE_DATA obj)
-	{
-		return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
-	}
+  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(IMAGE_SIZE_DATA obj) {
+    return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
+  }
 
-	~IMAGE_SIZE_DATA()
-	{
-		Dispose(false);
-	}
+  ~IMAGE_SIZE_DATA() {
+    Dispose(false);
+  }
 
-	public void Dispose()
-	{
-		Dispose(true);
-		global::System.GC.SuppressFinalize(this);
-	}
+  public void Dispose() {
+    Dispose(true);
+    global::System.GC.SuppressFinalize(this);
+  }
 
-	protected virtual void Dispose(bool disposing)
-	{
-		lock (this)
-		{
-			if (swigCPtr.Handle != global::System.IntPtr.Zero)
-			{
-				if (swigCMemOwn)
-				{
-					swigCMemOwn = false;
-					KeilMapLibPINVOKE.delete_IMAGE_SIZE_DATA(swigCPtr);
-				}
-				swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
-			}
-		}
-	}
+  protected virtual void Dispose(bool disposing) {
+    lock(this) {
+      if (swigCPtr.Handle != global::System.IntPtr.Zero) {
+        if (swigCMemOwn) {
+          swigCMemOwn = false;
+          KeilMapLibPINVOKE.delete_IMAGE_SIZE_DATA(swigCPtr);
+        }
+        swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
+      }
+    }
+  }
 
-	public string total_read_only_size
-	{
-		set
-		{
-			KeilMapLibPINVOKE.IMAGE_SIZE_DATA_total_read_only_size_set(swigCPtr, value);
-			if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-			{
-				throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-			}
-		}
-		get
-		{
-			string ret = KeilMapLibPINVOKE.IMAGE_SIZE_DATA_total_read_only_size_get(swigCPtr);
-			if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-			{
-				throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-			}
-			return ret;
-		}
-	}
+  public string total_read_only_size {
+    set {
+      KeilMapLibPINVOKE.IMAGE_SIZE_DATA_total_read_only_size_set(swigCPtr, value);
+      if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+    } 
+    get {
+      string ret = KeilMapLibPINVOKE.IMAGE_SIZE_DATA_total_read_only_size_get(swigCPtr);
+      if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+      return ret;
+    } 
+  }
 
-	public string total_read_write_size
-	{
-		set
-		{
-			KeilMapLibPINVOKE.IMAGE_SIZE_DATA_total_read_write_size_set(swigCPtr, value);
-			if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-			{
-				throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-			}
-		}
-		get
-		{
-			string ret = KeilMapLibPINVOKE.IMAGE_SIZE_DATA_total_read_write_size_get(swigCPtr);
-			if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-			{
-				throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-			}
-			return ret;
-		}
-	}
+  public string total_read_write_size {
+    set {
+      KeilMapLibPINVOKE.IMAGE_SIZE_DATA_total_read_write_size_set(swigCPtr, value);
+      if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+    } 
+    get {
+      string ret = KeilMapLibPINVOKE.IMAGE_SIZE_DATA_total_read_write_size_get(swigCPtr);
+      if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+      return ret;
+    } 
+  }
 
-	public string total_rom_size
-	{
-		set
-		{
-			KeilMapLibPINVOKE.IMAGE_SIZE_DATA_total_rom_size_set(swigCPtr, value);
-			if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-			{
-				throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-			}
-		}
-		get
-		{
-			string ret = KeilMapLibPINVOKE.IMAGE_SIZE_DATA_total_rom_size_get(swigCPtr);
-			if (KeilMapLibPINVOKE.SWIGPendingException.Pending)
-			{
-				throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
-			}
-			return ret;
-		}
-	}
+  public string total_rom_size {
+    set {
+      KeilMapLibPINVOKE.IMAGE_SIZE_DATA_total_rom_size_set(swigCPtr, value);
+      if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+    } 
+    get {
+      string ret = KeilMapLibPINVOKE.IMAGE_SIZE_DATA_total_rom_size_get(swigCPtr);
+      if (KeilMapLibPINVOKE.SWIGPendingException.Pending) throw KeilMapLibPINVOKE.SWIGPendingException.Retrieve();
+      return ret;
+    } 
+  }
 
-	public IMAGE_SIZE_DATA() : this(KeilMapLibPINVOKE.new_IMAGE_SIZE_DATA(), true)
-	{
-	}
+  public IMAGE_SIZE_DATA() : this(KeilMapLibPINVOKE.new_IMAGE_SIZE_DATA(), true) {
+  }
 
 }

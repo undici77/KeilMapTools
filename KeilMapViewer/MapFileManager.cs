@@ -218,9 +218,6 @@ namespace KeilMapViewer
 
 			_Worker_Thread = new Thread(this.WorkerThread);
 			_Worker_Thread.Start();
-
-			while (!_Worker_Thread.IsAlive)
-				;
 		}
 
 		private void WorkerThread()
@@ -484,7 +481,7 @@ namespace KeilMapViewer
 		{
 			_Watcher.EnableRaisingEvents = false;
 
-			Thread.Sleep(100);
+			Thread.Sleep(500);
 
 			_Map_File_Update = true;
 			_Worker_Thread_Update_Event.Set();
