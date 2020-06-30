@@ -20,7 +20,7 @@
 /******************************************************************************/
 
 const std::string App_Name    = "KeilRtxStackSize";
-const std::string App_Version = "v1.2.0.0";
+const std::string App_Version = "v1.3.0.0";
 const std::string App_Author  = "Alessandro Barbieri";
 
 /******************************************************************************/
@@ -193,7 +193,7 @@ int main(int argc, char *argv[])
 
 		description.add_options()
 		("help",                                                    "produce help message")
-		("debug",     boost::program_options::value<std::string>(), "enable debug info")
+		("debug",                                                   "enable debug info")
 		("ini",       boost::program_options::value<std::string>(), "set ini configuration file/folder")
 		("map",       boost::program_options::value<std::string>(), "set map file")
 		("out",       boost::program_options::value<std::string>(), "set output file/folder")
@@ -261,6 +261,8 @@ int main(int argc, char *argv[])
 		else
 		{
 			std::cout << description << std::endl;
+			std::cout << "Press any key to continue.." << std::endl;
+            getchar();
 			return (EXIT_FAILURE);
 		}
 

@@ -277,7 +277,7 @@ namespace KeilMapViewer
 							{
 								using (IMAGE_SIZE_DATA data = client.GetImageSize())
 								{
-									ImageSizeData result = new ImageSizeData(client.GetImageSize());
+									ImageSizeData result = new ImageSizeData(data);
 
 									lock (_Image_Size_Data_Lock)
 									{
@@ -378,6 +378,8 @@ namespace KeilMapViewer
 							global_symbol_task.Wait();
 							memory_map_image_task.Wait();
 							image_component_size_task.Wait();
+
+							image_size_data_task = null;
 
 							stack_info_ok = ((maximum_stack_usage_data_manager.Length > 0) ||
 							                (stack_usage_data_manager.Length > 0)         ||
@@ -503,8 +505,21 @@ namespace KeilMapViewer
 						memory_map_image_task.Wait();
 						image_component_size_task.Wait();
 
+						cross_reference_task      = null;
+						removed_symbol_task		  = null;
+						maximum_stack_usage_task  = null;
+						stack_usage_task		  = null;
+						mutually_recursive_task	  = null;
+						function_pointer_task	  = null;
+						local_symbol_task		  = null;
+						global_symbol_task		  = null;
+						memory_map_image_task	  = null;
+						image_component_size_task = null;
+
+						GC.Collect();
+
 						_Worker_Thread_Update_Event.WaitOne();
-						while (_Worker_Thread_Update_Event.WaitOne(500))
+						while (_Worker_Thread_Update_Event.WaitOne(100))
 							;
 					}
 				}

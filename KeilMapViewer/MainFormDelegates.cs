@@ -164,7 +164,6 @@ namespace KeilMapViewer
 
 			CrossReferenceDataGridView.PopSelections();
 			CrossReferenceDataGridView.Rows.Clear();
-			CrossReferenceDataGridView.SuspendLayout();
 
 			data = _Map_File_Manager.CrossReferenceSectionData;
 			foreach (CrossReferenceField field in data)
@@ -178,7 +177,6 @@ namespace KeilMapViewer
 			}
 
 			CrossReferenceDataGridView.PushSelections();
-			CrossReferenceDataGridView.ResumeLayout();
 		}
 
 		private void UpdateRemovedSymbol()
@@ -187,7 +185,6 @@ namespace KeilMapViewer
 
 			RemovedSymbolDataGridView.PopSelections();
 			RemovedSymbolDataGridView.Rows.Clear();
-			RemovedSymbolDataGridView.SuspendLayout();
 
 			data = _Map_File_Manager.RemovedSymbolSectionData;
 			foreach (RemovedSymbolField field in data)
@@ -196,7 +193,6 @@ namespace KeilMapViewer
 			}
 
 			RemovedSymbolDataGridView.PushSelections();
-			RemovedSymbolDataGridView.ResumeLayout();
 		}
 
 		private void UpdateMaximumStackUsage(bool ok)
@@ -208,7 +204,6 @@ namespace KeilMapViewer
 
 			MaximumStackUsageDataGridView.PopSelections();
 			MaximumStackUsageDataGridView.Rows.Clear();
-			MaximumStackUsageDataGridView.SuspendLayout();
 
 			data = _Map_File_Manager.MaximumStackUsageSectionData;
 			foreach (MaximumStackUsageField field in data)
@@ -222,7 +217,6 @@ namespace KeilMapViewer
 			}
 
 			MaximumStackUsageDataGridView.PushSelections();
-			MaximumStackUsageDataGridView.ResumeLayout();
 		}
 
 		private void UpdateStackUsage(bool ok)
@@ -233,7 +227,6 @@ namespace KeilMapViewer
 
 			StackUsageDataGridView.PopSelections();
 			StackUsageDataGridView.Rows.Clear();
-			StackUsageDataGridView.SuspendLayout();
 
 			data = _Map_File_Manager.StackUsageSectionData;
 			foreach (StackUsageField field in data)
@@ -242,7 +235,6 @@ namespace KeilMapViewer
 			}
 
 			StackUsageDataGridView.PushSelections();
-			StackUsageDataGridView.ResumeLayout();
 		}
 
 		private void UpdateMutuallyRecursive(bool ok)
@@ -253,7 +245,6 @@ namespace KeilMapViewer
 
 			MutuallyRecursiveDataGridView.PopSelections();
 			MutuallyRecursiveDataGridView.Rows.Clear();
-			MutuallyRecursiveDataGridView.SuspendLayout();
 
 			data = _Map_File_Manager.MutuallyRecursiveSectionData;
 			foreach (MutuallyRecursiveField field in data)
@@ -262,7 +253,6 @@ namespace KeilMapViewer
 			}
 
 			MutuallyRecursiveDataGridView.PushSelections();
-			MutuallyRecursiveDataGridView.ResumeLayout();
 		}
 
 		private void UpdateFunctionPointer(bool ok)
@@ -273,7 +263,6 @@ namespace KeilMapViewer
 
 			FunctionPointerDataGridView.PopSelections();
 			FunctionPointerDataGridView.Rows.Clear();
-			FunctionPointerDataGridView.SuspendLayout();
 
 			data = _Map_File_Manager.FunctionPointerSectionData;
 			foreach (FunctionPointerField field in data)
@@ -282,7 +271,6 @@ namespace KeilMapViewer
 			}
 
 			FunctionPointerDataGridView.PushSelections();
-			FunctionPointerDataGridView.ResumeLayout();
 		}
 
 		private void UpdateLocalSymbol()
@@ -291,7 +279,6 @@ namespace KeilMapViewer
 
 			LocalSymbolDataGridView.PopSelections();
 			LocalSymbolDataGridView.Rows.Clear();
-			LocalSymbolDataGridView.SuspendLayout();
 
 			data = _Map_File_Manager.LocalSymbolSectionData;
 			foreach (LocalSymbolField field in data)
@@ -300,7 +287,6 @@ namespace KeilMapViewer
 			}
 
 			LocalSymbolDataGridView.PushSelections();
-			LocalSymbolDataGridView.ResumeLayout();
 		}
 
 		private void UpdateGlobalSymbol()
@@ -309,7 +295,6 @@ namespace KeilMapViewer
 
 			GlobalSymbolDataGridView.PopSelections();
 			GlobalSymbolDataGridView.Rows.Clear();
-			GlobalSymbolDataGridView.SuspendLayout();
 
 			data = _Map_File_Manager.GlobalSymbolData;
 			foreach (GlobalSymbolField field in data)
@@ -318,7 +303,6 @@ namespace KeilMapViewer
 			}
 
 			GlobalSymbolDataGridView.PushSelections();
-			GlobalSymbolDataGridView.ResumeLayout();
 		}
 
 		private void UpdateMemoryMapImage()
@@ -329,7 +313,6 @@ namespace KeilMapViewer
 
 			MemoryMapImageDataGridView.PopSelections();
 			MemoryMapImageDataGridView.Rows.Clear();
-			MemoryMapImageDataGridView.SuspendLayout();
 
 			data = _Map_File_Manager.MemoryMapImageData;
 
@@ -440,7 +423,6 @@ namespace KeilMapViewer
 			}
 
 			MemoryMapImageDataGridView.PushSelections();
-			MemoryMapImageDataGridView.ResumeLayout();
 		}
 
 		private void UpdateImageComponentSize()
@@ -449,7 +431,6 @@ namespace KeilMapViewer
 
 			ImageComponentSizeDataGridView.PopSelections();
 			ImageComponentSizeDataGridView.Rows.Clear();
-			ImageComponentSizeDataGridView.SuspendLayout();
 
 			data = _Map_File_Manager.ImageComponentSizeData;
 			foreach (ImageComponentSizeField field in data)
@@ -458,7 +439,6 @@ namespace KeilMapViewer
 			}
 
 			ImageComponentSizeDataGridView.PushSelections();
-			ImageComponentSizeDataGridView.ResumeLayout();
 		}
 
 		private void UpdateImageSizeData()
