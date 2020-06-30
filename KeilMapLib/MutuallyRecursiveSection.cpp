@@ -46,11 +46,11 @@ bool MutuallyRecursiveSection::Manage(const std::string &file)
 
 	_Data.clear();
 
-	begin_section_regex = RegexBuilder::Make(RegexMapBeginSectionGroup()    + RegexString("[\\s]*Image Stack Usage Information.\\s*Maximum stack usage for Image.") + // Regex[1]
-	                                         RegexMapMultilineFieldsGroup() +                                                                                         // Regex[2]
-	                                         RegexStringGroup("Mutually recursive functions."));                                                                      // Regex[3]
+	begin_section_regex = RegexBuilder::Make(RegexMapBeginSectionGroup()    + RegexString("[\\s]*Image Stack Usage Information.\\s*Maximum stack usage for Image.") + // Group[1]
+	                                         RegexMapMultilineFieldsGroup() +                                                                                         // Group[2]
+	                                         RegexStringGroup("Mutually recursive functions."));                                                                      // Group[3]
 
-	end_section_regex = RegexBuilder::Make(RegexStringGroup("\\sUntraceable function pointers.\\s")); // Regex[1]
+	end_section_regex = RegexBuilder::Make(RegexStringGroup("\\sUntraceable function pointers.\\s")); // Group[1]
 
 	section_string = GetSection(file, begin_section_regex, 3, end_section_regex, 1);
 	if (section_string.empty())
@@ -58,8 +58,8 @@ bool MutuallyRecursiveSection::Manage(const std::string &file)
 		return (false);
 	}
 
-	fileds_section_regex = RegexBuilder::Make(RegexString("^ \\* ")      + RegexMapMultiFieldsGroup() + // Regex[1]
-	                                          RegexString(" => ")        + RegexMapMultiFieldsGroup()); // Regex[2]
+	fileds_section_regex = RegexBuilder::Make(RegexString("^ \\* ")      + RegexMapMultiFieldsGroup() + // Group[1]
+	                                          RegexString(" => ")        + RegexMapMultiFieldsGroup()); // Group[2]
 
 	fields_iterator = boost::sregex_token_iterator(section_string.begin(), section_string.end(), fileds_section_regex, 0);
 	while (fields_iterator != fields_end)

@@ -46,9 +46,9 @@ bool RemovedSymbolSection::Manage(const std::string &file)
 
 	_Data.clear();
 
-	begin_section_regex = RegexBuilder::Make(RegexMapBeginSectionGroup() + RegexString("Removing Unused input sections from the image.")); // Regex[1]
+	begin_section_regex = RegexBuilder::Make(RegexMapBeginSectionGroup() + RegexString("Removing Unused input sections from the image.")); // Group[1]
 
-	end_section_regex = RegexBuilder::Make(RegexMapEndSectionGroup()); // Regex[1]
+	end_section_regex = RegexBuilder::Make(RegexMapEndSectionGroup()); // Group[1]
 
 	section_string = GetSection(file, begin_section_regex, 1, end_section_regex, 1);
 	if (section_string.empty())
@@ -56,9 +56,9 @@ bool RemovedSymbolSection::Manage(const std::string &file)
 		return (false);
 	}
 
-	fileds_section_regex = RegexBuilder::Make(RegexString("[ ]+Removing ") + RegexMapSingleFieldGroup() +                       // Regex[1]
-	                                          RegexString("\\(")           + RegexMapSingleFieldGroup() + RegexString("\\)") +  // Regex[2]
-	                                          RegexString(", ")            + RegexString("\\(([\\d]+) bytes\\)"));              // Regex[3]
+	fileds_section_regex = RegexBuilder::Make(RegexString("[ ]+Removing ") + RegexMapSingleFieldGroup() +                       // Group[1]
+	                                          RegexString("\\(")           + RegexMapSingleFieldGroup() + RegexString("\\)") +  // Group[2]
+	                                          RegexString(", ")            + RegexString("\\(([\\d]+) bytes\\)"));              // Group[3]
 
 	fields_iterator = boost::sregex_token_iterator(section_string.begin(), section_string.end(), fileds_section_regex, 0);
 	while (fields_iterator != fields_end)

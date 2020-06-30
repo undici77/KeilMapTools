@@ -46,12 +46,12 @@ bool StackUsageSection::Manage(const std::string &file)
 
 	_Data.clear();
 
-	begin_section_regex = RegexBuilder::Make(RegexMapBeginSectionGroup()                   +                                  // Regex[1]
-	                                         RegexString("Image Stack Usage Information.") + RegexMapMultilineFieldsGroup() + // Regex[2]
-	                                         RegexStringGroup("Stack Usage for functions."));                                  // Regex[3]
+	begin_section_regex = RegexBuilder::Make(RegexMapBeginSectionGroup()                   +                                  // Group[1]
+	                                         RegexString("Image Stack Usage Information.") + RegexMapMultilineFieldsGroup() + // Group[2]
+	                                         RegexStringGroup("Stack Usage for functions."));                                  // Group[3]
 
 
-	end_section_regex = RegexBuilder::Make(RegexStringGroup("\\sPotential Stack Usage Inaccuracies.\\s")); // Regex[1]
+	end_section_regex = RegexBuilder::Make(RegexStringGroup("\\sPotential Stack Usage Inaccuracies.\\s")); // Group[1]
 
 	section_string = GetSection(file, begin_section_regex, 3, end_section_regex, 1);
 	if (section_string.empty())
@@ -59,8 +59,8 @@ bool StackUsageSection::Manage(const std::string &file)
 		return (false);
 	}
 
-	fileds_section_regex = RegexBuilder::Make(RegexString("Stack Usage for ") + RegexMapMultiFieldsGroup() + // Regex[1]
-	                                          RegexString(" ")                + RegexMapHexGroup()         + // Regex[2]
+	fileds_section_regex = RegexBuilder::Make(RegexString("Stack Usage for ") + RegexMapMultiFieldsGroup() + // Group[1]
+	                                          RegexString(" ")                + RegexMapHexGroup()         + // Group[2]
 	                                          RegexString(" bytes."));
 
 	fields_iterator = boost::sregex_token_iterator(section_string.begin(), section_string.end(), fileds_section_regex, 0);

@@ -46,10 +46,10 @@ bool LocalSymbolsSection::Manage(const std::string &file)
 
 	_Data.clear();
 
-	begin_section_regex = RegexBuilder::Make(RegexMapBeginSectionGroup() +                                                // Regex[1]
-	                                         RegexStringGroup("Image Symbol Table[\\s]*Local Symbols[\\s]+Symbol Name")); // Regex[2]
+	begin_section_regex = RegexBuilder::Make(RegexMapBeginSectionGroup() +                                                // Group[1]
+	                                         RegexStringGroup("Image Symbol Table[\\s]*Local Symbols[\\s]+Symbol Name")); // Group[2]
 
-	end_section_regex = RegexBuilder::Make(RegexStringGroup("[\\s]+Global Symbols[\\s]+Symbol Name")); // Regex[1]
+	end_section_regex = RegexBuilder::Make(RegexStringGroup("[\\s]+Global Symbols[\\s]+Symbol Name")); // Group[1]
 
 	section_string = GetSection(file, begin_section_regex, 2, end_section_regex, 1);
 	if (section_string.empty())
@@ -57,15 +57,15 @@ bool LocalSymbolsSection::Manage(const std::string &file)
 		return (false);
 	}
 
-	fields_regex = RegexBuilder::Make(RegexString("^[ ]*") + RegexMapMultiFieldsGroup()                    +  // Regex[1]
-	                                  RegexString("[ ]*")  + RegexMapHexGroup()                            +  // Regex[2]
-	                                  RegexString("[ ]*")  + RegexMultiWordsGroup()                        +  // Regex[3]
-	                                  RegexString("[ ]*")  + RegexMapDecimalGroup()                        +  // Regex[4]
-	                                  RegexString("[ ]*")  + RegexMapMultiFieldsGroup()                    +  // Regex[5]
+	fields_regex = RegexBuilder::Make(RegexString("^[ ]*") + RegexMapMultiFieldsGroup()                    +  // Group[1]
+	                                  RegexString("[ ]*")  + RegexMapHexGroup()                            +  // Group[2]
+	                                  RegexString("[ ]*")  + RegexMultiWordsGroup()                        +  // Group[3]
+	                                  RegexString("[ ]*")  + RegexMapDecimalGroup()                        +  // Group[4]
+	                                  RegexString("[ ]*")  + RegexMapMultiFieldsGroup()                    +  // Group[5]
 	                                  RegexString("$")     +
 	                                  RegexString("|")     +
-	                                  RegexString("^[ ]*") + RegexMapMultiFieldsGroup()                    +  // Regex[6]
-	                                  RegexString("[ ]*")  + RegexString("(-) (Undefined Weak Reference)") +  // Regex[7] Regex[8]
+	                                  RegexString("^[ ]*") + RegexMapMultiFieldsGroup()                    +  // Group[6]
+	                                  RegexString("[ ]*")  + RegexString("(-) (Undefined Weak Reference)") +  // Group[7] Group[8]
 	                                  RegexString("$"));
 
 	fields_iterator = boost::sregex_token_iterator(section_string.begin(), section_string.end(), fields_regex, 0);

@@ -46,11 +46,11 @@ bool FunctionPointerSection::Manage(const std::string &file)
 
 	_Data.clear();
 
-	begin_section_regex = RegexBuilder::Make(RegexMapBeginSectionGroup()    + RegexString("Image Stack Usage Information.\\s*Maximum stack usage for Image.") + // Regex[1]
-	                                         RegexMapMultilineFieldsGroup() +                                                                                   // Regex[2]
-	                                         RegexStringGroup("Untraceable function pointers."));                                                              // Regex[3]
+	begin_section_regex = RegexBuilder::Make(RegexMapBeginSectionGroup()    + RegexString("Image Stack Usage Information.\\s*Maximum stack usage for Image.") + // Group[1]
+	                                         RegexMapMultilineFieldsGroup() +                                                                                   // Group[2]
+	                                         RegexStringGroup("Untraceable function pointers."));                                                               // Group[3]
 
-	end_section_regex = RegexBuilder::Make(RegexMapEndSectionGroup()); // Regex[1]
+	end_section_regex = RegexBuilder::Make(RegexMapEndSectionGroup()); // Group[1]
 
 	section_string = GetSection(file, begin_section_regex, 3, end_section_regex, 1);
 	if (section_string.empty())
@@ -58,9 +58,9 @@ bool FunctionPointerSection::Manage(const std::string &file)
 		return (false);
 	}
 
-	fields_regex = RegexBuilder::Make(RegexString("^ \\* ")                              + RegexMapMultiFieldsGroup() + // Regex[1]
-	                                  RegexString(" from ")                              + RegexMapSingleFieldGroup() + // Regex[2]
-	                                  RegexString(" referenced (([\\d]*) times )?from ") + RegexMapSingleFieldGroup()); // Regex[3] Regex[4] Regex[5]
+	fields_regex = RegexBuilder::Make(RegexString("^ \\* ")                              + RegexMapMultiFieldsGroup() + // Group[1]
+	                                  RegexString(" from ")                              + RegexMapSingleFieldGroup() + // Group[2]
+	                                  RegexString(" referenced (([\\d]*) times )?from ") + RegexMapSingleFieldGroup()); // Group[3] Group[4] Group[5]
 
 	fields_iterator = boost::sregex_token_iterator(section_string.begin(), section_string.end(), fields_regex, 0);
 	while (fields_iterator != fields_end)

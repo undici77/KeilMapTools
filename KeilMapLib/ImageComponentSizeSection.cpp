@@ -48,9 +48,9 @@ bool ImageComponentSizeSection::Manage(const std::string &file)
 
 	_Data.clear();
 
-	begin_section_regex = RegexBuilder::Make(RegexMapBeginSectionGroup() + RegexString("Image component sizes")); // Regex[1]
+	begin_section_regex = RegexBuilder::Make(RegexMapBeginSectionGroup() + RegexString("Image component sizes")); // Group[1]
 
-	end_section_regex = RegexBuilder::Make(RegexMapEndSectionGroup()); // Regex[1]
+	end_section_regex = RegexBuilder::Make(RegexMapEndSectionGroup()); // Group[1]
 
 	section_string = GetSection(file, begin_section_regex, 1, end_section_regex, 1);
 	if (section_string.empty())
@@ -62,17 +62,17 @@ bool ImageComponentSizeSection::Manage(const std::string &file)
 	                                               RegexString("RO Data")                + RegexString("[ ]*") +
 	                                               RegexString("RW Data")                + RegexString("[ ]*") +
 	                                               RegexString("ZI Data")                + RegexString("[ ]*") +
-	                                               RegexString("Debug")                  + RegexMapMultiFieldsGroup()); // Regex[1]
+	                                               RegexString("Debug")                  + RegexMapMultiFieldsGroup()); // Group[1]
 
-	end_image_section_regex = RegexBuilder::Make(RegexString(R"([\s]+([\-]{68,}))"));// Regex[1]
+	end_image_section_regex = RegexBuilder::Make(RegexString(R"([\s]+([\-]{68,}))"));// Group[1]
 
-	fileds_section_regex = RegexBuilder::Make(RegexString("^[ ]*")   + RegexMapDecimalGroup()     +  // Regex[1]
-	                                          RegexString("[ ]*")    + RegexMapDecimalGroup()     +  // Regex[2]
-	                                          RegexString("[ ]*")    + RegexMapDecimalGroup()     +  // Regex[3]
-	                                          RegexString("[ ]*")    + RegexMapDecimalGroup()     +  // Regex[4]
-	                                          RegexString("[ ]*")    + RegexMapDecimalGroup()     +  // Regex[5]
-	                                          RegexString("[ ]*")    + RegexMapDecimalGroup()     +  // Regex[6]
-	                                          RegexString("[ ]*")    + RegexMapMultiFieldsGroup() +  // Regex[7]
+	fileds_section_regex = RegexBuilder::Make(RegexString("^[ ]*")   + RegexMapDecimalGroup()     +  // Group[1]
+	                                          RegexString("[ ]*")    + RegexMapDecimalGroup()     +  // Group[2]
+	                                          RegexString("[ ]*")    + RegexMapDecimalGroup()     +  // Group[3]
+	                                          RegexString("[ ]*")    + RegexMapDecimalGroup()     +  // Group[4]
+	                                          RegexString("[ ]*")    + RegexMapDecimalGroup()     +  // Group[5]
+	                                          RegexString("[ ]*")    + RegexMapDecimalGroup()     +  // Group[6]
+	                                          RegexString("[ ]*")    + RegexMapMultiFieldsGroup() +  // Group[7]
 	                                          RegexString("$"));
 
 	if (!SplitSection(section_string, begin_image_section_regex, &image_section_vector))

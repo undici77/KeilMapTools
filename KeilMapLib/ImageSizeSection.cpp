@@ -39,10 +39,10 @@ bool ImageSizeSection::Manage(const std::string &file)
 
 	_Data.clear();
 
-	section_regex = RegexBuilder::Make(RegexMapBeginSectionGroup() +                                                                                            // Regex[1]
-	                                   RegexString("Total RO  Size \\(Code \\+ RO Data\\)")                                      + RegexMapMultiFieldsGroup() + // Regex[2]
-	                                   RegexString("\\s[ ]*") + RegexString("Total RW  Size \\(RW Data \\+ ZI Data\\)")          + RegexMapMultiFieldsGroup() + // Regex[3]
-	                                   RegexString("\\s[ ]*") + RegexString("Total ROM Size \\(Code \\+ RO Data \\+ RW Data\\)") + RegexMapMultiFieldsGroup()); // Regex[4]
+	section_regex = RegexBuilder::Make(RegexMapBeginSectionGroup() +                                                                                            // Group[1]
+	                                   RegexString("Total RO  Size \\(Code \\+ RO Data\\)")                                      + RegexMapMultiFieldsGroup() + // Group[2]
+	                                   RegexString("\\s[ ]*") + RegexString("Total RW  Size \\(RW Data \\+ ZI Data\\)")          + RegexMapMultiFieldsGroup() + // Group[3]
+	                                   RegexString("\\s[ ]*") + RegexString("Total ROM Size \\(Code \\+ RO Data \\+ RW Data\\)") + RegexMapMultiFieldsGroup()); // Group[4]
 
 	if (boost::regex_search(file, match_result, section_regex))
 	{

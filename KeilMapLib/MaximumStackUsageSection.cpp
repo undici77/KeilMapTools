@@ -46,10 +46,10 @@ bool MaximumStackUsageSection::Manage(const std::string &file)
 
 	_Data.clear();
 
-	begin_section_regex = RegexBuilder::Make(RegexMapBeginSectionGroup() + RegexString("Image Stack Usage Information.")); // Regex[1]
+	begin_section_regex = RegexBuilder::Make(RegexMapBeginSectionGroup() + RegexString("Image Stack Usage Information.")); // Group[1]
 
 
-	end_section_regex = RegexBuilder::Make(RegexStringGroup("\\sStack Usage for functions.\\s")); // Regex[1]
+	end_section_regex = RegexBuilder::Make(RegexStringGroup("\\sStack Usage for functions.\\s")); // Group[1]
 
 	section_string = GetSection(file, begin_section_regex, 1, end_section_regex, 1);
 	if (section_string.empty())
@@ -57,9 +57,9 @@ bool MaximumStackUsageSection::Manage(const std::string &file)
 		return (false);
 	}
 
-	fileds_section_regex = RegexBuilder::Make(RegexString("Maximum Stack Usage for ")                         + RegexMapMultiFieldsGroup() + // Regex[1]
-	                                          RegexString(" ")                                                + RegexMapHexGroup()         + // Regex[2]
-	                                          RegexString(" bytes.\\sCall chain for maximum stack usage:\\s") + RegexMapMultiFieldsGroup()); // Regex[3]
+	fileds_section_regex = RegexBuilder::Make(RegexString("Maximum Stack Usage for ")                         + RegexMapMultiFieldsGroup() + // Group[1]
+	                                          RegexString(" ")                                                + RegexMapHexGroup()         + // Group[2]
+	                                          RegexString(" bytes.\\sCall chain for maximum stack usage:\\s") + RegexMapMultiFieldsGroup()); // Group[3]
 
 	fields_iterator = boost::sregex_token_iterator(section_string.begin(), section_string.end(), fileds_section_regex, 0);
 	while (fields_iterator != fields_end)

@@ -52,10 +52,10 @@ bool MemoryMapImageSection::Manage(const std::string &file)
 
 	_Data.clear();
 
-	begin_section_regex = RegexBuilder::Make(RegexMapBeginSectionGroup()                 +  // Regex[1]
-	                                         RegexStringGroup("Memory Map of the image"));  // Regex[2]
+	begin_section_regex = RegexBuilder::Make(RegexMapBeginSectionGroup()                 +  // Group[1]
+	                                         RegexStringGroup("Memory Map of the image"));  // Group[2]
 
-	end_section_regex = RegexBuilder::Make(RegexMapEndSectionGroup()); // Regex[1]
+	end_section_regex = RegexBuilder::Make(RegexMapEndSectionGroup()); // Group[1]
 
 	section_string = GetSection(file, begin_section_regex, 2, end_section_regex, 1);
 	if (section_string.empty())
@@ -63,7 +63,7 @@ bool MemoryMapImageSection::Manage(const std::string &file)
 		return (false);
 	}
 
-	enrty_point_regex = RegexBuilder::Make(RegexString("  Image Entry point[ ]*:[ ]*") + RegexMapHexGroup()); // Regex[1]
+	enrty_point_regex = RegexBuilder::Make(RegexString("  Image Entry point[ ]*:[ ]*") + RegexMapHexGroup()); // Group[1]
 	if (!boost::regex_search(section_string, match_result, enrty_point_regex))
 	{
 		return (false);
@@ -71,27 +71,27 @@ bool MemoryMapImageSection::Manage(const std::string &file)
 
 	memory_map_image.entry_point = match_result[1].str();
 
-	load_region_regex = RegexBuilder::Make(RegexString("Load Region ") + RegexMapSingleFieldGroup() + // Regex[1];
-	                                       RegexMapMultiFieldsGroup());                               // Regex[2];
+	load_region_regex = RegexBuilder::Make(RegexString("Load Region ") + RegexMapSingleFieldGroup() + // Group[1];
+	                                       RegexMapMultiFieldsGroup());                               // Group[2];
 
-	execution_region_regex = RegexBuilder::Make(RegexString("Execution Region ") + RegexMapSingleFieldGroup() + // Regex[1];
-	                                            RegexMapMultiFieldsGroup());                                    // Regex[2];
+	execution_region_regex = RegexBuilder::Make(RegexString("Execution Region ") + RegexMapSingleFieldGroup() + // Group[1];
+	                                            RegexMapMultiFieldsGroup());                                    // Group[2];
 
-	fields_regex = RegexBuilder::Make(RegexString("^[ ]*")   + RegexMapHexGroup()                            +  // Regex[1]
-	                                  RegexString("[ ]*")    + RegexMapSingleFieldGroup()                    +  // Regex[2]
-	                                  RegexString("[ ]*")    + RegexMapHexGroup()                            +  // Regex[3]
+	fields_regex = RegexBuilder::Make(RegexString("^[ ]*")   + RegexMapHexGroup()                            +  // Group[1]
+	                                  RegexString("[ ]*")    + RegexMapSingleFieldGroup()                    +  // Group[2]
+	                                  RegexString("[ ]*")    + RegexMapHexGroup()                            +  // Group[3]
 	                                  RegexString("[ ]*PAD") +
 	                                  RegexString("$")       +
 	                                  RegexString("|")       +
-	                                  RegexString("^[ ]*")   + RegexMapHexGroup()                            +  // Regex[4]
-	                                  RegexString("[ ]*")    + RegexMapSingleFieldGroup()                    +  // Regex[5]
-	                                  RegexString("[ ]*")    + RegexMapHexGroup()                            +  // Regex[6]
-	                                  RegexString("[ ]*")    + RegexMapSingleFieldGroup()                    +  // Regex[7]
-	                                  RegexString("[ ]*")    + RegexMapSingleFieldGroup()                    +  // Regex[8]
-	                                  RegexString("[ ]*")    + RegexMapDecimalGroup()                        +  // Regex[9]
-	                                  RegexString("[ ]*")    + RegexStringGroup("[\\*]?")                    +  // Regex[10]
-	                                  RegexString("[ ]*")    + RegexMapSingleFieldGroup()                    +  // Regex[11]
-	                                  RegexString("[ ]*")    + RegexMapSingleFieldGroup()                    +  // Regex[12]
+	                                  RegexString("^[ ]*")   + RegexMapHexGroup()                            +  // Group[4]
+	                                  RegexString("[ ]*")    + RegexMapSingleFieldGroup()                    +  // Group[5]
+	                                  RegexString("[ ]*")    + RegexMapHexGroup()                            +  // Group[6]
+	                                  RegexString("[ ]*")    + RegexMapSingleFieldGroup()                    +  // Group[7]
+	                                  RegexString("[ ]*")    + RegexMapSingleFieldGroup()                    +  // Group[8]
+	                                  RegexString("[ ]*")    + RegexMapDecimalGroup()                        +  // Group[9]
+	                                  RegexString("[ ]*")    + RegexStringGroup("[\\*]?")                    +  // Group[10]
+	                                  RegexString("[ ]*")    + RegexMapSingleFieldGroup()                    +  // Group[11]
+	                                  RegexString("[ ]*")    + RegexMapSingleFieldGroup()                    +  // Group[12]
 	                                  RegexString("$"));
 
 	if (!SplitSection(section_string, load_region_regex, &load_region_vector))
