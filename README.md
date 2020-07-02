@@ -68,3 +68,6 @@ Height=710
 [Tab]
 Selected=1
 ```
+## .Compile instruction
+[Check instruction on wiki](https://github.com/undici77/KeilMapTools/wiki)
+
