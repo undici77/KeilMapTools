@@ -22,10 +22,10 @@
 
 class MaximumStackUsageSection : public SectionBase, public SectionData<MAXIMUM_STACK_USAGE_FIELD>
 {
-public:
-	MaximumStackUsageSection();
-	~MaximumStackUsageSection();
+	public:
+		MaximumStackUsageSection();
+		~MaximumStackUsageSection();
 
-	bool Manage(const std::string &file);
+		bool Manage(const std::string &file);
 };
 

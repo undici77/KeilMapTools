@@ -22,12 +22,12 @@
 
 class ImageSizeSection : public SectionBase, public SectionData<IMAGE_SIZE_DATA>
 {
-public:
-	ImageSizeSection();
-	~ImageSizeSection();
+	public:
+		ImageSizeSection();
+		~ImageSizeSection();
 
-	bool Manage(const std::string &file);
+		bool Manage(const std::string &file);
 
-private:
+	private:
 };
 

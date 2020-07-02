@@ -22,10 +22,10 @@
 
 class FunctionPointerSection : public SectionBase, public SectionData<FUNCTION_POINTER_FIELD>
 {
-public:
-	FunctionPointerSection();
-	~FunctionPointerSection();
+	public:
+		FunctionPointerSection();
+		~FunctionPointerSection();
 
-	bool Manage(const std::string &file);
+		bool Manage(const std::string &file);
 };
 

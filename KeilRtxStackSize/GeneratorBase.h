@@ -26,19 +26,19 @@
 
 class GeneratorBase
 {
-public:
-	virtual bool Read(PARAMETERS &parameters, std::string *error);
-	virtual void Generate(PARAMETERS &parameters);
-	virtual bool WriteRequest(void);
-	virtual bool Write(PARAMETERS &parameters);
+	public:
+		virtual bool Read(PARAMETERS &parameters, std::string *error);
+		virtual void Generate(PARAMETERS &parameters);
+		virtual bool WriteRequest(void);
+		virtual bool Write(PARAMETERS &parameters);
 
-protected:
-	virtual size_t CalculareStackSize(size_t value, size_t stdio_stack_size, size_t stack_oversize);
-	std::string Pad(const char *input, size_t length);
+	protected:
+		virtual size_t CalculareStackSize(size_t value, size_t stdio_stack_size, size_t stack_oversize);
+		std::string Pad(const char *input, size_t length);
 
-	std::vector<MAXIMUM_STACK_USAGE_FIELD> _Maximum_Stack_Usage;
-	std::vector<STACK_USAGE_FIELD>         _Stack_Usage;
-	std::vector<std::string>               _Header_File;
-	std::vector<std::string>               _Original_Header_File;
+		std::vector<MAXIMUM_STACK_USAGE_FIELD> _Maximum_Stack_Usage;
+		std::vector<STACK_USAGE_FIELD>         _Stack_Usage;
+		std::vector<std::string>               _Header_File;
+		std::vector<std::string>               _Original_Header_File;
 };
 

@@ -316,7 +316,7 @@ namespace KeilMapViewer
 			ContextMenu menu;
 			DataGridView data_grid_view;
 
-			data_grid_view = (DataGridView)sender; 
+			data_grid_view = (DataGridView)sender;
 			if (e.Button == MouseButtons.Right)
 			{
 				total_size = 0;
@@ -346,7 +346,7 @@ namespace KeilMapViewer
 			ContextMenu menu;
 			DataGridView data_grid_view;
 
-			data_grid_view = (DataGridView)sender; 
+			data_grid_view = (DataGridView)sender;
 			if (e.Button == MouseButtons.Right)
 			{
 				total_size = 0;
@@ -376,7 +376,7 @@ namespace KeilMapViewer
 			ContextMenu menu;
 			DataGridView data_grid_view;
 
-			data_grid_view = (DataGridView)sender; 
+			data_grid_view = (DataGridView)sender;
 			if (e.Button == MouseButtons.Right)
 			{
 				total_size = 0;
@@ -406,7 +406,7 @@ namespace KeilMapViewer
 			ContextMenu menu;
 			DataGridView data_grid_view;
 
-			data_grid_view = (DataGridView)sender; 
+			data_grid_view = (DataGridView)sender;
 			if (e.Button == MouseButtons.Right)
 			{
 				total_size = 0;
@@ -436,7 +436,7 @@ namespace KeilMapViewer
 			ContextMenu menu;
 			DataGridView data_grid_view;
 
-			data_grid_view = (DataGridView)sender; 
+			data_grid_view = (DataGridView)sender;
 			if (e.Button == MouseButtons.Right)
 			{
 				total_size = 0;
@@ -466,7 +466,7 @@ namespace KeilMapViewer
 			ContextMenu menu;
 			DataGridView data_grid_view;
 
-			data_grid_view = (DataGridView)sender; 
+			data_grid_view = (DataGridView)sender;
 			if (e.Button == MouseButtons.Right)
 			{
 				total_size = 0;
@@ -501,7 +501,7 @@ namespace KeilMapViewer
 			ContextMenu menu;
 			DataGridView data_grid_view;
 
-			data_grid_view = (DataGridView)sender; 
+			data_grid_view = (DataGridView)sender;
 			if (e.Button == MouseButtons.Right)
 			{
 				total_code_size            = 0;

@@ -58,8 +58,8 @@ bool MutuallyRecursiveSection::Manage(const std::string &file)
 		return (false);
 	}
 
-	fileds_section_regex = RegexBuilder::Make(RegexString("^ \\* ")      + RegexMapMultiFieldsGroup() + // Group[1]
-	                                          RegexString(" => ")        + RegexMapMultiFieldsGroup()); // Group[2]
+	fileds_section_regex = RegexBuilder::Make(RegexString("^ \\* ") + RegexMapMultiFieldsGroup() + // Group[1]
+	                                          RegexString(" => ")   + RegexMapMultiFieldsGroup()); // Group[2]
 
 	fields_iterator = boost::sregex_token_iterator(section_string.begin(), section_string.end(), fileds_section_regex, 0);
 	while (fields_iterator != fields_end)

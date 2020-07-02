@@ -38,8 +38,8 @@ static void read_ini(const boost::filesystem::path &ini_file_path, PARAMETERS *p
 	}
 	catch (...)
 	{
-		boost::property_tree::ini_parser::write_ini (ini_file_path.string(), property_tree);
-		boost::property_tree::ini_parser::read_ini (ini_file_path.string(), property_tree);
+		boost::property_tree::ini_parser::write_ini(ini_file_path.string(), property_tree);
+		boost::property_tree::ini_parser::read_ini(ini_file_path.string(), property_tree);
 	}
 
 	// Architecture.Name
@@ -262,7 +262,7 @@ int main(int argc, char *argv[])
 		{
 			std::cout << description << std::endl;
 			std::cout << "Press any key to continue.." << std::endl;
-            getchar();
+			getchar();
 			return (EXIT_FAILURE);
 		}
 

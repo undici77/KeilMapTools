@@ -22,10 +22,10 @@
 
 class RemovedSymbolSection : public SectionBase, public SectionData<REMOVED_SYMBOL_FIELD>
 {
-public:
-	RemovedSymbolSection();
-	~RemovedSymbolSection();
+	public:
+		RemovedSymbolSection();
+		~RemovedSymbolSection();
 
-	bool Manage(const std::string &file);
+		bool Manage(const std::string &file);
 };
 

@@ -382,9 +382,9 @@ namespace KeilMapViewer
 							image_size_data_task = null;
 
 							stack_info_ok = ((maximum_stack_usage_data_manager.Length > 0) ||
-							                (stack_usage_data_manager.Length > 0)         ||
-											(mutually_recursive_data_manager.Length > 0)  ||
-											(function_pointer_data_manager.Length > 0)); 
+							                 (stack_usage_data_manager.Length > 0)         ||
+							                 (mutually_recursive_data_manager.Length > 0)  ||
+							                 (function_pointer_data_manager.Length > 0));
 						}
 					}
 

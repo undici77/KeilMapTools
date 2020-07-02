@@ -181,87 +181,96 @@ namespace KeilMapViewer
 			this.MainTableLayoutPanel.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.MemoryMapImageDataGridView)).BeginInit();
 			this.SuspendLayout();
-			// 
+			//
 			// AppInfoStatusStrip
-			// 
-			this.AppInfoStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.TotalROLabel,
-            this.TotalRWLabel,
-            this.TotalROMLabel});
+			//
+			this.AppInfoStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[]
+			{
+				this.TotalROLabel,
+				this.TotalRWLabel,
+				this.TotalROMLabel
+			});
 			this.AppInfoStatusStrip.Location = new System.Drawing.Point(0, 437);
 			this.AppInfoStatusStrip.Name = "AppInfoStatusStrip";
 			this.AppInfoStatusStrip.ShowItemToolTips = true;
 			this.AppInfoStatusStrip.Size = new System.Drawing.Size(1173, 24);
 			this.AppInfoStatusStrip.TabIndex = 1;
 			this.AppInfoStatusStrip.Text = "statusStrip1";
-			// 
+			//
 			// TotalROLabel
-			// 
-			this.TotalROLabel.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
-            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
-            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
+			//
+			this.TotalROLabel.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left |
+			                                                                                           System.Windows.Forms.ToolStripStatusLabelBorderSides.Top)
+			                                                                                          | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right)
+			                                                                                         | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
 			this.TotalROLabel.Name = "TotalROLabel";
 			this.TotalROLabel.Size = new System.Drawing.Size(386, 19);
 			this.TotalROLabel.Spring = true;
 			this.TotalROLabel.Text = "RO -";
-			// 
+			//
 			// TotalRWLabel
-			// 
-			this.TotalRWLabel.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
-            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
-            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
+			//
+			this.TotalRWLabel.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left |
+			                                                                                           System.Windows.Forms.ToolStripStatusLabelBorderSides.Top)
+			                                                                                          | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right)
+			                                                                                         | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
 			this.TotalRWLabel.Name = "TotalRWLabel";
 			this.TotalRWLabel.Size = new System.Drawing.Size(386, 19);
 			this.TotalRWLabel.Spring = true;
 			this.TotalRWLabel.Text = "RW -";
-			// 
+			//
 			// TotalROMLabel
-			// 
-			this.TotalROMLabel.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
-            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
-            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
+			//
+			this.TotalROMLabel.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left |
+			                                                                                            System.Windows.Forms.ToolStripStatusLabelBorderSides.Top)
+			                                                                                           | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right)
+			                                                                                          | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
 			this.TotalROMLabel.Name = "TotalROMLabel";
 			this.TotalROMLabel.Size = new System.Drawing.Size(386, 19);
 			this.TotalROMLabel.Spring = true;
 			this.TotalROMLabel.Text = "ROM -";
-			// 
+			//
 			// MainFromMenuStrip
-			// 
+			//
 			this.MainFromMenuStrip.BackColor = System.Drawing.SystemColors.ButtonFace;
-			this.MainFromMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
+			this.MainFromMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[]
+			{
+				this.fileToolStripMenuItem
+			});
 			this.MainFromMenuStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
 			this.MainFromMenuStrip.Location = new System.Drawing.Point(0, 0);
 			this.MainFromMenuStrip.Name = "MainFromMenuStrip";
 			this.MainFromMenuStrip.Size = new System.Drawing.Size(1173, 24);
 			this.MainFromMenuStrip.TabIndex = 2;
 			this.MainFromMenuStrip.Text = "MainFormMenuStrip";
-			// 
+			//
 			// fileToolStripMenuItem
-			// 
-			this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openToolStripMenuItem,
-            this.closeToolStripMenuItem});
+			//
+			this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[]
+			{
+				this.openToolStripMenuItem,
+				this.closeToolStripMenuItem
+			});
 			this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
 			this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
 			this.fileToolStripMenuItem.Text = "File";
-			// 
+			//
 			// openToolStripMenuItem
-			// 
+			//
 			this.openToolStripMenuItem.Name = "openToolStripMenuItem";
 			this.openToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
 			this.openToolStripMenuItem.Text = "Open";
 			this.openToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
-			// 
+			//
 			// closeToolStripMenuItem
-			// 
+			//
 			this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
 			this.closeToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
 			this.closeToolStripMenuItem.Text = "Close";
 			this.closeToolStripMenuItem.Click += new System.EventHandler(this.CloseToolStripMenuItem_Click);
-			// 
+			//
 			// MaximumStackUsageTab
-			// 
+			//
 			this.MaximumStackUsageTab.Controls.Add(this.MaximumStackUsageErrorLabel);
 			this.MaximumStackUsageTab.Controls.Add(this.MaximumStackUsageDataGridView);
 			this.MaximumStackUsageTab.Location = new System.Drawing.Point(4, 22);
@@ -271,9 +280,9 @@ namespace KeilMapViewer
 			this.MaximumStackUsageTab.TabIndex = 13;
 			this.MaximumStackUsageTab.Text = "Maximum Stack Usage";
 			this.MaximumStackUsageTab.UseVisualStyleBackColor = true;
-			// 
+			//
 			// MaximumStackUsageErrorLabel
-			// 
+			//
 			this.MaximumStackUsageErrorLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.MaximumStackUsageErrorLabel.AutoSize = true;
 			this.MaximumStackUsageErrorLabel.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -283,16 +292,16 @@ namespace KeilMapViewer
 			this.MaximumStackUsageErrorLabel.TabIndex = 11;
 			this.MaximumStackUsageErrorLabel.Text = "Please enable linker option \'--info=stack\'";
 			this.MaximumStackUsageErrorLabel.Visible = false;
-			// 
+			//
 			// MaximumStackUsageDataGridView
-			// 
+			//
 			this.MaximumStackUsageDataGridView.AllowUserToAddRows = false;
 			this.MaximumStackUsageDataGridView.AllowUserToDeleteRows = false;
 			this.MaximumStackUsageDataGridView.AllowUserToOrderColumns = true;
 			this.MaximumStackUsageDataGridView.AllowUserToResizeRows = false;
-			this.MaximumStackUsageDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			this.MaximumStackUsageDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+			                                                                                   | System.Windows.Forms.AnchorStyles.Left)
+			                                                                                  | System.Windows.Forms.AnchorStyles.Right)));
 			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
 			dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
 			dataGridViewCellStyle1.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -302,9 +311,11 @@ namespace KeilMapViewer
 			dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
 			this.MaximumStackUsageDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
 			this.MaximumStackUsageDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.MaximumStackUsageDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaximumStackUsageDataGridViewFunction,
-            this.MaximumStackUsageDataGridViewSize});
+			this.MaximumStackUsageDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[]
+			{
+				this.MaximumStackUsageDataGridViewFunction,
+				this.MaximumStackUsageDataGridViewSize
+			});
 			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
 			dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
 			dataGridViewCellStyle2.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -329,25 +340,25 @@ namespace KeilMapViewer
 			this.MaximumStackUsageDataGridView.Size = new System.Drawing.Size(1128, 365);
 			this.MaximumStackUsageDataGridView.TabIndex = 10;
 			this.MaximumStackUsageDataGridView.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.MaximumStackUsageDataGridView_CellMouseDown);
-			// 
+			//
 			// MaximumStackUsageDataGridViewFunction
-			// 
+			//
 			this.MaximumStackUsageDataGridViewFunction.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.MaximumStackUsageDataGridViewFunction.FillWeight = 194.9239F;
 			this.MaximumStackUsageDataGridViewFunction.HeaderText = "Function";
 			this.MaximumStackUsageDataGridViewFunction.Name = "MaximumStackUsageDataGridViewFunction";
 			this.MaximumStackUsageDataGridViewFunction.ReadOnly = true;
-			// 
+			//
 			// MaximumStackUsageDataGridViewSize
-			// 
+			//
 			this.MaximumStackUsageDataGridViewSize.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.MaximumStackUsageDataGridViewSize.FillWeight = 20F;
 			this.MaximumStackUsageDataGridViewSize.HeaderText = "Size";
 			this.MaximumStackUsageDataGridViewSize.Name = "MaximumStackUsageDataGridViewSize";
 			this.MaximumStackUsageDataGridViewSize.ReadOnly = true;
-			// 
+			//
 			// LocalSymbolTab
-			// 
+			//
 			this.LocalSymbolTab.Controls.Add(this.LocalSymbolDataGridView);
 			this.LocalSymbolTab.Location = new System.Drawing.Point(4, 22);
 			this.LocalSymbolTab.Name = "LocalSymbolTab";
@@ -356,16 +367,16 @@ namespace KeilMapViewer
 			this.LocalSymbolTab.TabIndex = 12;
 			this.LocalSymbolTab.Text = "Local Symbol";
 			this.LocalSymbolTab.UseVisualStyleBackColor = true;
-			// 
+			//
 			// LocalSymbolDataGridView
-			// 
+			//
 			this.LocalSymbolDataGridView.AllowUserToAddRows = false;
 			this.LocalSymbolDataGridView.AllowUserToDeleteRows = false;
 			this.LocalSymbolDataGridView.AllowUserToOrderColumns = true;
 			this.LocalSymbolDataGridView.AllowUserToResizeRows = false;
-			this.LocalSymbolDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			this.LocalSymbolDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+			                                                                             | System.Windows.Forms.AnchorStyles.Left)
+			                                                                            | System.Windows.Forms.AnchorStyles.Right)));
 			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
 			dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
 			dataGridViewCellStyle4.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -375,12 +386,14 @@ namespace KeilMapViewer
 			dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
 			this.LocalSymbolDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
 			this.LocalSymbolDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.LocalSymbolDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.LocalSymbolDataGridViewSymbolicName,
-            this.LocalSymbolDataGridViewAddress,
-            this.LocalSymbolDataGridViewSize,
-            this.LocalSymbolDataGridViewType,
-            this.LocalSymbolDataGridViewObjectName});
+			this.LocalSymbolDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[]
+			{
+				this.LocalSymbolDataGridViewSymbolicName,
+				this.LocalSymbolDataGridViewAddress,
+				this.LocalSymbolDataGridViewSize,
+				this.LocalSymbolDataGridViewType,
+				this.LocalSymbolDataGridViewObjectName
+			});
 			dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
 			dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
 			dataGridViewCellStyle5.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -405,49 +418,49 @@ namespace KeilMapViewer
 			this.LocalSymbolDataGridView.Size = new System.Drawing.Size(1128, 365);
 			this.LocalSymbolDataGridView.TabIndex = 11;
 			this.LocalSymbolDataGridView.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.LocalSymbolDataGridView_CellMouseDown);
-			// 
+			//
 			// LocalSymbolDataGridViewSymbolicName
-			// 
+			//
 			this.LocalSymbolDataGridViewSymbolicName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.LocalSymbolDataGridViewSymbolicName.FillWeight = 121.8274F;
 			this.LocalSymbolDataGridViewSymbolicName.HeaderText = "Symbolic Name";
 			this.LocalSymbolDataGridViewSymbolicName.Name = "LocalSymbolDataGridViewSymbolicName";
 			this.LocalSymbolDataGridViewSymbolicName.ReadOnly = true;
-			// 
+			//
 			// LocalSymbolDataGridViewAddress
-			// 
+			//
 			this.LocalSymbolDataGridViewAddress.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.LocalSymbolDataGridViewAddress.FillWeight = 121.8274F;
 			this.LocalSymbolDataGridViewAddress.HeaderText = "Address";
 			this.LocalSymbolDataGridViewAddress.Name = "LocalSymbolDataGridViewAddress";
 			this.LocalSymbolDataGridViewAddress.ReadOnly = true;
-			// 
+			//
 			// LocalSymbolDataGridViewSize
-			// 
+			//
 			this.LocalSymbolDataGridViewSize.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.LocalSymbolDataGridViewSize.FillWeight = 30F;
 			this.LocalSymbolDataGridViewSize.HeaderText = "Size";
 			this.LocalSymbolDataGridViewSize.Name = "LocalSymbolDataGridViewSize";
 			this.LocalSymbolDataGridViewSize.ReadOnly = true;
-			// 
+			//
 			// LocalSymbolDataGridViewType
-			// 
+			//
 			this.LocalSymbolDataGridViewType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.LocalSymbolDataGridViewType.FillWeight = 121.8274F;
 			this.LocalSymbolDataGridViewType.HeaderText = "Type";
 			this.LocalSymbolDataGridViewType.Name = "LocalSymbolDataGridViewType";
 			this.LocalSymbolDataGridViewType.ReadOnly = true;
-			// 
+			//
 			// LocalSymbolDataGridViewObjectName
-			// 
+			//
 			this.LocalSymbolDataGridViewObjectName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.LocalSymbolDataGridViewObjectName.FillWeight = 121.8274F;
 			this.LocalSymbolDataGridViewObjectName.HeaderText = "Object Name";
 			this.LocalSymbolDataGridViewObjectName.Name = "LocalSymbolDataGridViewObjectName";
 			this.LocalSymbolDataGridViewObjectName.ReadOnly = true;
-			// 
+			//
 			// ImageComponentSizeTab
-			// 
+			//
 			this.ImageComponentSizeTab.Controls.Add(this.ImageComponentSizeDataGridView);
 			this.ImageComponentSizeTab.Location = new System.Drawing.Point(4, 22);
 			this.ImageComponentSizeTab.Name = "ImageComponentSizeTab";
@@ -456,16 +469,16 @@ namespace KeilMapViewer
 			this.ImageComponentSizeTab.TabIndex = 11;
 			this.ImageComponentSizeTab.Text = "Image Component Size";
 			this.ImageComponentSizeTab.UseVisualStyleBackColor = true;
-			// 
+			//
 			// ImageComponentSizeDataGridView
-			// 
+			//
 			this.ImageComponentSizeDataGridView.AllowUserToAddRows = false;
 			this.ImageComponentSizeDataGridView.AllowUserToDeleteRows = false;
 			this.ImageComponentSizeDataGridView.AllowUserToOrderColumns = true;
 			this.ImageComponentSizeDataGridView.AllowUserToResizeRows = false;
-			this.ImageComponentSizeDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			this.ImageComponentSizeDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+			                                                                                    | System.Windows.Forms.AnchorStyles.Left)
+			                                                                                   | System.Windows.Forms.AnchorStyles.Right)));
 			dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
 			dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
 			dataGridViewCellStyle7.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -475,14 +488,16 @@ namespace KeilMapViewer
 			dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
 			this.ImageComponentSizeDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
 			this.ImageComponentSizeDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.ImageComponentSizeDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ImageComponentSizeDataGridViewObjectName,
-            this.ImageComponentSizeDataGridViewCode,
-            this.ImageComponentSizeDataGridViewlineData,
-            this.ImageComponentSizeDataGridViewReadOnlyData,
-            this.ImageComponentSizeDataGridViewReadWriteData,
-            this.ImageComponentSizeDataGridZeroInitData,
-            this.ImageComponentSizeDataGridViewDebugData});
+			this.ImageComponentSizeDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[]
+			{
+				this.ImageComponentSizeDataGridViewObjectName,
+				this.ImageComponentSizeDataGridViewCode,
+				this.ImageComponentSizeDataGridViewlineData,
+				this.ImageComponentSizeDataGridViewReadOnlyData,
+				this.ImageComponentSizeDataGridViewReadWriteData,
+				this.ImageComponentSizeDataGridZeroInitData,
+				this.ImageComponentSizeDataGridViewDebugData
+			});
 			dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
 			dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
 			dataGridViewCellStyle8.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -507,65 +522,65 @@ namespace KeilMapViewer
 			this.ImageComponentSizeDataGridView.Size = new System.Drawing.Size(1128, 365);
 			this.ImageComponentSizeDataGridView.TabIndex = 11;
 			this.ImageComponentSizeDataGridView.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.ImageComponentSizeDataGridView_CellMouseDown);
-			// 
+			//
 			// ImageComponentSizeDataGridViewObjectName
-			// 
+			//
 			this.ImageComponentSizeDataGridViewObjectName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.ImageComponentSizeDataGridViewObjectName.HeaderText = "Object Name";
 			this.ImageComponentSizeDataGridViewObjectName.Name = "ImageComponentSizeDataGridViewObjectName";
 			this.ImageComponentSizeDataGridViewObjectName.ReadOnly = true;
-			// 
+			//
 			// ImageComponentSizeDataGridViewCode
-			// 
+			//
 			this.ImageComponentSizeDataGridViewCode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.ImageComponentSizeDataGridViewCode.FillWeight = 30F;
 			this.ImageComponentSizeDataGridViewCode.HeaderText = "Code";
 			this.ImageComponentSizeDataGridViewCode.Name = "ImageComponentSizeDataGridViewCode";
 			this.ImageComponentSizeDataGridViewCode.ReadOnly = true;
-			// 
+			//
 			// ImageComponentSizeDataGridViewlineData
-			// 
+			//
 			this.ImageComponentSizeDataGridViewlineData.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.ImageComponentSizeDataGridViewlineData.FillWeight = 30F;
 			this.ImageComponentSizeDataGridViewlineData.HeaderText = "Inline Data";
 			this.ImageComponentSizeDataGridViewlineData.Name = "ImageComponentSizeDataGridViewlineData";
 			this.ImageComponentSizeDataGridViewlineData.ReadOnly = true;
-			// 
+			//
 			// ImageComponentSizeDataGridViewReadOnlyData
-			// 
+			//
 			this.ImageComponentSizeDataGridViewReadOnlyData.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.ImageComponentSizeDataGridViewReadOnlyData.FillWeight = 30F;
 			this.ImageComponentSizeDataGridViewReadOnlyData.HeaderText = "Read Only Data";
 			this.ImageComponentSizeDataGridViewReadOnlyData.Name = "ImageComponentSizeDataGridViewReadOnlyData";
 			this.ImageComponentSizeDataGridViewReadOnlyData.ReadOnly = true;
-			// 
+			//
 			// ImageComponentSizeDataGridViewReadWriteData
-			// 
+			//
 			this.ImageComponentSizeDataGridViewReadWriteData.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.ImageComponentSizeDataGridViewReadWriteData.FillWeight = 30F;
 			this.ImageComponentSizeDataGridViewReadWriteData.HeaderText = "Read Write Data";
 			this.ImageComponentSizeDataGridViewReadWriteData.Name = "ImageComponentSizeDataGridViewReadWriteData";
 			this.ImageComponentSizeDataGridViewReadWriteData.ReadOnly = true;
-			// 
+			//
 			// ImageComponentSizeDataGridZeroInitData
-			// 
+			//
 			this.ImageComponentSizeDataGridZeroInitData.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.ImageComponentSizeDataGridZeroInitData.FillWeight = 30F;
 			this.ImageComponentSizeDataGridZeroInitData.HeaderText = "Zero Init Data";
 			this.ImageComponentSizeDataGridZeroInitData.Name = "ImageComponentSizeDataGridZeroInitData";
 			this.ImageComponentSizeDataGridZeroInitData.ReadOnly = true;
-			// 
+			//
 			// ImageComponentSizeDataGridViewDebugData
-			// 
+			//
 			this.ImageComponentSizeDataGridViewDebugData.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.ImageComponentSizeDataGridViewDebugData.FillWeight = 30F;
 			this.ImageComponentSizeDataGridViewDebugData.HeaderText = "Debug Data";
 			this.ImageComponentSizeDataGridViewDebugData.MinimumWidth = 100;
 			this.ImageComponentSizeDataGridViewDebugData.Name = "ImageComponentSizeDataGridViewDebugData";
 			this.ImageComponentSizeDataGridViewDebugData.ReadOnly = true;
-			// 
+			//
 			// FunctionPointerTab
-			// 
+			//
 			this.FunctionPointerTab.Controls.Add(this.FunctionPointerErrorLabel);
 			this.FunctionPointerTab.Controls.Add(this.FunctionPointerDataGridView);
 			this.FunctionPointerTab.Location = new System.Drawing.Point(4, 22);
@@ -575,9 +590,9 @@ namespace KeilMapViewer
 			this.FunctionPointerTab.TabIndex = 9;
 			this.FunctionPointerTab.Text = "Function Pointer";
 			this.FunctionPointerTab.UseVisualStyleBackColor = true;
-			// 
+			//
 			// FunctionPointerErrorLabel
-			// 
+			//
 			this.FunctionPointerErrorLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.FunctionPointerErrorLabel.AutoSize = true;
 			this.FunctionPointerErrorLabel.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -587,16 +602,16 @@ namespace KeilMapViewer
 			this.FunctionPointerErrorLabel.TabIndex = 14;
 			this.FunctionPointerErrorLabel.Text = "Please enable linker option \'--info=stack\'";
 			this.FunctionPointerErrorLabel.Visible = false;
-			// 
+			//
 			// FunctionPointerDataGridView
-			// 
+			//
 			this.FunctionPointerDataGridView.AllowUserToAddRows = false;
 			this.FunctionPointerDataGridView.AllowUserToDeleteRows = false;
 			this.FunctionPointerDataGridView.AllowUserToOrderColumns = true;
 			this.FunctionPointerDataGridView.AllowUserToResizeRows = false;
-			this.FunctionPointerDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			this.FunctionPointerDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+			                                                                                 | System.Windows.Forms.AnchorStyles.Left)
+			                                                                                | System.Windows.Forms.AnchorStyles.Right)));
 			dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
 			dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
 			dataGridViewCellStyle10.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -606,11 +621,13 @@ namespace KeilMapViewer
 			dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
 			this.FunctionPointerDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
 			this.FunctionPointerDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.FunctionPointerDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.FunctionPointerDataGridViewSymbol,
-            this.FunctionPointerDataGridViewModule,
-            this.FunctionPointerDataGridViewCounts,
-            this.FunctionPointerDataGridViewModuleReference});
+			this.FunctionPointerDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[]
+			{
+				this.FunctionPointerDataGridViewSymbol,
+				this.FunctionPointerDataGridViewModule,
+				this.FunctionPointerDataGridViewCounts,
+				this.FunctionPointerDataGridViewModuleReference
+			});
 			dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
 			dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
 			dataGridViewCellStyle11.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -635,41 +652,41 @@ namespace KeilMapViewer
 			this.FunctionPointerDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.FunctionPointerDataGridView.Size = new System.Drawing.Size(1128, 365);
 			this.FunctionPointerDataGridView.TabIndex = 9;
-			// 
+			//
 			// FunctionPointerDataGridViewSymbol
-			// 
+			//
 			this.FunctionPointerDataGridViewSymbol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.FunctionPointerDataGridViewSymbol.FillWeight = 129.9492F;
 			this.FunctionPointerDataGridViewSymbol.HeaderText = "Symbol";
 			this.FunctionPointerDataGridViewSymbol.Name = "FunctionPointerDataGridViewSymbol";
 			this.FunctionPointerDataGridViewSymbol.ReadOnly = true;
-			// 
+			//
 			// FunctionPointerDataGridViewModule
-			// 
+			//
 			this.FunctionPointerDataGridViewModule.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.FunctionPointerDataGridViewModule.FillWeight = 129.9492F;
 			this.FunctionPointerDataGridViewModule.HeaderText = "Module";
 			this.FunctionPointerDataGridViewModule.Name = "FunctionPointerDataGridViewModule";
 			this.FunctionPointerDataGridViewModule.ReadOnly = true;
-			// 
+			//
 			// FunctionPointerDataGridViewCounts
-			// 
+			//
 			this.FunctionPointerDataGridViewCounts.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.FunctionPointerDataGridViewCounts.FillWeight = 30F;
 			this.FunctionPointerDataGridViewCounts.HeaderText = "Counts";
 			this.FunctionPointerDataGridViewCounts.Name = "FunctionPointerDataGridViewCounts";
 			this.FunctionPointerDataGridViewCounts.ReadOnly = true;
-			// 
+			//
 			// FunctionPointerDataGridViewModuleReference
-			// 
+			//
 			this.FunctionPointerDataGridViewModuleReference.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.FunctionPointerDataGridViewModuleReference.FillWeight = 129.9492F;
 			this.FunctionPointerDataGridViewModuleReference.HeaderText = "Module Reference";
 			this.FunctionPointerDataGridViewModuleReference.Name = "FunctionPointerDataGridViewModuleReference";
 			this.FunctionPointerDataGridViewModuleReference.ReadOnly = true;
-			// 
+			//
 			// GlobalSymbolTab
-			// 
+			//
 			this.GlobalSymbolTab.Controls.Add(this.GlobalSymbolDataGridView);
 			this.GlobalSymbolTab.Location = new System.Drawing.Point(4, 22);
 			this.GlobalSymbolTab.Name = "GlobalSymbolTab";
@@ -678,16 +695,16 @@ namespace KeilMapViewer
 			this.GlobalSymbolTab.TabIndex = 10;
 			this.GlobalSymbolTab.Text = "Global Symbol";
 			this.GlobalSymbolTab.UseVisualStyleBackColor = true;
-			// 
+			//
 			// GlobalSymbolDataGridView
-			// 
+			//
 			this.GlobalSymbolDataGridView.AllowUserToAddRows = false;
 			this.GlobalSymbolDataGridView.AllowUserToDeleteRows = false;
 			this.GlobalSymbolDataGridView.AllowUserToOrderColumns = true;
 			this.GlobalSymbolDataGridView.AllowUserToResizeRows = false;
-			this.GlobalSymbolDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			this.GlobalSymbolDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+			                                                                              | System.Windows.Forms.AnchorStyles.Left)
+			                                                                             | System.Windows.Forms.AnchorStyles.Right)));
 			dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
 			dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
 			dataGridViewCellStyle13.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -697,12 +714,14 @@ namespace KeilMapViewer
 			dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
 			this.GlobalSymbolDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
 			this.GlobalSymbolDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.GlobalSymbolDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.GlobalSymboldDataGridSymbolicName,
-            this.GlobalSymboldDataGridAddress,
-            this.GlobalSymboldDataGridSize,
-            this.GlobalSymboldDataGridType,
-            this.GlobalSymboldDataGridObjectName});
+			this.GlobalSymbolDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[]
+			{
+				this.GlobalSymboldDataGridSymbolicName,
+				this.GlobalSymboldDataGridAddress,
+				this.GlobalSymboldDataGridSize,
+				this.GlobalSymboldDataGridType,
+				this.GlobalSymboldDataGridObjectName
+			});
 			dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
 			dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
 			dataGridViewCellStyle14.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -727,49 +746,49 @@ namespace KeilMapViewer
 			this.GlobalSymbolDataGridView.Size = new System.Drawing.Size(1128, 365);
 			this.GlobalSymbolDataGridView.TabIndex = 10;
 			this.GlobalSymbolDataGridView.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GlobalSymbolDataGridView_CellMouseDown);
-			// 
+			//
 			// GlobalSymboldDataGridSymbolicName
-			// 
+			//
 			this.GlobalSymboldDataGridSymbolicName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.GlobalSymboldDataGridSymbolicName.FillWeight = 121.8274F;
 			this.GlobalSymboldDataGridSymbolicName.HeaderText = "Symbolic Name";
 			this.GlobalSymboldDataGridSymbolicName.Name = "GlobalSymboldDataGridSymbolicName";
 			this.GlobalSymboldDataGridSymbolicName.ReadOnly = true;
-			// 
+			//
 			// GlobalSymboldDataGridAddress
-			// 
+			//
 			this.GlobalSymboldDataGridAddress.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.GlobalSymboldDataGridAddress.FillWeight = 121.8274F;
 			this.GlobalSymboldDataGridAddress.HeaderText = "Address";
 			this.GlobalSymboldDataGridAddress.Name = "GlobalSymboldDataGridAddress";
 			this.GlobalSymboldDataGridAddress.ReadOnly = true;
-			// 
+			//
 			// GlobalSymboldDataGridSize
-			// 
+			//
 			this.GlobalSymboldDataGridSize.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.GlobalSymboldDataGridSize.FillWeight = 30F;
 			this.GlobalSymboldDataGridSize.HeaderText = "Size";
 			this.GlobalSymboldDataGridSize.Name = "GlobalSymboldDataGridSize";
 			this.GlobalSymboldDataGridSize.ReadOnly = true;
-			// 
+			//
 			// GlobalSymboldDataGridType
-			// 
+			//
 			this.GlobalSymboldDataGridType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.GlobalSymboldDataGridType.FillWeight = 121.8274F;
 			this.GlobalSymboldDataGridType.HeaderText = "Type";
 			this.GlobalSymboldDataGridType.Name = "GlobalSymboldDataGridType";
 			this.GlobalSymboldDataGridType.ReadOnly = true;
-			// 
+			//
 			// GlobalSymboldDataGridObjectName
-			// 
+			//
 			this.GlobalSymboldDataGridObjectName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.GlobalSymboldDataGridObjectName.FillWeight = 121.8274F;
 			this.GlobalSymboldDataGridObjectName.HeaderText = "Object Name";
 			this.GlobalSymboldDataGridObjectName.Name = "GlobalSymboldDataGridObjectName";
 			this.GlobalSymboldDataGridObjectName.ReadOnly = true;
-			// 
+			//
 			// CrossReferenceTab
-			// 
+			//
 			this.CrossReferenceTab.Controls.Add(this.CrossReferenceDataGridView);
 			this.CrossReferenceTab.Location = new System.Drawing.Point(4, 22);
 			this.CrossReferenceTab.Name = "CrossReferenceTab";
@@ -778,16 +797,16 @@ namespace KeilMapViewer
 			this.CrossReferenceTab.TabIndex = 8;
 			this.CrossReferenceTab.Text = "Cross Reference";
 			this.CrossReferenceTab.UseVisualStyleBackColor = true;
-			// 
+			//
 			// CrossReferenceDataGridView
-			// 
+			//
 			this.CrossReferenceDataGridView.AllowUserToAddRows = false;
 			this.CrossReferenceDataGridView.AllowUserToDeleteRows = false;
 			this.CrossReferenceDataGridView.AllowUserToOrderColumns = true;
 			this.CrossReferenceDataGridView.AllowUserToResizeRows = false;
-			this.CrossReferenceDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			this.CrossReferenceDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+			                                                                                | System.Windows.Forms.AnchorStyles.Left)
+			                                                                               | System.Windows.Forms.AnchorStyles.Right)));
 			dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
 			dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
 			dataGridViewCellStyle16.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -797,10 +816,12 @@ namespace KeilMapViewer
 			dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
 			this.CrossReferenceDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
 			this.CrossReferenceDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.CrossReferenceDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CrossReferenceDataGridViewSymbol,
-            this.CrossReferenceDataGridViewModuleReference,
-            this.CrossReferenceDataGridViewModule});
+			this.CrossReferenceDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[]
+			{
+				this.CrossReferenceDataGridViewSymbol,
+				this.CrossReferenceDataGridViewModuleReference,
+				this.CrossReferenceDataGridViewModule
+			});
 			dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
 			dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Window;
 			dataGridViewCellStyle17.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -825,33 +846,33 @@ namespace KeilMapViewer
 			this.CrossReferenceDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.CrossReferenceDataGridView.Size = new System.Drawing.Size(1128, 365);
 			this.CrossReferenceDataGridView.TabIndex = 8;
-			// 
+			//
 			// CrossReferenceDataGridViewSymbol
-			// 
+			//
 			this.CrossReferenceDataGridViewSymbol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.CrossReferenceDataGridViewSymbol.HeaderText = "Symbol";
 			this.CrossReferenceDataGridViewSymbol.Name = "CrossReferenceDataGridViewSymbol";
 			this.CrossReferenceDataGridViewSymbol.ReadOnly = true;
-			// 
+			//
 			// CrossReferenceDataGridViewModuleReference
-			// 
+			//
 			this.CrossReferenceDataGridViewModuleReference.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.CrossReferenceDataGridViewModuleReference.HeaderText = "Module Reference";
 			this.CrossReferenceDataGridViewModuleReference.Name = "CrossReferenceDataGridViewModuleReference";
 			this.CrossReferenceDataGridViewModuleReference.ReadOnly = true;
-			// 
+			//
 			// CrossReferenceDataGridViewModule
-			// 
+			//
 			this.CrossReferenceDataGridViewModule.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.CrossReferenceDataGridViewModule.HeaderText = "Module";
 			this.CrossReferenceDataGridViewModule.Name = "CrossReferenceDataGridViewModule";
 			this.CrossReferenceDataGridViewModule.ReadOnly = true;
-			// 
+			//
 			// MainTabs
-			// 
-			this.MainTabs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			//
+			this.MainTabs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+			                                                              | System.Windows.Forms.AnchorStyles.Left)
+			                                                             | System.Windows.Forms.AnchorStyles.Right)));
 			this.MainTabs.Controls.Add(this.CrossReferenceTab);
 			this.MainTabs.Controls.Add(this.RemovedSymbolTab);
 			this.MainTabs.Controls.Add(this.MaximumStackUsageTab);
@@ -870,9 +891,9 @@ namespace KeilMapViewer
 			this.MainTabs.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
 			this.MainTabs.TabIndex = 0;
 			this.MainTabs.SelectedIndexChanged += new System.EventHandler(this.InfoTabs_SelectedIndexChanged);
-			// 
+			//
 			// RemovedSymbolTab
-			// 
+			//
 			this.RemovedSymbolTab.Controls.Add(this.RemovedSymbolDataGridView);
 			this.RemovedSymbolTab.Location = new System.Drawing.Point(4, 22);
 			this.RemovedSymbolTab.Name = "RemovedSymbolTab";
@@ -881,16 +902,16 @@ namespace KeilMapViewer
 			this.RemovedSymbolTab.TabIndex = 16;
 			this.RemovedSymbolTab.Text = "Removed Symbol";
 			this.RemovedSymbolTab.UseVisualStyleBackColor = true;
-			// 
+			//
 			// RemovedSymbolDataGridView
-			// 
+			//
 			this.RemovedSymbolDataGridView.AllowUserToAddRows = false;
 			this.RemovedSymbolDataGridView.AllowUserToDeleteRows = false;
 			this.RemovedSymbolDataGridView.AllowUserToOrderColumns = true;
 			this.RemovedSymbolDataGridView.AllowUserToResizeRows = false;
-			this.RemovedSymbolDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			this.RemovedSymbolDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+			                                                                               | System.Windows.Forms.AnchorStyles.Left)
+			                                                                              | System.Windows.Forms.AnchorStyles.Right)));
 			dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
 			dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
 			dataGridViewCellStyle19.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -900,10 +921,12 @@ namespace KeilMapViewer
 			dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
 			this.RemovedSymbolDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
 			this.RemovedSymbolDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.RemovedSymbolDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.RemovedSymbolDataGridViewSymbol,
-            this.RemovedSymbolDataGridViewSize,
-            this.RemovedSymbolDataGridViewModule});
+			this.RemovedSymbolDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[]
+			{
+				this.RemovedSymbolDataGridViewSymbol,
+				this.RemovedSymbolDataGridViewSize,
+				this.RemovedSymbolDataGridViewModule
+			});
 			dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
 			dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window;
 			dataGridViewCellStyle20.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -928,33 +951,33 @@ namespace KeilMapViewer
 			this.RemovedSymbolDataGridView.Size = new System.Drawing.Size(1128, 365);
 			this.RemovedSymbolDataGridView.TabIndex = 12;
 			this.RemovedSymbolDataGridView.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.RemovedSymbolDataGridView_CellMouseDown);
-			// 
+			//
 			// RemovedSymbolDataGridViewSymbol
-			// 
+			//
 			this.RemovedSymbolDataGridViewSymbol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.RemovedSymbolDataGridViewSymbol.FillWeight = 146.1929F;
 			this.RemovedSymbolDataGridViewSymbol.HeaderText = "Symbol";
 			this.RemovedSymbolDataGridViewSymbol.Name = "RemovedSymbolDataGridViewSymbol";
 			this.RemovedSymbolDataGridViewSymbol.ReadOnly = true;
-			// 
+			//
 			// RemovedSymbolDataGridViewSize
-			// 
+			//
 			this.RemovedSymbolDataGridViewSize.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.RemovedSymbolDataGridViewSize.FillWeight = 20F;
 			this.RemovedSymbolDataGridViewSize.HeaderText = "Size";
 			this.RemovedSymbolDataGridViewSize.Name = "RemovedSymbolDataGridViewSize";
 			this.RemovedSymbolDataGridViewSize.ReadOnly = true;
-			// 
+			//
 			// RemovedSymbolDataGridViewModule
-			// 
+			//
 			this.RemovedSymbolDataGridViewModule.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.RemovedSymbolDataGridViewModule.FillWeight = 146.1929F;
 			this.RemovedSymbolDataGridViewModule.HeaderText = "Module";
 			this.RemovedSymbolDataGridViewModule.Name = "RemovedSymbolDataGridViewModule";
 			this.RemovedSymbolDataGridViewModule.ReadOnly = true;
-			// 
+			//
 			// StackUsageTab
-			// 
+			//
 			this.StackUsageTab.Controls.Add(this.StackUsageErrorLabel);
 			this.StackUsageTab.Controls.Add(this.StackUsageDataGridView);
 			this.StackUsageTab.Location = new System.Drawing.Point(4, 22);
@@ -964,9 +987,9 @@ namespace KeilMapViewer
 			this.StackUsageTab.TabIndex = 17;
 			this.StackUsageTab.Text = "Stack Usage";
 			this.StackUsageTab.UseVisualStyleBackColor = true;
-			// 
+			//
 			// StackUsageErrorLabel
-			// 
+			//
 			this.StackUsageErrorLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.StackUsageErrorLabel.AutoSize = true;
 			this.StackUsageErrorLabel.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -976,16 +999,16 @@ namespace KeilMapViewer
 			this.StackUsageErrorLabel.TabIndex = 12;
 			this.StackUsageErrorLabel.Text = "Please enable linker option \'--info=stack\'";
 			this.StackUsageErrorLabel.Visible = false;
-			// 
+			//
 			// StackUsageDataGridView
-			// 
+			//
 			this.StackUsageDataGridView.AllowUserToAddRows = false;
 			this.StackUsageDataGridView.AllowUserToDeleteRows = false;
 			this.StackUsageDataGridView.AllowUserToOrderColumns = true;
 			this.StackUsageDataGridView.AllowUserToResizeRows = false;
-			this.StackUsageDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			this.StackUsageDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+			                                                                            | System.Windows.Forms.AnchorStyles.Left)
+			                                                                           | System.Windows.Forms.AnchorStyles.Right)));
 			dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
 			dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Control;
 			dataGridViewCellStyle22.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -995,9 +1018,11 @@ namespace KeilMapViewer
 			dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
 			this.StackUsageDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
 			this.StackUsageDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.StackUsageDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.StackUsageDataFunction,
-            this.StackUsageDataSize});
+			this.StackUsageDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[]
+			{
+				this.StackUsageDataFunction,
+				this.StackUsageDataSize
+			});
 			dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
 			dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Window;
 			dataGridViewCellStyle23.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1022,25 +1047,25 @@ namespace KeilMapViewer
 			this.StackUsageDataGridView.Size = new System.Drawing.Size(1128, 365);
 			this.StackUsageDataGridView.TabIndex = 11;
 			this.StackUsageDataGridView.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.StackUsageDataGridView_CellMouseDown);
-			// 
+			//
 			// StackUsageDataFunction
-			// 
+			//
 			this.StackUsageDataFunction.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.StackUsageDataFunction.FillWeight = 116.9543F;
 			this.StackUsageDataFunction.HeaderText = "Function";
 			this.StackUsageDataFunction.Name = "StackUsageDataFunction";
 			this.StackUsageDataFunction.ReadOnly = true;
-			// 
+			//
 			// StackUsageDataSize
-			// 
+			//
 			this.StackUsageDataSize.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.StackUsageDataSize.FillWeight = 20F;
 			this.StackUsageDataSize.HeaderText = "Size";
 			this.StackUsageDataSize.Name = "StackUsageDataSize";
 			this.StackUsageDataSize.ReadOnly = true;
-			// 
+			//
 			// MutuallyRecursiveTab
-			// 
+			//
 			this.MutuallyRecursiveTab.Controls.Add(this.MutuallyRecursiveErrorLabel);
 			this.MutuallyRecursiveTab.Controls.Add(this.MutuallyRecursiveDataGridView);
 			this.MutuallyRecursiveTab.Location = new System.Drawing.Point(4, 22);
@@ -1050,9 +1075,9 @@ namespace KeilMapViewer
 			this.MutuallyRecursiveTab.TabIndex = 15;
 			this.MutuallyRecursiveTab.Text = "Mutually Recursive";
 			this.MutuallyRecursiveTab.UseVisualStyleBackColor = true;
-			// 
+			//
 			// MutuallyRecursiveErrorLabel
-			// 
+			//
 			this.MutuallyRecursiveErrorLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.MutuallyRecursiveErrorLabel.AutoSize = true;
 			this.MutuallyRecursiveErrorLabel.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1062,16 +1087,16 @@ namespace KeilMapViewer
 			this.MutuallyRecursiveErrorLabel.TabIndex = 13;
 			this.MutuallyRecursiveErrorLabel.Text = "Please enable linker option \'--info=stack\'";
 			this.MutuallyRecursiveErrorLabel.Visible = false;
-			// 
+			//
 			// MutuallyRecursiveDataGridView
-			// 
+			//
 			this.MutuallyRecursiveDataGridView.AllowUserToAddRows = false;
 			this.MutuallyRecursiveDataGridView.AllowUserToDeleteRows = false;
 			this.MutuallyRecursiveDataGridView.AllowUserToOrderColumns = true;
 			this.MutuallyRecursiveDataGridView.AllowUserToResizeRows = false;
-			this.MutuallyRecursiveDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			this.MutuallyRecursiveDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+			                                                                                   | System.Windows.Forms.AnchorStyles.Left)
+			                                                                                  | System.Windows.Forms.AnchorStyles.Right)));
 			dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
 			dataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Control;
 			dataGridViewCellStyle25.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1081,9 +1106,11 @@ namespace KeilMapViewer
 			dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
 			this.MutuallyRecursiveDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
 			this.MutuallyRecursiveDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.MutuallyRecursiveDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MutuallyRecursiveDataGridViewFunction,
-            this.MutuallyRecursiveDataGridViewCaller});
+			this.MutuallyRecursiveDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[]
+			{
+				this.MutuallyRecursiveDataGridViewFunction,
+				this.MutuallyRecursiveDataGridViewCaller
+			});
 			dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
 			dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Window;
 			dataGridViewCellStyle26.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1108,23 +1135,23 @@ namespace KeilMapViewer
 			this.MutuallyRecursiveDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.MutuallyRecursiveDataGridView.Size = new System.Drawing.Size(1128, 365);
 			this.MutuallyRecursiveDataGridView.TabIndex = 11;
-			// 
+			//
 			// MutuallyRecursiveDataGridViewFunction
-			// 
+			//
 			this.MutuallyRecursiveDataGridViewFunction.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.MutuallyRecursiveDataGridViewFunction.HeaderText = "Function";
 			this.MutuallyRecursiveDataGridViewFunction.Name = "MutuallyRecursiveDataGridViewFunction";
 			this.MutuallyRecursiveDataGridViewFunction.ReadOnly = true;
-			// 
+			//
 			// MutuallyRecursiveDataGridViewCaller
-			// 
+			//
 			this.MutuallyRecursiveDataGridViewCaller.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.MutuallyRecursiveDataGridViewCaller.HeaderText = "Caller";
 			this.MutuallyRecursiveDataGridViewCaller.Name = "MutuallyRecursiveDataGridViewCaller";
 			this.MutuallyRecursiveDataGridViewCaller.ReadOnly = true;
-			// 
+			//
 			// MemoryMapImageTab
-			// 
+			//
 			this.MemoryMapImageTab.Controls.Add(this.MainTableLayoutPanel);
 			this.MemoryMapImageTab.Location = new System.Drawing.Point(4, 22);
 			this.MemoryMapImageTab.Name = "MemoryMapImageTab";
@@ -1133,12 +1160,12 @@ namespace KeilMapViewer
 			this.MemoryMapImageTab.TabIndex = 14;
 			this.MemoryMapImageTab.Text = "Memory Map Image";
 			this.MemoryMapImageTab.UseVisualStyleBackColor = true;
-			// 
+			//
 			// MainTableLayoutPanel
-			// 
-			this.MainTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			//
+			this.MainTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+			                                                                          | System.Windows.Forms.AnchorStyles.Left)
+			                                                                         | System.Windows.Forms.AnchorStyles.Right)));
 			this.MainTableLayoutPanel.ColumnCount = 6;
 			this.MainTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
 			this.MainTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
@@ -1161,16 +1188,16 @@ namespace KeilMapViewer
 			this.MainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
 			this.MainTableLayoutPanel.Size = new System.Drawing.Size(1138, 374);
 			this.MainTableLayoutPanel.TabIndex = 0;
-			// 
+			//
 			// MemoryMapImageDataGridView
-			// 
+			//
 			this.MemoryMapImageDataGridView.AllowUserToAddRows = false;
 			this.MemoryMapImageDataGridView.AllowUserToDeleteRows = false;
 			this.MemoryMapImageDataGridView.AllowUserToOrderColumns = true;
 			this.MemoryMapImageDataGridView.AllowUserToResizeRows = false;
-			this.MemoryMapImageDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			this.MemoryMapImageDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+			                                                                                | System.Windows.Forms.AnchorStyles.Left)
+			                                                                               | System.Windows.Forms.AnchorStyles.Right)));
 			dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
 			dataGridViewCellStyle28.BackColor = System.Drawing.SystemColors.Control;
 			dataGridViewCellStyle28.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1180,16 +1207,18 @@ namespace KeilMapViewer
 			dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
 			this.MemoryMapImageDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle28;
 			this.MemoryMapImageDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.MemoryMapImageDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MemoryMapImageDataGridViewSectionName,
-            this.MemoryMapImageDataGridViewObjectName,
-            this.MemoryMapImageDataGridViewExecutionAddress,
-            this.MemoryMapImageDataGridViewLoadAddress,
-            this.MemoryMapImageDataGridViewSize,
-            this.MemoryMapImageDataGridViewType,
-            this.MemoryMapImageDataGridViewAttribute,
-            this.MemoryMapImageDataGridViewIndex,
-            this.MemoryMapImageDataGridViewEntryPoint});
+			this.MemoryMapImageDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[]
+			{
+				this.MemoryMapImageDataGridViewSectionName,
+				this.MemoryMapImageDataGridViewObjectName,
+				this.MemoryMapImageDataGridViewExecutionAddress,
+				this.MemoryMapImageDataGridViewLoadAddress,
+				this.MemoryMapImageDataGridViewSize,
+				this.MemoryMapImageDataGridViewType,
+				this.MemoryMapImageDataGridViewAttribute,
+				this.MemoryMapImageDataGridViewIndex,
+				this.MemoryMapImageDataGridViewEntryPoint
+			});
 			this.MainTableLayoutPanel.SetColumnSpan(this.MemoryMapImageDataGridView, 6);
 			dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
 			dataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.Window;
@@ -1215,9 +1244,9 @@ namespace KeilMapViewer
 			this.MemoryMapImageDataGridView.Size = new System.Drawing.Size(1132, 338);
 			this.MemoryMapImageDataGridView.TabIndex = 12;
 			this.MemoryMapImageDataGridView.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.MemoryMapImageDataGridView_CellMouseDown);
-			// 
+			//
 			// MemoryMapImageEntryPointAddressLabel
-			// 
+			//
 			this.MemoryMapImageEntryPointAddressLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.MemoryMapImageEntryPointAddressLabel.AutoSize = true;
 			this.MemoryMapImageEntryPointAddressLabel.Location = new System.Drawing.Point(103, 8);
@@ -1225,9 +1254,9 @@ namespace KeilMapViewer
 			this.MemoryMapImageEntryPointAddressLabel.Size = new System.Drawing.Size(94, 13);
 			this.MemoryMapImageEntryPointAddressLabel.TabIndex = 5;
 			this.MemoryMapImageEntryPointAddressLabel.Text = "0x00000000";
-			// 
+			//
 			// MemoryMapImageEntryPointLabel
-			// 
+			//
 			this.MemoryMapImageEntryPointLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.MemoryMapImageEntryPointLabel.AutoSize = true;
 			this.MemoryMapImageEntryPointLabel.Location = new System.Drawing.Point(3, 8);
@@ -1235,9 +1264,9 @@ namespace KeilMapViewer
 			this.MemoryMapImageEntryPointLabel.Size = new System.Drawing.Size(94, 13);
 			this.MemoryMapImageEntryPointLabel.TabIndex = 0;
 			this.MemoryMapImageEntryPointLabel.Text = "Entry Point";
-			// 
+			//
 			// MemoryMapImageLoadRegionLabel
-			// 
+			//
 			this.MemoryMapImageLoadRegionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.MemoryMapImageLoadRegionLabel.AutoSize = true;
 			this.MemoryMapImageLoadRegionLabel.Location = new System.Drawing.Point(203, 8);
@@ -1245,9 +1274,9 @@ namespace KeilMapViewer
 			this.MemoryMapImageLoadRegionLabel.Size = new System.Drawing.Size(94, 13);
 			this.MemoryMapImageLoadRegionLabel.TabIndex = 1;
 			this.MemoryMapImageLoadRegionLabel.Text = "Load Region";
-			// 
+			//
 			// MemoryMapImageExecutionRegionLabel
-			// 
+			//
 			this.MemoryMapImageExecutionRegionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.MemoryMapImageExecutionRegionLabel.AutoSize = true;
 			this.MemoryMapImageExecutionRegionLabel.Location = new System.Drawing.Point(672, 8);
@@ -1255,9 +1284,9 @@ namespace KeilMapViewer
 			this.MemoryMapImageExecutionRegionLabel.Size = new System.Drawing.Size(94, 13);
 			this.MemoryMapImageExecutionRegionLabel.TabIndex = 2;
 			this.MemoryMapImageExecutionRegionLabel.Text = "Execution Region";
-			// 
+			//
 			// MemoryMapImageLoadRegionComboBox
-			// 
+			//
 			this.MemoryMapImageLoadRegionComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.MemoryMapImageLoadRegionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.MemoryMapImageLoadRegionComboBox.FormattingEnabled = true;
@@ -1266,9 +1295,9 @@ namespace KeilMapViewer
 			this.MemoryMapImageLoadRegionComboBox.Size = new System.Drawing.Size(363, 21);
 			this.MemoryMapImageLoadRegionComboBox.TabIndex = 3;
 			this.MemoryMapImageLoadRegionComboBox.SelectionChangeCommitted += new System.EventHandler(this.MemoryMapImageLoadRegionComboBox_SelectionChangeCommitted);
-			// 
+			//
 			// MemoryMapImageExecutionRegionComboBox
-			// 
+			//
 			this.MemoryMapImageExecutionRegionComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.MemoryMapImageExecutionRegionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.MemoryMapImageExecutionRegionComboBox.FormattingEnabled = true;
@@ -1277,79 +1306,79 @@ namespace KeilMapViewer
 			this.MemoryMapImageExecutionRegionComboBox.Size = new System.Drawing.Size(363, 21);
 			this.MemoryMapImageExecutionRegionComboBox.TabIndex = 4;
 			this.MemoryMapImageExecutionRegionComboBox.SelectionChangeCommitted += new System.EventHandler(this.MemoryMapImageExecutionRegionComboBox_SelectionChangeCommitted);
-			// 
+			//
 			// MemoryMapImageDataGridViewSectionName
-			// 
+			//
 			this.MemoryMapImageDataGridViewSectionName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.MemoryMapImageDataGridViewSectionName.HeaderText = "Section Name";
 			this.MemoryMapImageDataGridViewSectionName.Name = "MemoryMapImageDataGridViewSectionName";
 			this.MemoryMapImageDataGridViewSectionName.ReadOnly = true;
-			// 
+			//
 			// MemoryMapImageDataGridViewObjectName
-			// 
+			//
 			this.MemoryMapImageDataGridViewObjectName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.MemoryMapImageDataGridViewObjectName.HeaderText = "Object Name";
 			this.MemoryMapImageDataGridViewObjectName.Name = "MemoryMapImageDataGridViewObjectName";
 			this.MemoryMapImageDataGridViewObjectName.ReadOnly = true;
-			// 
+			//
 			// MemoryMapImageDataGridViewExecutionAddress
-			// 
+			//
 			this.MemoryMapImageDataGridViewExecutionAddress.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.MemoryMapImageDataGridViewExecutionAddress.FillWeight = 30F;
 			this.MemoryMapImageDataGridViewExecutionAddress.HeaderText = "Exec Address";
 			this.MemoryMapImageDataGridViewExecutionAddress.Name = "MemoryMapImageDataGridViewExecutionAddress";
 			this.MemoryMapImageDataGridViewExecutionAddress.ReadOnly = true;
-			// 
+			//
 			// MemoryMapImageDataGridViewLoadAddress
-			// 
+			//
 			this.MemoryMapImageDataGridViewLoadAddress.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.MemoryMapImageDataGridViewLoadAddress.FillWeight = 30F;
 			this.MemoryMapImageDataGridViewLoadAddress.HeaderText = "Load Address";
 			this.MemoryMapImageDataGridViewLoadAddress.Name = "MemoryMapImageDataGridViewLoadAddress";
 			this.MemoryMapImageDataGridViewLoadAddress.ReadOnly = true;
-			// 
+			//
 			// MemoryMapImageDataGridViewSize
-			// 
+			//
 			this.MemoryMapImageDataGridViewSize.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.MemoryMapImageDataGridViewSize.FillWeight = 30F;
 			this.MemoryMapImageDataGridViewSize.HeaderText = "Size";
 			this.MemoryMapImageDataGridViewSize.Name = "MemoryMapImageDataGridViewSize";
 			this.MemoryMapImageDataGridViewSize.ReadOnly = true;
-			// 
+			//
 			// MemoryMapImageDataGridViewType
-			// 
+			//
 			this.MemoryMapImageDataGridViewType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.MemoryMapImageDataGridViewType.FillWeight = 30F;
 			this.MemoryMapImageDataGridViewType.HeaderText = "Type";
 			this.MemoryMapImageDataGridViewType.Name = "MemoryMapImageDataGridViewType";
 			this.MemoryMapImageDataGridViewType.ReadOnly = true;
-			// 
+			//
 			// MemoryMapImageDataGridViewAttribute
-			// 
+			//
 			this.MemoryMapImageDataGridViewAttribute.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.MemoryMapImageDataGridViewAttribute.FillWeight = 30F;
 			this.MemoryMapImageDataGridViewAttribute.HeaderText = "Attribute";
 			this.MemoryMapImageDataGridViewAttribute.Name = "MemoryMapImageDataGridViewAttribute";
 			this.MemoryMapImageDataGridViewAttribute.ReadOnly = true;
-			// 
+			//
 			// MemoryMapImageDataGridViewIndex
-			// 
+			//
 			this.MemoryMapImageDataGridViewIndex.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.MemoryMapImageDataGridViewIndex.FillWeight = 30F;
 			this.MemoryMapImageDataGridViewIndex.HeaderText = "Index";
 			this.MemoryMapImageDataGridViewIndex.Name = "MemoryMapImageDataGridViewIndex";
 			this.MemoryMapImageDataGridViewIndex.ReadOnly = true;
-			// 
+			//
 			// MemoryMapImageDataGridViewEntryPoint
-			// 
+			//
 			this.MemoryMapImageDataGridViewEntryPoint.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.MemoryMapImageDataGridViewEntryPoint.FillWeight = 20F;
 			this.MemoryMapImageDataGridViewEntryPoint.HeaderText = "Entry Point";
 			this.MemoryMapImageDataGridViewEntryPoint.Name = "MemoryMapImageDataGridViewEntryPoint";
 			this.MemoryMapImageDataGridViewEntryPoint.ReadOnly = true;
-			// 
+			//
 			// MainForm
-			// 
+			//
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1173, 461);

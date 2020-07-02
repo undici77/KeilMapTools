@@ -22,10 +22,10 @@
 
 class StackUsageSection : public SectionBase, public SectionData<STACK_USAGE_FIELD>
 {
-public:
-	StackUsageSection();
-	~StackUsageSection();
+	public:
+		StackUsageSection();
+		~StackUsageSection();
 
-	bool Manage(const std::string &file);
+		bool Manage(const std::string &file);
 };
 

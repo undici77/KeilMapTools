@@ -24,26 +24,26 @@
 
 class KeilMapLibClient
 {
-public:
-	KeilMapLibClient(void);
-	~KeilMapLibClient(void);
+	public:
+		KeilMapLibClient(void);
+		~KeilMapLibClient(void);
 
-	bool                                    ReadFile(const std::string file_path);
+		bool                                    ReadFile(const std::string file_path);
 
-	std::vector<CROSS_REFERENCE_FIELD>      GetCrossReference(void);
-	std::vector<FUNCTION_POINTER_FIELD>     GetFunctionPointer(void);
-	std::vector<GLOBAL_SYMBOL_FIELD>        GetGlobalSymbols(void);
-	std::vector<IMAGE_COMPONENT_SIZE_FIELD> GetImageComponentSize(void);
-	IMAGE_SIZE_DATA                         GetImageSize(void);
-	std::vector<LOCAL_SYMBOL_FIELD>         GetLocalSymbols(void);
-	std::vector<MAXIMUM_STACK_USAGE_FIELD>  GetMaximumStackUsage(void);
-	MEMORY_MAP_IMAGE                        GetMemoryMapImage(void);
-	std::vector<MUTUALLY_RECURSIVE_FIELD>   GetMutualRecursive(void);
-	std::vector<REMOVED_SYMBOL_FIELD>       GetRemovedSymbols(void);
-	std::vector<STACK_USAGE_FIELD>          GetStackUsage(void);
+		std::vector<CROSS_REFERENCE_FIELD>      GetCrossReference(void);
+		std::vector<FUNCTION_POINTER_FIELD>     GetFunctionPointer(void);
+		std::vector<GLOBAL_SYMBOL_FIELD>        GetGlobalSymbols(void);
+		std::vector<IMAGE_COMPONENT_SIZE_FIELD> GetImageComponentSize(void);
+		IMAGE_SIZE_DATA                         GetImageSize(void);
+		std::vector<LOCAL_SYMBOL_FIELD>         GetLocalSymbols(void);
+		std::vector<MAXIMUM_STACK_USAGE_FIELD>  GetMaximumStackUsage(void);
+		MEMORY_MAP_IMAGE                        GetMemoryMapImage(void);
+		std::vector<MUTUALLY_RECURSIVE_FIELD>   GetMutualRecursive(void);
+		std::vector<REMOVED_SYMBOL_FIELD>       GetRemovedSymbols(void);
+		std::vector<STACK_USAGE_FIELD>          GetStackUsage(void);
 
-private:
-	std::string _File;
+	private:
+		std::string _File;
 };
 
 #endif
