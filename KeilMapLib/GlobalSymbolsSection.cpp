@@ -41,7 +41,7 @@ bool GlobalSymbolsSection::Manage(const std::string &file)
 	boost::match_results<std::string::const_iterator> fields_match_result;
 	boost::sregex_token_iterator                      fields_iterator;
 	boost::sregex_token_iterator                      fields_end;
-	GLOBAL_SYMBOL_FIELD                              global_symbols_field;
+	GLOBAL_SYMBOL_FIELD                               global_symbols_field;
 	std::string                                       fields_string;
 
 	_Data.clear();
