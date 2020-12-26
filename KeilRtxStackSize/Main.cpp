@@ -20,7 +20,7 @@
 /******************************************************************************/
 
 const std::string App_Name    = "KeilRtxStackSize";
-const std::string App_Version = "v1.3.0.0";
+const std::string App_Version = "v1.4.0.0";
 const std::string App_Author  = "Alessandro Barbieri";
 
 /******************************************************************************/
@@ -47,19 +47,21 @@ static void read_ini(const boost::filesystem::path &ini_file_path, PARAMETERS *p
 	{
 		if (parameters->architecture.empty())
 		{
-			parameters->architecture = property_tree.get<std::string>("Architecture.Name");
-		}
-		if (parameters->architecture.empty())
-		{
-			parameters->architecture = "STM32";
+			if (property_tree.get_optional<std::string>("Architecture.Name").is_initialized())
+			{
+				parameters->architecture = property_tree.get<std::string>("Architecture.Name");
+			}
+			if (parameters->architecture.empty())
+			{
+				parameters->architecture = "STM32";
+			}
 		}
 
 		property_tree.put<std::string>("Architecture.Name", parameters->architecture);
 	}
 	catch (...)
 	{
-		parameters->architecture = "STM32";
-		property_tree.put<std::string>("Architecture.Name", parameters->architecture);
+		ASSERT(false);
 	}
 
 	// Map.FilePath
@@ -67,12 +69,15 @@ static void read_ini(const boost::filesystem::path &ini_file_path, PARAMETERS *p
 	{
 		if (parameters->map_file_path.empty())
 		{
-			parameters->map_file_path = property_tree.get<std::string>("Map.FilePath");
-		}
-		if (parameters->map_file_path.empty())
-		{
-			parameters->map_file_path = boost::filesystem::absolute(ini_file_path.parent_path());
-			parameters->map_file_path.append("Application.map");
+			if (property_tree.get_optional<std::string>("Map.FilePath").is_initialized())
+			{
+				parameters->map_file_path = boost::algorithm::trim_copy_if(property_tree.get<std::string>("Map.FilePath"), boost::is_any_of("\""));
+			}
+			else
+			{
+				parameters->map_file_path = boost::filesystem::absolute(ini_file_path.parent_path());
+				parameters->map_file_path.append("Application.map");
+			}
 		}
 		else
 		{
@@ -84,15 +89,12 @@ static void read_ini(const boost::filesystem::path &ini_file_path, PARAMETERS *p
 			parameters->map_file_path = boost::filesystem::absolute(parameters->map_file_path);
 		}
 
-		path = boost::filesystem::relative(parameters->map_file_path);
+		path = boost::filesystem::relative(parameters->map_file_path, boost::filesystem::current_path());
 		property_tree.put<std::string>("Map.FilePath", path.string());
 	}
 	catch (...)
 	{
-		parameters->map_file_path = boost::filesystem::absolute(ini_file_path.parent_path());
-		parameters->map_file_path.append("Application.map");
-		path = boost::filesystem::relative(parameters->map_file_path, boost::filesystem::current_path());
-		property_tree.put<std::string>("Map.FilePath", path.string());
+		ASSERT(false);
 	}
 
 	// Output.FilePath
@@ -100,13 +102,16 @@ static void read_ini(const boost::filesystem::path &ini_file_path, PARAMETERS *p
 	{
 		if (parameters->output_file_path.empty())
 		{
-			parameters->output_file_path = property_tree.get<std::string>("Output.FilePath");
-		}
-		if (parameters->output_file_path.empty())
-		{
-			parameters->output_file_path = boost::filesystem::current_path();
-			parameters->output_file_path.append("Src");
-			parameters->output_file_path.append("os_threads_stack_size.h");
+			if (property_tree.get_optional<std::string>("Output.FilePath").is_initialized())
+			{
+				parameters->output_file_path = boost::algorithm::trim_copy_if(property_tree.get<std::string>("Output.FilePath"), boost::is_any_of("\""));
+			}
+			else
+			{
+				parameters->output_file_path = boost::filesystem::current_path();
+				parameters->output_file_path.append("Src");
+				parameters->output_file_path.append("os_threads_stack_size.h");
+			}
 		}
 		else
 		{
@@ -123,12 +128,7 @@ static void read_ini(const boost::filesystem::path &ini_file_path, PARAMETERS *p
 	}
 	catch (...)
 	{
-		parameters->output_file_path = boost::filesystem::current_path();
-		parameters->output_file_path.append("Src");
-		parameters->output_file_path.append("os_threads_stack_size.h");
-
-		path = boost::filesystem::relative(parameters->output_file_path, boost::filesystem::current_path());
-		property_tree.put<std::string>("Output.FilePath", path.string());
+		ASSERT(false);
 	}
 
 	// Threads.Regex
@@ -136,25 +136,28 @@ static void read_ini(const boost::filesystem::path &ini_file_path, PARAMETERS *p
 	{
 		if (parameters->thread_regex.empty())
 		{
-			parameters->thread_regex = property_tree.get<std::string>("Threads.Regex");
-		}
-		if (parameters->thread_regex.empty())
-		{
-			parameters->thread_regex = "thread|task";
+			if (property_tree.get_optional<std::string>("Threads.Regex").is_initialized())
+			{
+				parameters->thread_regex = boost::algorithm::trim_copy_if(property_tree.get<std::string>("Threads.Regex"), boost::is_any_of("\""));
+			}
+			else
+			{
+				parameters->thread_regex = "thread|task";
+			}
 		}
 
 		property_tree.put<std::string>("Threads.Regex", parameters->thread_regex);
 	}
 	catch (...)
 	{
-		parameters->thread_regex = "thread|task";
-		property_tree.put<std::string>("Threads.Regex", parameters->thread_regex);
+		ASSERT(false);
 	}
 
 	// Stack.Oversizing
 	try
 	{
-		if (parameters->stack_oversizing != 0)
+		if ((parameters->stack_oversizing == 0) && 
+			(property_tree.get_optional<size_t>("Stack.Oversizing").is_initialized()))
 		{
 			parameters->stack_oversizing = property_tree.get<size_t>("Stack.Oversizing");
 		}
@@ -163,8 +166,7 @@ static void read_ini(const boost::filesystem::path &ini_file_path, PARAMETERS *p
 	}
 	catch (...)
 	{
-		parameters->stack_oversizing = 0;
-		property_tree.put<size_t>("Stack.Oversizing", parameters->stack_oversizing);
+		ASSERT(false);
 	}
 
 	boost::property_tree::ini_parser::write_ini (ini_file_path.string(), property_tree);

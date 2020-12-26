@@ -1,5 +1,5 @@
 #define ApplicationName 'KeilMapTools'
-#define ApplicationVersion '1.3.0.0'
+#define ApplicationVersion '1.4.0.0'
 
 [Files]
 ; Applicazione
